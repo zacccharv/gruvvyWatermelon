@@ -4,22 +4,12 @@
   "description": "Personal version of gruvbox",
   "version": "0.0.1",
   "engines": {
-    "vscode": "^1.84.0"
+    "vscode": "^1.85.0"
   },
   "categories": [
     "Themes"
   ],
   "contributes": {
-    "semanticTokenScopes": [
-      {
-        "language": "csharp",
-        "scopes": {
-          "struct": [
-            "storage.type.struct.cs"
-          ]
-        }
-      }
-    ],
     "themes": [
       {
         "label": "Zeebox",
