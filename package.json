@@ -17,5 +17,10 @@
         "path": "./themes/Zeebox-color-theme.json"
       }
     ]
+  },
+  "scripts": {
+    "start": "nodemon --watch src src/index.js",
+    "build": "node src/index.js && mkdir -p build",
+    "prepublishOnly": "npm run build && vsce publish"
   }
 }
