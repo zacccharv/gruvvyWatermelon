@@ -10,7 +10,7 @@ const zeeboxTheme = getTheme({
 fs.mkdir('./themes', { recursive: true })
     .then(() =>
         Promise.all([
-            fs.writeFile('./themes/zeebox-color-theme.json', JSON.stringify(zeeboxTheme, null, 2)),
+            fs.writeFile('./themes/Zeebox-color-theme.json', JSON.stringify(zeeboxTheme, null, 2)),
         ])
     )
     .catch(() => process.exit(1))

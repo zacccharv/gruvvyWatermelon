@@ -1,10 +1,11 @@
 const { colors } = require('./colors')
 
 function getTheme({ theme, name }) {
-    const themes = (options) => options[theme]
+    function themes(options) {
+        return options[theme]
+    }
 
     return {
-
         name: name,
         "colors": {
             "errorLens.errorForeground": "#ff5f87",
@@ -316,7 +317,7 @@ function getTheme({ theme, name }) {
             "widget.shadow": colors.dark_hard + "70",
             "activityBar.activeBorder": colors.green,
         },
-        "tokencolors": [
+        "tokenolors": [
             {
                 "scope": [
                     "comment",
