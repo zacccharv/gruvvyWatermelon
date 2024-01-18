@@ -317,7 +317,7 @@ function getTheme({ theme, name }) {
             "widget.shadow": colors.dark_hard + "70",
             "activityBar.activeBorder": colors.green,
         },
-        "tokenolors": [
+        "tokenColors": [
             {
                 "scope": [
                     "comment",
