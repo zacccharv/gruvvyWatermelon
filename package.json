@@ -22,5 +22,8 @@
     "start": "nodemon --watch src src/index.js",
     "build": "node src/index.js && mkdir -p build",
     "prepublishOnly": "npm run build && vsce publish"
+  },
+  "dependencies": {
+    "nodemon": "^3.0.3"
   }
 }

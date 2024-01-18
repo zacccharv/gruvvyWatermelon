@@ -7,7 +7,6 @@ const colors = {
     light_hard: "#f9f5de",
     light_normal: "#fbf1c7",
     light_soft: "#f2e5bc",
-    light_1: "",
     light_0: "#8e856b",
     red: "#ff5f87",
     yellow: "#f5cc4e",
