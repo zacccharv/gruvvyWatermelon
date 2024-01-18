@@ -3,7 +3,7 @@ const getTheme = require('./theme')
 
 const zeeboxTheme = getTheme({
     theme: 'dark',
-    name: 'ZeeBox',
+    name: 'Zeebox',
 })
 
 // write theme
