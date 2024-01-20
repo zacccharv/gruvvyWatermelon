@@ -7,7 +7,7 @@ const colors = {
     light_hard: "#eae0e2",
     light_normal: "#e9d9dc",
     light_soft: "#e7ccd1",
-    light_0: "#5d4c57",
+    light_0: "#685562",
     // keywords like public
     color_0: "#74d7a5",
     // keyword.type + kwrd.operator + kwrd.control
