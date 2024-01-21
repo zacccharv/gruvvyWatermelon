@@ -1,4 +1,5 @@
 const { colors } = require('./colors')
+const { tokenColors } = require('./colors')
 
 function getTheme({ theme, name }) {
     function themes(options) {
@@ -8,14 +9,18 @@ function getTheme({ theme, name }) {
     return {
         name: name,
         "colors": {
-            "errorLens.errorForeground": colors.color_2_dark,
-            "errorLens.errorBackground": colors.color_2_dark + "19",
-            "errorLens.warningForeground": colors.color_5,
-            "errorLens.warningBackground": colors.color_5 + "19",
-            "errorLens.infoForeground": colors.color_1,
-            "errorLens.infoMessageBackground": colors.color_1 + "19",
-            "errorLens.hintForeground": colors.color_0,
-            "errorLens.hintBackground": colors.color_0 + "19",
+            "editorBracketHighlight.foreground1": colors.color_0,
+            "editorBracketHighlight.foreground2": colors.color_3,
+            "editorBracketHighlight.foreground3": colors.color_1,
+            "editorBracketHighlight.foreground4": colors.color_2,
+            "errorLens.errorForeground": tokenColors.errorColor,
+            "errorLens.errorBackground": tokenColors.errorColor + "19",
+            "errorLens.warningForeground": tokenColors.warnColor,
+            "errorLens.warningBackground": tokenColors.warnColor + "19",
+            "errorLens.infoForeground": tokenColors.infoColor,
+            "errorLens.infoMessageBackground": tokenColors.infoColor + "19",
+            "errorLens.hintForeground": tokenColors.hintColor,
+            "errorLens.hintBackground": tokenColors.hintColor + "19",
             "activityBar.activeBorder": colors.color_1,
             "activityBar.activeFocusBorder": colors.color_1,
             "activityBar.background": colors.dark_hard,
@@ -24,7 +29,7 @@ function getTheme({ theme, name }) {
             "activityBar.inactiveForeground": colors.light_0,
             "activityBarBadge.background": colors.color_2,
             "activityBarBadge.foreground": colors.dark_normal,
-            "badge.background": colors.color_1,
+            "badge.background": tokenColors.infoColor,
             "badge.foreground": colors.dark_normal,
             "breadcrumb.activeSelectionForeground": colors.light_hard,
             "breadcrumb.focusForeground": colors.light_hard,
@@ -91,7 +96,7 @@ function getTheme({ theme, name }) {
             "editorOverviewRuler.commonContentForeground": colors.light_0,
             "editorOverviewRuler.currentContentForeground": colors.color_1 + "a0",
             "editorOverviewRuler.deletedForeground": colors.color_0 + "80",
-            "editorOverviewRuler.errorForeground": colors.color_0,
+            "editorOverviewRuler.errorForeground": tokenColors.errorColor,
             "editorOverviewRuler.findMatchForeground": colors.color_1 + "80",
             "editorOverviewRuler.incomingContentForeground": colors.color_1 + "a0",
             "editorOverviewRuler.infoForeground": colors.color_1,
@@ -106,7 +111,7 @@ function getTheme({ theme, name }) {
             "editorSuggestWidget.border": colors.dark_0,
             "editorSuggestWidget.foreground": colors.light_hard,
             "editorSuggestWidget.highlightForeground": colors.color_1,
-            "editorSuggestWidget.selectedBackground": colors.dark_0,
+            "editorSuggestWidget.selectedBackground": colors.dark_1,
             "editorUnnecessaryCode.border": colors.light_0,
             "editorUnnecessaryCode.opacity": colors.light_hard,
             "editorWarning.foreground": colors.color_4,
@@ -125,9 +130,9 @@ function getTheme({ theme, name }) {
             "gitDecoration.conflictingResourceForeground": colors.color_5 + "90",
             "gitDecoration.deletedResourceForeground": colors.color_3,
             "gitDecoration.ignoredResourceForeground": colors.dark_1,
-            "gitDecoration.modifiedResourceForeground": colors.color_1 + "80",
-            "gitDecoration.submoduleResourceForeground": colors.color_3 + "80",
-            "gitDecoration.untrackedResourceForeground": colors.color_4 + "70",
+            "gitDecoration.modifiedResourceForeground": colors.color_1 + "d1",
+            "gitDecoration.submoduleResourceForeground": colors.color_3 + "d1",
+            "gitDecoration.untrackedResourceForeground": colors.color_4 + "d1",
             "icon.foreground": colors.color_1,
             "input.background": colors.dark_normal + "00",
             "input.border": colors.dark_1,
@@ -244,21 +249,21 @@ function getTheme({ theme, name }) {
             "statusBarItem.remoteForeground": colors.dark_normal,
             "symbolIcon.arrayForeground": colors.light_hard,
             "symbolIcon.booleanForeground": colors.color_5,
-            "symbolIcon.classForeground": colors.color_1,
+            "symbolIcon.classForeground": tokenColors.class_name,
             "symbolIcon.colorForeground": colors.light_hard,
             "symbolIcon.constantForeground": colors.color_5,
             "symbolIcon.constructorForeground": colors.color_1,
             "symbolIcon.enumeratorForeground": colors.color_5,
             "symbolIcon.enumeratorMemberForeground": colors.color_5,
             "symbolIcon.eventForeground": colors.color_1,
-            "symbolIcon.fieldForeground": colors.light_hard,
+            "symbolIcon.fieldForeground": tokenColors.field_name,
             "symbolIcon.fileForeground": colors.light_hard,
             "symbolIcon.folderForeground": colors.light_hard,
-            "symbolIcon.functionForeground": colors.color_1,
+            "symbolIcon.functionForeground": tokenColors.method,
             "symbolIcon.interfaceForeground": colors.color_1,
             "symbolIcon.keyForeground": colors.color_1,
             "symbolIcon.keywordForeground": colors.color_0,
-            "symbolIcon.methodForeground": colors.color_1,
+            "symbolIcon.methodForeground": tokenColors.method,
             "symbolIcon.moduleForeground": colors.color_0,
             "symbolIcon.namespaceForeground": colors.color_0,
             "symbolIcon.nullForeground": colors.color_5,
@@ -266,7 +271,7 @@ function getTheme({ theme, name }) {
             "symbolIcon.objectForeground": colors.color_1,
             "symbolIcon.operatorForeground": colors.color_0,
             "symbolIcon.packageForeground": colors.color_0,
-            "symbolIcon.propertyForeground": colors.light_hard,
+            "symbolIcon.propertyForeground": tokenColors.property,
             "symbolIcon.referenceForeground": colors.color_1,
             "symbolIcon.snippetForeground": colors.light_hard,
             "symbolIcon.stringForeground": colors.color_4,
@@ -274,15 +279,15 @@ function getTheme({ theme, name }) {
             "symbolIcon.textForeground": colors.light_hard,
             "symbolIcon.typeParameterForeground": colors.color_3,
             "symbolIcon.unitForeground": colors.light_hard,
-            "symbolIcon.variableForeground": colors.light_hard,
+            "symbolIcon.variableForeground": tokenColors.class_name,
             "tab.activeBackground": colors.dark_normal,
-            "tab.activeBorder": colors.color_1,
+            "tab.activeBorder": tokenColors.hintColor,
             "tab.activeForeground": colors.light_hard,
-            "tab.border": colors.dark_normal,
+            "tab.border": colors.dark_hard,
             "tab.hoverBackground": colors.dark_normal,
             "tab.inactiveBackground": colors.dark_normal,
             "tab.inactiveForeground": colors.light_0,
-            "tab.unfocusedActiveBorder": colors.dark_normal + "00",
+            "tab.unfocusedActiveBorder": colors.dark_hard,
             "tab.unfocusedActiveForeground": colors.light_hard,
             "tab.unfocusedInactiveForeground": colors.light_0,
             "terminal.ansiBlack": colors.dark_hard,
@@ -462,15 +467,6 @@ function getTheme({ theme, name }) {
                 }
             },
             {
-                "scope": [
-                    "entity.name.function",
-                    "entity.name.function.templated"
-                ],
-                "settings": {
-                    "foreground": colors.color_3
-                }
-            },
-            {
                 "scope": "entity.name.function.member.static",
                 "settings": {
                     "foreground": colors.light_hard
@@ -480,10 +476,11 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "entity.name.type.class.templated",
                     "entity.name.type.class.generic",
-                    "entity.name.type.namespace"
+                    "entity.name.type.namespace",
+                    "entity.name.class",
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.namespace
                 }
             },
             {
@@ -494,12 +491,6 @@ function getTheme({ theme, name }) {
             },
             {
                 "scope": "entity.name.function.preprocessor",
-                "settings": {
-                    "foreground": colors.color_1
-                }
-            },
-            {
-                "scope": "entity.name.class",
                 "settings": {
                     "foreground": colors.color_1
                 }
@@ -521,12 +512,6 @@ function getTheme({ theme, name }) {
                 "settings": {
                     "foreground": colors.color_1,
                     "fontStyle": "italic"
-                }
-            },
-            {
-                "scope": "entity.name.function.cs",
-                "settings": {
-                    "foreground": colors.color_4
                 }
             },
             {
@@ -1167,15 +1152,20 @@ function getTheme({ theme, name }) {
             {
                 "scope": "storage.type",
                 "settings": {
-                    "foreground": colors.color_1,
-                    "fontStyle": "italic"
+                    "foreground": tokenColors.keyword_base_types,
+                }
+            },
+            {
+                "scope": "storage.type.accessor",
+                "settings": {
+                    "foreground": tokenColors.method,
                 }
             },
             {
                 "scope": "storage.type.extends",
                 "settings": {
                     "foreground": colors.color_0,
-                    "fontStyle": "normal"
+                    "fontStyle": ""
                 }
             },
             {
@@ -1522,13 +1512,13 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "variable.other",
-                    "variable.other.object.cs",
-                    "entity.name.variable.field.cs",
-                    "entity.name.variable.parameter.cs",
-                    "entity.name.variable.local.cs"
+                    "variable.other.object",
+                    "entity.name.variable.field",
+                    "entity.name.variable.parameter",
+                    "entity.name.variable.local"
                 ],
                 "settings": {
-                    "foreground": colors.color_2
+                    "foreground": tokenColors.field_name,
                 }
             },
             {
@@ -1542,22 +1532,43 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "entity.name.class",
-                    "entity.name.function",
                     "entity.name.type.class",
+                    "entity.name.variable.event",
                     "entity.name.type.namespace"
                 ],
                 "settings": {
-                    "foreground": colors.color_3
+                    "foreground": tokenColors.class_name
+                }
+            },
+            {
+                "scope": [
+                    "function",
+                    "entity.name.function",
+                    "entity.name.function.templated"
+                ],
+                "settings": {
+                    "foreground": tokenColors.method
+                }
+            },
+            {
+                "scope": [
+                    "property",
+                    "entity.name.variable.property"
+                ],
+                "settings": {
+                    "foreground": tokenColors.property
                 }
             },
             {
                 "scope": [
                     "string",
+                    "constant.language",
                     "constant.numeric",
-                    "string.quoted.double"
+                    "string.quoted.double",
+                    "entity.name.variable.enum-member"
                 ],
                 "settings": {
-                    "foreground": colors.color_5
+                    "foreground": tokenColors.value
                 }
             },
             {

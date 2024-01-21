@@ -7,11 +7,9 @@ const colors = {
     light_hard: "#eae0e2",
     light_normal: "#e9d9dc",
     light_soft: "#e7ccd1",
-    light_0: "#685562",
+    light_0: "#7a6473",
     // keywords like public
     color_0: "#74d7a5",
-    // keyword.type + kwrd.operator + kwrd.control
-    color_6: "#78a19c",
     // Class/TypeName
     color_1: "#b39df3",
     // FieldNames
@@ -23,7 +21,8 @@ const colors = {
     // Functions 
     color_4: "#ffb8f7",
     // numbers + strings + enums + bools
-    color_5: "#ff7baf",
+    color_5: "#ff7baf",    // keyword.type + kwrd.operator + kwrd.control
+    color_6: "#78a19c",
 }
 
 const tokenColors = {
@@ -53,7 +52,16 @@ const tokenColors = {
     method: colors.color_4,
 
     // number value + string value + enum value + bool
-    value: colors.color_5
+    value: colors.color_5,
+
+    // error
+    errorColor: colors.color_2_dark,
+    // warn
+    warnColor: colors.color_2,
+    // info
+    infoColor: colors.color_1,
+    // hint
+    hintColor: colors.color_0
 }
 
 module.exports = { colors, tokenColors }
