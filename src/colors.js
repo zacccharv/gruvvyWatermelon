@@ -22,7 +22,7 @@ const colors = {
     color_4: "#ffb8f7",
     // numbers + strings + enums + bools
     color_5: "#ff7baf",    // keyword.type + kwrd.operator + kwrd.control
-    color_6: "#78a19c",
+    color_6: "#78a19c",    // base types like int, float, bool
 }
 
 const tokenColors = {
