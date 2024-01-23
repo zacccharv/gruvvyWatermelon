@@ -930,9 +930,17 @@
       }
     },
     {
+      "scope": [
+        "punctuation.definition.interpolation"
+      ],
+      "settings": {
+        "foreground": "#d06c73"
+      }
+    },
+    {
       "scope": "punctuation",
       "settings": {
-        "foreground": "#7a6473"
+        "foreground": "#74d7a5"
       }
     },
     {
@@ -946,7 +954,7 @@
         "punctuation.definition.string.end.html source.css"
       ],
       "settings": {
-        "foreground": "#7a6473"
+        "foreground": "#74d7a5"
       }
     },
     {

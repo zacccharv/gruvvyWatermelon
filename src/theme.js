@@ -939,9 +939,17 @@ function getTheme({ theme, name }) {
                 }
             },
             {
+                "scope": [
+                    "punctuation.definition.interpolation",
+                ],
+                "settings": {
+                    "foreground": colors.color_2_dark
+                }
+            },
+            {
                 "scope": "punctuation",
                 "settings": {
-                    "foreground": colors.light_0
+                    "foreground": tokenColors.punctuation
                 }
             },
             {
@@ -955,7 +963,7 @@ function getTheme({ theme, name }) {
                     "punctuation.definition.string.end.html source.css"
                 ],
                 "settings": {
-                    "foreground": colors.light_0
+                    "foreground": tokenColors.punctuation
                 }
             },
             {

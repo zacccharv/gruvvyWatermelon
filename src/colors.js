@@ -30,6 +30,9 @@ const tokenColors = {
     // public, private, static...
     keyword_storage: colors.color_0,
 
+    // punctuation
+    punctuation: colors.color_0,
+
     // base types (bool, string, int, uint, float...) + flow control + operators
     keyword_flow: colors.color_6,
     keyword_base_types: colors.color_6,
