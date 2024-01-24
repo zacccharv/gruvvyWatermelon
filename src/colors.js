@@ -11,13 +11,13 @@ const colors = {
     // keywords like public
     color_0: "#81e5b3",
     // Class/TypeName
-    color_1: "#b39df3",
+    color_1: "#ac8eff",
     // FieldNames
     color_2: "#ffb6eb",
     // Namespaces + classname of file
     color_3: "#f39db4",
     // Property names
-    color_2_dark: "#ff8be0",
+    color_2_dark: "#e68eff",
     // Functions 
     color_4: "#ff7baf",    // keyword.type + kwrd.operator + kwrd.control
     // numbers + strings + enums + bools
@@ -49,7 +49,7 @@ const tokenColors = {
     class_name: colors.color_3,
 
     // property names
-    property: colors.color_3,
+    property: colors.color_2_dark,
 
     // functions/methods
     method: colors.color_4,
