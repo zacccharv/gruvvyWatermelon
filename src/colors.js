@@ -4,24 +4,24 @@ const colors = {
     dark_soft: "#31292a",
     dark_0: "#31292a",
     dark_1: "#3f3436",
-    light_hard: "#eae0e2",
+    light_hard: "#eee",
     light_normal: "#e9d9dc",
     light_soft: "#e7ccd1",
     light_0: "#7a6473",
     // keywords like public
-    color_0: "#74d7a5",
+    color_0: "#81e5b3",
     // Class/TypeName
     color_1: "#b39df3",
     // FieldNames
-    color_2: "#f6c3b1",
+    color_2: "#ffb6eb",
     // Namespaces + classname of file
     color_3: "#f39db4",
     // Property names
-    color_2_dark: "#d06c73",
+    color_2_dark: "#ff8be0",
     // Functions 
-    color_4: "#ffb8f7",
+    color_4: "#ff7baf",    // keyword.type + kwrd.operator + kwrd.control
     // numbers + strings + enums + bools
-    color_5: "#ff7baf",    // keyword.type + kwrd.operator + kwrd.control
+    color_5: "#f89eaa",
     color_6: "#78a19c",    // base types like int, float, bool
 }
 
@@ -45,11 +45,11 @@ const tokenColors = {
     field_name: colors.color_2,
 
     // namespaces + classname + className of file
-    namespace: colors.color_3,
+    namespace: colors.color_2_dark,
     class_name: colors.color_3,
 
     // property names
-    property: colors.color_2_dark,
+    property: colors.color_3,
 
     // functions/methods
     method: colors.color_4,

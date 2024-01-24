@@ -234,7 +234,7 @@ function getTheme({ theme, name }) {
             "sideBarSectionHeader.background": colors.dark_normal + "00",
             "sideBarSectionHeader.foreground": colors.light_0,
             "sideBarTitle.foreground": colors.light_0,
-            "statusBar.background": colors.color_2,
+            "statusBar.background": colors.color_3,
             "statusBar.border": colors.dark_hard,
             "statusBar.debuggingBackground": colors.color_0,
             "statusBar.debuggingBorder": colors.color_0,
@@ -1542,10 +1542,11 @@ function getTheme({ theme, name }) {
                     "entity.name.class",
                     "entity.name.type.class",
                     "entity.name.variable.event",
+                    "entity.name.type.struct",
                     "entity.name.type.namespace"
                 ],
                 "settings": {
-                    "foreground": tokenColors.class_name
+                    "foreground": tokenColors.namespace
                 }
             },
             {
