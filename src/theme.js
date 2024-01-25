@@ -9,9 +9,9 @@ function getTheme({ theme, name }) {
     return {
         name: name,
         "colors": {
-            "editorBracketHighlight.foreground1": colors.color_0,
+            "editorBracketHighlight.foreground1": tokenColors.buttonHighlight,
             "editorBracketHighlight.foreground2": colors.color_3,
-            "editorBracketHighlight.foreground3": colors.color_1,
+            "editorBracketHighlight.foreground3": tokenColors.menuHighlight,
             "editorBracketHighlight.foreground4": colors.color_2,
             "errorLens.errorForeground": tokenColors.errorColor,
             "errorLens.errorBackground": tokenColors.errorColor + "19",
@@ -21,8 +21,8 @@ function getTheme({ theme, name }) {
             "errorLens.infoMessageBackground": tokenColors.infoColor + "19",
             "errorLens.hintForeground": tokenColors.hintColor,
             "errorLens.hintBackground": tokenColors.hintColor + "19",
-            "activityBar.activeBorder": colors.color_1,
-            "activityBar.activeFocusBorder": colors.color_1,
+            "activityBar.activeBorder": tokenColors.menuHighlight,
+            "activityBar.activeFocusBorder": tokenColors.menuHighlight,
             "activityBar.background": colors.dark_hard,
             "activityBar.border": colors.dark_hard,
             "activityBar.foreground": colors.light_hard,
@@ -36,22 +36,22 @@ function getTheme({ theme, name }) {
             "breadcrumb.foreground": colors.light_0,
             "button.background": colors.color_2,
             "button.foreground": colors.dark_normal,
-            "button.hoverBackground": colors.color_1,
+            "button.hoverBackground": tokenColors.menuHighlight,
             "checkbox.background": colors.dark_normal,
             "checkbox.border": colors.dark_1,
             "checkbox.foreground": colors.color_3,
             "debugToolBar.background": colors.dark_normal,
-            "diffEditor.insertedTextBackground": colors.color_1 + "20",
-            "diffEditor.removedTextBackground": colors.color_0 + "26",
+            "diffEditor.insertedTextBackground": tokenColors.menuHighlight + "20",
+            "diffEditor.removedTextBackground": tokenColors.buttonHighlight + "26",
             "dropdown.background": colors.dark_normal,
             "dropdown.border": colors.dark_1,
             "dropdown.foreground": colors.light_hard,
             "editor.background": colors.dark_normal,
-            "editor.findMatchBackground": colors.color_0 + "40",
+            "editor.findMatchBackground": tokenColors.buttonHighlight + "40",
             "editor.findMatchHighlightBackground": colors.color_5 + "40",
             "editor.findRangeHighlightBackground": colors.color_5 + "40",
             "editor.foreground": colors.light_hard,
-            "editor.hoverHighlightBackground": colors.color_1 + "36",
+            "editor.hoverHighlightBackground": tokenColors.menuHighlight + "36",
             "editor.lineHighlightBackground": colors.dark_0 + "e0",
             "editor.lineHighlightBorder": colors.dark_0 + "00",
             "editor.rangeHighlightBackground": colors.color_5 + "40",
@@ -60,49 +60,49 @@ function getTheme({ theme, name }) {
             "editor.snippetFinalTabstopHighlightBackground": colors.color_5 + "30",
             "editor.snippetFinalTabstopHighlightBorder": colors.dark_normal,
             "editor.snippetTabstopHighlightBackground": colors.dark_1 + "a0",
-            "editor.symbolHighlightBackground": colors.color_1 + "38",
+            "editor.symbolHighlightBackground": tokenColors.menuHighlight + "38",
             "editor.wordHighlightBackground": colors.dark_0 + "c0",
             "editor.wordHighlightStrongBackground": colors.dark_0 + "c0",
             "editorBracketMatch.background": colors.dark_1,
             "editorBracketMatch.border": colors.dark_normal + "00",
             "editorCodeLens.foreground": colors.light_0,
             "editorCursor.foreground": colors.light_hard,
-            "editorError.foreground": colors.color_0,
+            "editorError.foreground": tokenColors.buttonHighlight,
             "editorGroup.border": colors.dark_hard,
             "editorGroup.dropBackground": colors.dark_1 + "60",
             "editorGroupHeader.noTabsBackground": colors.dark_normal,
             "editorGroupHeader.tabsBackground": colors.dark_normal,
-            "editorGutter.addedBackground": colors.color_1 + "40",
+            "editorGutter.addedBackground": tokenColors.menuHighlight + "40",
             "editorGutter.background": colors.dark_normal + "00",
-            "editorGutter.deletedBackground": colors.color_0 + "40",
-            "editorGutter.modifiedBackground": colors.color_1 + "40",
-            "editorHint.foreground": colors.color_1,
+            "editorGutter.deletedBackground": tokenColors.buttonHighlight + "40",
+            "editorGutter.modifiedBackground": tokenColors.menuHighlight + "40",
+            "editorHint.foreground": tokenColors.menuHighlight,
             "editorHoverWidget.background": colors.dark_0,
             "editorHoverWidget.border": colors.dark_1,
             "editorIndentGuide.activeBackground1": colors.dark_1,
             "editorIndentGuide.background1": colors.dark_0,
-            "editorInfo.foreground": colors.color_1,
+            "editorInfo.foreground": tokenColors.menuHighlight,
             "editorLightBulb.foreground": colors.color_3,
-            "editorLightBulbAutoFix.foreground": colors.color_1,
+            "editorLightBulbAutoFix.foreground": tokenColors.menuHighlight,
             "editorLineNumber.activeForeground": colors.light_hard,
             "editorLineNumber.foreground": colors.light_0,
-            "editorLink.activeForeground": colors.color_1,
+            "editorLink.activeForeground": tokenColors.menuHighlight,
             "editorMarkerNavigation.background": colors.dark_0,
-            "editorMarkerNavigationError.background": colors.color_0,
-            "editorMarkerNavigationInfo.background": colors.color_1,
+            "editorMarkerNavigationError.background": tokenColors.buttonHighlight,
+            "editorMarkerNavigationInfo.background": tokenColors.menuHighlight,
             "editorMarkerNavigationWarning.background": colors.color_4,
-            "editorOverviewRuler.addedForeground": colors.color_1 + "80",
+            "editorOverviewRuler.addedForeground": tokenColors.menuHighlight + "80",
             "editorOverviewRuler.border": colors.dark_normal + "00",
             "editorOverviewRuler.commonContentForeground": colors.light_0,
-            "editorOverviewRuler.currentContentForeground": colors.color_1 + "a0",
-            "editorOverviewRuler.deletedForeground": colors.color_0 + "80",
+            "editorOverviewRuler.currentContentForeground": tokenColors.menuHighlight + "a0",
+            "editorOverviewRuler.deletedForeground": tokenColors.buttonHighlight + "80",
             "editorOverviewRuler.errorForeground": tokenColors.errorColor,
-            "editorOverviewRuler.findMatchForeground": colors.color_1 + "80",
-            "editorOverviewRuler.incomingContentForeground": colors.color_1 + "a0",
-            "editorOverviewRuler.infoForeground": colors.color_1,
-            "editorOverviewRuler.modifiedForeground": colors.color_1 + "80",
-            "editorOverviewRuler.rangeHighlightForeground": colors.color_1 + "80",
-            "editorOverviewRuler.selectionHighlightForeground": colors.color_1 + "80",
+            "editorOverviewRuler.findMatchForeground": tokenColors.menuHighlight + "80",
+            "editorOverviewRuler.incomingContentForeground": tokenColors.menuHighlight + "a0",
+            "editorOverviewRuler.infoForeground": tokenColors.menuHighlight,
+            "editorOverviewRuler.modifiedForeground": tokenColors.menuHighlight + "80",
+            "editorOverviewRuler.rangeHighlightForeground": tokenColors.menuHighlight + "80",
+            "editorOverviewRuler.selectionHighlightForeground": tokenColors.menuHighlight + "80",
             "editorOverviewRuler.warningForeground": colors.color_4,
             "editorOverviewRuler.wordHighlightForeground": colors.light_0 + "80",
             "editorOverviewRuler.wordHighlightStrongForeground": colors.light_0 + "60",
@@ -110,7 +110,7 @@ function getTheme({ theme, name }) {
             "editorSuggestWidget.background": colors.dark_0,
             "editorSuggestWidget.border": colors.dark_0,
             "editorSuggestWidget.foreground": colors.light_hard,
-            "editorSuggestWidget.highlightForeground": colors.color_1,
+            "editorSuggestWidget.highlightForeground": tokenColors.menuHighlight,
             "editorSuggestWidget.selectedBackground": colors.dark_1,
             "editorUnnecessaryCode.border": colors.light_0,
             "editorUnnecessaryCode.opacity": colors.light_hard,
@@ -118,49 +118,49 @@ function getTheme({ theme, name }) {
             "editorWhitespace.foreground": colors.light_0,
             "editorWidget.background": colors.dark_normal,
             "editorWidget.border": colors.dark_1,
-            "errorForeground": colors.color_0,
-            "extensionBadge.remoteBackground": colors.color_1,
+            "errorForeground": tokenColors.buttonHighlight,
+            "extensionBadge.remoteBackground": tokenColors.menuHighlight,
             "extensionBadge.remoteForeground": colors.dark_normal,
-            "extensionButton.prominentBackground": colors.color_1,
+            "extensionButton.prominentBackground": tokenColors.menuHighlight,
             "extensionButton.prominentForeground": colors.dark_normal,
-            "extensionButton.prominentHoverBackground": colors.color_1,
+            "extensionButton.prominentHoverBackground": tokenColors.menuHighlight,
             "focusBorder": colors.dark_1 + "00",
             "foreground": colors.light_hard,
-            "gitDecoration.addedResourceForeground": colors.color_1 + "80",
+            "gitDecoration.addedResourceForeground": tokenColors.menuHighlight + "80",
             "gitDecoration.conflictingResourceForeground": colors.color_5 + "90",
             "gitDecoration.deletedResourceForeground": colors.color_3,
             "gitDecoration.ignoredResourceForeground": colors.dark_1,
-            "gitDecoration.modifiedResourceForeground": colors.color_1 + "d1",
+            "gitDecoration.modifiedResourceForeground": tokenColors.menuHighlight + "d1",
             "gitDecoration.submoduleResourceForeground": colors.color_3 + "d1",
             "gitDecoration.untrackedResourceForeground": colors.color_4 + "d1",
-            "icon.foreground": colors.color_1,
+            "icon.foreground": tokenColors.menuHighlight,
             "input.background": colors.dark_normal + "00",
             "input.border": colors.dark_1,
             "input.foreground": colors.light_hard,
             "input.placeholderForeground": colors.light_0,
-            "inputOption.activeBorder": colors.color_1,
+            "inputOption.activeBorder": tokenColors.menuHighlight,
             "inputValidation.errorBackground": colors.dark_0,
-            "inputValidation.errorBorder": colors.color_0,
-            "inputValidation.errorForeground": colors.color_0,
+            "inputValidation.errorBorder": tokenColors.buttonHighlight,
+            "inputValidation.errorForeground": tokenColors.buttonHighlight,
             "inputValidation.infoBackground": colors.dark_0,
-            "inputValidation.infoBorder": colors.color_1,
-            "inputValidation.infoForeground": colors.color_1,
+            "inputValidation.infoBorder": tokenColors.menuHighlight,
+            "inputValidation.infoForeground": tokenColors.menuHighlight,
             "inputValidation.warningBackground": colors.dark_0,
             "inputValidation.warningBorder": colors.color_4,
             "inputValidation.warningForeground": colors.color_4,
             "list.activeSelectionBackground": colors.dark_normal + "e0",
             "list.activeSelectionForeground": colors.light_hard,
             "list.dropBackground": colors.dark_0 + "80",
-            "list.errorForeground": colors.color_0,
+            "list.errorForeground": tokenColors.buttonHighlight,
             "list.focusBackground": colors.dark_1 + "80",
             "list.focusForeground": colors.light_hard,
-            "list.highlightForeground": colors.color_1,
+            "list.highlightForeground": tokenColors.menuHighlight,
             "list.hoverBackground": colors.dark_hard + "00",
             "list.hoverForeground": colors.light_hard,
             "list.inactiveFocusBackground": colors.dark_1 + "68",
             "list.inactiveSelectionBackground": colors.dark_normal + "c8",
             "list.inactiveSelectionForeground": colors.light_0,
-            "list.invalidItemForeground": colors.color_0 + "80",
+            "list.invalidItemForeground": tokenColors.buttonHighlight + "80",
             "list.warningForeground": colors.color_4,
             "menu.background": colors.dark_hard,
             "menu.foreground": colors.light_hard,
@@ -169,47 +169,47 @@ function getTheme({ theme, name }) {
             "menubar.selectionBackground": colors.dark_normal,
             "menubar.selectionBorder": colors.dark_normal,
             "merge.border": colors.dark_normal + "00",
-            "merge.currentContentBackground": colors.color_1 + "1a",
-            "merge.currentHeaderBackground": colors.color_1 + "30",
-            "merge.incomingContentBackground": colors.color_1 + "1a",
-            "merge.incomingHeaderBackground": colors.color_1 + "30",
-            "minimap.errorHighlight": colors.color_0 + "70",
-            "minimap.findMatchHighlight": colors.color_1 + "40",
+            "merge.currentContentBackground": tokenColors.menuHighlight + "1a",
+            "merge.currentHeaderBackground": tokenColors.menuHighlight + "30",
+            "merge.incomingContentBackground": tokenColors.menuHighlight + "1a",
+            "merge.incomingHeaderBackground": tokenColors.menuHighlight + "30",
+            "minimap.errorHighlight": tokenColors.buttonHighlight + "70",
+            "minimap.findMatchHighlight": tokenColors.menuHighlight + "40",
             "minimap.selectionHighlight": colors.dark_1 + "f0",
             "minimap.warningHighlight": colors.color_4 + "50",
-            "minimapGutter.addedBackground": colors.color_1 + "a0",
-            "minimapGutter.deletedBackground": colors.color_0 + "a0",
-            "minimapGutter.modifiedBackground": colors.color_1 + "a0",
+            "minimapGutter.addedBackground": tokenColors.menuHighlight + "a0",
+            "minimapGutter.deletedBackground": tokenColors.buttonHighlight + "a0",
+            "minimapGutter.modifiedBackground": tokenColors.menuHighlight + "a0",
             "notificationCenterHeader.background": colors.dark_0,
             "notificationCenterHeader.foreground": colors.light_hard,
-            "notificationLink.foreground": colors.color_1,
+            "notificationLink.foreground": tokenColors.menuHighlight,
             "notifications.background": colors.dark_normal,
             "notifications.foreground": colors.light_hard,
-            "notificationsErrorIcon.foreground": colors.color_0,
-            "notificationsInfoIcon.foreground": colors.color_1,
+            "notificationsErrorIcon.foreground": tokenColors.buttonHighlight,
+            "notificationsInfoIcon.foreground": tokenColors.menuHighlight,
             "notificationsWarningIcon.foreground": colors.color_4,
             "panel.background": colors.dark_0,
             "panel.border": colors.dark_0,
             "panelInput.border": colors.dark_1,
-            "panelTitle.activeBorder": colors.color_1,
-            "panelTitle.activeForeground": colors.light_hard,
+            "panelTitle.activeBorder": tokenColors.menuHighlight,
+            "panelTitle.activeForeground": colors.light_0,
             "panelTitle.inactiveForeground": colors.light_0,
             "peekView.border": colors.dark_0,
             "peekViewEditor.background": colors.dark_0,
-            "peekViewEditor.matchHighlightBackground": colors.color_1 + "28",
+            "peekViewEditor.matchHighlightBackground": tokenColors.menuHighlight + "28",
             "peekViewEditorGutter.background": colors.dark_0,
             "peekViewResult.background": colors.dark_0,
             "peekViewResult.fileForeground": colors.light_hard,
             "peekViewResult.matchHighlightBackground": colors.color_3 + "50",
-            "peekViewResult.selectionBackground": colors.color_1 + "28",
+            "peekViewResult.selectionBackground": tokenColors.menuHighlight + "28",
             "peekViewTitle.background": colors.dark_0,
             "peekViewTitleDescription.foreground": colors.light_0,
             "peekViewTitleLabel.foreground": colors.light_hard,
             "pickerGroup.border": colors.light_hard + "1a",
-            "problemsErrorIcon.foreground": colors.color_0,
-            "problemsInfoIcon.foreground": colors.color_1,
+            "problemsErrorIcon.foreground": tokenColors.buttonHighlight,
+            "problemsInfoIcon.foreground": tokenColors.menuHighlight,
             "problemsWarningIcon.foreground": colors.color_4,
-            "progressBar.background": colors.color_1,
+            "progressBar.background": tokenColors.menuHighlight,
             "quickInputList.focusBackground": colors.dark_0 + "f0",
             "scrollbar.shadow": colors.dark_hard + "70",
             "scrollbarSlider.activeBackground": colors.light_0 + "b0",
@@ -221,61 +221,62 @@ function getTheme({ theme, name }) {
             "settings.checkboxForeground": colors.color_3,
             "settings.dropdownBackground": colors.dark_normal,
             "settings.dropdownBorder": colors.dark_1,
-            "settings.dropdownForeground": colors.color_1,
+            "settings.dropdownForeground": tokenColors.menuHighlight,
             "settings.headerForeground": colors.light_hard,
             "settings.numberInputBackground": colors.dark_normal,
             "settings.numberInputBorder": colors.dark_1,
             "settings.numberInputForeground": colors.color_5,
             "settings.textInputBackground": colors.dark_normal,
             "settings.textInputBorder": colors.dark_1,
-            "settings.textInputForeground": colors.color_1,
+            "settings.textInputForeground": tokenColors.menuHighlight,
             "sideBar.background": colors.dark_hard,
             "sideBar.foreground": colors.light_0,
             "sideBarSectionHeader.background": colors.dark_normal + "00",
             "sideBarSectionHeader.foreground": colors.light_0,
             "sideBarTitle.foreground": colors.light_0,
-            "statusBar.background": colors.color_3,
+            "statusBar.background": tokenColors.buttonHighlight,
+            "statusBar.background": tokenColors.secondaryButtonHighlight,
             "statusBar.border": colors.dark_hard,
-            "statusBar.debuggingBackground": colors.color_0,
-            "statusBar.debuggingBorder": colors.color_0,
+            "statusBar.debuggingBackground": tokenColors.buttonHighlight,
+            "statusBar.debuggingBorder": tokenColors.buttonHighlight,
             "statusBar.debuggingForeground": colors.dark_normal,
             "statusBar.foreground": colors.dark_normal,
             "statusBar.noFolderBackground": colors.color_2,
             "statusBar.noFolderBorder": colors.dark_hard,
             "statusBar.noFolderForeground": colors.dark_normal,
             "statusBarItem.activeBackground": colors.dark_1 + "a0",
-            "statusBarItem.hoverBackground": colors.color_1,
-            "statusBarItem.remoteBackground": colors.color_0,
+            "statusBarItem.hoverBackground": tokenColors.menuHighlight,
+            "statusBarItem.remoteBackground": tokenColors.buttonHighlight,
             "statusBarItem.remoteForeground": colors.dark_normal,
             "symbolIcon.arrayForeground": colors.light_hard,
             "symbolIcon.booleanForeground": colors.color_5,
             "symbolIcon.classForeground": tokenColors.class_name,
             "symbolIcon.colorForeground": colors.light_hard,
             "symbolIcon.constantForeground": colors.color_5,
-            "symbolIcon.constructorForeground": colors.color_1,
+            "symbolIcon.constructorForeground": tokenColors.menuHighlight,
             "symbolIcon.enumeratorForeground": colors.color_5,
             "symbolIcon.enumeratorMemberForeground": colors.color_5,
-            "symbolIcon.eventForeground": colors.color_1,
+            "symbolIcon.eventForeground": tokenColors.menuHighlight,
             "symbolIcon.fieldForeground": tokenColors.field_name,
             "symbolIcon.fileForeground": colors.light_hard,
             "symbolIcon.folderForeground": colors.light_hard,
             "symbolIcon.functionForeground": tokenColors.method,
-            "symbolIcon.interfaceForeground": colors.color_1,
-            "symbolIcon.keyForeground": colors.color_1,
-            "symbolIcon.keywordForeground": colors.color_0,
+            "symbolIcon.interfaceForeground": tokenColors.menuHighlight,
+            "symbolIcon.keyForeground": tokenColors.menuHighlight,
+            "symbolIcon.keywordForeground": tokenColors.buttonHighlight,
             "symbolIcon.methodForeground": tokenColors.method,
-            "symbolIcon.moduleForeground": colors.color_0,
-            "symbolIcon.namespaceForeground": colors.color_0,
+            "symbolIcon.moduleForeground": tokenColors.buttonHighlight,
+            "symbolIcon.namespaceForeground": tokenColors.buttonHighlight,
             "symbolIcon.nullForeground": colors.color_5,
             "symbolIcon.numberForeground": colors.color_5,
-            "symbolIcon.objectForeground": colors.color_1,
-            "symbolIcon.operatorForeground": colors.color_0,
-            "symbolIcon.packageForeground": colors.color_0,
+            "symbolIcon.objectForeground": tokenColors.menuHighlight,
+            "symbolIcon.operatorForeground": tokenColors.buttonHighlight,
+            "symbolIcon.packageForeground": tokenColors.buttonHighlight,
             "symbolIcon.propertyForeground": tokenColors.property,
-            "symbolIcon.referenceForeground": colors.color_1,
+            "symbolIcon.referenceForeground": tokenColors.menuHighlight,
             "symbolIcon.snippetForeground": colors.light_hard,
             "symbolIcon.stringForeground": colors.color_4,
-            "symbolIcon.structForeground": colors.color_1,
+            "symbolIcon.structForeground": tokenColors.menuHighlight,
             "symbolIcon.textForeground": colors.light_hard,
             "symbolIcon.typeParameterForeground": colors.color_3,
             "symbolIcon.unitForeground": colors.light_hard,
@@ -291,19 +292,19 @@ function getTheme({ theme, name }) {
             "tab.unfocusedActiveForeground": colors.light_hard,
             "tab.unfocusedInactiveForeground": colors.light_0,
             "terminal.ansiBlack": colors.dark_hard,
-            "terminal.ansiBlue": colors.color_1,
+            "terminal.ansiBlue": tokenColors.menuHighlight,
             "terminal.ansiBrightBlack": colors.dark_0,
-            "terminal.ansiBrightBlue": colors.color_1,
+            "terminal.ansiBrightBlue": tokenColors.menuHighlight,
             "terminal.ansiBrightCyan": colors.color_3,
-            "terminal.ansiBrightGreen": colors.color_1,
+            "terminal.ansiBrightGreen": tokenColors.menuHighlight,
             "terminal.ansiBrightMagenta": colors.color_5,
-            "terminal.ansiBrightRed": colors.color_0,
+            "terminal.ansiBrightRed": tokenColors.buttonHighlight,
             "terminal.ansiBrightWhite": colors.light_hard,
             "terminal.ansiBrightYellow": colors.color_4,
             "terminal.ansiCyan": colors.color_3,
-            "terminal.ansiGreen": colors.color_1,
+            "terminal.ansiGreen": tokenColors.menuHighlight,
             "terminal.ansiMagenta": colors.color_5,
-            "terminal.ansiRed": colors.color_0,
+            "terminal.ansiRed": tokenColors.buttonHighlight,
             "terminal.ansiWhite": colors.light_hard,
             "terminal.ansiYellow": colors.color_4,
             "terminal.foreground": colors.light_hard,
@@ -311,8 +312,8 @@ function getTheme({ theme, name }) {
             "textBlockQuote.background": colors.dark_0,
             "textBlockQuote.border": colors.light_0,
             "textCodeBlock.background": colors.dark_0,
-            "textLink.activeForeground": colors.color_1 + "a0",
-            "textLink.foreground": colors.color_1,
+            "textLink.activeForeground": tokenColors.menuHighlight + "a0",
+            "textLink.foreground": tokenColors.menuHighlight,
             "titleBar.activeBackground": colors.dark_hard,
             "titleBar.activeForeground": colors.light_hard,
             "titleBar.border": colors.dark_hard,
@@ -320,7 +321,7 @@ function getTheme({ theme, name }) {
             "titleBar.inactiveForeground": colors.light_0,
             "tree.indentGuidesStroke": colors.light_0,
             "widget.shadow": colors.dark_hard + "70",
-            "activityBar.activeBorder": colors.color_1,
+            "activityBar.activeBorder": tokenColors.menuHighlight,
         },
         "tokenColors": [
             {
@@ -367,13 +368,13 @@ function getTheme({ theme, name }) {
             {
                 "scope": "comment.git-status.header.remote",
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
                 "scope": "comment.git-status.header.local",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -445,7 +446,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "constant.language",
                 "settings": {
-                    "foreground": colors.color_5
+                    "foreground": tokenColors.value
                 }
             },
             {
@@ -492,7 +493,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "entity.name.function.preprocessor",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -510,7 +511,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "entity.other.inherited-class",
                 "settings": {
-                    "foreground": colors.color_1,
+                    "foreground": tokenColors.menuHighlight,
                     "fontStyle": "italic"
                 }
             },
@@ -521,13 +522,13 @@ function getTheme({ theme, name }) {
                     "entity.name.tag support.class.component"
                 ],
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
                 "scope": "entity.name.function.operator",
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
@@ -537,13 +538,13 @@ function getTheme({ theme, name }) {
                     "entity.name.type.class.value"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.type
                 }
             },
             {
                 "scope": "entity.other.attribute-name",
                 "settings": {
-                    "foreground": colors.color_1,
+                    "foreground": tokenColors.menuHighlight,
                     "fontStyle": "italic"
                 }
             },
@@ -555,7 +556,7 @@ function getTheme({ theme, name }) {
                     "entity.other.attribute-name.css"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -571,7 +572,7 @@ function getTheme({ theme, name }) {
                     "entity.other.pseudo-element.css"
                 ],
                 "settings": {
-                    "foreground": colors.color_1,
+                    "foreground": tokenColors.menuHighlight,
                     "fontStyle": "italic"
                 }
             },
@@ -581,7 +582,7 @@ function getTheme({ theme, name }) {
                     "support.function"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -617,13 +618,13 @@ function getTheme({ theme, name }) {
             {
                 "scope": "entity.name.type.rust",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
                 "scope": "entity.name.lifetime.rust",
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
@@ -635,13 +636,13 @@ function getTheme({ theme, name }) {
             {
                 "scope": "keyword",
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.keyword_storage
                 }
             },
             {
                 "scope": "keyword.control",
                 "settings": {
-                    "foreground": colors.color_6,
+                    "foreground": tokenColors.keyword_flow,
                     "fontStyle": ""
                 }
             },
@@ -666,7 +667,7 @@ function getTheme({ theme, name }) {
                     "keyword.other.template.end"
                 ],
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
@@ -686,7 +687,7 @@ function getTheme({ theme, name }) {
                     "keyword.other.where.rust"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -695,7 +696,7 @@ function getTheme({ theme, name }) {
                     "keyword.operator.misc.rust"
                 ],
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
@@ -731,7 +732,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "markup.underline.link",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -740,7 +741,7 @@ function getTheme({ theme, name }) {
                     "markup.inserted punctuation.definition.inserted"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -801,7 +802,7 @@ function getTheme({ theme, name }) {
                     "meta.function-call.arguments.python meta.function-call.python"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -813,7 +814,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "meta.instance.constructor",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -822,7 +823,7 @@ function getTheme({ theme, name }) {
                     "meta.attribute.class.html string"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -943,7 +944,7 @@ function getTheme({ theme, name }) {
                     "punctuation.definition.interpolation",
                 ],
                 "settings": {
-                    "foreground": colors.color_2_dark
+                    "foreground": tokenColors.punctuation
                 }
             },
             {
@@ -985,7 +986,7 @@ function getTheme({ theme, name }) {
                     "punctuation.definition.entity.css"
                 ],
                 "settings": {
-                    "foreground": colors.light_0
+                    "foreground": tokenColors.punctuation
                 }
             },
             {
@@ -996,7 +997,7 @@ function getTheme({ theme, name }) {
                     "punctuation.section.embedded source"
                 ],
                 "settings": {
-                    "foreground": colors.color_3
+                    "foreground": tokenColors.punctuation
                 }
             },
             {
@@ -1009,7 +1010,7 @@ function getTheme({ theme, name }) {
                     "string.quoted.template punctuation.definition.string.end"
                 ],
                 "settings": {
-                    "foreground": colors.color_3
+                    "foreground": tokenColors.punctuation
                 }
             },
             {
@@ -1024,8 +1025,8 @@ function getTheme({ theme, name }) {
             {
                 "scope": "region.redish",
                 "settings": {
-                    "foreground": colors.color_0,
-                    "background": colors.color_0 + "59"
+                    "foreground": tokenColors.buttonHighlight,
+                    "background": tokenColors.buttonHighlight + "59"
                 }
             },
             {
@@ -1045,8 +1046,8 @@ function getTheme({ theme, name }) {
             {
                 "scope": "region.greenish",
                 "settings": {
-                    "foreground": colors.color_1,
-                    "background": colors.color_1 + "59"
+                    "foreground": tokenColors.menuHighlight,
+                    "background": tokenColors.menuHighlight + "59"
                 }
             },
             {
@@ -1066,8 +1067,8 @@ function getTheme({ theme, name }) {
             {
                 "scope": "region.pinkish",
                 "settings": {
-                    "foreground": colors.color_0,
-                    "background": colors.color_0 + "59"
+                    "foreground": tokenColors.buttonHighlight,
+                    "background": tokenColors.buttonHighlight + "59"
                 }
             },
             {
@@ -1154,7 +1155,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "storage",
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
@@ -1172,14 +1173,14 @@ function getTheme({ theme, name }) {
             {
                 "scope": "storage.type.extends",
                 "settings": {
-                    "foreground": colors.color_0,
+                    "foreground": tokenColors.buttonHighlight,
                     "fontStyle": ""
                 }
             },
             {
                 "scope": "storage.type.function.arrow",
                 "settings": {
-                    "foreground": colors.color_0,
+                    "foreground": tokenColors.buttonHighlight,
                     "fontStyle": "normal"
                 }
             },
@@ -1189,7 +1190,7 @@ function getTheme({ theme, name }) {
                     "storage.type.modifier"
                 ],
                 "settings": {
-                    "foreground": colors.color_0,
+                    "foreground": tokenColors.keyword_storage,
                     "fontStyle": "italic"
                 }
             },
@@ -1205,7 +1206,7 @@ function getTheme({ theme, name }) {
                     "storage.modifier.lifetime.rust"
                 ],
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
@@ -1219,7 +1220,7 @@ function getTheme({ theme, name }) {
                     "storage.class.std.rust"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1233,7 +1234,7 @@ function getTheme({ theme, name }) {
                     "keyword.other.where.rust"
                 ],
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
@@ -1266,13 +1267,13 @@ function getTheme({ theme, name }) {
                     "string.other.link.description"
                 ],
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
                 "scope": "string.other.link.description.title",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1281,7 +1282,7 @@ function getTheme({ theme, name }) {
                     "string.regexp punctuation.definition.string.end"
                 ],
                 "settings": {
-                    "foreground": colors.color_3
+                    "foreground": tokenColors.punctuation
                 }
             },
             {
@@ -1290,7 +1291,7 @@ function getTheme({ theme, name }) {
                     "string.other.restructuredtext.ref"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1302,13 +1303,13 @@ function getTheme({ theme, name }) {
             {
                 "scope": "string.other.git-status.remote",
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
                 "scope": "support.constant",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1326,7 +1327,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "support.function",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1335,14 +1336,14 @@ function getTheme({ theme, name }) {
                     "entity.name.type.object.console"
                 ],
                 "settings": {
-                    "foreground": colors.color_1,
+                    "foreground": tokenColors.menuHighlight,
                     "fontStyle": "italic"
                 }
             },
             {
                 "scope": "support.variable",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1355,7 +1356,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "support.class",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1417,7 +1418,7 @@ function getTheme({ theme, name }) {
                     "variable.other.class",
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1460,7 +1461,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "variable.function",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1484,7 +1485,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "source.jinja2 variable.other.jinja2.block",
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.menuHighlight
                 }
             },
             {
@@ -1534,7 +1535,7 @@ function getTheme({ theme, name }) {
                     "support.type.property-name"
                 ],
                 "settings": {
-                    "foreground": colors.color_1
+                    "foreground": tokenColors.property
                 }
             },
             {
@@ -1586,7 +1587,7 @@ function getTheme({ theme, name }) {
                     "punctuation.definition.string.end"
                 ],
                 "settings": {
-                    "foreground": colors.color_5
+                    "foreground": tokenColors.string
                 }
             },
             {
@@ -1595,7 +1596,7 @@ function getTheme({ theme, name }) {
                     "punctuation.accessor",
                 ],
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.punctuation
                 }
             },
             {
@@ -1604,7 +1605,7 @@ function getTheme({ theme, name }) {
                     "keyword.operator.expression.new"
                 ],
                 "settings": {
-                    "foreground": colors.color_6,
+                    "foreground": tokenColors.keyword_base_types,
                     "fontStyle": ""
                 }
             }, {
@@ -1612,7 +1613,7 @@ function getTheme({ theme, name }) {
                     "keyword.operator",
                 ],
                 "settings": {
-                    "foreground": colors.color_0,
+                    "foreground": tokenColors.buttonHighlight,
                     "fontStyle": ""
                 }
             },
@@ -1631,7 +1632,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "token.error-token",
                 "settings": {
-                    "foreground": colors.color_0
+                    "foreground": tokenColors.buttonHighlight
                 }
             },
             {
