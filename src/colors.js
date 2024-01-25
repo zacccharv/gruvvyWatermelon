@@ -14,11 +14,9 @@ const colors = {
     color_3: "#DD5A8E",
     color_4: "#C3ADFF",
     color_5: "#9781D5",
-    // used in ui only
     color_6: "#A2EDE0",
     color_7: "#67938E",
     color_8: "#81E5B3",
-    // used in ui only
     color_9: "#4FB094"
 }
 
