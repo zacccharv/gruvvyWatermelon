@@ -192,7 +192,7 @@ function getTheme({ theme, name }) {
             "panel.border": colors.dark_0,
             "panelInput.border": colors.dark_1,
             "panelTitle.activeBorder": tokenColors.menuHighlight,
-            "panelTitle.activeForeground": colors.light_0,
+            "panelTitle.activeForeground": colors.light_soft,
             "panelTitle.inactiveForeground": colors.light_0,
             "peekView.border": colors.dark_0,
             "peekViewEditor.background": colors.dark_0,
