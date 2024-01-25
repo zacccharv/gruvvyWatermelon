@@ -2,6 +2,7 @@ const { colors } = require('./colors')
 const { tokenColors } = require('./colors')
 
 function getTheme({ theme, name }) {
+
     function themes(options) {
         return options[theme]
     }

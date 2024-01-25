@@ -1,6 +1,6 @@
 {
-  "name": "zeebox",
-  "displayName": "Zeebox",
+  "name": "gruvvy-watermelon",
+  "displayName": "Gruvvy Watermelon",
   "description": "Personal version of gruvbox",
   "version": "0.0.1",
   "engines": {
@@ -12,9 +12,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "Zeebox",
+        "label": "Gruvvy Watermelon",
         "uiTheme": "vs-dark",
-        "path": "./themes/Zeebox-color-theme.json"
+        "path": "./themes/Gruvvy-Watermelon-color-theme.json"
       }
     ]
   },

@@ -20,6 +20,10 @@ const colors = {
     color_9: "#4FB094"
 }
 
+const workBenchColors = {
+
+}
+
 const tokenColors = {
     // public, private, static...
     keyword_storage: colors.color_8,
