@@ -1,7 +1,7 @@
 const fs = require('fs').promises
 const getTheme = require('./theme')
 
-const gruvvyWatermonTheme = getTheme({
+const gruvvyWatermelonTheme = getTheme({
     theme: 'dark',
     name: 'Gruvvy Watermelon',
 })
@@ -10,7 +10,7 @@ const gruvvyWatermonTheme = getTheme({
 fs.mkdir('./themes', { recursive: true })
     .then(() =>
         Promise.all([
-            fs.writeFile('./themes/Gruvvy-Watermelon-color-theme.json', JSON.stringify(gruvvyWatermonTheme, null, 2)),
+            fs.writeFile('./themes/Gruvvy-Watermelon-color-theme.json', JSON.stringify(gruvvyWatermelonTheme, null, 2)),
         ])
     )
     .catch(() => process.exit(1))
