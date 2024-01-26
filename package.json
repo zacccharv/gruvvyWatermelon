@@ -21,5 +21,9 @@
   "scripts": {
     "build": "node src/index.js && mkdir -p build",
     "prepublishOnly": "npm run build && vsce publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacccharv/gruvvyWatermelon"
   }
 }
