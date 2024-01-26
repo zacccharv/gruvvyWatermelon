@@ -3,17 +3,6 @@
     "tasks": [
         {
             "type": "npm",
-            "script": "start",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "problemMatcher": [],
-            "label": "npm: start",
-            "detail": "nodemon --watch src src/index.js"
-        },
-        {
-            "type": "npm",
             "script": "build",
             "group": "build",
             "problemMatcher": [],
