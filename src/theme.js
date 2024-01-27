@@ -1,5 +1,4 @@
-const { colors } = require('./colors')
-const { tokenColors } = require('./colors')
+const { colors, workBenchColors, tokenColors, gruvvyWatermelonColors } = require('./colors')
 
 function getTheme({ theme, name }) {
 
@@ -77,9 +76,9 @@ function getTheme({ theme, name }) {
             "editorGutter.background": colors.dark_normal + "00",
             "editorGutter.deletedBackground": tokenColors.buttonHighlight + "40",
             "editorGutter.modifiedBackground": tokenColors.menuHighlight + "40",
-            "editorHint.foreground": tokenColors.menuHighlight,
-            "editorHoverWidget.background": colors.dark_0,
-            "editorHoverWidget.border": colors.dark_1,
+            "editorHint.foreground": workBenchColors.widget_fg,
+            "editorHoverWidget.background": workBenchColors.widget_bg,
+            "editorHoverWidget.border": workBenchColors.widget_hl,
             "editorIndentGuide.activeBackground1": colors.dark_1,
             "editorIndentGuide.background1": colors.dark_0,
             "editorInfo.foreground": tokenColors.menuHighlight,
@@ -108,17 +107,17 @@ function getTheme({ theme, name }) {
             "editorOverviewRuler.wordHighlightForeground": colors.light_0 + "80",
             "editorOverviewRuler.wordHighlightStrongForeground": colors.light_0 + "60",
             "editorRuler.foreground": colors.dark_1,
-            "editorSuggestWidget.background": colors.dark_0,
-            "editorSuggestWidget.border": colors.dark_0,
-            "editorSuggestWidget.foreground": colors.light_hard,
-            "editorSuggestWidget.highlightForeground": tokenColors.menuHighlight,
-            "editorSuggestWidget.selectedBackground": colors.dark_1,
+            "editorSuggestWidget.background": workBenchColors.widget_bg,
+            "editorSuggestWidget.border": workBenchColors.widget_fg,
+            "editorSuggestWidget.foreground": workBenchColors.widget_fg,
+            "editorSuggestWidget.highlightForeground": workBenchColors.widget_fg,
+            "editorSuggestWidget.selectedBackground": workBenchColors.widget_hl,
             "editorUnnecessaryCode.border": colors.light_0,
             "editorUnnecessaryCode.opacity": colors.light_hard,
             "editorWarning.foreground": colors.color_4,
             "editorWhitespace.foreground": colors.light_0,
-            "editorWidget.background": colors.dark_normal,
-            "editorWidget.border": colors.dark_1,
+            "editorWidget.background": workBenchColors.widget_bg,
+            "editorWidget.border": workBenchColors.widget_hl,
             "errorForeground": tokenColors.buttonHighlight,
             "extensionBadge.remoteBackground": tokenColors.menuHighlight,
             "extensionBadge.remoteForeground": colors.dark_normal,
@@ -195,17 +194,17 @@ function getTheme({ theme, name }) {
             "panelTitle.activeBorder": tokenColors.menuHighlight,
             "panelTitle.activeForeground": colors.light_soft,
             "panelTitle.inactiveForeground": colors.light_0,
-            "peekView.border": colors.dark_0,
-            "peekViewEditor.background": colors.dark_soft,
-            "peekViewEditor.matchHighlightBackground": tokenColors.menuHighlight + "28",
-            "peekViewEditorGutter.background": colors.dark_soft,
-            "peekViewResult.background": colors.dark_0,
-            "peekViewResult.fileForeground": colors.light_hard,
-            "peekViewResult.matchHighlightBackground": colors.color_3 + "50",
-            "peekViewResult.selectionBackground": tokenColors.menuHighlight + "28",
-            "peekViewTitle.background": colors.dark_soft,
-            "peekViewTitleDescription.foreground": colors.light_0,
-            "peekViewTitleLabel.foreground": colors.light_hard,
+            "peekView.border": workBenchColors.widget_hl,
+            "peekViewEditor.background": workBenchColors.widget_bg,
+            "peekViewEditor.matchHighlightBackground": workBenchColors.widget_hl,
+            "peekViewEditorGutter.background": workBenchColors.widget_menu_bg,
+            "peekViewResult.background": workBenchColors.widget_menu_bg,
+            "peekViewResult.fileForeground": workBenchColors.widget_fg,
+            "peekViewResult.matchHighlightBackground": gruvvyWatermelonColors.white,
+            "peekViewResult.selectionBackground": workBenchColors.widget_hl,
+            "peekViewTitle.background": workBenchColors.widget_menu_bg,
+            "peekViewTitleDescription.foreground": workBenchColors.widget_fg,
+            "peekViewTitleLabel.foreground": workBenchColors.widget_fg,
             "pickerGroup.border": colors.light_hard + "1a",
             "problemsErrorIcon.foreground": tokenColors.buttonHighlight,
             "problemsInfoIcon.foreground": tokenColors.menuHighlight,
@@ -304,7 +303,7 @@ function getTheme({ theme, name }) {
             "terminal.ansiBrightYellow": colors.color_4,
             "terminal.ansiCyan": colors.color_3,
             "terminal.ansiGreen": tokenColors.menuHighlight,
-            "terminal.ansiMagenta": colors.color_5,
+            // "terminal.ansiMagenta": colors.color_5,
             "terminal.ansiRed": tokenColors.buttonHighlight,
             "terminal.ansiWhite": colors.light_hard,
             "terminal.ansiYellow": colors.color_4,
@@ -447,7 +446,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "constant.language",
                 "settings": {
-                    "foreground": tokenColors.value
+                    "foreground": tokenColors.base_value
                 }
             },
             {
@@ -1381,7 +1380,6 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "variable",
-                    "variable.other"
                 ],
                 "settings": {
                     "foreground": colors.light_hard
@@ -1428,7 +1426,7 @@ function getTheme({ theme, name }) {
                     "variable.other.object.property.cs"
                 ],
                 "settings": {
-                    "foreground": colors.light_hard
+                    "foreground": tokenColors.field_name
                 }
             },
             {
@@ -1521,11 +1519,18 @@ function getTheme({ theme, name }) {
             },
             {
                 "scope": [
-                    "variable.other",
-                    "variable.other.object",
                     "entity.name.variable.field",
                     "entity.name.variable.parameter",
                     "entity.name.variable.local"
+                ],
+                "settings": {
+                    "foreground": tokenColors.field_name_declaration,
+                }
+            },
+            {
+                "scope": [
+                    "variable.other.cs",
+                    "variable.other.object.cs",
                 ],
                 "settings": {
                     "foreground": tokenColors.field_name,
@@ -1579,7 +1584,7 @@ function getTheme({ theme, name }) {
                     "entity.name.variable.enum-member"
                 ],
                 "settings": {
-                    "foreground": tokenColors.value
+                    "foreground": tokenColors.base_value
                 }
             },
             {

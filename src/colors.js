@@ -2,8 +2,8 @@ const colors = {
     dark_hard: "#171c1b",
     dark_normal: "#202626",
     dark_soft: "#293030",
-    dark_0: "#2e3836",
-    dark_1: "#35403e",
+    dark_0: "#35403e",
+    dark_1: "#5f6867",
     light_hard: "#ecefee",
     light_normal: "#d8e8e6",
     light_soft: "#cce8e5",
@@ -17,57 +17,90 @@ const colors = {
     color_6: "#A2EDE0",
     color_7: "#67938E",
     color_8: "#81E5B3",
-    color_9: "#4FB094"
+    color_9: "#4FB094",
+    color_10: "#f9b7a4",
+    color_11: "#f18464"
+}
+
+const gruvvyWatermelonColors = {
+
+    white: colors.light_hard,
+    gray: colors.light_0,
+    black: colors.dark_hard,
+
+    bg_0: dark_normal,
+    bg_1: colors.dark_soft,
+    bg_2: colors.dark_0,
+    fg_0: colors.light_hard,
+    fg_1: colors.light_normal,
+    fg_2: colors.light_soft,
+
+    bright_red_pink: colors.color_0,
+    red_pink: colors.color_1,
+    bright_purple_pink: colors.color_2,
+    purple_pink: colors.color_3,
+    bright_purple: colors.color_4,
+    purple: colors.color_5,
+    bright_blue: colors.color_6,
+    blue: colors.color_7,
+    bright_aqua: colors.color_8,
+    aqua: colors.color_9,
+    bright_peach: colors.color_10,
+    peach: colors.color_11
 }
 
 const workBenchColors = {
-
+    widget_bg: gruvvyWatermelonColors.bg_1,
+    widget_fg: gruvvyWatermelonColors.fg_0,
+    widget_hl: gruvvyWatermelonColors.gray,
+    widget_menu_bg: gruvvyWatermelonColors.bg_2
 }
 
 const tokenColors = {
-    // public, private, static...
-    keyword_storage: colors.color_8,
 
     // punctuation
-    punctuation: colors.color_8,
+    punctuation: gruvvyWatermelonColors.bright_aqua,
+
+    // public, private, static...
+    keyword_storage: gruvvyWatermelonColors.bright_aqua,
 
     // base types (bool, string, int, uint, float...) + flow control + operators
-    keyword_flow: colors.color_7,
-    keyword_base_types: colors.color_7,
-    operator: colors.color_7,
+    keyword_flow: gruvvyWatermelonColors.aqua,
+    keyword_base_types: gruvvyWatermelonColors.aqua,
+    operator: gruvvyWatermelonColors.aqua,
 
     // type/class
-    type: colors.color_5,
+    type: gruvvyWatermelonColors.purple,
 
     // fieldNames
-    field_name: colors.color_0,
+    field_name_declaration: gruvvyWatermelonColors.bright_red_pink,
+    field_name: gruvvyWatermelonColors.bright_peach,
 
     // namespaces + classname + className of file
-    namespace: colors.color_1,
-    class_name: colors.color_1,
+    namespace: gruvvyWatermelonColors.red_pink,
+    class_name: gruvvyWatermelonColors.red_pink,
 
     // property names
-    property: colors.color_9,
+    property: gruvvyWatermelonColors.aqua,
 
     // functions/methods
-    method: colors.color_3,
+    method: gruvvyWatermelonColors.red_pink,
 
     // number value + string value + enum value + bool
-    value: colors.color_9,
-    string: colors.color_9,
+    base_value: gruvvyWatermelonColors.aqua,
 
     // error
-    errorColor: colors.color_1,
+    errorColor: gruvvyWatermelonColors.purple_pink,
     // warn
-    warnColor: colors.color_1,
+    warnColor: gruvvyWatermelonColors.peach,
     // info
-    infoColor: colors.color_6,
+    infoColor: colors.purple,
     // hint
-    hintColor: colors.color_8,
+    hintColor: gruvvyWatermelonColors.bright_aqua,
 
-    menuHighlight: colors.color_6,
-    buttonHighlight: colors.color_8,
-    secondaryButtonHighlight: colors.color_2
+    menuHighlight: gruvvyWatermelonColors.bright_blue,
+    buttonHighlight: gruvvyWatermelonColors.bright_aqua,
+    secondaryButtonHighlight: gruvvyWatermelonColors.purple_pink
 }
 
-module.exports = { colors, tokenColors } 
+module.exports = { colors, tokenColors, workBenchColors, gruvvyWatermelonColors } 
