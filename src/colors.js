@@ -18,7 +18,7 @@ const colors = {
     color_7: "#67938E",
     color_8: "#81E5B3",
     color_9: "#4FB094",
-    color_10: "#f9b7a4",
+    color_10: "#f1bcac",
     color_11: "#f18464"
 }
 
@@ -28,7 +28,7 @@ const gruvvyWatermelonColors = {
     gray: colors.light_0,
     black: colors.dark_hard,
 
-    bg_0: dark_normal,
+    bg_0: colors.dark_normal,
     bg_1: colors.dark_soft,
     bg_2: colors.dark_0,
     fg_0: colors.light_hard,
@@ -57,6 +57,7 @@ const workBenchColors = {
 }
 
 const tokenColors = {
+    plain: gruvvyWatermelonColors.white,
 
     // punctuation
     punctuation: gruvvyWatermelonColors.bright_aqua,
@@ -73,8 +74,8 @@ const tokenColors = {
     type: gruvvyWatermelonColors.purple,
 
     // fieldNames
-    field_name_declaration: gruvvyWatermelonColors.bright_red_pink,
-    field_name: gruvvyWatermelonColors.bright_peach,
+    field_name_declaration: gruvvyWatermelonColors.bright_peach,
+    field_name: gruvvyWatermelonColors.bright_red_pink,
 
     // namespaces + classname + className of file
     namespace: gruvvyWatermelonColors.red_pink,
@@ -84,7 +85,7 @@ const tokenColors = {
     property: gruvvyWatermelonColors.aqua,
 
     // functions/methods
-    method: gruvvyWatermelonColors.red_pink,
+    method: gruvvyWatermelonColors.purple_pink,
 
     // number value + string value + enum value + bool
     base_value: gruvvyWatermelonColors.aqua,
