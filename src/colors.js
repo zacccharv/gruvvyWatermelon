@@ -2,7 +2,7 @@ const colors = {
     dark_hard: "#171c1b",
     dark_normal: "#202626",
     dark_soft: "#293030",
-    dark_0: "#35403e",
+    dark_0: "#2e3836",
     dark_1: "#35403e",
     light_hard: "#ecefee",
     light_normal: "#d8e8e6",
