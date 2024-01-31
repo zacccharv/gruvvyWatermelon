@@ -68,7 +68,7 @@ function getTheme({ theme, name }) {
             "editorBracketMatch.border": colors.dark_normal + "00",
             "editorCodeLens.foreground": colors.light_0,
             "editorCursor.foreground": colors.light_hard,
-            "editorError.foreground": tokenColors.buttonHighlight,
+            "editorError.foreground": tokenColors.errorColor,
             "editorGroup.border": colors.dark_hard,
             "editorGroup.dropBackground": colors.dark_1 + "60",
             "editorGroupHeader.noTabsBackground": colors.dark_normal,
@@ -77,7 +77,7 @@ function getTheme({ theme, name }) {
             "editorGutter.background": colors.dark_normal + "00",
             "editorGutter.deletedBackground": tokenColors.buttonHighlight + "40",
             "editorGutter.modifiedBackground": tokenColors.menuHighlight + "40",
-            "editorHint.foreground": tokenColors.menuHighlight,
+            "editorHint.foreground": tokenColors.hintColor,
             "editorHoverWidget.background": colors.dark_0,
             "editorHoverWidget.border": colors.dark_1,
             "editorIndentGuide.activeBackground1": colors.dark_1,
@@ -115,7 +115,7 @@ function getTheme({ theme, name }) {
             "editorSuggestWidget.selectedBackground": colors.dark_1,
             "editorUnnecessaryCode.border": colors.light_0,
             "editorUnnecessaryCode.opacity": colors.light_hard,
-            "editorWarning.foreground": colors.color_4,
+            "editorWarning.foreground": tokenColors.warnColor,
             "editorWhitespace.foreground": colors.light_0,
             "editorWidget.background": colors.dark_normal,
             "editorWidget.border": colors.dark_1,
@@ -479,7 +479,6 @@ function getTheme({ theme, name }) {
                     "entity.name.type.class.templated",
                     "entity.name.type.class.generic",
                     "entity.name.type.namespace",
-                    "entity.name.class",
                 ],
                 "settings": {
                     "foreground": tokenColors.namespace
@@ -637,7 +636,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "keyword",
                 "settings": {
-                    "foreground": tokenColors.keyword_storage
+                    "foreground": tokenColors.storage_modifier
                 }
             },
             {
@@ -1162,7 +1161,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "storage.type",
                 "settings": {
-                    "foreground": tokenColors.keyword_base_types,
+                    "foreground": tokenColors.storage,
                 }
             },
             {
@@ -1191,7 +1190,7 @@ function getTheme({ theme, name }) {
                     "storage.type.modifier"
                 ],
                 "settings": {
-                    "foreground": tokenColors.keyword_storage,
+                    "foreground": tokenColors.storage_modifier,
                     "fontStyle": "italic"
                 }
             },
@@ -1384,7 +1383,7 @@ function getTheme({ theme, name }) {
                     "variable.other"
                 ],
                 "settings": {
-                    "foreground": colors.light_hard
+                    "foreground": tokenColors.field_name
                 }
             },
             {
@@ -1419,13 +1418,12 @@ function getTheme({ theme, name }) {
                     "variable.other.class",
                 ],
                 "settings": {
-                    "foreground": tokenColors.menuHighlight
+                    "foreground": tokenColors.field_name
                 }
             },
             {
                 "scope": [
-                    "variable.other.class",
-                    "variable.other.object.property.cs"
+                    "variable.other.object.property"
                 ],
                 "settings": {
                     "foreground": colors.light_hard
@@ -1434,13 +1432,13 @@ function getTheme({ theme, name }) {
             {
                 "scope": "variable.other.constant",
                 "settings": {
-                    "foreground": colors.color_5
+                    "foreground": tokenColors.field_name
                 }
             },
             {
                 "scope": "variable.other.member",
                 "settings": {
-                    "foreground": colors.light_hard
+                    "foreground": tokenColors.field_name
                 }
             },
             {
@@ -1456,7 +1454,7 @@ function getTheme({ theme, name }) {
                     "variable.other.event"
                 ],
                 "settings": {
-                    "foreground": colors.color_2
+                    "foreground": tokenColors.object_property
                 }
             },
             {
@@ -1523,12 +1521,19 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "variable.other",
                     "variable.other.object",
-                    "entity.name.variable.field",
                     "entity.name.variable.parameter",
-                    "entity.name.variable.local"
                 ],
                 "settings": {
                     "foreground": tokenColors.field_name,
+                }
+            },
+            {
+                "scope": [
+                    "entity.name.variable.local",
+                    "entity.name.variable.field"
+                ],
+                "settings": {
+                    "foreground": tokenColors.field_name_declaration,
                 }
             },
             {
@@ -1543,12 +1548,12 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "entity.name.class",
                     "entity.name.type.class",
+                    "entity.name.type.delegate",
                     "entity.name.variable.event",
                     "entity.name.type.struct",
-                    "entity.name.type.namespace"
                 ],
                 "settings": {
-                    "foreground": tokenColors.namespace
+                    "foreground": tokenColors.type_declaration
                 }
             },
             {
@@ -1579,7 +1584,7 @@ function getTheme({ theme, name }) {
                     "entity.name.variable.enum-member"
                 ],
                 "settings": {
-                    "foreground": tokenColors.value
+                    "foreground": tokenColors.string
                 }
             },
             {
@@ -1606,7 +1611,7 @@ function getTheme({ theme, name }) {
                     "keyword.operator.expression.new"
                 ],
                 "settings": {
-                    "foreground": tokenColors.keyword_base_types,
+                    "foreground": tokenColors.keyword,
                     "fontStyle": ""
                 }
             }, {

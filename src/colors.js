@@ -3,7 +3,7 @@ const colors = {
     dark_normal: "#202626",
     dark_soft: "#293030",
     dark_0: "#2e3836",
-    dark_1: "#35403e",
+    dark_1: "#607570",
     light_hard: "#ecefee",
     light_normal: "#d8e8e6",
     light_soft: "#cce8e5",
@@ -21,40 +21,52 @@ const colors = {
 }
 
 const workBenchColors = {
-
+    editor_bg: "",
+    widget_bg: "",
+    menu_fg: "",
+    select_hl: "",
+    menu: "",
+    button: "",
+    buttonHover: ""
 }
 
 const tokenColors = {
-    // public, private, static...
-    keyword_storage: colors.color_8,
-
     // punctuation
     punctuation: colors.color_8,
 
+    // public, private, static...
+    storage: colors.color_9,
+    storage_modifier: colors.color_8,
+
     // base types (bool, string, int, uint, float...) + flow control + operators
     keyword_flow: colors.color_7,
-    keyword_base_types: colors.color_7,
+    keyword: colors.color_7,
     operator: colors.color_7,
 
     // type/class
     type: colors.color_5,
+    type_declaration: colors.color_1,
 
     // fieldNames
     field_name: colors.color_0,
+    field_name_declaration: colors.color_0,
 
     // namespaces + classname + className of file
     namespace: colors.color_1,
     class_name: colors.color_1,
 
     // property names
+    object_property: colors.light_hard,
     property: colors.color_9,
 
     // functions/methods
     method: colors.color_3,
 
     // number value + string value + enum value + bool
-    value: colors.color_9,
     string: colors.color_9,
+    number: colors.color_9,
+    bool: colors.color_9,
+    enum: colors.color_9,
 
     // error
     errorColor: colors.color_1,
