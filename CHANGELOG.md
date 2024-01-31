@@ -2,7 +2,9 @@
 
 ## [Unreleased]
 
-- Add icon for extension marketplace
+## [0.0.3]
+
+- Added icon for extension marketplace
 
 ## [0.0.2] - 1-31-24
 
