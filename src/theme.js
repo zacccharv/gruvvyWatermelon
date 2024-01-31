@@ -1,5 +1,4 @@
-const { colors } = require('./colors')
-const { tokenColors } = require('./colors')
+const { colors, workBenchColors, tokenColors, gruvvyWatermelonColors } = require('./colors')
 
 function getTheme({ theme, name }) {
 
@@ -29,9 +28,9 @@ function getTheme({ theme, name }) {
             "activityBar.foreground": colors.light_hard,
             "activityBar.inactiveForeground": colors.light_0,
             "activityBarBadge.background": colors.color_2,
-            "activityBarBadge.foreground": colors.dark_normal,
-            "badge.background": tokenColors.infoColor,
-            "badge.foreground": colors.dark_normal,
+            "activityBarBadge.foreground": gruvvyWatermelonColors.black,
+            "badge.background": gruvvyWatermelonColors.bright_blue,
+            "badge.foreground": gruvvyWatermelonColors.black,
             "breadcrumb.activeSelectionForeground": colors.light_hard,
             "breadcrumb.focusForeground": colors.light_hard,
             "breadcrumb.foreground": colors.light_0,
@@ -48,12 +47,12 @@ function getTheme({ theme, name }) {
             "dropdown.border": colors.dark_1,
             "dropdown.foreground": colors.light_hard,
             "editor.background": colors.dark_normal,
-            "editor.findMatchBackground": tokenColors.buttonHighlight + "40",
-            "editor.findMatchHighlightBackground": colors.color_5 + "40",
-            "editor.findRangeHighlightBackground": colors.color_5 + "40",
+            "editor.findMatchBackground": gruvvyWatermelonColors.bright_aqua + "40",
+            "editor.findMatchHighlightBackground": gruvvyWatermelonColors.bright_purple + "40",
+            "editor.findRangeHighlightBackground": gruvvyWatermelonColors.bright_purple + "40",
             "editor.foreground": colors.light_hard,
             "editor.hoverHighlightBackground": tokenColors.menuHighlight + "36",
-            "editor.lineHighlightBackground": colors.dark_0 + "e0",
+            "editor.lineHighlightBackground": colors.dark_0 + "40",
             "editor.lineHighlightBorder": colors.dark_0 + "00",
             "editor.rangeHighlightBackground": colors.color_5 + "40",
             "editor.selectionBackground": colors.dark_0 + "f0",
@@ -77,18 +76,18 @@ function getTheme({ theme, name }) {
             "editorGutter.background": colors.dark_normal + "00",
             "editorGutter.deletedBackground": tokenColors.buttonHighlight + "40",
             "editorGutter.modifiedBackground": tokenColors.menuHighlight + "40",
-            "editorHint.foreground": tokenColors.hintColor,
-            "editorHoverWidget.background": colors.dark_0,
-            "editorHoverWidget.border": colors.dark_1,
+            "editorHint.foreground": workBenchColors.widget_fg,
+            "editorHoverWidget.background": workBenchColors.widget_bg,
+            "editorHoverWidget.border": workBenchColors.widget_bg,
             "editorIndentGuide.activeBackground1": colors.dark_1,
             "editorIndentGuide.background1": colors.dark_0,
             "editorInfo.foreground": tokenColors.menuHighlight,
-            "editorLightBulb.foreground": colors.color_3,
+            "editorLightBulb.foreground": gruvvyWatermelonColors.purple_pink,
             "editorLightBulbAutoFix.foreground": tokenColors.menuHighlight,
             "editorLineNumber.activeForeground": colors.light_hard,
             "editorLineNumber.foreground": colors.light_0,
             "editorLink.activeForeground": tokenColors.menuHighlight,
-            "editorMarkerNavigation.background": colors.dark_0,
+            "editorMarkerNavigation.background": colors.dark_1,
             "editorMarkerNavigationError.background": tokenColors.buttonHighlight,
             "editorMarkerNavigationInfo.background": tokenColors.menuHighlight,
             "editorMarkerNavigationWarning.background": colors.color_4,
@@ -108,17 +107,17 @@ function getTheme({ theme, name }) {
             "editorOverviewRuler.wordHighlightForeground": colors.light_0 + "80",
             "editorOverviewRuler.wordHighlightStrongForeground": colors.light_0 + "60",
             "editorRuler.foreground": colors.dark_1,
-            "editorSuggestWidget.background": colors.dark_0,
-            "editorSuggestWidget.border": colors.dark_0,
-            "editorSuggestWidget.foreground": colors.light_hard,
-            "editorSuggestWidget.highlightForeground": tokenColors.menuHighlight,
-            "editorSuggestWidget.selectedBackground": colors.dark_1,
+            "editorSuggestWidget.background": workBenchColors.widget_bg,
+            "editorSuggestWidget.border": workBenchColors.widget_bg,
+            "editorSuggestWidget.foreground": workBenchColors.widget_fg,
+            "editorSuggestWidget.highlightForeground": workBenchColors.widget_fg,
+            "editorSuggestWidget.selectedBackground": workBenchColors.widget_hl,
             "editorUnnecessaryCode.border": colors.light_0,
             "editorUnnecessaryCode.opacity": colors.light_hard,
             "editorWarning.foreground": tokenColors.warnColor,
             "editorWhitespace.foreground": colors.light_0,
-            "editorWidget.background": colors.dark_normal,
-            "editorWidget.border": colors.dark_1,
+            "editorWidget.background": workBenchColors.widget_menu_bg,
+            "editorWidget.border": workBenchColors.widget_bg,
             "errorForeground": tokenColors.buttonHighlight,
             "extensionBadge.remoteBackground": tokenColors.menuHighlight,
             "extensionBadge.remoteForeground": colors.dark_normal,
@@ -136,15 +135,15 @@ function getTheme({ theme, name }) {
             "gitDecoration.untrackedResourceForeground": colors.color_4 + "d1",
             "icon.foreground": tokenColors.menuHighlight,
             "input.background": colors.dark_normal + "00",
-            "input.border": colors.dark_1,
+            "input.border": workBenchColors.widget_bg,
             "input.foreground": colors.light_hard,
             "input.placeholderForeground": colors.light_0,
-            "inputOption.activeBorder": tokenColors.menuHighlight,
+            "inputOption.activeBorder": workBenchColors.widget_hl,
             "inputValidation.errorBackground": colors.dark_0,
             "inputValidation.errorBorder": tokenColors.buttonHighlight,
             "inputValidation.errorForeground": tokenColors.buttonHighlight,
             "inputValidation.infoBackground": colors.dark_0,
-            "inputValidation.infoBorder": tokenColors.menuHighlight,
+            "inputValidation.infoBorder": workBenchColors.widget_bg,
             "inputValidation.infoForeground": tokenColors.menuHighlight,
             "inputValidation.warningBackground": colors.dark_0,
             "inputValidation.warningBorder": colors.color_4,
@@ -191,27 +190,27 @@ function getTheme({ theme, name }) {
             "notificationsWarningIcon.foreground": colors.color_4,
             "panel.background": colors.dark_0,
             "panel.border": colors.dark_0,
-            "panelInput.border": colors.dark_1,
+            "panelInput.border": workBenchColors.widget_bg,
             "panelTitle.activeBorder": tokenColors.menuHighlight,
             "panelTitle.activeForeground": colors.light_soft,
             "panelTitle.inactiveForeground": colors.light_0,
-            "peekView.border": colors.dark_0,
-            "peekViewEditor.background": colors.dark_soft,
-            "peekViewEditor.matchHighlightBackground": tokenColors.menuHighlight + "28",
-            "peekViewEditorGutter.background": colors.dark_soft,
-            "peekViewResult.background": colors.dark_0,
-            "peekViewResult.fileForeground": colors.light_hard,
-            "peekViewResult.matchHighlightBackground": colors.color_3 + "50",
-            "peekViewResult.selectionBackground": tokenColors.menuHighlight + "28",
-            "peekViewTitle.background": colors.dark_soft,
-            "peekViewTitleDescription.foreground": colors.light_0,
-            "peekViewTitleLabel.foreground": colors.light_hard,
+            "peekView.border": workBenchColors.widget_bg,
+            "peekViewEditor.background": workBenchColors.widget_bg,
+            "peekViewEditor.matchHighlightBackground": workBenchColors.widget_hl,
+            "peekViewEditorGutter.background": workBenchColors.widget_menu_bg,
+            "peekViewResult.background": workBenchColors.widget_menu_bg,
+            "peekViewResult.fileForeground": workBenchColors.widget_fg,
+            "peekViewResult.matchHighlightBackground": workBenchColors.widget_hl,
+            "peekViewResult.selectionBackground": workBenchColors.widget_menu_bg,
+            "peekViewTitle.background": workBenchColors.widget_menu_bg,
+            "peekViewTitleDescription.foreground": workBenchColors.widget_fg,
+            "peekViewTitleLabel.foreground": workBenchColors.widget_fg,
             "pickerGroup.border": colors.light_hard + "1a",
             "problemsErrorIcon.foreground": tokenColors.buttonHighlight,
             "problemsInfoIcon.foreground": tokenColors.menuHighlight,
             "problemsWarningIcon.foreground": colors.color_4,
             "progressBar.background": tokenColors.menuHighlight,
-            "quickInputList.focusBackground": colors.dark_0 + "f0",
+            "quickInputList.focusBackground": workBenchColors.widget_hl,
             "scrollbar.shadow": colors.dark_hard + "70",
             "scrollbarSlider.activeBackground": colors.light_0 + "b0",
             "scrollbarSlider.background": colors.light_0 + "70",
@@ -225,18 +224,17 @@ function getTheme({ theme, name }) {
             "settings.dropdownForeground": tokenColors.menuHighlight,
             "settings.headerForeground": colors.light_hard,
             "settings.numberInputBackground": colors.dark_normal,
-            "settings.numberInputBorder": colors.dark_1,
+            "settings.numberInputBorder": workBenchColors.widget_bg,
             "settings.numberInputForeground": colors.color_5,
-            "settings.textInputBackground": colors.dark_normal,
-            "settings.textInputBorder": colors.dark_1,
+            "settings.textInputBackground": workBenchColors.widget_bg,
+            "settings.textInputBorder": workBenchColors.widget_bg,
             "settings.textInputForeground": tokenColors.menuHighlight,
             "sideBar.background": colors.dark_hard,
             "sideBar.foreground": colors.light_0,
             "sideBarSectionHeader.background": colors.dark_normal + "00",
             "sideBarSectionHeader.foreground": colors.light_0,
             "sideBarTitle.foreground": colors.light_0,
-            "statusBar.background": tokenColors.buttonHighlight,
-            "statusBar.background": tokenColors.secondaryButtonHighlight,
+            "statusBar.background": gruvvyWatermelonColors.bright_red_pink,
             "statusBar.border": colors.dark_hard,
             "statusBar.debuggingBackground": tokenColors.buttonHighlight,
             "statusBar.debuggingBorder": tokenColors.buttonHighlight,
@@ -304,7 +302,7 @@ function getTheme({ theme, name }) {
             "terminal.ansiBrightYellow": colors.color_4,
             "terminal.ansiCyan": colors.color_3,
             "terminal.ansiGreen": tokenColors.menuHighlight,
-            "terminal.ansiMagenta": colors.color_5,
+            // "terminal.ansiMagenta": colors.color_5,
             "terminal.ansiRed": tokenColors.buttonHighlight,
             "terminal.ansiWhite": colors.light_hard,
             "terminal.ansiYellow": colors.color_4,
@@ -447,7 +445,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "constant.language",
                 "settings": {
-                    "foreground": tokenColors.value
+                    "foreground": tokenColors.base_value
                 }
             },
             {
@@ -1380,7 +1378,6 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "variable",
-                    "variable.other"
                 ],
                 "settings": {
                     "foreground": tokenColors.field_name
@@ -1423,10 +1420,11 @@ function getTheme({ theme, name }) {
             },
             {
                 "scope": [
+                    "variable.other.class",
                     "variable.other.object.property"
                 ],
                 "settings": {
-                    "foreground": colors.light_hard
+                    "foreground": tokenColors.plain
                 }
             },
             {
@@ -1511,7 +1509,7 @@ function getTheme({ theme, name }) {
                     "keyword.other.unit.px.css",
                     "constant.numeric.decimal.js",
                     "constant.numeric.json",
-                    "entity.name.type.class.cs"
+                    "entity.name.type.class"
                 ],
                 "settings": {
                     "fontStyle": ""
@@ -1519,9 +1517,18 @@ function getTheme({ theme, name }) {
             },
             {
                 "scope": [
+                    "entity.name.variable.field",
+                    "entity.name.variable.parameter",
+                    "entity.name.variable.local"
+                ],
+                "settings": {
+                    "foreground": tokenColors.field_name_declaration,
+                }
+            },
+            {
+                "scope": [
                     "variable.other",
                     "variable.other.object",
-                    "entity.name.variable.parameter",
                 ],
                 "settings": {
                     "foreground": tokenColors.field_name,
@@ -1584,7 +1591,7 @@ function getTheme({ theme, name }) {
                     "entity.name.variable.enum-member"
                 ],
                 "settings": {
-                    "foreground": tokenColors.string
+                    "foreground": tokenColors.base_value
                 }
             },
             {
