@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [0.0.31]
+## [0.0.32]
 
 - Added icon for extension marketplace
 

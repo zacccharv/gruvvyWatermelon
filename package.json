@@ -3,7 +3,7 @@
   "publisher": "ZaccCharvolin",
   "displayName": "Gruvvy Watermelon",
   "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "icon": "imgs/logo.png",
   "engines": {
     "vscode": "^1.85.0"
