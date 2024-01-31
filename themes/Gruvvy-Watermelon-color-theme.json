@@ -433,7 +433,9 @@
     },
     {
       "scope": "constant.language",
-      "settings": {}
+      "settings": {
+        "foreground": "#4FB094"
+      }
     },
     {
       "scope": "constant.character.escape",
@@ -620,9 +622,7 @@
     },
     {
       "scope": "keyword",
-      "settings": {
-        "foreground": "#81E5B3"
-      }
+      "settings": {}
     },
     {
       "scope": "keyword.control",
@@ -1145,9 +1145,7 @@
     },
     {
       "scope": "storage.type",
-      "settings": {
-        "foreground": "#4FB094"
-      }
+      "settings": {}
     },
     {
       "scope": "storage.type.accessor",
@@ -1175,7 +1173,6 @@
         "storage.type.modifier"
       ],
       "settings": {
-        "foreground": "#81E5B3",
         "fontStyle": "italic"
       }
     },
@@ -1367,7 +1364,7 @@
         "variable"
       ],
       "settings": {
-        "foreground": "#ecefee"
+        "foreground": "#ffc7d6"
       }
     },
     {
@@ -1423,7 +1420,7 @@
     {
       "scope": "variable.other.member",
       "settings": {
-        "foreground": "#ecefee"
+        "foreground": "#ffc7d6"
       }
     },
     {
@@ -1438,9 +1435,7 @@
         "variable.other.property.static",
         "variable.other.event"
       ],
-      "settings": {
-        "foreground": "#ecefee"
-      }
+      "settings": {}
     },
     {
       "scope": "variable.function",
@@ -1523,6 +1518,15 @@
     },
     {
       "scope": [
+        "entity.name.variable.local",
+        "entity.name.variable.field"
+      ],
+      "settings": {
+        "foreground": "#f1bcac"
+      }
+    },
+    {
+      "scope": [
         "support.type.property-name"
       ],
       "settings": {
@@ -1537,9 +1541,7 @@
         "entity.name.variable.event",
         "entity.name.type.struct"
       ],
-      "settings": {
-        "foreground": "#FF647D"
-      }
+      "settings": {}
     },
     {
       "scope": [
@@ -1594,7 +1596,6 @@
         "keyword.operator.expression.new"
       ],
       "settings": {
-        "foreground": "#4FB094",
         "fontStyle": ""
       }
     },
