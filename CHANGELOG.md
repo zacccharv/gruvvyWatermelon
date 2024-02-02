@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+- Implement a way to use the colortheme colors for material icons
+
 ## [0.0.32]
 
 - Added icon for extension marketplace
