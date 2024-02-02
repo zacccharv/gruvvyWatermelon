@@ -2,8 +2,9 @@
   "name": "gruvvy-watermelon",
   "publisher": "ZaccCharvolin",
   "displayName": "Gruvvy Watermelon",
-  "description": "Personal version of gruvbox",
-  "version": "0.0.2",
+  "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
+  "version": "0.0.32",
+  "icon": "imgs/logo.png",
   "engines": {
     "vscode": "^1.85.0"
   },
