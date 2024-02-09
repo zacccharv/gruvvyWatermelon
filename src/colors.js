@@ -67,7 +67,7 @@ const tokenColors = {
 
     // base types (bool, string, int, uint, float...) + flow control + operators
     keyword_flow: gruvvyWatermelonColors.aqua,
-    keyword_base_types: gruvvyWatermelonColors.aqua,
+    keyword_base_types: gruvvyWatermelonColors.bright_purple,
     operator: gruvvyWatermelonColors.aqua,
 
     // type/class
