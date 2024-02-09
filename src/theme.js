@@ -1618,7 +1618,7 @@ function getTheme({ theme, name }) {
                     "keyword.operator.expression.new"
                 ],
                 "settings": {
-                    "foreground": tokenColors.keyword,
+                    "foreground": tokenColors.keyword_base_types,
                     "fontStyle": ""
                 }
             }, {

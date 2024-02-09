@@ -1597,6 +1597,7 @@
         "keyword.operator.expression.new"
       ],
       "settings": {
+        "foreground": "#4FB094",
         "fontStyle": ""
       }
     },
