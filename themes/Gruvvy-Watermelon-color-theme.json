@@ -263,7 +263,7 @@
     "symbolIcon.objectForeground": "#A2EDE0",
     "symbolIcon.operatorForeground": "#81E5B3",
     "symbolIcon.packageForeground": "#81E5B3",
-    "symbolIcon.propertyForeground": "#4FB094",
+    "symbolIcon.propertyForeground": "#DD5A8E",
     "symbolIcon.referenceForeground": "#A2EDE0",
     "symbolIcon.snippetForeground": "#ecefee",
     "symbolIcon.stringForeground": "#C3ADFF",
@@ -623,7 +623,9 @@
     },
     {
       "scope": "keyword",
-      "settings": {}
+      "settings": {
+        "foreground": "#4FB094"
+      }
     },
     {
       "scope": "keyword.control",
@@ -1146,7 +1148,10 @@
     },
     {
       "scope": "storage.type",
-      "settings": {}
+      "settings": {
+        "foreground": "#4FB094",
+        "fontStyle": "bold"
+      }
     },
     {
       "scope": "storage.type.accessor",
@@ -1531,7 +1536,7 @@
         "support.type.property-name"
       ],
       "settings": {
-        "foreground": "#4FB094"
+        "foreground": "#DD5A8E"
       }
     },
     {
@@ -1560,7 +1565,7 @@
         "entity.name.variable.property"
       ],
       "settings": {
-        "foreground": "#4FB094"
+        "foreground": "#DD5A8E"
       }
     },
     {
@@ -1598,7 +1603,7 @@
       ],
       "settings": {
         "foreground": "#4FB094",
-        "fontStyle": ""
+        "fontStyle": "bold"
       }
     },
     {

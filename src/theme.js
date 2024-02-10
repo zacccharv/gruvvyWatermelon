@@ -634,7 +634,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "keyword",
                 "settings": {
-                    "foreground": tokenColors.storage_modifier
+                    "foreground": tokenColors.keyword_base_types
                 }
             },
             {
@@ -1159,7 +1159,8 @@ function getTheme({ theme, name }) {
             {
                 "scope": "storage.type",
                 "settings": {
-                    "foreground": tokenColors.storage,
+                    "foreground": tokenColors.keyword_storage,
+                    "fontStyle": "bold"
                 }
             },
             {
@@ -1619,7 +1620,7 @@ function getTheme({ theme, name }) {
                 ],
                 "settings": {
                     "foreground": tokenColors.keyword_base_types,
-                    "fontStyle": ""
+                    "fontStyle": "bold"
                 }
             }, {
                 "scope": [

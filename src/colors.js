@@ -63,11 +63,11 @@ const tokenColors = {
     punctuation: gruvvyWatermelonColors.bright_aqua,
 
     // public, private, static...
-    keyword_storage: gruvvyWatermelonColors.bright_aqua,
+    keyword_storage: gruvvyWatermelonColors.aqua,
 
-    // base types (bool, string, int, uint, float...) + flow control + operators
-    keyword_flow: gruvvyWatermelonColors.aqua,
+    // base types (bool, string, int, uint, float...) + flow control + operators + using
     keyword_base_types: gruvvyWatermelonColors.aqua,
+    keyword_flow: gruvvyWatermelonColors.aqua,
     operator: gruvvyWatermelonColors.aqua,
 
     // type/class
@@ -82,7 +82,7 @@ const tokenColors = {
     class_name: gruvvyWatermelonColors.red_pink,
 
     // property names
-    property: gruvvyWatermelonColors.aqua,
+    property: gruvvyWatermelonColors.purple_pink,
 
     // functions/methods
     method: gruvvyWatermelonColors.purple_pink,
