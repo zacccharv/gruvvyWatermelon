@@ -1,7 +1,7 @@
 # Gruvvy Watermelon color theme
 
 A color theme inspired by gruvbox and Watermelons (and maybe some grapes).
-Created for Unity and C# but looks good in json and javascript but other language colorization isn't optimized.
+Created for Unity and C# but looks good in json and javascript, other language colorization isn't optimized.
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_130235.png)
 
