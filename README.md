@@ -70,7 +70,7 @@ Here's my config to go with this theme.
   }
 ```
 
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-15_193506.png)
+![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-15_193507.png)
 
 [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - a nice way to see errors and hints in the editor, and I integrated it with this theme.
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131100.png)
