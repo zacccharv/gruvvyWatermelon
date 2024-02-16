@@ -11,7 +11,9 @@ Created for Unity and C# but looks good in json and javascript, other language c
 
 ## Recommended Extensions
 
-[TODO-Tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) - A really helpful plugin for keeping track of todos in your code with tons of customization.
+## [TODO tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+
+A really helpful plugin for keeping track of todos in your code with tons of customization.
 Here's my config to go with this theme.
 
 ```json
@@ -72,7 +74,9 @@ Here's my config to go with this theme.
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-15_193507.png)
 
-[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) - a nice way to see errors and hints in the editor, and I integrated it with this theme.
+## [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+A nice way to see errors and hints in the editor, and I integrated it with this theme.
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131100.png)
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131339.png)
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131803.png)
