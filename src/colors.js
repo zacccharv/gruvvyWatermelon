@@ -72,6 +72,7 @@ const tokenColors = {
 
     // type/class
     type: gruvvyWatermelonColors.purple,
+    type_declaration: gruvvyWatermelonColors.purple_pink,
 
     // fieldNames
     field_name_declaration: gruvvyWatermelonColors.bright_peach,
@@ -84,8 +85,9 @@ const tokenColors = {
     // property names
     property: gruvvyWatermelonColors.purple_pink,
 
-    // functions/methods
+    // functions/methods/events/getters + setters
     method: gruvvyWatermelonColors.purple_pink,
+    event: gruvvyWatermelonColors.purple_pink,
 
     // number value + string value + enum value + bool
     base_value: gruvvyWatermelonColors.aqua,

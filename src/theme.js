@@ -533,7 +533,8 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "entity.name.type",
                     "entity.name.type.class.reference",
-                    "entity.name.type.class.value"
+                    "entity.name.type.class.value",
+                    "entity.name.type.delegate",
                 ],
                 "settings": {
                     "foreground": tokenColors.type
@@ -1495,7 +1496,6 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "comment",
-                    "entity.name.type.class",
                     "keyword",
                     "storage.modifier",
                     "storage.type.class.js"
@@ -1510,7 +1510,6 @@ function getTheme({ theme, name }) {
                     "keyword.other.unit.px.css",
                     "constant.numeric.decimal.js",
                     "constant.numeric.json",
-                    "entity.name.type.class"
                 ],
                 "settings": {
                     "fontStyle": ""
@@ -1520,7 +1519,7 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "entity.name.variable.field",
                     "entity.name.variable.parameter",
-                    "entity.name.variable.local"
+                    "entity.name.variable.local",
                 ],
                 "settings": {
                     "foreground": tokenColors.field_name_declaration,
@@ -1556,8 +1555,6 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "entity.name.class",
                     "entity.name.type.class",
-                    "entity.name.type.delegate",
-                    "entity.name.variable.event",
                     "entity.name.type.struct",
                 ],
                 "settings": {
@@ -1568,7 +1565,7 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "function",
                     "entity.name.function",
-                    "entity.name.function.templated"
+                    "entity.name.function.templated",
                 ],
                 "settings": {
                     "foreground": tokenColors.method
@@ -1577,6 +1574,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "property",
+                    "entity.name.variable.event",
                     "entity.name.variable.property"
                 ],
                 "settings": {

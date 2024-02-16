@@ -523,7 +523,8 @@
       "scope": [
         "entity.name.type",
         "entity.name.type.class.reference",
-        "entity.name.type.class.value"
+        "entity.name.type.class.value",
+        "entity.name.type.delegate"
       ],
       "settings": {
         "foreground": "#9781D5"
@@ -1482,7 +1483,6 @@
     {
       "scope": [
         "comment",
-        "entity.name.type.class",
         "keyword",
         "storage.modifier",
         "storage.type.class.js"
@@ -1496,8 +1496,7 @@
         "invalid",
         "keyword.other.unit.px.css",
         "constant.numeric.decimal.js",
-        "constant.numeric.json",
-        "entity.name.type.class"
+        "constant.numeric.json"
       ],
       "settings": {
         "fontStyle": ""
@@ -1543,11 +1542,11 @@
       "scope": [
         "entity.name.class",
         "entity.name.type.class",
-        "entity.name.type.delegate",
-        "entity.name.variable.event",
         "entity.name.type.struct"
       ],
-      "settings": {}
+      "settings": {
+        "foreground": "#DD5A8E"
+      }
     },
     {
       "scope": [
@@ -1562,6 +1561,7 @@
     {
       "scope": [
         "property",
+        "entity.name.variable.event",
         "entity.name.variable.property"
       ],
       "settings": {
