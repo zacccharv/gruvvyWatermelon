@@ -4,6 +4,11 @@
 
 - Implement a way to use the colortheme colors for material icons
 
+## [0.0.5]
+
+- Fixed entity.name.variable.event color
+- Added info about TODO-tree to ReadMe
+
 ## [0.0.4]
 
 - Fixed keyword.type color
