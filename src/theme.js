@@ -1368,7 +1368,7 @@ function getTheme({ theme, name }) {
             {
                 "scope": "text",
                 "settings": {
-                    "foreground": colors.light_hard
+                    "foreground": "#fceae6"
                 }
             },
             {
@@ -1656,18 +1656,36 @@ function getTheme({ theme, name }) {
             {
                 "scope": "heading.1.markdown",
                 "settings": {
-                    "foreground": colors.color_3,
+                    "foreground": "#bb9aff",
                     "fontStyle": "bold"
                 }
             },
             {
                 "scope": "heading.2.markdown",
                 "settings": {
-                    "foreground": colors.color_3,
+                    "foreground": "#ff9ade",
                     "fontStyle": "bold"
                 }
-            }
-        ]
+            },
+            {
+                "scope": "heading.3.markdown",
+                "settings": {
+                    "foreground": "#ffc19a",
+                }
+            },
+            {
+                "scope": "heading.4.markdown",
+                "settings": {
+                    "foreground": "#ff9aad",
+                }
+            },
+            {
+                "scope": "punctuation.definition.heading.markdown",
+                "settings": {
+                    "foreground": colors.light_0,
+                    "fontStyle": "bold"
+                }
+            }]
     }
 }
 
