@@ -1357,7 +1357,7 @@
     {
       "scope": "text",
       "settings": {
-        "foreground": "#ecefee"
+        "foreground": "#fceae6"
       }
     },
     {
@@ -1642,14 +1642,33 @@
     {
       "scope": "heading.1.markdown",
       "settings": {
-        "foreground": "#DD5A8E",
+        "foreground": "#bb9aff",
         "fontStyle": "bold"
       }
     },
     {
       "scope": "heading.2.markdown",
       "settings": {
-        "foreground": "#DD5A8E",
+        "foreground": "#ff9ade",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": "heading.3.markdown",
+      "settings": {
+        "foreground": "#ffc19a"
+      }
+    },
+    {
+      "scope": "heading.4.markdown",
+      "settings": {
+        "foreground": "#ff9aad"
+      }
+    },
+    {
+      "scope": "punctuation.definition.heading.markdown",
+      "settings": {
+        "foreground": "#647a78",
         "fontStyle": "bold"
       }
     }
