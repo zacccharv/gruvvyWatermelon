@@ -466,7 +466,9 @@
       "scope": [
         "entity.name.type.class.templated",
         "entity.name.type.class.generic",
-        "entity.name.type.namespace"
+        "entity.name.type.namespace",
+        "entity.name.namespace",
+        "string.quoted.other.lt-gt.include.cpp"
       ],
       "settings": {
         "foreground": "#FF647D"
@@ -488,12 +490,6 @@
       "scope": "entity.name.constant",
       "settings": {
         "foreground": "#9781D5"
-      }
-    },
-    {
-      "scope": "entity.name.namespace",
-      "settings": {
-        "foreground": "#ecefee"
       }
     },
     {
@@ -1485,7 +1481,8 @@
         "comment",
         "keyword",
         "storage.modifier",
-        "storage.type.class.js"
+        "storage.type.class.js",
+        "keyword.control.directive.include.cpp"
       ],
       "settings": {
         "fontStyle": "italic"
@@ -1506,7 +1503,8 @@
       "scope": [
         "entity.name.variable.field",
         "entity.name.variable.parameter",
-        "entity.name.variable.local"
+        "entity.name.variable.local",
+        "entity.name.variable.tuple-element"
       ],
       "settings": {
         "foreground": "#f1bcac"

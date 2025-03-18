@@ -4,6 +4,10 @@
 
 - Implement a way to use the colortheme colors for material icons
 
+## [0.0.61]
+
+- Added color to tuple parameter names
+
 ## [0.0.5]
 
 - Fixed entity.name.variable.event color

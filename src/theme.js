@@ -477,6 +477,8 @@ function getTheme({ theme, name }) {
                     "entity.name.type.class.templated",
                     "entity.name.type.class.generic",
                     "entity.name.type.namespace",
+                    "entity.name.namespace",
+                    "string.quoted.other.lt-gt.include.cpp",
                 ],
                 "settings": {
                     "foreground": tokenColors.namespace
@@ -498,12 +500,6 @@ function getTheme({ theme, name }) {
                 "scope": "entity.name.constant",
                 "settings": {
                     "foreground": colors.color_5
-                }
-            },
-            {
-                "scope": "entity.name.namespace",
-                "settings": {
-                    "foreground": colors.light_hard
                 }
             },
             {
@@ -634,6 +630,7 @@ function getTheme({ theme, name }) {
             },
             {
                 "scope": "keyword",
+
                 "settings": {
                     "foreground": tokenColors.keyword_base_types
                 }
@@ -1498,7 +1495,8 @@ function getTheme({ theme, name }) {
                     "comment",
                     "keyword",
                     "storage.modifier",
-                    "storage.type.class.js"
+                    "storage.type.class.js",
+                    "keyword.control.directive.include.cpp"
                 ],
                 "settings": {
                     "fontStyle": "italic"
@@ -1519,7 +1517,8 @@ function getTheme({ theme, name }) {
                 "scope": [
                     "entity.name.variable.field",
                     "entity.name.variable.parameter",
-                    "entity.name.variable.local",
+                    "entity.name.variable.local", 
+                    "entity.name.variable.tuple-element"
                 ],
                 "settings": {
                     "foreground": tokenColors.field_name_declaration,
