@@ -21,7 +21,7 @@
     ]
   },
   "scripts": {
-    "build": "node src/index.js && mkdir -p build",
+    "build": "node src/index.js && mkdir build",
     "prepublishOnly": "npm run build && vsce publish"
   },
   "repository": {

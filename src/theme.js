@@ -531,6 +531,8 @@ function getTheme({ theme, name }) {
                     "entity.name.type.class.reference",
                     "entity.name.type.class.value",
                     "entity.name.type.delegate",
+                    "entity.name.function.decorator.gdscript"
+
                 ],
                 "settings": {
                     "foreground": tokenColors.type
@@ -1184,10 +1186,11 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "storage.modifier",
-                    "storage.type.modifier"
+                    "storage.type.modifier",
+                    "storage.type.function.gdscript"
                 ],
                 "settings": {
-                    "foreground": tokenColors.storage_modifier,
+                    "foreground": tokenColors.keyword_storage,
                     "fontStyle": "italic"
                 }
             },
@@ -1377,9 +1380,11 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "variable",
+                    "variable.parameter.function.language.gdscript"
                 ],
                 "settings": {
-                    "foreground": tokenColors.field_name
+                    "foreground": tokenColors.field_name,
+                    "fontStyle": ""
                 }
             },
             {
@@ -1420,7 +1425,8 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "variable.other.class",
-                    "variable.other.object.property"
+                    "variable.other.object.property",
+                    "variable.other.property.gdscript",
                 ],
                 "settings": {
                     "foreground": tokenColors.plain
@@ -1451,7 +1457,7 @@ function getTheme({ theme, name }) {
                     "variable.other.event"
                 ],
                 "settings": {
-                    "foreground": tokenColors.object_property
+                    "foreground": tokenColors.property
                 }
             },
             {
@@ -1514,11 +1520,17 @@ function getTheme({ theme, name }) {
                 }
             },
             {
+                "scope": "meta.variable.declaration.gdscript variable.other.gdscript ",
+                "settings": {
+                    "foreground": tokenColors.field_name_declaration,
+                }
+            },
+            {
                 "scope": [
                     "entity.name.variable.field",
                     "entity.name.variable.parameter",
                     "entity.name.variable.local", 
-                    "entity.name.variable.tuple-element"
+                    "entity.name.variable.tuple-element",
                 ],
                 "settings": {
                     "foreground": tokenColors.field_name_declaration,
@@ -1565,9 +1577,11 @@ function getTheme({ theme, name }) {
                     "function",
                     "entity.name.function",
                     "entity.name.function.templated",
+                    "meta.function-call.gdscript keyword.language.gdscript"
                 ],
                 "settings": {
-                    "foreground": tokenColors.method
+                    "foreground": tokenColors.method,
+                    "fontStyle": ""
                 }
             },
             {
@@ -1586,7 +1600,8 @@ function getTheme({ theme, name }) {
                     "constant.language",
                     "constant.numeric",
                     "string.quoted.double",
-                    "entity.name.variable.enum-member"
+                    "entity.name.variable.enum-member",
+                    "variable.other.constant.gdscript"
                 ],
                 "settings": {
                     "foreground": tokenColors.base_value
@@ -1613,11 +1628,12 @@ function getTheme({ theme, name }) {
             {
                 "scope": [
                     "keyword.type",
-                    "keyword.operator.expression.new"
+                    "keyword.operator.expression.new",
+                    "storage.type.var.gdscript"
                 ],
                 "settings": {
                     "foreground": tokenColors.keyword_base_types,
-                    "fontStyle": "bold"
+                    "fontStyle": "italic"
                 }
             }, {
                 "scope": [
