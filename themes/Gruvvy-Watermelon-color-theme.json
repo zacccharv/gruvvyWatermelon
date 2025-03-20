@@ -1367,8 +1367,7 @@
     },
     {
       "scope": [
-        "variable",
-        "variable.parameter.function.language.gdscript"
+        "variable"
       ],
       "settings": {
         "foreground": "#ffc7d6",
@@ -1508,7 +1507,10 @@
       }
     },
     {
-      "scope": "meta.variable.declaration.gdscript variable.other.gdscript ",
+      "scope": [
+        "meta.variable.declaration.gdscript variable.other.gdscript",
+        "variable.parameter.function.language.gdscript"
+      ],
       "settings": {
         "foreground": "#f1bcac"
       }
