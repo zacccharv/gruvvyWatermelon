@@ -1,7 +1,7 @@
 # Gruvvy Watermelon Color Theme
 
 A color theme inspired by gruvbox and Watermelons (and maybe some grapes).
-Created for Unity and C# but looks good in json and javascript, other language colorization isn't optimized.
+Created for Unity and C# with GDScript support currently in development. Other languages may look ok but are untested.
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_130235.png)
 
@@ -11,7 +11,7 @@ Created for Unity and C# but looks good in json and javascript, other language c
 
 ## Font
 
-I use Victor Mono for its cursive italics.
+I use [Victor Mono](https://rubjo.github.io/victor-mono/) for its cursive italics.
 
 ## Recommended Extensions
 
@@ -22,47 +22,58 @@ Here's my config to go with this theme.
 
 ```json
   "todo-tree.general.tags": [
-    "// BUG",
-    "// HACK",
-    "// FIXME",
-    "// Todo",
-    "// TODO",
-    "// Note",
-    "// NOTE",
-    "note:",
-    "note",
-    "NOTE",
-    "todo",
-    "// IMPORTANT"
+        "// TODO",
+        "// Todo",
+        "# TODO",        
+        "// Note",
+        "<!-- note",
+        "// NOTE",
+        "# NOTE",            
+        "// FIXME",
+        "<!-- fixme",
+        "# FIXME"
   ],
   "todo-tree.general.tagGroups": {
     "TODO": [
-      "// TODO",
-      "// Todo",
-    ],
-    "NOTE": [
-      "// Note",
-      "// NOTE"
+        "// TODO",
+        "// Todo",
+        "# TODO"
+      ],
+      "NOTE": [
+        "// Note",
+        "<!-- note",
+        "// NOTE",
+        "# NOTE"
+      ],
+      "FIXME": [
+        "// FIXME",
+        "<!-- fixme",
+        "# FIXME"
+      ],
+      "IMPORTANT": [
+        "// IMPORTANT",
+        "# IMPORTANT",
+        "<!-- IMPORTANT"
     ]
   },
   "todo-tree.highlights.customHighlight": {
-    " FIXME ": {
-      "background": "#ff647d",
-      "foreground": "#cfc5f5",
-      "icon": "flame",
-      "iconColour": "#E34583"
-    },
-    "// IMPORTANT": {
-      "background": "#FFB6EB",
-      "icon": "alert-fill"
+    "TODO": {
+      "background": "#81E5B3",
+      "icon": "flame"
     },
     "NOTE": {
       "background": "#C3ADFF",
       "icon": "note"
     },
-    "TODO": {
-      "background": "#81E5B3",
-      "icon": "flame"
+    "FIXME": {
+      "background": "#ff647d",
+      "foreground": "#cfc5f5",
+      "icon": "flame",
+      "iconColour": "#E34583"
+    },
+    "IMPORTANT": {
+      "background": "#FFB6EB",
+      "icon": "alert-fill"
     }
   },
   "todo-tree.highlights.defaultHighlight": {
