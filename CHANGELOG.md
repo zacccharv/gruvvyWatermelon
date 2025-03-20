@@ -4,9 +4,13 @@
 
 - Implement a way to use the colortheme colors for material icons
 
+## [0.0.7]
+
+- Added more support for GDScript (variable declarations + parameter names)
+
 ## [0.0.62]
 
-- Added support for gdscript language
+- Added support for GDscript language
 
 ## [0.0.61]
 
