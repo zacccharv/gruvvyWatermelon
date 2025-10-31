@@ -1,6 +1,6 @@
 import { promises as fs } from 'fs'
 import { generateTheme } from './theme.js'
-import { bench } from './workbench.js'
+import { bench } from './ui/workbench.js'
 import { grammarColors } from './grammars/default.js'
 import { errorColors } from './extensions/errorlens.js'
 

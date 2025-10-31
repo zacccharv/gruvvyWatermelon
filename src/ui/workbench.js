@@ -1,4 +1,4 @@
-import { colors, tokenColors, gruvvyWatermelonColors, workBenchColors } from "./colors.js";
+import { colors, tokenColors, gruvvyWatermelonColors, workBenchColors } from "../colors.js";
 
 const bench = {
     "editorBracketHighlight.foreground1": tokenColors.buttonHighlight,
