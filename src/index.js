@@ -1,10 +1,15 @@
-const fs = require('fs').promises
-const getTheme = require('./theme')
+import { promises as fs } from 'fs'
+import { generateTheme } from './theme.js'
+import { bench } from './workbench.js'
+import { grammarColors } from './grammars/default.js'
+import { errorColors } from './extensions/errorlens.js'
 
-const gruvvyWatermelonTheme = getTheme({
-    theme: 'dark',
-    name: 'Gruvvy Watermelon',
-})
+const gruvvyWatermelonTheme = generateTheme(
+    'Gruvvy Watermelon',
+    bench,
+    grammarColors,
+    errorColors
+)
 
 // write theme
 fs.mkdir('./themes', { recursive: true })

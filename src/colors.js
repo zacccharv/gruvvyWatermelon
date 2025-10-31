@@ -106,4 +106,4 @@ const tokenColors = {
     secondaryButtonHighlight: gruvvyWatermelonColors.purple_pink
 }
 
-module.exports = { colors, tokenColors, workBenchColors, gruvvyWatermelonColors } 
+export default { colors, tokenColors, workBenchColors, gruvvyWatermelonColors } 

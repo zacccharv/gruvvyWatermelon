@@ -1004,57 +1004,48 @@
         "meta.paragraph.markdown meta.dummy.line-break",
         "meta.paragraph.markdown meta.hard-line-break.markdown"
       ],
-      "settings": {
-        "background": "#9781D5"
-      }
+      "settings": {}
     },
     {
       "scope": "region.redish",
       "settings": {
-        "foreground": "#81E5B3",
-        "background": "#81E5B359"
+        "foreground": "#81E5B3"
       }
     },
     {
       "scope": "region.orangish",
       "settings": {
-        "foreground": "#DD5A8E",
-        "background": "#DD5A8E59"
+        "foreground": "#DD5A8E"
       }
     },
     {
       "scope": "region.yellowish",
       "settings": {
-        "foreground": "#C3ADFF",
-        "background": "#C3ADFF59"
+        "foreground": "#C3ADFF"
       }
     },
     {
       "scope": "region.greenish",
       "settings": {
-        "foreground": "#A2EDE0",
-        "background": "#A2EDE059"
+        "foreground": "#A2EDE0"
       }
     },
     {
       "scope": "region.bluish",
       "settings": {
-        "foreground": "#FFB6EB",
-        "background": "#FFB6EB59"
+        "foreground": "#FFB6EB"
       }
     },
     {
       "scope": "region.purplish",
       "settings": {
-        "foreground": "#9781D5",
-        "background": "#9781D559"
+        "foreground": "#9781D5"
       }
     },
     {
       "scope": "region.pinkish",
       "settings": {
-        "foreground": "#81E5B3",
-        "background": "#81E5B359"
+        "foreground": "#81E5B3"
       }
     },
     {
@@ -1168,7 +1159,7 @@
       "scope": "storage.type.function.arrow",
       "settings": {
         "foreground": "#81E5B3",
-        "fontStyle": "normal"
+        "fontStyle": ""
       }
     },
     {
@@ -1338,7 +1329,7 @@
       "scope": "support.type.property-name",
       "settings": {
         "foreground": "#ecefee",
-        "fontStyle": "normal"
+        "fontStyle": ""
       }
     },
     {
