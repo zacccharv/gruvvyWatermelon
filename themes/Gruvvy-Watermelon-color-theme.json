@@ -1,10 +1,9 @@
 {
   "name": "Gruvvy Watermelon",
+  "type": "dark",
+  "semanticHighlighting": false,
+  "semanticTokenColors": {},
   "colors": {
-    "editorBracketHighlight.foreground1": "#81E5B3",
-    "editorBracketHighlight.foreground2": "#DD5A8E",
-    "editorBracketHighlight.foreground3": "#A2EDE0",
-    "editorBracketHighlight.foreground4": "#FFB6EB",
     "errorLens.errorForeground": "#DD5A8E",
     "errorLens.errorBackground": "#DD5A8E19",
     "errorLens.warningForeground": "#f18464",
@@ -13,6 +12,10 @@
     "errorLens.infoMessageBackground": "#9781D519",
     "errorLens.hintForeground": "#81E5B3",
     "errorLens.hintBackground": "#81E5B319",
+    "editorBracketHighlight.foreground1": "#81E5B3",
+    "editorBracketHighlight.foreground2": "#DD5A8E",
+    "editorBracketHighlight.foreground3": "#A2EDE0",
+    "editorBracketHighlight.foreground4": "#FFB6EB",
     "activityBar.activeBorder": "#A2EDE0",
     "activityBar.activeFocusBorder": "#A2EDE0",
     "activityBar.background": "#171c1b",
@@ -1593,7 +1596,9 @@
         "punctuation.definition.string.begin",
         "punctuation.definition.string.end"
       ],
-      "settings": {}
+      "settings": {
+        "foreground": "#ecefee"
+      }
     },
     {
       "scope": [

@@ -1,6 +1,10 @@
-import { colors, tokenColors, gruvvyWatermelonColors, workBenchColors } from "../colors.js";
+import colorObject from "../../colors.ts";
+let colors = colorObject.colors;
+let tokenColors = colorObject.tokenColors;
+let gruvvyWatermelonColors = colorObject.gruvvyWatermelonColors;
+let workBenchColors = colorObject.workBenchColors;
 
-const bench = {
+const values = {
     "editorBracketHighlight.foreground1": tokenColors.buttonHighlight,
     "editorBracketHighlight.foreground2": colors.color_3,
     "editorBracketHighlight.foreground3": tokenColors.menuHighlight,
@@ -315,7 +319,10 @@ const bench = {
     "titleBar.inactiveForeground": colors.light_0,
     "tree.indentGuidesStroke": colors.light_0,
     "widget.shadow": colors.dark_hard + "70",
-    "activityBar.activeBorder": tokenColors.menuHighlight,
 }
 
-export { bench };
+const workBench = {
+    colors: values
+}
+
+export default { workBench };

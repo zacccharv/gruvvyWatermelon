@@ -5,6 +5,7 @@
   "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
   "version": "0.0.7",
   "icon": "imgs/logo.png",
+  "type": "module",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -21,11 +22,30 @@
     ]
   },
   "scripts": {
-    "build": "node src/index.js && mkdir build",
+    "start": "tsc --watch",
+    "test": "tsup",
+    "build": "node ./src/index.ts && mkdir build",
     "prepublishOnly": "npm run build && vsce publish"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/zacccharv/gruvvyWatermelon"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.14.0",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.9.2",
+    "lodash": "^4.17.21",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true
   }
 }

@@ -97,7 +97,7 @@ const tokenColors = {
     // warn
     warnColor: gruvvyWatermelonColors.peach,
     // info
-    infoColor: colors.purple,
+    infoColor: gruvvyWatermelonColors.purple,
     // hint
     hintColor: gruvvyWatermelonColors.bright_aqua,
 
@@ -106,4 +106,9 @@ const tokenColors = {
     secondaryButtonHighlight: gruvvyWatermelonColors.purple_pink
 }
 
-export default { colors, tokenColors, workBenchColors, gruvvyWatermelonColors } 
+export default {
+    tokenColors: tokenColors,
+    colors: colors,
+    gruvvyWatermelonColors: gruvvyWatermelonColors,
+    workBenchColors: workBenchColors
+}

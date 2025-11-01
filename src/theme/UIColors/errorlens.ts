@@ -1,6 +1,8 @@
-import { tokenColors, gruvvyWatermelonColors } from "../colors.js";
+import colorObject from "../../colors.ts";
+let tokenColors = colorObject.tokenColors;
+let gruvvyWatermelonColors = colorObject.gruvvyWatermelonColors;
 
-const errorColors = {
+const values = {
     "errorLens.errorForeground": tokenColors.errorColor,
     "errorLens.errorBackground": tokenColors.errorColor + "19",
     "errorLens.warningForeground": tokenColors.warnColor,
@@ -11,4 +13,8 @@ const errorColors = {
     "errorLens.hintBackground": tokenColors.hintColor + "19",
 }
 
-export default errorColors;
+const errorColors = {
+    colors: values
+}
+
+export default { errorColors };
