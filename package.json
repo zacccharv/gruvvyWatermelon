@@ -4,7 +4,7 @@
   "publisher": "ZaccCharvolin",
   "icon": "imgs/logo.png",
   "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "type": "module",
   "engines": {
     "node": ">=20.0.0",
@@ -28,8 +28,8 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/main.cjs",
+  "module": "dist/index.cjs",
   "contributes": {
     "themes": [
       {
@@ -124,8 +124,9 @@
     }
   },
   "scripts": {
-    "build": "tsx ./src/index.ts",
-    "watch": "tsx watch ./src/index.ts --dev --no-regenerate",
+    "core:build": "tsx build.ts",
+    "core:dev": "tsx build.ts --dev --no-regenerate",
+    "core:watch": "tsx watch build.ts --dev --no-regenerate",
     "lint": "eslint --flag v10_config_lookup_from_file .",
     "prepublishOnly": "pnpm run build && vsce publish"
   },
@@ -154,22 +155,5 @@
     "type-flag": "^4.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.2"
-  },
-  "tsup": {
-    "clean": true,
-    "entryPoints": [
-      "dist/index.js"
-    ],
-    "format": [
-      "esm",
-      "cjs"
-    ],
-    "dts": {
-      "resolve": true
-    },
-    "sourcemap": false,
-    "external": [
-      "vscode"
-    ]
   }
 }

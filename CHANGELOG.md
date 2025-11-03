@@ -1,8 +1,9 @@
 # Change Log
 
-## [0.0.8]
+## [0.1]
 
-- integrating typescript
+- typescript integration overhaul inspired by [catpuccin](https://github.com/catppuccin/vscode)
+- adding todo-tree compatibilty that can be toggled
 
 ## [0.0.7]
 

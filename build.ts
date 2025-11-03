@@ -20,7 +20,7 @@ if (shouldRegenerate) {
 
 await build({
     clean: true,
-    entry: ["src/browser.ts", "src/main.ts", "src/hooks/generateThemes.ts"],
+    entry: ["./src/main.ts", "./src/hooks/generateThemes.ts"],
     external: ["vscode"],
     minify: !development,
     sourcemap: development,
