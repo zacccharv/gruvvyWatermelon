@@ -1,14 +1,16 @@
 {
+    "extends": "@tsconfig/node22/tsconfig.json",
     "compilerOptions": {
-        "target": "ES5",
-        "module": "node16",
-        "moduleResolution": "node16",
-        "allowJs": true,
-        "allowImportingTsExtensions": true,
-        "emitDeclarationOnly": true,
-        "declaration": true,
-        "declarationDir": "./types",
-        "rootDir": "./src",
-        "outDir": "./dist",
+        "module": "ES2022",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
     }
 }

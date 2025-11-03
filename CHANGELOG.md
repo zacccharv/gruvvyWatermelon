@@ -1,8 +1,8 @@
 # Change Log
 
-## [Unreleased]
+## [0.0.8]
 
-- Implement a way to use the colortheme colors for material icons
+- integrating typescript
 
 ## [0.0.7]
 

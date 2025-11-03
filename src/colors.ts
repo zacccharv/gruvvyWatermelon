@@ -1,4 +1,12 @@
-const colors = {
+import {
+    Colors,
+    FlavorColors,
+    Palette,
+    TokenColors,
+    WidgetThemeColors,
+} from "@/types";
+
+const colors: Colors = {
     dark_hard: "#171c1b",
     dark_normal: "#202626",
     dark_soft: "#293030",
@@ -19,11 +27,10 @@ const colors = {
     color_8: "#81E5B3",
     color_9: "#4FB094",
     color_10: "#f1bcac",
-    color_11: "#f18464"
-}
+    color_11: "#f18464",
+};
 
-const gruvvyWatermelonColors = {
-
+const flavor: FlavorColors = {
     white: colors.light_hard,
     gray: colors.light_0,
     black: colors.dark_hard,
@@ -46,69 +53,71 @@ const gruvvyWatermelonColors = {
     bright_aqua: colors.color_8,
     aqua: colors.color_9,
     bright_peach: colors.color_10,
-    peach: colors.color_11
-}
+    peach: colors.color_11,
+};
 
-const workBenchColors = {
-    widget_bg: gruvvyWatermelonColors.bg_1,
-    widget_fg: gruvvyWatermelonColors.fg_0,
-    widget_hl: gruvvyWatermelonColors.gray,
-    widget_menu_bg: gruvvyWatermelonColors.bg_2
-}
-
-const tokenColors = {
-    plain: gruvvyWatermelonColors.white,
+const tokens: TokenColors = {
+    plain: flavor.white,
 
     // punctuation
-    punctuation: gruvvyWatermelonColors.bright_aqua,
+    punctuation: flavor.bright_aqua,
 
     // public, private, static...
-    keyword_storage: gruvvyWatermelonColors.bright_aqua,
+    keyword_storage: flavor.bright_aqua,
 
     // base types (bool, string, int, uint, float...) + flow control + operators + using
-    keyword_base_types: gruvvyWatermelonColors.aqua,
-    keyword_flow: gruvvyWatermelonColors.aqua,
-    operator: gruvvyWatermelonColors.aqua,
+    keyword_base_types: flavor.aqua,
+    keyword_flow: flavor.aqua,
+    operator: flavor.aqua,
 
     // type/class
-    type: gruvvyWatermelonColors.purple,
-    type_declaration: gruvvyWatermelonColors.purple_pink,
+    type: flavor.purple,
+    type_declaration: flavor.purple_pink,
 
     // fieldNames
-    field_name_declaration: gruvvyWatermelonColors.bright_peach,
-    field_name: gruvvyWatermelonColors.bright_red_pink,
+    field_name_declaration: flavor.bright_peach,
+    field_name: flavor.bright_red_pink,
 
     // namespaces + classname + className of file
-    namespace: gruvvyWatermelonColors.red_pink,
-    class_name: gruvvyWatermelonColors.red_pink,
+    namespace: flavor.red_pink,
+    class_name: flavor.red_pink,
 
     // property names
-    property: gruvvyWatermelonColors.purple_pink,
+    property: flavor.purple_pink,
 
     // functions/methods/events/getters + setters
-    method: gruvvyWatermelonColors.purple_pink,
-    event: gruvvyWatermelonColors.purple_pink,
+    method: flavor.purple_pink,
+    event: flavor.purple_pink,
 
     // number value + string value + enum value + bool
-    base_value: gruvvyWatermelonColors.aqua,
+    base_value: flavor.aqua,
 
     // error
-    errorColor: gruvvyWatermelonColors.purple_pink,
+    errorColor: flavor.purple_pink,
     // warn
-    warnColor: gruvvyWatermelonColors.peach,
+    warnColor: flavor.peach,
     // info
-    infoColor: gruvvyWatermelonColors.purple,
+    infoColor: flavor.purple,
     // hint
-    hintColor: gruvvyWatermelonColors.bright_aqua,
+    hintColor: flavor.bright_aqua,
 
-    menuHighlight: gruvvyWatermelonColors.bright_blue,
-    buttonHighlight: gruvvyWatermelonColors.bright_aqua,
-    secondaryButtonHighlight: gruvvyWatermelonColors.purple_pink
-}
+    menuHighlight: flavor.bright_blue,
+    buttonHighlight: flavor.bright_aqua,
+    secondaryButtonHighlight: flavor.purple_pink,
+};
 
-export default {
-    tokenColors: tokenColors,
+const widgets: WidgetThemeColors = {
+    widget_bg: flavor.bg_1,
+    widget_fg: flavor.fg_0,
+    widget_hl: flavor.gray,
+    widget_menu_bg: flavor.bg_2,
+};
+
+const palette: Palette = {
     colors: colors,
-    gruvvyWatermelonColors: gruvvyWatermelonColors,
-    workBenchColors: workBenchColors
-}
+    palette: flavor,
+    tokenColors: tokens,
+    widgetColors: widgets,
+};
+
+export { palette };

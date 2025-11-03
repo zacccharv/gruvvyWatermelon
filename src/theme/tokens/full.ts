@@ -1,9 +1,9 @@
-import colorObject from "../../colors.ts";
-const colors = colorObject.colors;
-const tokenColors = colorObject.tokenColors;
+import { type Palette } from "../../types";
 
-const grammarTokens =
-    [
+export default function full(ctx: Palette) {
+    const { colors, tokenColors } = ctx;
+
+    return [
         {
             scope: [
                 "comment",
@@ -331,7 +331,10 @@ const grammarTokens =
             },
         },
         {
-            scope: ["keyword.other.template.begin", "keyword.other.template.end"],
+            scope: [
+                "keyword.other.template.begin",
+                "keyword.other.template.end",
+            ],
             settings: {
                 foreground: tokenColors.buttonHighlight,
             },
@@ -673,8 +676,7 @@ const grammarTokens =
                 "meta.paragraph.markdown meta.dummy.line-break",
                 "meta.paragraph.markdown meta.hard-line-break.markdown",
             ],
-            settings: {
-            },
+            settings: {},
         },
         {
             scope: "region.redish",
@@ -1317,10 +1319,6 @@ const grammarTokens =
                 foreground: colors.light_0,
                 fontStyle: "bold",
             },
-        }]
-
-const grammarColors = {
-    tokens: grammarTokens
+        },
+    ];
 }
-
-export default { grammarColors };
