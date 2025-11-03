@@ -93,13 +93,13 @@ const tokens: TokenColors = {
     base_value: flavor.aqua,
 
     // error
-    errorColor: flavor.purple_pink,
+    errorColor: flavor.red_pink,
     // warn
     warnColor: flavor.peach,
     // info
-    infoColor: flavor.purple,
+    infoColor: flavor.bright_aqua,
     // hint
-    hintColor: flavor.bright_aqua,
+    hintColor: flavor.bright_purple,
 
     menuHighlight: flavor.bright_blue,
     buttonHighlight: flavor.bright_aqua,
