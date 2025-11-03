@@ -98,3 +98,11 @@ export type Colors = {
     color_10: string;
     color_11: string;
 };
+
+export type ThemeOptions = {
+    overrideTodoTree: boolean;
+    // bracketMode: "rainbow" | "nvim" | "off";
+    // boldkeywords: boolean;
+    // italicComments: boolean;
+    // italicKeywords: boolean;
+};
