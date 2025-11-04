@@ -2,7 +2,8 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { repoRoot } from "./constants";
-import { configuration } from "@/extensions/todoTree";
+import { todoConfiguration } from "@/extensions/todoTree";
+import { errorLensConfiguration } from "@/extensions/errorLens";
 import { palette } from "@/palettes";
 
 const readPackageJsonVersion = async () => {
@@ -23,7 +24,8 @@ const updatePackageJson = async () => {
                 contributes: {
                     ...data.contributes,
                     configurationDefaults: {
-                        ...configuration(palette),
+                        ...todoConfiguration(palette),
+                        ...errorLensConfiguration(palette),
                     },
                 },
             };

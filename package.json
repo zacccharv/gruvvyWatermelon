@@ -120,7 +120,11 @@
           "background": "#ffc7d6",
           "icon": "star"
         }
-      }
+      },
+      "errorLens.hintGutterIconColor": "#C3ADFF",
+      "errorLens.infoGutterIconColor": "#81E5B3",
+      "errorLens.warningGutterIconColor": "#f18464",
+      "errorLens.errorGutterIconColor": "#FF647D"
     }
   },
   "scripts": {

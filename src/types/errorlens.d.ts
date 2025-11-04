@@ -1,3 +1,9 @@
+/**
+ * This file was automatically generated.
+ * DO NOT MODIFY IT BY HAND
+ * OH YES IT WAS!.
+ * Instead, run `pnpm --filter @catppuccin/vsc-typegen typegen:update` to regenerate this file.
+ */
 export interface ErrorLensColors {
     /**
      * Background color of the entire line containing error.
@@ -149,3 +155,22 @@ export interface ErrorLensColors {
      */
     "errorLens.statusBarHintForeground": string;
 }
+
+export type ErrorLensConfig = {
+    /**
+     * "Info color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)"Gutter icon color for errors.
+     */
+    "errorLens.errorGutterIconColor": string;
+    /**
+     * Error color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)
+     */
+    "errorLens.warningGutterIconColor": string;
+    /**
+     * Info color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)
+     */
+    "errorLens.infoGutterIconColor": string;
+    /**
+     * Hint color of simple gutter icons (shapes and letters). [demo](https://github.com/usernamehw/vscode-error-lens/blob/master/docs/docs.md#errorlenserrorguttericoncolor)
+     */
+    "errorLens.hintGutterIconColor": string;
+};

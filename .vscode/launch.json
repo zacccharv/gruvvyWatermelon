@@ -5,7 +5,7 @@
             "name": "Watch Files",
             "type": "node-terminal",
             "request": "launch",
-            "command": "pnpm --filter gruvvy-watermelon core:watch"
+            "command": "pnpm --filter gruvvy-watermelon core:build core:watch"
         },
         {
             "name": "Debug Extension",

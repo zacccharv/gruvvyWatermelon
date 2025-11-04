@@ -1,6 +1,6 @@
 import { Palette, TodoTreeConfig } from "@/types";
 
-const configuration = (ctx: Palette): TodoTreeConfig => {
+const todoConfiguration = (ctx: Palette): TodoTreeConfig => {
     const { palette } = ctx;
     const generalTags = [
         "// TODO",
@@ -72,4 +72,4 @@ const configuration = (ctx: Palette): TodoTreeConfig => {
     };
 };
 
-export { configuration };
+export { todoConfiguration };

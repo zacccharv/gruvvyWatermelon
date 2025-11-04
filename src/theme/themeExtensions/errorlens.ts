@@ -3,7 +3,7 @@ import { Palette, ErrorLensColors } from "@/types";
 export default function errorColors(
     context: Palette
 ): Partial<ErrorLensColors> {
-    const { palette, tokenColors } = context;
+    const { tokenColors } = context;
 
     return {
         "errorLens.errorForeground": tokenColors.errorColor,

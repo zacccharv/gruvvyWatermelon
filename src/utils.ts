@@ -8,6 +8,7 @@ import {
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
 import { ThemeOptions } from "@/types";
+import { fill } from "lodash";
 
 // the reason why an update has been triggered, and a reload is needed
 export enum UpdateTrigger {
@@ -35,7 +36,7 @@ export const LOG: LogOutputChannel = window.createOutputChannel(
 
 const writeThemeFile = async (uri: Uri, data: any): Promise<void> => {
     return workspace.fs
-        .writeFile(uri, Buffer.from(JSON.stringify(data, undefined, 2)))
+        .writeFile(uri, Buffer.alloc(5, JSON.stringify(data, undefined, 2)))
         .then(
             () => {},
             (error) => {
