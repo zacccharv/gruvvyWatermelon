@@ -1,16 +1,15 @@
 {
     "extends": "@tsconfig/node22/tsconfig.json",
     "compilerOptions": {
-        "module": "ES2022",
-        "moduleResolution": "bundler",
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "strictNullChecks": true,
-        "paths": {
-            "@/*": [
-                "./src/*"
-            ]
-        }
-    }
+			"module": "esnext",
+			"moduleResolution": "bundler",
+			"resolveJsonModule": true,
+			"skipLibCheck": true,
+			"noEmit": true,
+			"strict": true,
+			"strictNullChecks": true,
+			"paths": {
+				"@/*": ["./src/*"]
+			}
+		}
 }

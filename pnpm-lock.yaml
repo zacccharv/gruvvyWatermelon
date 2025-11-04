@@ -7,6 +7,9 @@ settings:
 importers:
 
   .:
+    dependenciesMeta:
+      keytar:
+        built: false
     devDependencies:
       '@actions/core':
         specifier: ^1.11.1
@@ -35,6 +38,9 @@ importers:
       '@vscode/vsce':
         specifier: ^3.6.2
         version: 3.6.2
+      eslint:
+        specifier: ^9.39.1
+        version: 9.39.1
       globals:
         specifier: ^16.5.0
         version: 16.5.0
@@ -54,7 +60,7 @@ importers:
         specifier: ^8.5.0
         version: 8.5.0(tsx@4.20.6)(typescript@5.9.3)
       tsx:
-        specifier: 4.20.6
+        specifier: ^4.20.6
         version: 4.20.6
       type-flag:
         specifier: ^4.0.0

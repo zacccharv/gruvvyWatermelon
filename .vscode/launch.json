@@ -1,32 +1,25 @@
 {
-    "version": "0.2.0",
+    "version": "0.1.0",
     "configurations": [
         {
             "name": "Watch Files",
             "type": "node-terminal",
             "request": "launch",
-            "command": "pnpm --filter gruvvy-watermelon core:build core:watch"
+            "command": "pnpm --filter gruvvy-watermelon core:build"
         },
         {
             "name": "Debug Extension",
             "type": "extensionHost",
             "request": "launch",
-            "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}"
-            ],
-            "outFiles": [
-                "${workspaceFolder}/dist/*.js"
-            ]
-        },
+            "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
+            "outFiles": ["${workspaceFolder}/dist/*.js"]
+        }
     ],
     "compounds": [
         {
             "name": "Debug & Watch Files",
-            "configurations": [
-                "Watch Files",
-                "Debug Extension"
-            ],
+            "configurations": ["Watch Files", "Debug Extension"],
             "stopAll": true
-    }
+        }
     ]
 }
