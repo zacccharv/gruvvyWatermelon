@@ -1,15 +1,12 @@
 import { Palette, ErrorLensConfig } from "@/types";
 
-const errorLensConfiguration = (
-	ctx: Palette,
-	integrateErrorLensGutter: boolean = false
-): ErrorLensConfig => {
+const errorLensConfiguration = (ctx: Palette): ErrorLensConfig => {
 	const { tokenColors } = ctx;
 	return {
-		"errorLens.hintGutterIconColor": tokenColors.hintColor,
-		"errorLens.infoGutterIconColor": tokenColors.infoColor,
-		"errorLens.warningGutterIconColor": tokenColors.warnColor,
-		"errorLens.errorGutterIconColor": tokenColors.errorColor,
+		"hintGutterIconColor": tokenColors.hintColor,
+		"infoGutterIconColor": tokenColors.infoColor,
+		"warningGutterIconColor": tokenColors.warnColor,
+		"errorGutterIconColor": tokenColors.errorColor,
 	};
 };
 

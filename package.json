@@ -56,8 +56,9 @@
 		}
 	},
 	"scripts": {
+		"build:theme": "tsx src/hooks/generateTheme.ts",
+		"build": "pnpm run build:theme && pnpm run build:extension && mkdir build",
 		"build:extension": "tsx build.ts",
-		"build": "pnpm run build:extension && mkdir build",
 		"dev": "npm run build:theme && tsx build.ts --dev --no-regenerate",
 		"watch": "npm run build:theme && tsx watch build.ts --dev --no-regenerate",
 		"core:build": "tsx build.ts",

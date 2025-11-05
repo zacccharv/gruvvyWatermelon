@@ -3,44 +3,40 @@ import {
 	ExtensionContext,
 	LogOutputChannel,
 	Uri,
-	ColorThemeKind,
 	commands,
 	window,
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type { ErrorLensConfig, ThemeOptions, TodoTreeConfig } from "./types";
+import type { ThemeOptions, ConfigTargets } from "@/types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
 /* eslint-disable no-restricted-imports */
-import { readFile, writeFile } from "node:fs/promises";
-import path from "node:path";
 
-import { repoRoot } from "./hooks/constants";
+type Entry<T> = { [K in keyof T]: [K, T[K]] }[keyof T];
+export type configTargets = ConfigTargets;
+export type themeOptions = ThemeOptions;
 
-// the reason why an update has been triggered, and a reload is needed
 export enum UpdateTrigger {
 	CONFIG_CHANGE = "Configuration changed",
 	FRESH_INSTALL = "Update detected",
 }
 
-type Entry<T> = { [K in keyof T]: [K, T[K]] }[keyof T];
-
 const filterObject = <T extends object>(
 	object: T,
-	function_: (entry: Entry<T>, index: number, array: Entry<T>[]) => boolean
+	function_: (entry: Entry<T>, index: number, array: Entry<T>[]) => boolean,
 ) => {
 	return Object.fromEntries(
 		(Object.entries(object) as Entry<T>[]).filter((element, index, array) =>
-			function_(element, index, array)
-		)
+			function_(element, index, array),
+		),
 	) as Partial<T>;
 };
 
 export const LOG: LogOutputChannel = window.createOutputChannel(
 	"Gruvvy Watermelon Theme",
-	{ log: true }
+	{ log: true },
 );
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -51,17 +47,19 @@ const writeThemeFile = async (uri: Uri, data: any): Promise<void> => {
 			() => {},
 			(error) => {
 				window.showErrorMessage(error.message);
-			}
+			},
 		);
 };
 
 export const updateTheme = async (
 	options: ThemeOptions,
-	trigger: UpdateTrigger
+	trigger: UpdateTrigger,
 ) => {
 	const promise = async (): Promise<void> => {
 		const theme = compileTheme(options);
-		const themeUri = Uri.file("./themes/Gruvvy-Watermelon-color-theme.json");
+		const themeUri = Uri.file(
+			"./themes/Gruvvy-Watermelon-color-theme.json",
+		);
 		return writeThemeFile(themeUri, theme);
 	};
 
@@ -71,7 +69,7 @@ export const updateTheme = async (
 		})
 		.catch((error) => {
 			window.showErrorMessage(
-				"Failed to save re-compiled theme: \n" + error.message
+				"Failed to save re-compiled theme: \n" + error.message,
 			);
 		});
 };
@@ -87,7 +85,7 @@ function promptToReload(trigger: UpdateTrigger) {
 }
 
 export const isFreshInstall = async (
-	context: ExtensionContext
+	context: ExtensionContext,
 ): Promise<boolean | "error"> => {
 	LOG.info("Checking if gruvvy watermelon is installed for the first time.");
 	const flagUri = Uri.file(context.asAbsolutePath("themes/.flag"));
@@ -98,7 +96,7 @@ export const isFreshInstall = async (
 		LOG.info("Catppuccin is installed for the first time!");
 		return workspace.fs.writeFile(flagUri, Buffer.from("")).then(
 			() => true,
-			() => "error"
+			() => "error",
 		);
 	}
 };
@@ -106,7 +104,7 @@ export const isFreshInstall = async (
 const fileExists = async (uri: Uri): Promise<boolean> => {
 	return workspace.fs.stat(uri).then(
 		() => true,
-		() => false
+		() => false,
 	);
 };
 
@@ -114,7 +112,9 @@ export const getConfiguration = (): ThemeOptions => {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
 	const options = {
 		integrateTodoTree: config.get<boolean>("overrideTodoTree"),
-		integrateErrorLensGutter: config.get<boolean>("integrateErrorLensGutter"),
+		integrateErrorLensGutter: config.get<boolean>(
+			"integrateErrorLensGutter",
+		),
 	};
 	return {
 		...defaultOptions,
@@ -132,33 +132,36 @@ export const getConfiguration = (): ThemeOptions => {
 // 	return .get<string>("colorTheme") ?? "";
 // };
 
-export function syncExtensionSettings() {
+export function syncExtensionSettings(configTargets: ConfigTargets) {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
 	const integrateTodoTree = config.get<boolean>("integrateTodoTree");
 	const integrateErrorLensGutter = config.get<boolean>(
-		"integrateErrorLensGutter"
+		"integrateErrorLensGutter",
 	);
 
 	// Update Todo Tree settings
-	const todoConfig = todoConfiguration(palette, integrateTodoTree);
-	for (const [key, value] of Object.entries(todoConfig)) {
-		workspace.getConfiguration("todo-tree").update(
-			key.replace(/^todo-tree\./, ""), // remove "todo-tree." prefix for update
-			integrateTodoTree ? value : undefined,
-			ConfigurationTarget.Workspace
-		);
+	if (configTargets["gruvvy-watermelon.integrateErrorLensGutter"].changed) {
+		{
+			const todoConfig = todoConfiguration(palette);
+			for (const [key, value] of Object.entries(todoConfig)) {
+				workspace.getConfiguration("todo-tree").update(
+					key, // remove "todo-tree." prefix for update
+					integrateTodoTree ? value : undefined,
+					ConfigurationTarget.Workspace,
+				);
+			}
+		}
 	}
 
-	// Update ErrorLens settings
-	const errorLensConfig = errorLensConfiguration(
-		palette,
-		integrateErrorLensGutter
-	);
-	for (const [key, value] of Object.entries(errorLensConfig)) {
-		workspace.getConfiguration("errorLens").update(
-			key.replace(/^errorLens\./, ""), // remove "errorLens." prefix for update
-			integrateErrorLensGutter ? value : undefined,
-			ConfigurationTarget.Workspace
-		);
+	if (configTargets["gruvvy-watermelon.integrateErrorLensGutter"].changed) {
+		// Update ErrorLens settings
+		const errorLensConfig = errorLensConfiguration(palette);
+		for (const [key, value] of Object.entries(errorLensConfig)) {
+			workspace.getConfiguration("errorLens").update(
+				key, // remove "errorLens." prefix for update
+				integrateErrorLensGutter ? value : undefined,
+				ConfigurationTarget.Workspace,
+			);
+		}
 	}
 }

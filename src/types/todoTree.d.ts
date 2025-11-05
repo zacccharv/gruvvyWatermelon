@@ -1,12 +1,12 @@
 export type TodoTreeConfig = {
-	"todo-tree.general.tags": string[];
-	"todo-tree.general.tagGroups": {
+	"general.tags": string[];
+	"general.tagGroups": {
 		TODO: string[];
 		NOTE: string[];
 		FIXME: string[];
 		IMPORTANT: string[];
 	};
-	"todo-tree.highlights.defaultHighlight": {
+	"highlights.defaultHighlight": {
 		background: string;
 		borderRadius: string;
 		fontWeight: string;
@@ -15,7 +15,7 @@ export type TodoTreeConfig = {
 		iconColour: string;
 		type: string;
 	};
-	"todo-tree.highlights.customHighlight": {
+	"highlights.customHighlight": {
 		TODO: { background: string; icon: string };
 		NOTE: { background: string; icon: string };
 		FIXME: { background: string; icon: string };

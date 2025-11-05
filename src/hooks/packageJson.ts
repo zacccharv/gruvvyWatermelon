@@ -44,30 +44,4 @@ const generatePackage = async () => {
 	// 	});
 };
 
-function pruneConfigurationDefaults(pkg: any) {
-	const config = pkg.contributes?.configuration?.properties || {};
-	const defaults = pkg.contributes?.configurationDefaults || {};
-
-	// Remove todo-tree defaults if integrateTodoTree is false
-	if (config["gruvvy-watermelon.integrateTodoTree"] === false) {
-		for (const key of Object.keys(defaults)) {
-			if (key.startsWith("todo-tree.")) {
-				delete defaults[key];
-			}
-		}
-	}
-
-	// Remove errorLens defaults if integrateErrorLensGutter is false
-	if (config["gruvvy-watermelon.integrateErrorLensGutter"] === false) {
-		for (const key of Object.keys(defaults)) {
-			if (key.startsWith("errorLens.")) {
-				delete defaults[key];
-			}
-		}
-	}
-
-	pkg.contributes.configurationDefaults = defaults;
-	return pkg;
-}
-
 export { generatePackage as updatePackageJson, readPackageJsonVersion };

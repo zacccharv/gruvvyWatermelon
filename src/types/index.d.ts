@@ -102,8 +102,18 @@ export type Colors = {
 export interface ThemeOptions {
 	integrateTodoTree: boolean;
 	integrateErrorLensGutter: boolean;
-	// bracketMode: "rainbow" | "nvim" | "off";
-	// boldkeywords: boolean;
-	// italicComments: boolean;
-	// italicKeywords: boolean;
+}
+
+export enum UpdateTrigger {
+	CONFIG_CHANGE = "Configuration changed",
+	FRESH_INSTALL = "Update detected",
+}
+
+export type ConfigTargets = {
+	"gruvvy-watermelon.integrateTodoTree": {
+		changed: boolean;
+	};
+	"gruvvy-watermelon.integrateErrorLensGutter": {
+		changed: boolean;
+	};
 };
