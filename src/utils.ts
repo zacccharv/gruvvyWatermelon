@@ -13,6 +13,11 @@ import type { ErrorLensConfig, ThemeOptions, TodoTreeConfig } from "./types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
+/* eslint-disable no-restricted-imports */
+import { readFile, writeFile } from "node:fs/promises";
+import path from "node:path";
+
+import { repoRoot } from "./hooks/constants";
 
 // the reason why an update has been triggered, and a reload is needed
 export enum UpdateTrigger {
@@ -117,60 +122,43 @@ export const getConfiguration = (): ThemeOptions => {
 	};
 };
 
-const getActiveTheme = (): string => {
-	// if `window.autoDetectColorScheme` is enabled, we have to check the active color theme "kind"
-	// and then use that to look up one of the `workbench.preferred*ColorTheme` settings.
-	// if not, we can use the theme specified by `workbench.colorTheme`.
-	//
-	// this really feels like a function that should be in the API, but I couldn't find it.
-	const workbench = workspace.getConfiguration("workbench");
-	return workbench.get<string>("colorTheme")?.toString() ?? "";
-};
+// const getActiveTheme = (): string => {
+// 	// if `window.autoDetectColorScheme` is enabled, we have to check the active color theme "kind"
+// 	// and then use that to look up one of the `workbench.preferred*ColorTheme` settings.
+// 	// if not, we can use the theme specified by `workbench.colorTheme`.
+// 	//
+// 	// this really feels like a function that should be in the API, but I couldn't find it.
 
-export const syncConfiguration = () => {
-	// check if the current editor theme is a Gruvvy theme
-	const uiTheme = getActiveTheme();
-	const themeActive = uiTheme.includes("Gruvvy Watermelon");
+// 	return .get<string>("colorTheme") ?? "";
+// };
 
-	//only sync todo tree if the user's not currently using the overriden settings
-	// const toDoEnabled =
-	// 	(workspace.getConfiguration("todo-tree") !== undefined &&
-	// 		workspace.getConfiguration("todo-tree").get<string[]>("general.tags")
-	// 			?.length === 0) ||
-	// 	workspace.getConfiguration("todo-tree").get<object>("general.tagGroups") ===
-	// 		undefined ||
-	// 	workspace
-	// 		.getConfiguration("todo-tree")
-	// 		.get<object>("highlights.defaultHighlight") === undefined ||
-	// 	workspace
-	// 		.getConfiguration("todo-tree")
-	// 		.get<object>("highlights.customHighlight") === undefined;
+export function syncExtensionSettings() {
+	const config = workspace.getConfiguration("gruvvy-watermelon");
+	const integrateTodoTree = config.get<boolean>("integrateTodoTree");
+	const integrateErrorLensGutter = config.get<boolean>(
+		"integrateErrorLensGutter"
+	);
 
-	if (themeActive) {
-		const config = getConfiguration();
-		const options = todoConfiguration(palette, config.integrateTodoTree);
-
-		for (const [key, value] of Object.entries(options)) {
-			workspace
-				.getConfiguration("todo-tree")
-				.update(key, value, ConfigurationTarget.Workspace);
-		}
-	}
-
-	// const errorLensEnabled =
-	// 	workspace.getConfiguration("errorLens") !== undefined;
-
-	if (themeActive) {
-		const config = getConfiguration();
-		const options = errorLensConfiguration(
-			palette,
-			config.integrateErrorLensGutter
+	// Update Todo Tree settings
+	const todoConfig = todoConfiguration(palette, integrateTodoTree);
+	for (const [key, value] of Object.entries(todoConfig)) {
+		workspace.getConfiguration("todo-tree").update(
+			key.replace(/^todo-tree\./, ""), // remove "todo-tree." prefix for update
+			integrateTodoTree ? value : undefined,
+			ConfigurationTarget.Workspace
 		);
-
-		for (const [key, value] of Object.entries(options)) {
-			workspace
-				.getConfiguration("errorLens")
-				.update(key, value, ConfigurationTarget.Workspace);
-		}
 	}
-};
+
+	// Update ErrorLens settings
+	const errorLensConfig = errorLensConfiguration(
+		palette,
+		integrateErrorLensGutter
+	);
+	for (const [key, value] of Object.entries(errorLensConfig)) {
+		workspace.getConfiguration("errorLens").update(
+			key.replace(/^errorLens\./, ""), // remove "errorLens." prefix for update
+			integrateErrorLensGutter ? value : undefined,
+			ConfigurationTarget.Workspace
+		);
+	}
+}

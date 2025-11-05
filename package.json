@@ -1,178 +1,101 @@
 {
-  "name": "gruvvy-watermelon",
-  "displayName": "Gruvvy Watermelon",
-  "publisher": "ZaccCharvolin",
-  "icon": "imgs/logo.png",
-  "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
-  "version": "0.1.0",
-  "type": "module",
-  "engines": {
-    "vscode": "^1.85.0",
-    "node": ">=20.0.0"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "extensionKind": [
-    "ui",
-    "workspace"
-  ],
-  "capabilities": {
-    "untrustedWorkspaces": {
-      "supported": true
-    },
-    "virtualWorkspaces": {
-      "supported": true
-    }
-  },
-  "activationEvents": [
-    "onStartupFinished"
-  ],
-  "main": "dist/main.cjs",
-  "contributes": {
-    "themes": [
-      {
-        "label": "Gruvvy Watermelon",
-        "uiTheme": "vs-dark",
-        "path": "./themes/Gruvvy-Watermelon-color-theme.json"
-      }
-    ],
-    "configuration": {
-      "title": "gruvvy-watermelon",
-      "properties": {
-        "gruvvy-watermelon.integrateTodoTree": {
-          "scope": "window",
-          "type": "boolean",
-          "default": false,
-          "description": "Integrate Gruvvy Watermelon theme with the Todo Tree extension."
-        },
-        "gruvvy-watermelon.integrateErrorLensGutter": {
-          "scope": "window",
-          "type": "boolean",
-          "default": false,
-          "description": "Integrate Gruvvy Watermelon theme with the Error Lens extension gutter icons. Adds basic shapes that use the theme colors for errors, warnings and info and puts them in the editor gutter next to each line with a notification."
-        }
-      }
-    },
-    "configurationDefaults": {
-      "todo-tree.general.tags": [
-        "// TODO",
-        "/** TODO",
-        "# TODO",
-        "<!-- TODO",
-        "// NOTE",
-        "/** NOTE",
-        "# NOTE",
-        "<!-- NOTE",
-        "// FIXME",
-        "/** FIXME",
-        "# FIXME",
-        "<!-- FIXME",
-        "// IMPORTANT",
-        "/** IMPORTANT",
-        "# IMPORTANT",
-        "<!-- IMPORTANT"
-      ],
-      "todo-tree.general.tagGroups": {
-        "TODO": [
-          "// TODO",
-          "/** TODO",
-          "# TODO",
-          "<!-- TODO"
-        ],
-        "NOTE": [
-          "// NOTE",
-          "/** NOTE",
-          "# NOTE",
-          "<!-- NOTE"
-        ],
-        "FIXME": [
-          "// FIXME",
-          "/** FIXME",
-          "# FIXME",
-          "<!-- FIXME"
-        ],
-        "IMPORTANT": [
-          "// IMPORTANT",
-          "/** IMPORTANT",
-          "# IMPORTANT",
-          "<!-- IMPORTANT"
-        ]
-      },
-      "todo-tree.highlights.defaultHighlight": {
-        "background": "#293030",
-        "borderRadius": "0",
-        "fontWeight": "bold",
-        "foreground": "#171c1b",
-        "icon": "alert",
-        "iconColour": "#FFB6EB",
-        "type": "text"
-      },
-      "todo-tree.highlights.customHighlight": {
-        "TODO": {
-          "background": "#81E5B3",
-          "icon": "info"
-        },
-        "NOTE": {
-          "background": "#C3ADFF",
-          "icon": "note"
-        },
-        "FIXME": {
-          "background": "#FF647D",
-          "icon": "flame"
-        },
-        "IMPORTANT": {
-          "background": "#ffc7d6",
-          "icon": "star"
-        }
-      },
-      "errorLens.hintGutterIconColor": "#C3ADFF",
-      "errorLens.infoGutterIconColor": "#81E5B3",
-      "errorLens.warningGutterIconColor": "#f18464",
-      "errorLens.errorGutterIconColor": "#FF647D"
-    }
-  },
-  "scripts": {
-    "build:extension": "tsx build.ts",
-    "build": "pnpm run build:extension && mkdir build",
-    "dev": "npm run build:theme && tsx build.ts --dev --no-regenerate",
-    "watch": "npm run build:theme && tsx watch build.ts --dev --no-regenerate",
-    "core:build": "tsx build.ts",
-    "core:dev": "npm run build:theme && tsx build.ts --dev --no-regenerate",
-    "core:watch": "npm run build:theme && tsx watch build.ts --dev --no-regenerate",
-    "lint": "eslint --flag v10_config_lookup_from_file .",
-    "prepublishOnly": "pnpm run build && vsce publish"
-  },
-  "packageManager": "pnpm@10.20.0",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zacccharv/gruvvyWatermelon"
-  },
-  "devDependencies": {
-    "@actions/core": "^1.11.1",
-    "@eslint/js": "^9.39.0",
-    "@tsconfig/node22": "^22.0.2",
-    "@types/lodash": "^4.17.20",
-    "@types/node": "^24.9.2",
-    "@types/tinycolor2": "^1.4.6",
-    "@types/vscode": "^1.1.37",
-    "@vscode/test-electron": "^2.5.2",
-    "@vscode/vsce": "^3.6.2",
-    "eslint": "^9.39.1",
-    "globals": "^16.5.0",
-    "lodash": "^4.17.21",
-    "prettier": "^3.6.2",
-    "tinycolor2": "^1.6.0",
-    "ts-node": "^10.9.2",
-    "tsup": "^8.5.0",
-    "tsx": "^4.20.6",
-    "type-flag": "^4.0.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
-  },
-  "dependenciesMeta": {
-    "keytar": {
-      "built": false
-    }
-  }
+	"name": "gruvvy-watermelon",
+	"displayName": "Gruvvy Watermelon",
+	"publisher": "ZaccCharvolin",
+	"icon": "imgs/logo.png",
+	"description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
+	"version": "0.1.0",
+	"type": "module",
+	"engines": {
+		"vscode": "^1.85.0",
+		"node": ">=20.0.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"extensionKind": [
+		"ui",
+		"workspace"
+	],
+	"capabilities": {
+		"untrustedWorkspaces": {
+			"supported": true
+		},
+		"virtualWorkspaces": {
+			"supported": true
+		}
+	},
+	"activationEvents": [
+		"onStartupFinished"
+	],
+	"main": "dist/main.cjs",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Gruvvy Watermelon",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Gruvvy-Watermelon-color-theme.json"
+			}
+		],
+		"configuration": {
+			"title": "gruvvy-watermelon",
+			"properties": {
+				"gruvvy-watermelon.integrateTodoTree": {
+					"scope": "window",
+					"type": "boolean",
+					"default": false,
+					"description": "Integrate Gruvvy Watermelon theme with the Todo Tree extension."
+				},
+				"gruvvy-watermelon.integrateErrorLensGutter": {
+					"scope": "window",
+					"type": "boolean",
+					"default": false,
+					"description": "Integrate Gruvvy Watermelon theme with the Error Lens extension gutter icons. Adds basic shapes that use the theme colors for errors, warnings and info and puts them in the editor gutter next to each line with a notification."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"build:extension": "tsx build.ts",
+		"build": "pnpm run build:extension && mkdir build",
+		"dev": "npm run build:theme && tsx build.ts --dev --no-regenerate",
+		"watch": "npm run build:theme && tsx watch build.ts --dev --no-regenerate",
+		"core:build": "tsx build.ts",
+		"core:dev": "npm run build:theme && tsx build.ts --dev --no-regenerate",
+		"core:watch": "npm run build:theme && tsx watch build.ts --dev --no-regenerate",
+		"lint": "eslint --flag v10_config_lookup_from_file .",
+		"prepublishOnly": "pnpm run build && vsce publish"
+	},
+	"packageManager": "pnpm@10.20.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/zacccharv/gruvvyWatermelon"
+	},
+	"devDependencies": {
+		"@actions/core": "^1.11.1",
+		"@eslint/js": "^9.39.0",
+		"@tsconfig/node22": "^22.0.2",
+		"@types/lodash": "^4.17.20",
+		"@types/node": "^24.9.2",
+		"@types/tinycolor2": "^1.4.6",
+		"@types/vscode": "^1.1.37",
+		"@vscode/test-electron": "^2.5.2",
+		"@vscode/vsce": "^3.6.2",
+		"eslint": "^9.39.1",
+		"globals": "^16.5.0",
+		"lodash": "^4.17.21",
+		"prettier": "^3.6.2",
+		"tinycolor2": "^1.6.0",
+		"ts-node": "^10.9.2",
+		"tsup": "^8.5.0",
+		"tsx": "^4.20.6",
+		"type-flag": "^4.0.0",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.46.2"
+	},
+	"dependenciesMeta": {
+		"keytar": {
+			"built": false
+		}
+	}
 }

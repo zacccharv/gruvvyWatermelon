@@ -5,7 +5,6 @@ const errorLensConfiguration = (
 	integrateErrorLensGutter: boolean = false
 ): ErrorLensConfig => {
 	const { tokenColors } = ctx;
-
 	return {
 		"errorLens.hintGutterIconColor": tokenColors.hintColor,
 		"errorLens.infoGutterIconColor": tokenColors.infoColor,

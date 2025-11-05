@@ -62,6 +62,10 @@ const todoConfiguration = (
 		},
 	};
 
+	// if (!integrateTodoTree) {
+	// 	return {};
+	// }
+
 	return {
 		"todo-tree.general.tags": [...generalTags],
 		"todo-tree.general.tagGroups": {
