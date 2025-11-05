@@ -9,7 +9,7 @@ import {
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type { ThemeOptions } from "./types";
+import type { ErrorLensConfig, ThemeOptions, TodoTreeConfig } from "./types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
@@ -84,10 +84,10 @@ function promptToReload(trigger: UpdateTrigger) {
 export const isFreshInstall = async (
 	context: ExtensionContext
 ): Promise<boolean | "error"> => {
-	LOG.info("Checking if catppuccin is installed for the first time.");
+	LOG.info("Checking if gruvvy watermelon is installed for the first time.");
 	const flagUri = Uri.file(context.asAbsolutePath("themes/.flag"));
 	if (await fileExists(flagUri)) {
-		LOG.info("Catppuccin has been installed before.");
+		LOG.info("Gruvvy Watermelon has been installed before.");
 		return false;
 	} else {
 		LOG.info("Catppuccin is installed for the first time!");
@@ -106,16 +106,10 @@ const fileExists = async (uri: Uri): Promise<boolean> => {
 };
 
 export const getConfiguration = (): ThemeOptions => {
-	const config = workspace.getConfiguration("gruvvy-Watermelon");
+	const config = workspace.getConfiguration("gruvvy-watermelon");
 	const options = {
 		integrateTodoTree: config.get<boolean>("overrideTodoTree"),
 		integrateErrorLensGutter: config.get<boolean>("integrateErrorLensGutter"),
-		// transparentBackground: config.get<boolean>("transparentBackground"),
-		// showEndOfBuffer: config.get<boolean>("showEndOfBuffer"),
-		// bracketMode: config.get<"rainbow" | "nvim" | "off">("bracketMode"),
-		// boldkeywords: config.get<boolean>("boldkeywords"),
-		// italicComments: config.get<boolean>("italicComments"),
-		// italicKeywords: config.get<boolean>("italicKeywords"),
 	};
 	return {
 		...defaultOptions,
@@ -130,57 +124,43 @@ const getActiveTheme = (): string => {
 	//
 	// this really feels like a function that should be in the API, but I couldn't find it.
 	const workbench = workspace.getConfiguration("workbench");
-	const autoDetectColorScheme = workspace
-		.getConfiguration("window")
-		.get<boolean>("autoDetectColorScheme");
-
-	if (autoDetectColorScheme) {
-		const prefs = {
-			[ColorThemeKind.Light]: "preferredLightColorTheme",
-			[ColorThemeKind.Dark]: "preferredDarkColorTheme",
-			[ColorThemeKind.HighContrastLight]:
-				"preferredHighContrastLightColorTheme",
-			[ColorThemeKind.HighContrast]: "preferredHighContrastColorTheme",
-		};
-		return workbench.get<string>(prefs[window.activeColorTheme.kind]) ?? "";
-	} else {
-		return workbench.get<string>("colorTheme") ?? "";
-	}
+	return workbench.get<string>("colorTheme")?.toString() ?? "";
 };
 
 export const syncConfiguration = () => {
 	// check if the current editor theme is a Gruvvy theme
 	const uiTheme = getActiveTheme();
-	const themeActive = Object.keys("Gruvvy Watermelon").includes(uiTheme);
+	const themeActive = uiTheme.includes("Gruvvy Watermelon");
 
 	//only sync todo tree if the user's not currently using the overriden settings
-	const toDoEnabled =
-		(workspace.getConfiguration("todo-tree") !== undefined &&
-			workspace.getConfiguration("todo-tree").get<string[]>("general.tags")
-				?.length === 0) ||
-		workspace.getConfiguration("todo-tree").get<object>("general.tagGroups") ===
-			undefined ||
-		workspace
-			.getConfiguration("todo-tree")
-			.get<object>("highlights.defaultHighlight") === undefined ||
-		workspace
-			.getConfiguration("todo-tree")
-			.get<object>("highlights.customHighlight") === undefined;
+	// const toDoEnabled =
+	// 	(workspace.getConfiguration("todo-tree") !== undefined &&
+	// 		workspace.getConfiguration("todo-tree").get<string[]>("general.tags")
+	// 			?.length === 0) ||
+	// 	workspace.getConfiguration("todo-tree").get<object>("general.tagGroups") ===
+	// 		undefined ||
+	// 	workspace
+	// 		.getConfiguration("todo-tree")
+	// 		.get<object>("highlights.defaultHighlight") === undefined ||
+	// 	workspace
+	// 		.getConfiguration("todo-tree")
+	// 		.get<object>("highlights.customHighlight") === undefined;
 
-	if (themeActive && toDoEnabled) {
+	if (themeActive) {
 		const config = getConfiguration();
 		const options = todoConfiguration(palette, config.integrateTodoTree);
+
 		for (const [key, value] of Object.entries(options)) {
 			workspace
 				.getConfiguration("todo-tree")
-				.update(key, value, ConfigurationTarget.Global);
+				.update(key, value, ConfigurationTarget.Workspace);
 		}
 	}
 
-	const errorLensEnabled =
-		workspace.getConfiguration("errorLens") !== undefined;
+	// const errorLensEnabled =
+	// 	workspace.getConfiguration("errorLens") !== undefined;
 
-	if (themeActive && errorLensEnabled) {
+	if (themeActive) {
 		const config = getConfiguration();
 		const options = errorLensConfiguration(
 			palette,
@@ -190,7 +170,7 @@ export const syncConfiguration = () => {
 		for (const [key, value] of Object.entries(options)) {
 			workspace
 				.getConfiguration("errorLens")
-				.update(key, value, ConfigurationTarget.Global);
+				.update(key, value, ConfigurationTarget.Workspace);
 		}
 	}
 };

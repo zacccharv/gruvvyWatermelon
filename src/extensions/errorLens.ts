@@ -3,11 +3,9 @@ import { Palette, ErrorLensConfig } from "@/types";
 const errorLensConfiguration = (
 	ctx: Palette,
 	integrateErrorLensGutter: boolean = false
-): ErrorLensConfig | object => {
+): ErrorLensConfig => {
 	const { tokenColors } = ctx;
-	if (!integrateErrorLensGutter) {
-		return {};
-	}
+
 	return {
 		"errorLens.hintGutterIconColor": tokenColors.hintColor,
 		"errorLens.infoGutterIconColor": tokenColors.infoColor,

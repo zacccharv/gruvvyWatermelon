@@ -41,25 +41,100 @@
       "title": "gruvvy-watermelon",
       "properties": {
         "gruvvy-watermelon.integrateTodoTree": {
-          "scope": "application",
+          "scope": "window",
           "type": "boolean",
           "default": false,
           "description": "Integrate Gruvvy Watermelon theme with the Todo Tree extension."
         },
         "gruvvy-watermelon.integrateErrorLensGutter": {
-          "scope": "application",
+          "scope": "window",
           "type": "boolean",
           "default": false,
           "description": "Integrate Gruvvy Watermelon theme with the Error Lens extension gutter icons. Adds basic shapes that use the theme colors for errors, warnings and info and puts them in the editor gutter next to each line with a notification."
         }
       }
     },
-    "configurationDefaults": {}
+    "configurationDefaults": {
+      "todo-tree.general.tags": [
+        "// TODO",
+        "/** TODO",
+        "# TODO",
+        "<!-- TODO",
+        "// NOTE",
+        "/** NOTE",
+        "# NOTE",
+        "<!-- NOTE",
+        "// FIXME",
+        "/** FIXME",
+        "# FIXME",
+        "<!-- FIXME",
+        "// IMPORTANT",
+        "/** IMPORTANT",
+        "# IMPORTANT",
+        "<!-- IMPORTANT"
+      ],
+      "todo-tree.general.tagGroups": {
+        "TODO": [
+          "// TODO",
+          "/** TODO",
+          "# TODO",
+          "<!-- TODO"
+        ],
+        "NOTE": [
+          "// NOTE",
+          "/** NOTE",
+          "# NOTE",
+          "<!-- NOTE"
+        ],
+        "FIXME": [
+          "// FIXME",
+          "/** FIXME",
+          "# FIXME",
+          "<!-- FIXME"
+        ],
+        "IMPORTANT": [
+          "// IMPORTANT",
+          "/** IMPORTANT",
+          "# IMPORTANT",
+          "<!-- IMPORTANT"
+        ]
+      },
+      "todo-tree.highlights.defaultHighlight": {
+        "background": "#293030",
+        "borderRadius": "0",
+        "fontWeight": "bold",
+        "foreground": "#171c1b",
+        "icon": "alert",
+        "iconColour": "#FFB6EB",
+        "type": "text"
+      },
+      "todo-tree.highlights.customHighlight": {
+        "TODO": {
+          "background": "#81E5B3",
+          "icon": "info"
+        },
+        "NOTE": {
+          "background": "#C3ADFF",
+          "icon": "note"
+        },
+        "FIXME": {
+          "background": "#FF647D",
+          "icon": "flame"
+        },
+        "IMPORTANT": {
+          "background": "#ffc7d6",
+          "icon": "star"
+        }
+      },
+      "errorLens.hintGutterIconColor": "#C3ADFF",
+      "errorLens.infoGutterIconColor": "#81E5B3",
+      "errorLens.warningGutterIconColor": "#f18464",
+      "errorLens.errorGutterIconColor": "#FF647D"
+    }
   },
   "scripts": {
-    "build:theme": "tsx src/hooks/generateTheme.ts",
     "build:extension": "tsx build.ts",
-    "build": "pnpm run build:theme && pnpm run build:extension && mkdir build",
+    "build": "pnpm run build:extension && mkdir build",
     "dev": "npm run build:theme && tsx build.ts --dev --no-regenerate",
     "watch": "npm run build:theme && tsx watch build.ts --dev --no-regenerate",
     "core:build": "tsx build.ts",

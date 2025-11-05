@@ -3,7 +3,7 @@ import { Palette, TodoTreeConfig } from "@/types";
 const todoConfiguration = (
 	ctx: Palette,
 	integrateTodoTree: boolean = false
-): TodoTreeConfig | object => {
+): TodoTreeConfig => {
 	const { palette } = ctx;
 	const generalTags = [
 		"// TODO",
@@ -61,10 +61,6 @@ const todoConfiguration = (
 			icon: "star",
 		},
 	};
-
-	if (!integrateTodoTree) {
-		return {};
-	}
 
 	return {
 		"todo-tree.general.tags": [...generalTags],
