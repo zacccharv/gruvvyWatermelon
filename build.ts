@@ -21,12 +21,12 @@ const main = async () => {
 
 	await build({
 		clean: true,
-		entry: ["src/main.ts"],
+		entry: ["src/main.ts", "src/hooks/generateTheme.ts"],
 		external: ["vscode", "keytar"],
 		minify: !development,
 		sourcemap: development,
 		target: "node16",
-		format: ["cjs"],
+		format: ["cjs", "esm"],
 	});
 
 	const packagePath = `gruvvygruvvy-watermelon-${packageJsonVersion}.vsix`;
