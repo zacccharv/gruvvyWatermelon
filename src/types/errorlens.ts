@@ -1,4 +1,4 @@
-export interface ErrorLensColors {
+export type ErrorLensColors = {
 	/**
 	 * Background color of the entire line containing error.
 	 */
@@ -148,7 +148,7 @@ export interface ErrorLensColors {
 	 * Status bar item hint color.
 	 */
 	statusBarHintForeground: string;
-}
+};
 
 export type ErrorLensConfig = {
 	/**

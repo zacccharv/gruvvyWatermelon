@@ -1,15 +1,18 @@
 {
     "extends": "@tsconfig/node22/tsconfig.json",
     "compilerOptions": {
-			"module": "esnext",
-			"moduleResolution": "bundler",
-			"resolveJsonModule": true,
-			"skipLibCheck": true,
-			"noEmit": true,
-			"strict": true,
-			"strictNullChecks": true,
-			"paths": {
-				"@/*": ["./src/*"]
-			}
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"allowUnusedLabels": true,
+		"skipLibCheck": true,
+		"noEmit": true,
+		"strict": true,
+		"strictNullChecks": true,
+		"paths": {
+			"@/*": ["./src/*"]
 		}
+	}
 }

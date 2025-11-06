@@ -1,7 +1,6 @@
 import { ConfigurationChangeEvent, ExtensionContext, workspace } from "vscode";
 import * as utils from "./utils";
-
-type ConfigTargets = utils.configTargets;
+import { ConfigTargets } from "./types";
 
 export const activate = async (context: ExtensionContext) => {
 	const config = utils.getConfiguration();
@@ -15,7 +14,7 @@ export const activate = async (context: ExtensionContext) => {
 		},
 	};
 
-	// regenerate theme on fresh install
+	// regenerate theme on fresh install/first activation
 	if ((await utils.isFreshInstall(context)) === true) {
 		utils.updateTheme(config, utils.UpdateTrigger.FRESH_INSTALL);
 		utils.syncExtensionSettings(configTargets);

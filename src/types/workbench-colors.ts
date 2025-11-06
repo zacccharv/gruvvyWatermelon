@@ -103,7 +103,7 @@ export type _100 = string;
 export type _96 = string;
 export type _97 = string;
 
-export interface WorkbenchColors {
+export type WorkbenchColors = {
 	/**
 	 * Background color for toggled action items in action bar.
 	 */
@@ -3663,4 +3663,4 @@ export interface WorkbenchColors {
 	 * The color used for the border of the window when it is inactive on macOS or Linux. Requires custom title bar style and custom or hidden window controls on Linux.
 	 */
 	"window.inactiveBorder"?: _1 | _6;
-}
+};

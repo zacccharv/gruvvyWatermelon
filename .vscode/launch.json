@@ -2,11 +2,11 @@
     "version": "0.1.0",
     "configurations": [
         {
-            "name": "Watch Files",
-            "type": "node-terminal",
-            "request": "launch",
-            "command": "pnpm --filter gruvvy-watermelon core:build"
-        },
+			"name": "Watch Files",
+			"type": "node-terminal",
+			"request": "launch",
+			"command": "pnpm --filter gruvvy-watermelon core:compile"
+		},
         {
             "name": "Debug Extension",
             "type": "extensionHost",

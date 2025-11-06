@@ -6,11 +6,6 @@ import { getTokenColors } from "./tokencolors";
 export const defaultOptions: ThemeOptions = {
 	integrateTodoTree: false,
 	integrateErrorLensGutter: false,
-	// TODO: genereate these options
-	// bracketMode: "rainbow",
-	// boldKeywords: true,
-	// italicComments: true,
-	// italicKeywords: true,
 };
 
 export const compileTheme = (

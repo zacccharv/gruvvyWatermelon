@@ -5,15 +5,9 @@ import path from "node:path";
 import { compileTheme, defaultOptions } from "@/theme";
 import { repoRoot } from "./constants";
 
-// options can also be passed as a JSON string as an environment variable
-const optEnvironmentVariable = process.env.GRUVVY_THEME_OPTIONS;
-const optEnvironment = optEnvironmentVariable
-	? JSON.parse(optEnvironmentVariable)
-	: {};
-
 const main = async () => {
 	await mkdir(path.join(repoRoot, "themes"), { recursive: true });
-	const options = { ...defaultOptions, ...optEnvironment };
+	const options = { ...defaultOptions };
 	const theme = compileTheme(options);
 	writeFile(
 		path.join(repoRoot, `themes/Gruvvy-Watermelon-color-theme.json`),

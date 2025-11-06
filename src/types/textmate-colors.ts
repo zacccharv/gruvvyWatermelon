@@ -4,12 +4,8 @@ export type TextmateColors = {
 	settings?: Settings;
 }[];
 
-export interface TextmateColors {
-	textmateColors?: TextmateColors;
-}
-
-export interface Settings {
+export type Settings = {
 	foreground?: string;
 	background?: string;
 	fontStyle?: string;
-}
+};

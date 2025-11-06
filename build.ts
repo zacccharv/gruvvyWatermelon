@@ -2,31 +2,35 @@ import { createVSIX } from "@vscode/vsce";
 import { build } from "tsup";
 import { getFlag } from "type-flag";
 
-import { updatePackageJson, readPackageJsonVersion } from "@/hooks/packageJson";
-// import generateTheme from "@/hooks/generateTheme";
+import { generatePackage, readPackageJsonVersion } from "@/hooks/packageJson";
 
 const main = async () => {
 	const development = getFlag("--dev", Boolean);
 	const shouldRegenerate = !getFlag("--no-regenerate", Boolean);
-	// await generateTheme(); // Run this separately
 
+	// Update package.json if not --no-regenerate flag next
 	const packageJsonVersion = await readPackageJsonVersion();
 
 	if (shouldRegenerate) {
 		console.debug(
-			`Regenerating package.json with version "${packageJsonVersion}"`
+			`Regenerating package.json with version "${packageJsonVersion}"`,
 		);
-		await updatePackageJson();
+		await generatePackage();
 	}
 
+	// build extension last
+	// main.ts creates the theme at runtime
 	await build({
+		format: ["esm", "cjs"],
+		target: "esnext",
+		outDir: "dist",
 		clean: true,
-		entry: ["src/main.ts", "src/hooks/generateTheme.ts"],
+		entry: ["src/main.ts"],
 		external: ["vscode", "keytar"],
 		minify: !development,
 		sourcemap: development,
-		target: "node16",
-		format: ["cjs", "esm"],
+		dts: development,
+		tsconfig: "tsconfig.json",
 	});
 
 	const packagePath = `gruvvygruvvy-watermelon-${packageJsonVersion}.vsix`;
