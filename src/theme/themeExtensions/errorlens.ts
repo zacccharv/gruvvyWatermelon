@@ -6,13 +6,13 @@ export default function errorColors(
     const { tokenColors } = context;
 
     return {
-        "errorLens.errorForeground": tokenColors.errorColor,
-        "errorLens.errorBackground": tokenColors.errorColor + "19",
-        "errorLens.warningForeground": tokenColors.warnColor,
-        "errorLens.warningBackground": tokenColors.warnColor + "19",
-        "errorLens.infoForeground": tokenColors.infoColor,
-        "errorLens.infoMessageBackground": tokenColors.infoColor + "19",
-        "errorLens.hintForeground": tokenColors.hintColor,
-        "errorLens.hintBackground": tokenColors.hintColor + "19",
-    };
+		"errorForeground": tokenColors.errorColor,
+		"errorBackground": tokenColors.errorColor + "19",
+		"warningForeground": tokenColors.warnColor,
+		"warningBackground": tokenColors.warnColor + "19",
+		"infoForeground": tokenColors.infoColor,
+		"infoMessageBackground": tokenColors.infoColor + "19",
+		"hintForeground": tokenColors.hintColor,
+		"hintBackground": tokenColors.hintColor + "19",
+	};
 }

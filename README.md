@@ -24,11 +24,11 @@ Here's my config to go with this theme.
   "todo-tree.general.tags": [
         "// TODO",
         "// Todo",
-        "# TODO",        
+        "# TODO",
         "// Note",
         "<!-- note",
         "// NOTE",
-        "# NOTE",            
+        "# NOTE",
         "// FIXME",
         "<!-- fixme",
         "# FIXME"
@@ -95,3 +95,9 @@ A nice way to see errors and hints in the editor, and I integrated it with this 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131100.png)
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131339.png)
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131803.png)
+
+## Todos
+
+- [ ] Explain default settings overrides provided and how they can be toggled on or off
+- [ ] Vscode Vim integration?
+- [ ] Learn about bundlers

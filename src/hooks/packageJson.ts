@@ -1,11 +1,8 @@
 /* eslint-disable no-restricted-imports */
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 import { repoRoot } from "./constants";
-import { todoConfiguration } from "@/extensions/todoTree";
-import { errorLensConfiguration } from "@/extensions/errorLens";
-import { palette } from "@/palettes";
 
 const readPackageJsonVersion = async () => {
 	return await readFile(path.join(repoRoot, "package.json"), "utf8").then(
