@@ -1,7 +1,7 @@
 import { Palette, TodoTreeConfig } from "@/types";
 
 const todoConfiguration = (ctx: Palette): TodoTreeConfig => {
-	const { palette } = ctx;
+	const { flavor: palette } = ctx;
 	const generalTags = [
 		"// TODO",
 		"/** TODO",
@@ -21,10 +21,10 @@ const todoConfiguration = (ctx: Palette): TodoTreeConfig => {
 		"<!-- IMPORTANT",
 	];
 	const tagGroupSettings = {
-		"TODO": ["// TODO", "/** TODO", "# TODO", "<!-- TODO"],
-		"NOTE": ["// NOTE", "/** NOTE", "# NOTE", "<!-- NOTE"],
-		"FIXME": ["// FIXME", "/** FIXME", "# FIXME", "<!-- FIXME"],
-		"IMPORTANT": [
+		TODO: ["// TODO", "/** TODO", "# TODO", "<!-- TODO"],
+		NOTE: ["// NOTE", "/** NOTE", "# NOTE", "<!-- NOTE"],
+		FIXME: ["// FIXME", "/** FIXME", "# FIXME", "<!-- FIXME"],
+		IMPORTANT: [
 			"// IMPORTANT",
 			"/** IMPORTANT",
 			"# IMPORTANT",
@@ -32,30 +32,30 @@ const todoConfiguration = (ctx: Palette): TodoTreeConfig => {
 		],
 	};
 	const defaultTagColorSetting = {
-		"background": palette.bg_1,
-		"borderRadius": "0",
-		"fontWeight": "bold",
-		"foreground": palette.black,
-		"icon": "alert",
-		"iconColour": palette.bright_purple_pink,
-		"type": "text",
+		background: palette.base,
+		borderRadius: "0",
+		fontWeight: "bold",
+		foreground: palette.crust,
+		icon: "alert",
+		iconColour: palette.pink,
+		type: "text",
 	};
 	const tagColorSettings = {
-		"TODO": {
-			"background": palette.bright_aqua,
-			"icon": "info",
+		TODO: {
+			background: palette.mint,
+			icon: "info",
 		},
-		"NOTE": {
-			"background": palette.bright_purple,
-			"icon": "note",
+		NOTE: {
+			background: palette.lavender,
+			icon: "note",
 		},
-		"FIXME": {
-			"background": palette.red_pink,
-			"icon": "flame",
+		FIXME: {
+			background: palette.cherry,
+			icon: "flame",
 		},
-		"IMPORTANT": {
-			"background": palette.bright_red_pink,
-			"icon": "star",
+		IMPORTANT: {
+			background: palette.rosewater,
+			icon: "star",
 		},
 	};
 

@@ -1,9 +1,18 @@
 import { ConfigurationChangeEvent, ExtensionContext, workspace } from "vscode";
 import * as utils from "./utils";
-import { ConfigTargets } from "./types";
+import * as types from "./types";
+
+export type ConfigTargets = {
+	"gruvvy-watermelon.integrateTodoTree": {
+		changed: boolean;
+	};
+	"gruvvy-watermelon.integrateErrorLensGutter": {
+		changed: boolean;
+	};
+};
 
 export const activate = async (context: ExtensionContext) => {
-	const config = utils.getConfiguration();
+	const config = types.getConfiguration();
 
 	const configTargets: ConfigTargets = {
 		"gruvvy-watermelon.integrateTodoTree": {

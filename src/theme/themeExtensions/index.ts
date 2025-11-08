@@ -1,8 +1,10 @@
-import { type Palette } from "@/types";
+import { ThemeContext } from "@/types";
 import errorLens from "./errorlens";
 
-export default function extensions(ctx: Palette) {
+export default function extensions(ctx: ThemeContext) {
+	const { palette } = ctx;
+
 	return {
-		...errorLens(ctx),
+		...errorLens(palette),
 	};
 }

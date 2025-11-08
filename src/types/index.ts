@@ -1,11 +1,15 @@
+import { AccentName, Colors } from "./palettetypes";
+
+export type * from "./palettetypes";
 export type * from "./textmate-colors";
 export type * from "./workbench-colors";
 export type * from "./errorlens";
 export type * from "./todoTree";
 
-export type Palette = {
-	colors: Colors;
-	palette: FlavorColors;
+export type GruvvyPalette = Colors<string>;
+
+export type FlavorPalette = {
+	colors: GruvvyPalette;
 	tokenColors: TokenColors;
 	widgetColors: WidgetThemeColors;
 };
@@ -34,77 +38,30 @@ export type TokenColors = {
 	method: string;
 	event: string;
 	base_value: string;
-
-	// error
 	errorColor: string;
-	// warn
 	warnColor: string;
-	// info
 	infoColor: string;
-	// hint
 	hintColor: string;
-
-	menuHighlight: string;
-	buttonHighlight: string;
+	menu_bg_highlight: string;
+	menu_fg_highlight: string;
+	button_bg_highlight: string;
+	button_fg_highlight: string;
 	secondaryButtonHighlight: string;
-};
-
-export type FlavorColors = {
-	white: string;
-	gray: string;
-	black: string;
-
-	bg_0: string;
-	bg_1: string;
-	bg_2: string;
-	fg_0: string;
-	fg_1: string;
-	fg_2: string;
-
-	bright_red_pink: string;
-	red_pink: string;
-	bright_purple_pink: string;
-	purple_pink: string;
-	bright_purple: string;
-	purple: string;
-	bright_blue: string;
-	blue: string;
-	bright_aqua: string;
-	aqua: string;
-	bright_peach: string;
-	peach: string;
-};
-
-export type Colors = {
-	dark_hard: string;
-	dark_normal: string;
-	dark_soft: string;
-	dark_0: string;
-	dark_1: string;
-	light_hard: string;
-	light_normal: string;
-	light_soft: string;
-	light_0: string;
-	color_0: string;
-	color_1: string;
-	color_2: string;
-	color_3: string;
-	color_4: string;
-	color_5: string;
-	color_6: string;
-	color_7: string;
-	color_8: string;
-	color_9: string;
-	color_10: string;
-	color_11: string;
 };
 
 export type ThemeOptions = {
 	integrateTodoTree: boolean;
 	integrateErrorLensGutter: boolean;
+	accentColor: AccentName;
 };
 
-export type ConfigTargets = {
+export type ThemeContext = {
+	accentColor: AccentName;
+	palette: FlavorPalette;
+	options: ThemeOptions;
+};
+
+export type JsonSettings = {
 	"gruvvy-watermelon.integrateTodoTree": {
 		changed: boolean;
 	};

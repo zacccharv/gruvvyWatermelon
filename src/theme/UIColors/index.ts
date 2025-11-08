@@ -1,10 +1,10 @@
-import { type Palette } from "../../types";
+import { ThemeContext } from "../../types";
 import { workBench } from "./workbench";
 
-const uiCustomization = (ctx: Palette) => {
-    return {
-        ...workBench(ctx),
-    };
+const uiCustomization = (ctx: ThemeContext) => {
+	return {
+		...workBench(ctx),
+	};
 };
 
 export default uiCustomization;

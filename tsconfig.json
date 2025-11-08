@@ -6,7 +6,6 @@
 		"resolveJsonModule": true,
 		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
-		"allowUnusedLabels": true,
 		"skipLibCheck": true,
 		"noEmit": true,
 		"strict": true,

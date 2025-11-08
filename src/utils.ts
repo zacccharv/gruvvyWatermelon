@@ -8,15 +8,13 @@ import {
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type { ThemeOptions, ConfigTargets } from "@/types";
+import type { ThemeOptions, JsonSettings } from "@/types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
 /* eslint-disable no-restricted-imports */
 
 type Entry<T> = { [K in keyof T]: [K, T[K]] }[keyof T];
-export type configTargets = ConfigTargets;
-export type themeOptions = ThemeOptions;
 
 export enum UpdateTrigger {
 	CONFIG_CHANGE = "Configuration changed",
@@ -39,10 +37,9 @@ export const LOG: LogOutputChannel = window.createOutputChannel(
 	{ log: true },
 );
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const writeThemeFile = async (uri: Uri, data: any): Promise<void> => {
 	return workspace.fs
-		.writeFile(uri, Buffer.alloc(5, JSON.stringify(data, undefined, 2)))
+		.writeFile(uri, Buffer.from(JSON.stringify(data, undefined, 2)))
 		.then(
 			() => {},
 			(error) => {
@@ -84,6 +81,17 @@ function promptToReload(trigger: UpdateTrigger) {
 	});
 }
 
+export const isDefaultConfig = (): boolean => {
+	LOG.info("Checking if Gruvvy Watermelon is using default config.");
+	const state =
+		JSON.stringify(getConfiguration()) === JSON.stringify(defaultOptions);
+	LOG.info(
+		`Gruvvy Watermelon is using ${state ? "default" : "custom"} config.`,
+	);
+
+	return state;
+};
+
 export const isFreshInstall = async (
 	context: ExtensionContext,
 ): Promise<boolean | "error"> => {
@@ -93,7 +101,7 @@ export const isFreshInstall = async (
 		LOG.info("Gruvvy Watermelon has been installed before.");
 		return false;
 	} else {
-		LOG.info("Catppuccin is installed for the first time!");
+		LOG.info("Gruvvy Watermelon is installed for the first time!");
 		return workspace.fs.writeFile(flagUri, Buffer.from("")).then(
 			() => true,
 			() => "error",
@@ -110,7 +118,9 @@ const fileExists = async (uri: Uri): Promise<boolean> => {
 
 export const getConfiguration = (): ThemeOptions => {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
+
 	const options = {
+		accent: config.get<string>("accentColor"),
 		integrateTodoTree: config.get<boolean>("overrideTodoTree"),
 		integrateErrorLensGutter: config.get<boolean>(
 			"integrateErrorLensGutter",
@@ -132,7 +142,7 @@ export const getConfiguration = (): ThemeOptions => {
 // 	return .get<string>("colorTheme") ?? "";
 // };
 
-export function syncExtensionSettings(configTargets: ConfigTargets) {
+export function syncExtensionSettings(configTargets: JsonSettings) {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
 	const integrateTodoTree = config.get<boolean>("integrateTodoTree");
 	const integrateErrorLensGutter = config.get<boolean>(

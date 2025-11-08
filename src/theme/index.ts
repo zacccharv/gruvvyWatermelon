@@ -6,12 +6,10 @@ import { getTokenColors } from "./tokencolors";
 export const defaultOptions: ThemeOptions = {
 	integrateTodoTree: false,
 	integrateErrorLensGutter: false,
+	accentColor: "mauve",
 };
 
-export const compileTheme = (
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	_options: ThemeOptions = defaultOptions
-): object => {
+export const compileTheme = (options: ThemeOptions = defaultOptions): object => {
 	return {
 		name: "Gruvvy Watermelon",
 		type: "dark",

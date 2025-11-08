@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-imports */
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
@@ -12,8 +11,7 @@ const config = {
 				scope: "window",
 				type: "boolean",
 				default: false,
-				description:
-					"Integrate Gruvvy Watermelon theme with the Todo Tree extension.",
+				description: "Integrate Gruvvy Watermelon theme with the Todo Tree extension.",
 			},
 			"gruvvy-watermelon.integrateErrorLensGutter": {
 				scope: "window",
@@ -27,12 +25,10 @@ const config = {
 };
 
 const readPackageJsonVersion = async () => {
-	return await readFile(path.join(repoRoot, "package.json"), "utf8").then(
-		(data) => {
-			const json = JSON.parse(data);
-			return json.version;
-		},
-	);
+	return await readFile(path.join(repoRoot, "package.json"), "utf8").then((data) => {
+		const json = JSON.parse(data);
+		return json.version;
+	});
 };
 
 const generatePackage = async () => {
@@ -50,11 +46,7 @@ const generatePackage = async () => {
 			};
 		})
 		.then((data) => {
-			writeFile(
-				path.join(repoRoot, "package.json"),
-				JSON.stringify(data, undefined, 2) + "\n",
-				"utf8",
-			);
+			writeFile(path.join(repoRoot, "package.json"), JSON.stringify(data, undefined, 2) + "\n", "utf8");
 			return data;
 		});
 };
