@@ -1,7 +1,11 @@
-import { Palette, TokenColors, WidgetThemeColors } from "@/types";
-import { Colors, GruvvyColors } from "./types/palettetypes";
+import {
+	GruvvyPalette,
+	PaletteCollection,
+	TokenColors,
+	WidgetThemeColors,
+} from "@/types";
 
-const colors: GruvvyColors = {
+const m_colors: GruvvyPalette = {
 	rosewater: "#ffc7d6",
 	cherry: "#FF647D",
 	pink: "#FFB6EB",
@@ -14,107 +18,83 @@ const colors: GruvvyColors = {
 	watermelon: "#4FB094",
 	champagne: "#f1bcac",
 	peach: "#f18464",
-	text: "hsla(160, 9%, 93%, 1.00)",
-	subtext1: "hsla(173, 26%, 88%, 1.00)",
-	subtext0: "hsla(174, 38%, 86%, 1.00)",
-	overlay1: "hsla(175, 10%, 65%, 1.00)",
-	overlay0: "hsla(175, 10%, 46%, 1.00)",
-	surface1: "hsla(173, 5%, 39%, 1.00)",
-	surface0: "hsla(169, 9%, 23%, 1.00)",
-	base: "hsla(180, 8%, 18%, 1.00)",
-	mantle: "hsla(180, 9%, 14%, 1.00)",
-	crust: "hsla(168, 10%, 10%, 1.00)",
-};
-
-const flavor: FlavorColors = {
-	white: colors.text,
-	gray: colors.overlay0,
-	crust: colors.crust,
-
-	mantle: colors.mantle,
-	base: colors.base,
-	surface0: colors.surface0,
-	text: colors.text,
-	subtext1: colors.subtext1,
-	subtext0: colors.subtext0,
-
-	rosewater: colors.rosewater,
-	cherry: colors.cherry,
-	pink: colors.pink,
-	raspberry: colors.raspberry,
-	lavender: colors.lavender,
-	mauve: colors.mauve,
-	teal: colors.teal,
-	mint: colors.mint,
-	watermelon: colors.watermelon,
-	champagne: colors.champagne,
-	peach: colors.peach,
+	text: "#ecefeeff",
+	subtext1: "#d8e8e6ff",
+	subtext0: "#cee9e6ff",
+	overlay1: "#9dafadff",
+	overlay0: "#6a817fff",
+	surface1: "#5e6867ff",
+	surface0: "#35403eff",
+	base: "#2a3232ff",
+	mantle: "#202727ff",
+	crust: "#171c1bff",
 };
 
 const tokens: TokenColors = {
-	plain: flavor.white,
+	plain: m_colors.text,
 
 	// punctuation
-	punctuation: flavor.mint,
+	punctuation: m_colors.mint,
 
 	// public, private, static...
-	keyword_storage: flavor.mint,
+	keyword_storage: m_colors.mint,
 
 	// base types (bool, string, int, uint, float...) + flow control + operators + using
-	keyword_base_types: flavor.watermelon,
-	keyword_flow: flavor.watermelon,
-	operator: flavor.watermelon,
+	keyword_base_types: m_colors.watermelon,
+	keyword_flow: m_colors.watermelon,
+	operator: m_colors.watermelon,
 
 	// type/class
-	type: flavor.mauve,
-	type_declaration: flavor.raspberry,
+	type: m_colors.mauve,
+	type_declaration: m_colors.raspberry,
 
 	// fieldNames
-	field_name_declaration: flavor.champagne,
-	field_name: flavor.rosewater,
+	field_name_declaration: m_colors.champagne,
+	field_name: m_colors.rosewater,
 
 	// namespaces + classname + className of file
-	namespace: flavor.cherry,
-	class_name: flavor.cherry,
+	namespace: m_colors.cherry,
+	class_name: m_colors.cherry,
 
 	// property names
-	property: flavor.raspberry,
+	property: m_colors.raspberry,
 
 	// functions/methods/events/getters + setters
-	method: flavor.raspberry,
-	event: flavor.raspberry,
+	method: m_colors.raspberry,
+	event: m_colors.raspberry,
 
 	// number value + string value + enum value + bool
-	base_value: flavor.watermelon,
+	base_value: m_colors.watermelon,
+	string_value: m_colors.watermelon,
+	number_value: m_colors.watermelon,
 
 	// error
-	errorColor: flavor.cherry,
+	errorColor: m_colors.cherry,
 	// warn
-	warnColor: flavor.peach,
+	warnColor: m_colors.peach,
 	// info
-	infoColor: flavor.mint,
+	infoColor: m_colors.mint,
 	// hint
-	hintColor: flavor.lavender,
+	hintColor: m_colors.lavender,
 
-	menu_bg_highlight: flavor.watermelon,
-	menu_fg_highlight: flavor.crust,
-	button_bg_highlight: flavor.watermelon,
-	button_fg_highlight: flavor.crust,
-	secondaryButtonHighlight: flavor.raspberry,
+	menu_bg_highlight: m_colors.watermelon,
+	menu_fg_highlight: m_colors.crust,
+	button_bg_highlight: m_colors.watermelon,
+	button_fg_highlight: m_colors.crust,
+	secondaryButtonHighlight: m_colors.raspberry,
 };
 
 const widgets: WidgetThemeColors = {
-	widget_bg: flavor.base,
-	widget_fg: flavor.text,
-	widget_hl: flavor.gray,
-	widget_menu_bg: flavor.surface0,
+	widget_bg: m_colors.base,
+	widget_fg: m_colors.text,
+	widget_hl: m_colors.overlay0,
+	widget_menu_bg: m_colors.surface0,
 };
 
-const palette: Palette = {
-	colors: colors,
-	flavor: flavor,
+const palette: PaletteCollection = {
 	tokenColors: tokens,
 	widgetColors: widgets,
+	colors: m_colors,
 };
 
 export { palette };

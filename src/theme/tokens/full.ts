@@ -1,6 +1,6 @@
-import { FlavorPalette } from "../../types";
+import { PaletteCollection } from "../../types";
 
-export default function full(ctx: FlavorPalette) {
+export default function full(ctx: PaletteCollection) {
 	const { colors, tokenColors } = ctx;
 
 	return [
@@ -1227,7 +1227,7 @@ export default function full(ctx: FlavorPalette) {
 				"variable.other.constant.gdscript",
 			],
 			settings: {
-				foreground: tokenColors.base_value,
+				foreground: tokenColors.string_value,
 			},
 		},
 		{

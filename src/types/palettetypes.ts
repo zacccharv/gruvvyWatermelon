@@ -51,9 +51,24 @@ export type ColorFormat = {
 	accent: boolean;
 };
 
+export const AccentNames = {
+	ROSEWATER: "rosewater",
+	CHERRY: "cherry",
+	PINK: "pink",
+	RASPBERRY: "raspberry",
+	LAVENDER: "lavender",
+	MAUVE: "mauve",
+	SEAFOAM: "seafoam",
+	TEAL: "teal",
+	MINT: "mint",
+	WATERMELON: "watermelon",
+	CHAMPAGNE: "champagne",
+	PEACH: "peach",
+} as const;
+
 export type AccentName = "rosewater" | "cherry" | "pink" | "raspberry" | "lavender" | "mauve" | "seafoam" | "teal" | "mint" | "watermelon" | "champagne" | "peach";
 
-export type MonochromaticName = "text" | "subtext1" | "subtext0" | "overlay2" | "overlay1" | "overlay0" | "surface2" | "surface1" | "surface0" | "base" | "mantle" | "crust";
+export type MonochromaticName = "text" | "subtext1" | "subtext0" |  "overlay1" | "overlay0" |  "surface1" | "surface0" | "base" | "mantle" | "crust";
 
 export type ColorName = AccentName | MonochromaticName;
 

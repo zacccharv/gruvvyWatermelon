@@ -1,8 +1,10 @@
-import { Palette, ErrorLensColors } from "@/types";
+import { ErrorLensColors, PaletteCollection } from "@/types";
 
 type PartialErrorLens = Partial<Record<keyof ErrorLensColors, string>>;
 
-export default function errorColors(context: Palette): PartialErrorLens {
+export default function errorColors(
+	context: PaletteCollection,
+): PartialErrorLens {
 	const { tokenColors } = context;
 
 	return {

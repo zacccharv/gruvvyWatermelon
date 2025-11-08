@@ -1,6 +1,6 @@
-import type { Palette, TextmateColors } from "@/types";
+import type { ThemeContext, TextmateColors } from "@/types";
 import tokens from "./tokens";
 
-export const getTokenColors = (ctx: Palette): TextmateColors => {
-    return tokens(ctx);
+export const getTokenColors = (ctx: ThemeContext): TextmateColors => {
+	return tokens(ctx);
 };

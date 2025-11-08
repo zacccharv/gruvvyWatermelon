@@ -1,4 +1,5 @@
 import { readFile, writeFile } from "node:fs/promises";
+import { AccentNames } from "@/types/palettetypes";
 import path from "node:path";
 
 import { repoRoot } from "./constants";
@@ -7,11 +8,36 @@ const config = {
 	configuration: {
 		title: "gruvvy-watermelon",
 		properties: {
+			"gruvvy-watermelon.accentColor": {
+				scope: "window",
+				type: "string",
+				enum: [
+					AccentNames.ROSEWATER,
+					AccentNames.CHERRY,
+					AccentNames.PINK,
+					AccentNames.RASPBERRY,
+					AccentNames.LAVENDER,
+					AccentNames.MAUVE,
+					AccentNames.SEAFOAM,
+					AccentNames.TEAL,
+					AccentNames.MINT,
+					AccentNames.WATERMELON,
+					AccentNames.CHAMPAGNE,
+					AccentNames.PEACH,
+				],
+				enumDescriptions: Object.values(AccentNames).map(
+					(name) => `Use ${name} as the accent color.`,
+				),
+				default: "mauve",
+				description:
+					"Select the accent color for the Gruvvy Watermelon theme.",
+			},
 			"gruvvy-watermelon.integrateTodoTree": {
 				scope: "window",
 				type: "boolean",
 				default: false,
-				description: "Integrate Gruvvy Watermelon theme with the Todo Tree extension.",
+				description:
+					"Integrate Gruvvy Watermelon theme with the Todo Tree extension.",
 			},
 			"gruvvy-watermelon.integrateErrorLensGutter": {
 				scope: "window",

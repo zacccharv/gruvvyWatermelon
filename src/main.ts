@@ -1,6 +1,10 @@
-import { ConfigurationChangeEvent, ExtensionContext, workspace } from "vscode";
+import {
+	ConfigurationChangeEvent,
+	ExtensionContext,
+	Uri,
+	workspace,
+} from "vscode";
 import * as utils from "./utils";
-import * as types from "./types";
 
 export type ConfigTargets = {
 	"gruvvy-watermelon.integrateTodoTree": {
@@ -12,7 +16,13 @@ export type ConfigTargets = {
 };
 
 export const activate = async (context: ExtensionContext) => {
-	const config = types.getConfiguration();
+	const config = utils.getConfiguration();
+	const base = context.extensionUri;
+	const path = Uri.joinPath(
+		base,
+		"themes",
+		"Gruvvy-Watermelon-color-theme.json",
+	);
 
 	const configTargets: ConfigTargets = {
 		"gruvvy-watermelon.integrateTodoTree": {
@@ -25,14 +35,18 @@ export const activate = async (context: ExtensionContext) => {
 
 	// regenerate theme on fresh install/first activation
 	if ((await utils.isFreshInstall(context)) === true) {
-		utils.updateTheme(config, utils.UpdateTrigger.FRESH_INSTALL);
-		utils.syncExtensionSettings(configTargets);
+		utils.updateTheme(config, path, utils.UpdateTrigger.FRESH_INSTALL);
+		//utils.syncExtensionSettings(configTargets);
 	}
 
 	context.subscriptions.push(
 		workspace.onDidChangeConfiguration((evt) => {
 			if (evt.affectsConfiguration("gruvvy-watermelon")) {
-				utils.updateTheme(config, utils.UpdateTrigger.CONFIG_CHANGE);
+				utils.updateTheme(
+					config,
+					path,
+					utils.UpdateTrigger.CONFIG_CHANGE,
+				);
 
 				// sync settings for updated config keys
 				let syncResult = syncMe(configTargets, evt);

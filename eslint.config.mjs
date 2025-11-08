@@ -30,6 +30,5 @@ export default defineConfig([
             js.configs.recommended,
             tseslint.configs.recommended
         ],
-    },
-
+	}
 ])

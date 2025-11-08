@@ -1,6 +1,7 @@
 import { AccentName, Colors } from "./palettetypes";
 
 export type * from "./palettetypes";
+
 export type * from "./textmate-colors";
 export type * from "./workbench-colors";
 export type * from "./errorlens";
@@ -8,7 +9,7 @@ export type * from "./todoTree";
 
 export type GruvvyPalette = Colors<string>;
 
-export type FlavorPalette = {
+export type PaletteCollection = {
 	colors: GruvvyPalette;
 	tokenColors: TokenColors;
 	widgetColors: WidgetThemeColors;
@@ -37,6 +38,8 @@ export type TokenColors = {
 	property: string;
 	method: string;
 	event: string;
+	string_value: string;
+	number_value: string;
 	base_value: string;
 	errorColor: string;
 	warnColor: string;
@@ -56,8 +59,7 @@ export type ThemeOptions = {
 };
 
 export type ThemeContext = {
-	accentColor: AccentName;
-	palette: FlavorPalette;
+	palette: PaletteCollection;
 	options: ThemeOptions;
 };
 

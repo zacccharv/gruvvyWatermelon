@@ -1,7 +1,9 @@
-import { Palette, TodoTreeConfig } from "@/types";
+import { PaletteCollection, TodoTreeConfig } from "@/types";
 
-const todoConfiguration = (ctx: Palette): TodoTreeConfig => {
-	const { flavor: palette } = ctx;
+const todoConfiguration = (ctx: PaletteCollection): TodoTreeConfig => {
+	const { colors } = ctx;
+	const palette = colors;
+
 	const generalTags = [
 		"// TODO",
 		"/** TODO",

@@ -4,22 +4,74 @@ import { mix, opacity, shade, transparent } from "../utils";
 export type WorkbenchPartial = Partial<Record<keyof WorkbenchColors, string>>;
 
 export function workBench(ctx: ThemeContext): WorkbenchPartial {
-	const { palette, accentColor } = ctx;
+	const { palette, options } = ctx;
 	const { colors, tokenColors, widgetColors } = palette;
 
-	const accent = colors[accentColor];
+	const accent = colors[options.accentColor];
 	const dropBackground = opacity(accent, 0.2);
 
 	return {
+		// Base colors
+		focusBorder: accent,
+		foreground: colors.text,
+		disabledForeground: colors.subtext0,
+		"widget.shadow": opacity(colors.mantle, 0.5),
+		"selection.background": opacity(accent, 0.4),
+		descriptionForeground: colors.text,
+		errorForeground: colors.cherry,
+		"icon.foreground": accent,
+		"sash.hoverBorder": accent,
+
+		// Text colors
+		"textBlockQuote.background": colors.mantle,
+		"textBlockQuote.border": colors.crust,
+		"textCodeBlock.background": colors.mantle,
+		"textLink.activeForeground": colors.mauve,
+		"textLink.foreground": colors.seafoam,
+		"textPreformat.foreground": colors.text,
+		"textSeparator.foreground": accent,
+
+		// buttons & checkboxes
+		"button.background": accent,
+		"button.foreground": colors.crust,
+		"button.border": transparent,
+		"button.separator": transparent,
+		"button.hoverBackground": shade(accent, 0.07),
+		"button.secondaryForeground": colors.text,
+		"button.secondaryBackground": colors.surface1,
+		"button.secondaryHoverBackground": shade(colors.surface1, 0.07),
+		"checkbox.background": colors.surface1,
+		"checkbox.border": transparent,
+		"checkbox.foreground": accent,
+
+		"list.highlightForeground": accent,
+		"notificationCenter.border": accent,
+		"notificationToast.border": accent,
+		"notifications.border": accent,
+		"panelTitle.activeBorder": accent,
+		"pickerGroup.border": accent,
+		"pickerGroup.foreground": accent,
+		"settings.modifiedItemIndicator": accent,
+		"sideBarTitle.foreground": accent,
+		"statusBarItem.prominentForeground": accent,
+		"progressBar.background": accent,
+		"commandCenter.activeForeground": accent,
+
+		"welcomePage.progress.foreground": accent,
+		"symbolIcon.fileForeground": accent,
+		"symbolIcon.folderForeground": accent,
+
 		"editorBracketHighlight.foreground1": tokenColors.button_fg_highlight,
 		"editorBracketHighlight.foreground2": colors.raspberry,
 		"editorBracketHighlight.foreground3": tokenColors.menu_bg_highlight,
 		"editorBracketHighlight.foreground4": colors.pink,
+
+		// Activity Bar
 		"activityBar.activeBorder": tokenColors.menu_bg_highlight,
 		"activityBar.activeFocusBorder": tokenColors.menu_bg_highlight,
 		"activityBar.background": colors.crust,
+		"activityBar.foreground": accent,
 		"activityBar.border": colors.crust,
-		"activityBar.foreground": colors.text,
 		"activityBar.inactiveForeground": colors.surface0,
 		"activityBarBadge.background": colors.pink,
 		"activityBarBadge.foreground": colors.crust,
@@ -28,16 +80,49 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"breadcrumb.activeSelectionForeground": colors.text,
 		"breadcrumb.focusForeground": colors.text,
 		"breadcrumb.foreground": colors.surface0,
-		"button.background": colors.pink,
-		"button.foreground": tokenColors.menu_fg_highlight,
-		"button.hoverBackground": tokenColors.menu_bg_highlight,
-		"checkbox.background": colors.mantle,
-		"checkbox.border": colors.surface1,
-		"checkbox.foreground": colors.raspberry,
-		"debugToolBar.background": colors.mantle,
+
+		// debug
+		"debugToolBar.background": colors.crust,
+		"debugToolBar.border": transparent,
+		"debugExceptionWidget.background": colors.crust,
+		"debugTokenExpression.number": tokenColors.number_value,
+		"debugTokenExpression.boolean": colors.peach,
+		"debugTokenExpression.string": tokenColors.string_value,
+		"debugTokenExpression.error": tokenColors.errorColor,
+
+		// debug icons
+		"debugIcon.breakpointForeground": colors.cherry,
+		"debugIcon.breakpointDisabledForeground": opacity(colors.cherry, 0.6),
+		"debugIcon.breakpointUnverifiedForeground": mix(
+			colors.cherry,
+			colors.surface1,
+			0.5,
+		),
+		"debugIcon.breakpointCurrentStackframeForeground": colors.surface1,
+		"debugIcon.breakpointStackframeForeground": colors.surface1,
+		"debugIcon.startForeground": colors.watermelon,
+		"debugIcon.pauseForeground": colors.teal,
+		"debugIcon.stopForeground": colors.cherry,
+		"debugIcon.disconnectForeground": colors.surface1,
+		"debugIcon.restartForeground": colors.teal,
+		"debugIcon.stepOverForeground": colors.mauve,
+		"debugIcon.stepIntoForeground": colors.text,
+		"debugIcon.stepOutForeground": colors.text,
+		"debugIcon.continueForeground": colors.watermelon,
+		"debugIcon.stepBackForeground": colors.surface1,
+		"debugConsole.infoForeground": tokenColors.infoColor,
+		"debugConsole.warningForeground": colors.peach,
+		"debugConsole.errorForeground": colors.cherry,
+		"debugConsole.sourceForeground": colors.rosewater,
+		"debugConsoleInputIcon.foreground": colors.text,
+
+		//extensions
+		"extensionButton.prominentBackground": accent,
+		"extensionButton.prominentHoverBackground": shade(accent, 0.07),
+
 		"diffEditor.insertedTextBackground": opacity(
 			tokenColors.menu_bg_highlight,
-			0.12,
+			0.1,
 		),
 		"diffEditor.removedTextBackground": opacity(
 			tokenColors.button_fg_highlight,
@@ -53,7 +138,7 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"editor.foreground": colors.text,
 		"editor.hoverHighlightBackground": opacity(
 			tokenColors.menu_bg_highlight,
-			0.21,
+			0.2,
 		),
 		"editor.lineHighlightBackground": opacity(colors.surface0, 0.25),
 		"editor.lineHighlightBorder": opacity(colors.surface0, 0),
@@ -62,21 +147,21 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"editor.selectionHighlightBackground": opacity(colors.surface0, 0),
 		"editor.snippetFinalTabstopHighlightBackground": opacity(
 			colors.mauve,
-			19,
+			0.2,
 		),
 		"editor.snippetFinalTabstopHighlightBorder": colors.mantle,
 		"editor.snippetTabstopHighlightBackground": opacity(
 			colors.surface1,
-			0.63,
+			0.6,
 		),
 		"editor.symbolHighlightBackground": opacity(
 			tokenColors.menu_bg_highlight,
-			0.61,
+			0.6,
 		),
 		"editor.wordHighlightBackground": opacity(colors.surface0, 0.75),
 		"editor.wordHighlightStrongBackground": opacity(colors.surface0, 0.75),
 		"editorBracketMatch.background": colors.surface1,
-		"editorBracketMatch.border": opacity(colors.mantle, 0),
+		"editorBracketMatch.border": transparent,
 		"editorCodeLens.foreground": colors.surface0,
 		"editorCursor.foreground": colors.text,
 		"editorError.foreground": tokenColors.errorColor,
@@ -88,7 +173,7 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 			tokenColors.menu_bg_highlight,
 			0.25,
 		),
-		"editorGutter.background": opacity(colors.mantle, 0),
+		"editorGutter.background": transparent,
 		"editorGutter.deletedBackground": opacity(
 			tokenColors.button_fg_highlight,
 			0.25,
@@ -117,7 +202,7 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 			tokenColors.menu_bg_highlight,
 			0.5,
 		),
-		"editorOverviewRuler.border": opacity(colors.mantle, 0),
+		"editorOverviewRuler.border": transparent,
 		"editorOverviewRuler.commonContentForeground": colors.surface0,
 		"editorOverviewRuler.currentContentForeground": opacity(
 			tokenColors.menu_bg_highlight,
@@ -156,7 +241,7 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		),
 		"editorOverviewRuler.wordHighlightStrongForeground": opacity(
 			colors.surface0,
-			0.37,
+			0.375,
 		),
 		"editorRuler.foreground": colors.surface1,
 		"editorSuggestWidget.background": widgetColors.widget_bg,
@@ -170,22 +255,16 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"editorWhitespace.foreground": colors.surface0,
 		"editorWidget.background": widgetColors.widget_menu_bg,
 		"editorWidget.border": widgetColors.widget_bg,
-		errorForeground: tokenColors.button_fg_highlight,
 		"extensionBadge.remoteBackground": tokenColors.menu_bg_highlight,
 		"extensionBadge.remoteForeground": colors.mantle,
-		"extensionButton.prominentBackground": tokenColors.menu_bg_highlight,
 		"extensionButton.prominentForeground": colors.mantle,
-		"extensionButton.prominentHoverBackground":
-			tokenColors.menu_bg_highlight,
-		focusBorder: opacity(colors.surface1, 0),
-		foreground: colors.text,
 		"gitDecoration.addedResourceForeground": opacity(
 			tokenColors.menu_bg_highlight,
 			0.5,
 		),
 		"gitDecoration.conflictingResourceForeground": opacity(
 			colors.mauve,
-			0.56,
+			0.55,
 		),
 		"gitDecoration.deletedResourceForeground": colors.raspberry,
 		"gitDecoration.ignoredResourceForeground": colors.surface1,
@@ -201,7 +280,6 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 			colors.lavender,
 			0.82,
 		),
-		"icon.foreground": tokenColors.menu_bg_highlight,
 		"input.background": opacity(colors.mantle, 0),
 		"input.border": widgetColors.widget_bg,
 		"input.foreground": colors.text,
@@ -222,7 +300,6 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"list.errorForeground": tokenColors.button_fg_highlight,
 		"list.focusBackground": opacity(colors.surface1, 0.5),
 		"list.focusForeground": colors.text,
-		"list.highlightForeground": tokenColors.menu_bg_highlight,
 		"list.hoverBackground": opacity(colors.crust, 0),
 		"list.hoverForeground": colors.text,
 		"list.inactiveFocusBackground": opacity(colors.surface1, 0.42),
@@ -246,7 +323,7 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		),
 		"merge.currentHeaderBackground": opacity(
 			tokenColors.menu_bg_highlight,
-			19,
+			0.19,
 		),
 		"merge.incomingContentBackground": opacity(
 			tokenColors.menu_bg_highlight,
@@ -254,8 +331,10 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		),
 		"merge.incomingHeaderBackground": opacity(
 			tokenColors.menu_bg_highlight,
-			19,
+			0.19,
 		),
+
+		// minimap
 		"minimap.errorHighlight": opacity(
 			tokenColors.button_fg_highlight,
 			0.44,
@@ -266,6 +345,7 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		),
 		"minimap.selectionHighlight": opacity(colors.surface1, 0.94),
 		"minimap.warningHighlight": opacity(colors.lavender, 0.8),
+		"minimap.background": opacity(colors.base, 0.5),
 		"minimapGutter.addedBackground": opacity(
 			tokenColors.menu_bg_highlight,
 			0.63,
@@ -278,6 +358,7 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 			tokenColors.menu_bg_highlight,
 			0.63,
 		),
+
 		"notificationCenterHeader.background": colors.surface0,
 		"notificationCenterHeader.foreground": colors.text,
 		"notificationLink.foreground": tokenColors.menu_bg_highlight,
@@ -286,10 +367,8 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"notificationsErrorIcon.foreground": tokenColors.button_fg_highlight,
 		"notificationsInfoIcon.foreground": tokenColors.menu_bg_highlight,
 		"notificationsWarningIcon.foreground": colors.lavender,
-		"panel.background": colors.surface0,
-		"panel.border": colors.surface0,
+
 		"panelInput.border": widgetColors.widget_bg,
-		"panelTitle.activeBorder": tokenColors.menu_bg_highlight,
 		"panelTitle.activeForeground": colors.subtext0,
 		"panelTitle.inactiveForeground": colors.surface0,
 		"peekView.border": widgetColors.widget_bg,
@@ -303,17 +382,15 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"peekViewTitle.background": widgetColors.widget_menu_bg,
 		"peekViewTitleDescription.foreground": widgetColors.widget_fg,
 		"peekViewTitleLabel.foreground": widgetColors.widget_fg,
-		"pickerGroup.border": opacity(colors.text, 0.1),
 		"problemsErrorIcon.foreground": tokenColors.button_fg_highlight,
 		"problemsInfoIcon.foreground": tokenColors.menu_bg_highlight,
 		"problemsWarningIcon.foreground": colors.lavender,
-		"progressBar.background": tokenColors.menu_bg_highlight,
 		"quickInputList.focusBackground": widgetColors.widget_hl,
 		"scrollbar.shadow": opacity(colors.crust, 0.44),
 		"scrollbarSlider.activeBackground": opacity(colors.surface0, 0.69),
 		"scrollbarSlider.background": opacity(colors.surface0, 0.44),
 		"scrollbarSlider.hoverBackground": opacity(colors.surface0, 0.56),
-		"selection.background": opacity(colors.surface1, 0.88),
+
 		"settings.checkboxBackground": colors.mantle,
 		"settings.checkboxBorder": colors.surface1,
 		"settings.checkboxForeground": colors.raspberry,
@@ -327,11 +404,15 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"settings.textInputBackground": widgetColors.widget_bg,
 		"settings.textInputBorder": widgetColors.widget_bg,
 		"settings.textInputForeground": tokenColors.menu_bg_highlight,
+
 		"sideBar.background": colors.crust,
 		"sideBar.foreground": colors.surface0,
 		"sideBarSectionHeader.background": colors.mantle,
 		"sideBarSectionHeader.foreground": colors.surface0,
-		"sideBarTitle.foreground": colors.surface0,
+
+		// status bar
+		"statusBarItem.errorBackground": tokenColors.errorColor,
+		"statusBarItem.errorForeground": colors.mantle,
 		"statusBar.background": colors.rosewater,
 		"statusBar.border": colors.crust,
 		"statusBar.debuggingBackground": tokenColors.button_bg_highlight,
@@ -345,6 +426,8 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"statusBarItem.hoverBackground": tokenColors.menu_bg_highlight,
 		"statusBarItem.remoteBackground": tokenColors.button_bg_highlight,
 		"statusBarItem.remoteForeground": colors.mantle,
+
+		// symbols in outline, autocomplete, etc.
 		"symbolIcon.arrayForeground": colors.text,
 		"symbolIcon.booleanForeground": colors.mauve,
 		"symbolIcon.classForeground": tokenColors.class_name,
@@ -355,8 +438,6 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"symbolIcon.enumeratorMemberForeground": colors.mauve,
 		"symbolIcon.eventForeground": tokenColors.menu_bg_highlight,
 		"symbolIcon.fieldForeground": tokenColors.field_name,
-		"symbolIcon.fileForeground": colors.text,
-		"symbolIcon.folderForeground": colors.text,
 		"symbolIcon.functionForeground": tokenColors.method,
 		"symbolIcon.interfaceForeground": tokenColors.menu_bg_highlight,
 		"symbolIcon.keyForeground": tokenColors.menu_bg_highlight,
@@ -378,9 +459,10 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"symbolIcon.typeParameterForeground": colors.raspberry,
 		"symbolIcon.unitForeground": colors.text,
 		"symbolIcon.variableForeground": tokenColors.class_name,
+
+		// tabs
 		"tab.activeBackground": colors.mantle,
 		"tab.activeBorder": tokenColors.hintColor,
-		"tab.activeForeground": colors.text,
 		"tab.border": colors.crust,
 		"tab.hoverBackground": colors.mantle,
 		"tab.inactiveBackground": colors.mantle,
@@ -388,6 +470,16 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"tab.unfocusedActiveBorder": colors.crust,
 		"tab.unfocusedActiveForeground": colors.text,
 		"tab.unfocusedInactiveForeground": colors.surface0,
+		"tab.activeBorderTop": accent,
+		"tab.activeForeground": accent,
+		"tab.hoverForeground": accent,
+		"tab.lastPinnedBorder": accent,
+		"tab.unfocusedActiveBorderTop": opacity(accent, 0.3),
+
+		// terminal / panel
+		"panel.background": colors.surface0,
+		"panel.border": colors.surface0,
+		"terminal.tab.activeBorder": accent,
 		"terminal.ansiBlack": colors.crust,
 		"terminal.ansiBlue": tokenColors.menu_bg_highlight,
 		"terminal.ansiBrightBlack": colors.surface0,
@@ -406,20 +498,14 @@ export function workBench(ctx: ThemeContext): WorkbenchPartial {
 		"terminal.ansiYellow": colors.lavender,
 		"terminal.foreground": colors.text,
 		"terminalCursor.foreground": colors.text,
-		"textBlockQuote.background": colors.surface0,
-		"textBlockQuote.border": colors.surface0,
-		"textCodeBlock.background": colors.surface0,
-		"textLink.activeForeground": opacity(
-			tokenColors.menu_bg_highlight,
-			0.63,
-		),
-		"textLink.foreground": tokenColors.menu_bg_highlight,
+
+		// title bar
 		"titleBar.activeBackground": colors.crust,
 		"titleBar.activeForeground": colors.text,
 		"titleBar.border": colors.crust,
 		"titleBar.inactiveBackground": colors.crust,
 		"titleBar.inactiveForeground": colors.surface0,
+
 		"tree.indentGuidesStroke": colors.surface0,
-		"widget.shadow": opacity(colors.crust, 0.44),
 	};
 }

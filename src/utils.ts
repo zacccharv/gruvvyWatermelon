@@ -8,7 +8,7 @@ import {
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type { ThemeOptions, JsonSettings } from "@/types";
+import type { ThemeOptions, ThemeContext, JsonSettings } from "@/types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
@@ -39,7 +39,7 @@ export const LOG: LogOutputChannel = window.createOutputChannel(
 
 const writeThemeFile = async (uri: Uri, data: any): Promise<void> => {
 	return workspace.fs
-		.writeFile(uri, Buffer.from(JSON.stringify(data, undefined, 2)))
+		.writeFile(uri, Buffer.alloc(5, JSON.stringify(data, undefined, 2)))
 		.then(
 			() => {},
 			(error) => {
@@ -50,14 +50,12 @@ const writeThemeFile = async (uri: Uri, data: any): Promise<void> => {
 
 export const updateTheme = async (
 	options: ThemeOptions,
+	path: Uri,
 	trigger: UpdateTrigger,
 ) => {
 	const promise = async (): Promise<void> => {
 		const theme = compileTheme(options);
-		const themeUri = Uri.file(
-			"./themes/Gruvvy-Watermelon-color-theme.json",
-		);
-		return writeThemeFile(themeUri, theme);
+		return writeThemeFile(path, theme);
 	};
 
 	Promise.resolve(promise)
