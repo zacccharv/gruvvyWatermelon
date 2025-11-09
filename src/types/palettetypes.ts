@@ -21,7 +21,7 @@ type Entries<T> = {
 
 export type AccentName = "rosewater" | "cherry" | "pink" | "raspberry" | "lavender" | "mauve" | "seafoam" | "teal" | "mint" | "watermelon" | "champagne" | "peach";
 
-export type MonochromaticName = "text" | "subtext1" | "subtext0" |  "overlay1" | "overlay0" |  "surface1" | "surface0" | "base" | "mantle" | "crust";
+export type MonochromaticName = "text" | "subtext1" | "subtext0" |  "overlay1" | "overlay0" |  "surface1" | "surface0" | "subSurface" |"base" | "mantle" | "crust";
 
 export type ColorName = AccentName | MonochromaticName;
 
@@ -81,7 +81,7 @@ export type ColorFormat = {
 
 export type GruvvyColors = Record<ColorName, ColorFormat>;
 
-export type GruvvyFlavor ={
+export type Flavor ={
 	name: string;
 	colors: GruvvyColors;
 	colorEntries: Entries<GruvvyColors>;

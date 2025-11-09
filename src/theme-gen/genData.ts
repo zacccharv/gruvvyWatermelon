@@ -1,8 +1,10 @@
 // Generate Gruvvyflavor from hex colors
-import { GruvvyFlavor, ColorFormat, Colors, GruvvyColors } from "@/types";
+import { ColorFormat, GruvvyColors } from "@/types/palettetypes";
+import { AccentNames } from "@/types/palettetypes";
 import { hexToHsl, hexToRgba } from "@/theme/utils";
 import { palette } from "../palettes";
 import { writeFile } from "fs";
+import { GruvvyFlavor } from "@/types";
 
 type Entries<T> = {
 	[K in keyof T]: [K, T[K]];
@@ -25,7 +27,7 @@ export const createColorFormat = (
 const colorMap: GruvvyColors = Object.fromEntries(
 	Object.entries(palette.colors).map(([name, hex]) => [
 		name,
-		createColorFormat(name, hex, false),
+		createColorFormat(name, hex, isAccent(name)),
 	]),
 ) as GruvvyColors;
 
@@ -49,7 +51,9 @@ export const generate = async (): Promise<Boolean> => {
 					console.error("Error writing Gruvvy Watermelon JSON:", err);
 					resolve(false);
 				} else {
-					console.log("Successfully wrote Gruvvy Watermelon JSON.");
+					console.log(
+						"Successfully wrote Gruvvy Watermelon Backing Theme.",
+					);
 					resolve(true);
 				}
 			},
@@ -58,3 +62,8 @@ export const generate = async (): Promise<Boolean> => {
 };
 
 generate();
+
+function isAccent(name: string): boolean {
+	return (Object.values(AccentNames) as string[]).includes(name);
+}
+

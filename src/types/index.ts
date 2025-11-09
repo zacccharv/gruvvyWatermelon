@@ -1,6 +1,4 @@
-import { AccentName, Colors } from "./palettetypes";
-
-export type * from "./palettetypes";
+import { AccentName, Colors, Flavor } from "./palettetypes";
 
 export type * from "./textmate-colors";
 export type * from "./workbench-colors";
@@ -52,8 +50,12 @@ export type TokenColors = {
 	secondaryButtonHighlight: string;
 };
 
+export type GruvvyFlavor = Flavor;
+
+export type Accent = AccentName;
+
 export type ThemeOptions = {
-	accentColor: AccentName;
+	accentColor: Accent;
 	integrateTodoTree: boolean;
 	integrateErrorLensGutter: boolean;
 };

@@ -10,6 +10,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 	const { colors, tokenColors, widgetColors } = palette;
 
 	const accent = colors[options.accentColor];
+	console.log("Generating UI colors with accent:", accent);
 	const dropBackground = opacity(accent, 0.2);
 
 	return {
@@ -63,7 +64,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"symbolIcon.fileForeground": accent,
 		"symbolIcon.folderForeground": accent,
 
-		"editorBracketHighlight.foreground1": tokenColors.button_fg_highlight,
+		"editorBracketHighlight.foreground1": colors.mint,
 		"editorBracketHighlight.foreground2": colors.raspberry,
 		"editorBracketHighlight.foreground3": tokenColors.menu_bg_highlight,
 		"editorBracketHighlight.foreground4": colors.pink,
@@ -74,14 +75,14 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"activityBar.background": colors.crust,
 		"activityBar.foreground": accent,
 		"activityBar.border": colors.crust,
-		"activityBar.inactiveForeground": colors.surface0,
+		"activityBar.inactiveForeground": colors.surface1,
 		"activityBarBadge.background": colors.pink,
 		"activityBarBadge.foreground": colors.crust,
 		"badge.background": colors.watermelon,
 		"badge.foreground": colors.crust,
 		"breadcrumb.activeSelectionForeground": colors.text,
 		"breadcrumb.focusForeground": colors.text,
-		"breadcrumb.foreground": colors.surface0,
+		"breadcrumb.foreground": colors.surface1,
 
 		// debug
 		"debugToolBar.background": colors.crust,
@@ -164,7 +165,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"editor.wordHighlightStrongBackground": opacity(colors.surface0, 0.75),
 		"editorBracketMatch.background": colors.surface1,
 		"editorBracketMatch.border": transparent,
-		"editorCodeLens.foreground": colors.surface0,
+		"editorCodeLens.foreground": colors.surface1,
 		"editorCursor.foreground": colors.text,
 		"editorError.foreground": tokenColors.errorColor,
 		"editorGroup.border": colors.crust,
@@ -193,7 +194,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"editorLightBulb.foreground": colors.raspberry,
 		"editorLightBulbAutoFix.foreground": tokenColors.infoColor,
 		"editorLineNumber.activeForeground": colors.text,
-		"editorLineNumber.foreground": colors.surface0,
+		"editorLineNumber.foreground": colors.surface1,
 		"editorLink.activeForeground": tokenColors.menu_bg_highlight,
 		"editorMarkerNavigation.background": colors.surface1,
 		"editorMarkerNavigationError.background":
@@ -285,17 +286,21 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"input.background": opacity(colors.mantle, 0),
 		"input.border": widgetColors.widget_bg,
 		"input.foreground": colors.text,
-		"input.placeholderForeground": colors.surface0,
+		"input.placeholderForeground": colors.text,
 		"inputOption.activeBorder": widgetColors.widget_hl,
-		"inputValidation.errorBackground": colors.surface0,
-		"inputValidation.errorBorder": tokenColors.button_fg_highlight,
-		"inputValidation.errorForeground": tokenColors.button_fg_highlight,
-		"inputValidation.infoBackground": colors.surface0,
-		"inputValidation.infoBorder": widgetColors.widget_bg,
-		"inputValidation.infoForeground": tokenColors.menu_bg_highlight,
-		"inputValidation.warningBackground": colors.surface0,
-		"inputValidation.warningBorder": colors.lavender,
-		"inputValidation.warningForeground": colors.lavender,
+
+		"inputValidation.errorBackground": colors.mantle,
+		"inputValidation.errorBorder": tokenColors.errorColor,
+		"inputValidation.errorForeground": colors.cherry,
+
+		"inputValidation.infoBackground": colors.mantle,
+		"inputValidation.infoBorder": tokenColors.infoColor,
+		"inputValidation.infoForeground": colors.mauve,
+
+		"inputValidation.warningBackground": colors.mantle,
+		"inputValidation.warningBorder": tokenColors.warnColor,
+		"inputValidation.warningForeground": colors.peach,
+
 		"list.activeSelectionBackground": opacity(colors.mantle, 0.88),
 		"list.activeSelectionForeground": colors.text,
 		"list.dropBackground": dropBackground,
@@ -366,9 +371,9 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"notificationLink.foreground": tokenColors.menu_bg_highlight,
 		"notifications.background": colors.mantle,
 		"notifications.foreground": colors.text,
-		"notificationsErrorIcon.foreground": tokenColors.button_fg_highlight,
-		"notificationsInfoIcon.foreground": tokenColors.menu_bg_highlight,
-		"notificationsWarningIcon.foreground": colors.lavender,
+		"notificationsErrorIcon.foreground": accent,
+		"notificationsInfoIcon.foreground": accent,
+		"notificationsWarningIcon.foreground": accent,
 
 		"panelInput.border": widgetColors.widget_bg,
 		"panelTitle.activeForeground": colors.subtext0,
@@ -384,9 +389,9 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"peekViewTitle.background": widgetColors.widget_menu_bg,
 		"peekViewTitleDescription.foreground": widgetColors.widget_fg,
 		"peekViewTitleLabel.foreground": widgetColors.widget_fg,
-		"problemsErrorIcon.foreground": tokenColors.button_fg_highlight,
-		"problemsInfoIcon.foreground": tokenColors.menu_bg_highlight,
-		"problemsWarningIcon.foreground": colors.lavender,
+		"problemsErrorIcon.foreground": tokenColors.errorColor,
+		"problemsInfoIcon.foreground": tokenColors.infoColor,
+		"problemsWarningIcon.foreground": tokenColors.warnColor,
 		"quickInputList.focusBackground": widgetColors.widget_hl,
 		"scrollbar.shadow": opacity(colors.crust, 0.44),
 		"scrollbarSlider.activeBackground": opacity(colors.surface0, 0.69),
@@ -408,7 +413,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"settings.textInputForeground": tokenColors.menu_bg_highlight,
 
 		"sideBar.background": colors.crust,
-		"sideBar.foreground": colors.surface0,
+		"sideBar.foreground": colors.surface1,
 		"sideBarSectionHeader.background": colors.mantle,
 		"sideBarSectionHeader.foreground": colors.surface0,
 
@@ -464,22 +469,22 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 
 		// tabs
 		"tab.activeBackground": colors.mantle,
-		"tab.activeBorder": tokenColors.hintColor,
+		"tab.activeBorder": accent,
 		"tab.border": colors.crust,
 		"tab.hoverBackground": colors.mantle,
 		"tab.inactiveBackground": colors.mantle,
-		"tab.inactiveForeground": colors.surface0,
+		"tab.inactiveForeground": colors.surface1,
 		"tab.unfocusedActiveBorder": colors.crust,
 		"tab.unfocusedActiveForeground": colors.text,
 		"tab.unfocusedInactiveForeground": colors.surface0,
-		"tab.activeBorderTop": accent,
+		"tab.activeBorderTop": colors.mantle,
 		"tab.activeForeground": accent,
 		"tab.hoverForeground": accent,
 		"tab.lastPinnedBorder": accent,
 		"tab.unfocusedActiveBorderTop": opacity(accent, 0.3),
 
 		// terminal / panel
-		"panel.background": colors.surface0,
+		"panel.background": colors.subSurface,
 		"panel.border": colors.surface0,
 		"terminal.tab.activeBorder": accent,
 		"terminal.ansiBlack": colors.crust,
@@ -500,15 +505,23 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"terminal.ansiYellow": colors.lavender,
 		"terminal.foreground": colors.text,
 		"terminalCursor.foreground": colors.text,
+		"terminalCommandDecoration.defaultBackground": colors.surface1,
+		"terminalCommandDecoration.errorBackground": tokenColors.errorColor,
+		"terminalCommandDecoration.successBackground": colors.seafoam,
 
 		// title bar
 		"titleBar.activeBackground": colors.crust,
 		"titleBar.activeForeground": colors.text,
 		"titleBar.border": colors.crust,
 		"titleBar.inactiveBackground": colors.crust,
-		"titleBar.inactiveForeground": colors.surface0,
+		"titleBar.inactiveForeground": colors.surface1,
 
-		"tree.indentGuidesStroke": colors.surface0,
+		"tree.indentGuidesStroke": colors.surface1,
+
+		"inlineChat.foreground": colors.subtext0,
+		"chat.slashCommandBackground": colors.surface0,
+		"chat.slashCommandForeground": colors.seafoam,
+		"editorStickyScrollHover.background": colors.subSurface,
 		...extensions(ctx),
 	};
 }

@@ -440,7 +440,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "markup.untracked",
 			settings: {
-				foreground: colors.surface0,
+				foreground: colors.surface1,
 			},
 		},
 		{
@@ -1259,7 +1259,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["keyword.operator"],
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.operator,
 				fontStyle: "",
 			},
 		},

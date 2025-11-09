@@ -8,7 +8,7 @@ import {
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type { ThemeOptions, JsonSettings, ThemeContext } from "@/types";
+import type { ThemeOptions, JsonSettings, ThemeContext, Accent } from "@/types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
@@ -50,30 +50,42 @@ const writeThemeFile = async (uri: Uri, data: any): Promise<void> => {
 
 export const updateTheme = async (
 	options: ThemeOptions,
+	path: Uri,
 	trigger: UpdateTrigger,
 ) => {
-	const promise = async (): Promise<void> => {
-		const theme = compileTheme(options);
-		const themeUri = Uri.file(
-			"./themes/Gruvvy-Watermelon-color-theme.json",
-		);
-		return writeThemeFile(themeUri, theme);
-	};
+	console.log("updateTheme called with options:", options);
+	console.log("updateTheme path:", path.fsPath);
 
-	Promise.resolve(promise)
-		.then(() => {
-			promptToReload(trigger);
-		})
-		.catch((error) => {
-			window.showErrorMessage(
-				"Failed to save re-compiled theme: \n" + error.message,
-			);
-		});
+	try {
+		const theme = compileTheme(options);
+		await writeThemeFile(path, theme);
+		console.log("Theme file written successfully");
+
+		// Try to force VS Code to reload the theme by switching themes momentarily
+		const config = workspace.getConfiguration("workbench");
+		const currentTheme = config.get<string>("colorTheme");
+
+		if (currentTheme === "Gruvvy Watermelon") {
+			// Switch to default dark theme briefly, then back
+			await config.update("colorTheme", "Default Dark+", true);
+			// Small delay to ensure the change is processed
+			setTimeout(async () => {
+				await config.update("colorTheme", "Gruvvy Watermelon", true);
+			}, 100);
+		}
+
+		promptToReload(trigger);
+	} catch (error) {
+		console.error("Error updating theme:", error);
+		window.showErrorMessage(
+			"Failed to save re-compiled theme: \n" + (error as Error).message,
+		);
+	}
 };
 
 function promptToReload(trigger: UpdateTrigger) {
-	const message = `Gruvvy Watermelon: ${trigger} - Reload required.`;
-	const action = "Reload window";
+	const message = `Gruvvy Watermelon: ${trigger} - Theme updated! Please reload to see changes.`;
+	const action = "Reload Now";
 	window.showInformationMessage(message, action).then((selectedAction) => {
 		if (selectedAction === action) {
 			commands.executeCommand("workbench.action.reloadWindow");
@@ -120,16 +132,20 @@ export const getConfiguration = (): ThemeOptions => {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
 
 	const options = {
-		accent: config.get<string>("accentColor"),
-		integrateTodoTree: config.get<boolean>("overrideTodoTree"),
+		accentColor: config.get<Accent>("accentColor"),
+		integrateTodoTree: config.get<boolean>("integrateTodoTree"),
 		integrateErrorLensGutter: config.get<boolean>(
 			"integrateErrorLensGutter",
 		),
-	};
-	return {
+	} satisfies Partial<ThemeOptions>;
+
+	const result = {
 		...defaultOptions,
 		...filterObject(options, ([, value]) => value !== undefined),
 	};
+
+	console.log("getConfiguration result:", result);
+	return result;
 };
 
 // const getActiveTheme = (): string => {
@@ -144,7 +160,6 @@ export const getConfiguration = (): ThemeOptions => {
 
 export function syncExtensionSettings(configTargets: JsonSettings) {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
-	const changeAccent = config.get<string>("accentColor");
 	const integrateTodoTree = config.get<boolean>("integrateTodoTree");
 	const integrateErrorLensGutter = config.get<boolean>(
 		"integrateErrorLensGutter",
@@ -171,7 +186,7 @@ export function syncExtensionSettings(configTargets: JsonSettings) {
 
 	if (configTargets["gruvvy-watermelon.integrateErrorLensGutter"].changed) {
 		// Update ErrorLens settings
-		const errorLensConfig = errorLensConfiguration(palette);
+		const errorLensConfig = errorLensConfiguration(context);
 		for (const [key, value] of Object.entries(errorLensConfig)) {
 			workspace.getConfiguration("errorLens").update(
 				key, // remove "errorLens." prefix for update

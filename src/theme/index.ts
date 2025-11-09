@@ -1,40 +1,29 @@
 import { palette } from "../palettes";
 import {
 	GruvvyFlavor,
-	GruvvyPalette,
 	PaletteCollection,
 	ThemeContext,
 	ThemeOptions,
 } from "@/types";
 import { getUiColors } from "./uiColors";
 import { getTokenColors } from "./tokencolors";
-import { readFileSync } from "fs";
+import path from "node:path";
+import fs from "node:fs";
 import { repoRoot } from "@/hooks/constants";
-import path from "path";
 
 export const defaultOptions: ThemeOptions = {
 	integrateTodoTree: false,
 	integrateErrorLensGutter: false,
-	accentColor: "mauve",
+	accentColor: "watermelon",
 };
 
 export const compileTheme = (
 	options: ThemeOptions = defaultOptions,
 ): object => {
-	const ctxPalette = {} as GruvvyPalette;
-	const flavor: GruvvyFlavor = JSON.parse(
-		readFileSync(
-			path.join(repoRoot, "/src/theme-gen/theme/gruvvyWatermelon.json"),
-			"utf-8",
-		),
-	);
-
-	for (const [colorName, colorValue] of flavor.colorEntries) {
-		ctxPalette[colorName] = colorValue.hex;
-	}
-
+	console.log("compileTheme called with options:", options);
+	// Use the dynamic palette instead of reading from static JSON
 	const ctxPaletteCollection: PaletteCollection = {
-		colors: ctxPalette,
+		colors: palette.colors,
 		tokenColors: palette.tokenColors,
 		widgetColors: palette.widgetColors,
 	};
@@ -43,6 +32,8 @@ export const compileTheme = (
 		palette: ctxPaletteCollection,
 		options: options,
 	};
+
+	console.log("Context created with accentColor:", ctx.options.accentColor);
 
 	return {
 		name: "Gruvvy Watermelon",

@@ -1,4 +1,10 @@
-import { ConfigurationChangeEvent, ExtensionContext, workspace } from "vscode";
+import {
+	ConfigurationChangeEvent,
+	ExtensionContext,
+	Uri,
+	window,
+	workspace,
+} from "vscode";
 
 import * as utils from "./utils";
 
@@ -15,7 +21,12 @@ export type ConfigTargets = {
 };
 
 export const activate = async (context: ExtensionContext) => {
-	const config = utils.getConfiguration();
+	const base = context.extensionUri;
+	const path = Uri.joinPath(
+		base,
+		"themes",
+		"Gruvvy-Watermelon-color-theme.json",
+	);
 
 	const configTargets: ConfigTargets = {
 		"gruvvy-watermelon.accentColor": {
@@ -28,20 +39,31 @@ export const activate = async (context: ExtensionContext) => {
 			changed: false,
 		},
 	};
-
+	const config = utils.getConfiguration();
 	// regenerate theme on fresh install/first activation
-	if ((await utils.isFreshInstall(context)) === true) {
-		utils.updateTheme(config, utils.UpdateTrigger.FRESH_INSTALL);
+	if ((await utils.isFreshInstall(context)) && !utils.isDefaultConfig()) {
+		utils.updateTheme(config, path, utils.UpdateTrigger.FRESH_INSTALL);
 		utils.syncExtensionSettings(configTargets);
 	}
 
 	context.subscriptions.push(
 		workspace.onDidChangeConfiguration((evt) => {
 			if (evt.affectsConfiguration("gruvvy-watermelon")) {
-				utils.updateTheme(config, utils.UpdateTrigger.CONFIG_CHANGE);
+				const newConfig = utils.getConfiguration();
+				console.log(
+					"Config changed, new accent color:",
+					newConfig.accentColor,
+				);
+
+				utils.updateTheme(
+					newConfig,
+					path,
+					utils.UpdateTrigger.CONFIG_CHANGE,
+				);
+
+				let syncResult = syncMe(configTargets, evt);
 
 				// sync settings for updated config keys
-				let syncResult = syncMe(configTargets, evt);
 				if (syncResult.changed) {
 					utils.syncExtensionSettings(syncResult.entries);
 				}

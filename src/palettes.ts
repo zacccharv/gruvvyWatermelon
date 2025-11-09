@@ -23,8 +23,9 @@ const m_colors: GruvvyPalette = {
 	subtext0: "#cee9e6ff",
 	overlay1: "#9dafadff",
 	overlay0: "#6a817fff",
-	surface1: "#5e6867ff",
-	surface0: "#35403eff",
+	surface1: "#627776",
+	surface0: "#5e6867ff",
+	subSurface: "#35403eff",
 	base: "#2a3232ff",
 	mantle: "#202727ff",
 	crust: "#171c1bff",
@@ -87,7 +88,7 @@ const tokens: TokenColors = {
 const widgets: WidgetThemeColors = {
 	widget_bg: m_colors.base,
 	widget_fg: m_colors.text,
-	widget_hl: m_colors.overlay0,
+	widget_hl: m_colors.overlay1,
 	widget_menu_bg: m_colors.surface0,
 };
 

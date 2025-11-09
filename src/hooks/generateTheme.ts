@@ -14,6 +14,7 @@ const main = async () => {
 };
 
 export default main;
-
-console.log("Compiling themes...");
-main();
+if (typeof require !== "undefined" && require.main === module) {
+	console.log("Compiling themes...");
+	main();
+}
