@@ -1,8 +1,11 @@
 import { ConfigurationChangeEvent, ExtensionContext, workspace } from "vscode";
+
 import * as utils from "./utils";
-import * as types from "./types";
 
 export type ConfigTargets = {
+	"gruvvy-watermelon.accentColor": {
+		changed: boolean;
+	};
 	"gruvvy-watermelon.integrateTodoTree": {
 		changed: boolean;
 	};
@@ -12,9 +15,12 @@ export type ConfigTargets = {
 };
 
 export const activate = async (context: ExtensionContext) => {
-	const config = types.getConfiguration();
+	const config = utils.getConfiguration();
 
 	const configTargets: ConfigTargets = {
+		"gruvvy-watermelon.accentColor": {
+			changed: false,
+		},
 		"gruvvy-watermelon.integrateTodoTree": {
 			changed: false,
 		},

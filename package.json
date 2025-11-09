@@ -52,6 +52,12 @@
 		"configuration": {
 			"title": "gruvvy-watermelon",
 			"properties": {
+				"gruvvy-watermelon.accentColor": {
+					"scope": "window",
+					"type": "object",
+					"default": "mauve",
+					"description": "Sets the accent color for the Gruvvy Watermelon theme. Choose from a variety of vibrant colors to customize your coding experience."
+				},
 				"gruvvy-watermelon.integrateTodoTree": {
 					"scope": "window",
 					"type": "boolean",
@@ -63,33 +69,13 @@
 					"type": "boolean",
 					"default": false,
 					"description": "Integrate Gruvvy Watermelon theme with the Error Lens extension gutter icons. Adds basic shapes that use the theme colors for errors, warnings and info and puts them in the editor gutter next to each line with a notification."
-				},
-				"gruvvy-watermelon.accentColor": {
-					"scope": "window",
-					"type": "string",
-					"enum": [
-						"rosewater",
-						"cherry",
-						"pink",
-						"raspberry",
-						"lavender",
-						"mauve",
-						"seafoam",
-						"teal",
-						"mint",
-						"watermelon",
-						"champagne",
-						"peach"
-					],
-					"default": "mauve",
-					"description": "Select the accent color for the Gruvvy Watermelon theme."
 				}
 			}
 		}
 	},
 	"scripts": {
 		"core:compile": "pnpm check-types && tsx build.ts",
-		"check-types": "tsc --noEmit",
+		"check-types": "tsc --noEmit && tsx src/theme-gen/genData.ts",
 		"build": "pnpm tsx build.ts --dev",
 		"core:watch": "tsx watch build.ts ",
 		"prepublishOnly": "pnpm run build && vsce publish"

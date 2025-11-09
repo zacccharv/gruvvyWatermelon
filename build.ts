@@ -1,6 +1,8 @@
 import { createVSIX } from "@vscode/vsce";
 import { build } from "tsup";
 import { getFlag } from "type-flag";
+import { generate } from "./src/theme-gen/genData";
+import generateTheme from "./src/hooks/generateTheme";
 
 import { generatePackage, readPackageJsonVersion } from "@/hooks/packageJson";
 
@@ -17,6 +19,8 @@ const main = async () => {
 		);
 		await generatePackage();
 	}
+
+	await generate().then(() => generateTheme());
 
 	// build extension last
 	// main.ts creates the theme at runtime

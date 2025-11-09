@@ -2,152 +2,152 @@ export type ErrorLensColors = {
 	/**
 	 * Background color of the entire line containing error.
 	 */
-	errorBackground: string;
+	"errorLens.errorBackground": string;
 
 	/**
 	 * Background color of the error message.
 	 */
-	errorMessageBackground: string;
+	"errorLens.errorMessageBackground": string;
 
 	/**
 	 * Background color of the error range (when problemRangeDecorationEnabled setting enabled).
 	 */
-	errorRangeBackground: string;
+	"errorLens.errorRangeBackground": string;
 
 	/**
 	 * Background color of the entire line containing error (Only in light themes).
 	 */
-	errorBackgroundLight: string;
+	"errorLens.errorBackgroundLight": string;
 
 	/**
 	 * Text color used to highlight lines containing errors.
 	 */
-	errorForeground: string;
+	"errorLens.errorForeground": string;
 
 	/**
 	 * Text color used to highlight lines containing errors (Only in light themes).
 	 */
-	errorForegroundLight: string;
+	"errorLens.errorForegroundLight": string;
 
 	/**
 	 * Background color used to highlight lines containing warnings.
 	 */
-	warningBackground: string;
+	"errorLens.warningBackground": string;
 
 	/**
 	 * Background color of the warning message.
 	 */
-	warningMessageBackground: string;
+	"errorLens.warningMessageBackground": string;
 
 	/**
 	 * Background color of the warning range (when problemRangeDecorationEnabled setting enabled).
 	 */
-	warningRangeBackground: string;
+	"errorLens.warningRangeBackground": string;
 
 	/**
 	 * Background color used to highlight lines containing warnings (Only in light themes).
 	 */
-	warningBackgroundLight: string;
+	"errorLens.warningBackgroundLight": string;
 
 	/**
 	 * Text color used to highlight lines containing warnings.
 	 */
-	warningForeground: string;
+	"errorLens.warningForeground": string;
 
 	/**
 	 * Text color used to highlight lines containing warnings (Only in light themes).
 	 */
-	warningForegroundLight: string;
+	"errorLens.warningForegroundLight": string;
 
 	/**
 	 * Background color used to highlight lines containing info.
 	 */
-	infoBackground: string;
+	"errorLens.infoBackground": string;
 
 	/**
 	 * Background color of the info message.
 	 */
-	infoMessageBackground: string;
+	"errorLens.infoMessageBackground": string;
 
 	/**
 	 * Background color of the info range (when problemRangeDecorationEnabled setting enabled).
 	 */
-	infoRangeBackground: string;
+	"errorLens.infoRangeBackground": string;
 
 	/**
 	 * Background color used to highlight lines containing info (Only in light themes).
 	 */
-	infoBackgroundLight: string;
+	"errorLens.infoBackgroundLight": string;
 
 	/**
 	 * Text color used to highlight lines containing info.
 	 */
-	infoForeground: string;
+	"errorLens.infoForeground": string;
 
 	/**
 	 * Text color used to highlight lines containing info (Only in light themes).
 	 */
-	infoForegroundLight: string;
+	"errorLens.infoForegroundLight": string;
 
 	/**
 	 * Background color used to highlight lines containing hints.
 	 */
-	hintBackground: string;
+	"errorLens.hintBackground": string;
 
 	/**
 	 * Background color of the hint message.
 	 */
-	hintMessageBackground: string;
+	"errorLens.hintMessageBackground": string;
 
 	/**
 	 * Background color of the hint range (when problemRangeDecorationEnabled setting enabled).
 	 */
-	hintRangeBackground: string;
+	"errorLens.hintRangeBackground": string;
 
 	/**
 	 * Background color used to highlight lines containing hints (Only in light themes).
 	 */
-	hintBackgroundLight: string;
+	"errorLens.hintBackgroundLight": string;
 
 	/**
 	 * Text color used to highlight lines containing hints.
 	 */
-	hintForeground: string;
+	"errorLens.hintForeground": string;
 
 	/**
 	 * Text color used to highlight lines containing hints (Only in light themes).
 	 */
-	hintForegroundLight: string;
+	"errorLens.hintForegroundLight": string;
 
 	/**
 	 * Status bar icon item error color. Foreground is used when the `statusBarIconsUseBackground` setting is disabled.
 	 */
-	statusBarIconErrorForeground: string;
+	"errorLens.statusBarIconErrorForeground": string;
 
 	/**
 	 * Status bar icon item error color. Foreground is used when the `statusBarIconsUseBackground` setting is disabled.
 	 */
-	statusBarIconWarningForeground: string;
+	"errorLens.statusBarIconWarningForeground": string;
 
 	/**
 	 * Status bar item error color.
 	 */
-	statusBarErrorForeground: string;
+	"errorLens.statusBarErrorForeground": string;
 
 	/**
 	 * Status bar item warning color.
 	 */
-	statusBarWarningForeground: string;
+	"errorLens.statusBarWarningForeground": string;
 
 	/**
 	 * Status bar item info color.
 	 */
-	statusBarInfoForeground: string;
+	"errorLens.statusBarInfoForeground": string;
 
 	/**
 	 * Status bar item hint color.
 	 */
-	statusBarHintForeground: string;
+	"errorLens.statusBarHintForeground": string;
 };
 
 export type ErrorLensConfig = {

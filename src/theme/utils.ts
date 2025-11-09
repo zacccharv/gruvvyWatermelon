@@ -31,4 +31,20 @@ export const shade = (color: string, magnitude: number): string =>
 				.darken(Math.abs(magnitude * 100))
 				.toHexString();
 
+export const hexToRgba = (
+	hex: string,
+): { r: number; g: number; b: number; a: number } => {
+	const tc = tinycolor(hex);
+	const rgb = tc.toRgb();
+	return { r: rgb.r, g: rgb.g, b: rgb.b, a: rgb.a ?? 1 };
+};
+
+export const hexToHsl = (
+	hex: string,
+): { h: number; s: number; l: number; a: number } => {
+	const tc = tinycolor(hex);
+	const hsl = tc.toHsl();
+	return { h: hsl.h, s: hsl.s * 100, l: hsl.l * 100, a: hsl.a ?? 1 };
+};
+
 export const transparent = "#00000000";

@@ -1,4 +1,32 @@
 
+
+export const AccentNames = {
+	ROSEWATER: "rosewater",
+	CHERRY: "cherry",
+	PINK: "pink",
+	RASPBERRY: "raspberry",
+	LAVENDER: "lavender",
+	MAUVE: "mauve",
+	SEAFOAM: "seafoam",
+	TEAL: "teal",
+	MINT: "mint",
+	WATERMELON: "watermelon",
+	CHAMPAGNE: "champagne",
+	PEACH: "peach",
+} as const;
+
+type Entries<T> = {
+    [K in keyof T]: [K, T[K]];
+}[keyof T][];
+
+export type AccentName = "rosewater" | "cherry" | "pink" | "raspberry" | "lavender" | "mauve" | "seafoam" | "teal" | "mint" | "watermelon" | "champagne" | "peach";
+
+export type MonochromaticName = "text" | "subtext1" | "subtext0" |  "overlay1" | "overlay0" |  "surface1" | "surface0" | "base" | "mantle" | "crust";
+
+export type ColorName = AccentName | MonochromaticName;
+
+export type Colors<T> = Record<ColorName, T>;
+
 export type ColorFormat = {
 	/**
 	 * Name of the color.
@@ -51,12 +79,10 @@ export type ColorFormat = {
 	accent: boolean;
 };
 
-export type AccentName = "rosewater" | "cherry" | "pink" | "raspberry" | "lavender" | "mauve" | "seafoam" | "teal" | "mint" | "watermelon" | "champagne" | "peach";
+export type GruvvyColors = Record<ColorName, ColorFormat>;
 
-export type MonochromaticName = "text" | "subtext1" | "subtext0" | "overlay2" | "overlay1" | "overlay0" | "surface2" | "surface1" | "surface0" | "base" | "mantle" | "crust";
-
-export type ColorName = AccentName | MonochromaticName;
-
-export type Colors<T> = Record<ColorName, T>;
-
-export type GruvvyColors = Readonly<Colors<ColorFormat>>;
+export type GruvvyFlavor ={
+	name: string;
+	colors: GruvvyColors;
+	colorEntries: Entries<GruvvyColors>;
+}

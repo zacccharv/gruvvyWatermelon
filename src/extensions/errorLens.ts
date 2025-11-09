@@ -1,12 +1,12 @@
-import { Palette, ErrorLensConfig } from "@/types";
+import { PaletteCollection, ErrorLensConfig } from "@/types";
 
-const errorLensConfiguration = (ctx: Palette): ErrorLensConfig => {
+const errorLensConfiguration = (ctx: PaletteCollection): ErrorLensConfig => {
 	const { tokenColors } = ctx;
 	return {
-		"hintGutterIconColor": tokenColors.hintColor,
-		"infoGutterIconColor": tokenColors.infoColor,
-		"warningGutterIconColor": tokenColors.warnColor,
-		"errorGutterIconColor": tokenColors.errorColor,
+		hintGutterIconColor: tokenColors.hintColor,
+		infoGutterIconColor: tokenColors.infoColor,
+		warningGutterIconColor: tokenColors.warnColor,
+		errorGutterIconColor: tokenColors.errorColor,
 	};
 };
 

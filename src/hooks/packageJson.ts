@@ -7,11 +7,20 @@ const config = {
 	configuration: {
 		title: "gruvvy-watermelon",
 		properties: {
+			"gruvvy-watermelon.accentColor": {
+				scope: "window",
+				// TODO Turn this into an enum with available accent colors so it shows a dropdown in settings
+				type: "string",
+				default: "mauve",
+				description:
+					"Sets the accent color for the Gruvvy Watermelon theme. Choose from a variety of vibrant colors to customize your coding experience.",
+			},
 			"gruvvy-watermelon.integrateTodoTree": {
 				scope: "window",
 				type: "boolean",
 				default: false,
-				description: "Integrate Gruvvy Watermelon theme with the Todo Tree extension.",
+				description:
+					"Integrate Gruvvy Watermelon theme with the Todo Tree extension.",
 			},
 			"gruvvy-watermelon.integrateErrorLensGutter": {
 				scope: "window",

@@ -8,7 +8,7 @@ import {
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type { ThemeOptions, JsonSettings } from "@/types";
+import type { ThemeOptions, JsonSettings, ThemeContext } from "@/types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
@@ -144,15 +144,21 @@ export const getConfiguration = (): ThemeOptions => {
 
 export function syncExtensionSettings(configTargets: JsonSettings) {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
+	const changeAccent = config.get<string>("accentColor");
 	const integrateTodoTree = config.get<boolean>("integrateTodoTree");
 	const integrateErrorLensGutter = config.get<boolean>(
 		"integrateErrorLensGutter",
 	);
 
+	const context: ThemeContext = {
+		palette: palette,
+		options: getConfiguration(),
+	};
+
 	// Update Todo Tree settings
 	if (configTargets["gruvvy-watermelon.integrateErrorLensGutter"].changed) {
 		{
-			const todoConfig = todoConfiguration(palette);
+			const todoConfig = todoConfiguration(context);
 			for (const [key, value] of Object.entries(todoConfig)) {
 				workspace.getConfiguration("todo-tree").update(
 					key, // remove "todo-tree." prefix for update

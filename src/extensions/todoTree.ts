@@ -1,7 +1,7 @@
-import { Palette, TodoTreeConfig } from "@/types";
+import { ThemeContext, TodoTreeConfig } from "@/types";
 
-const todoConfiguration = (ctx: Palette): TodoTreeConfig => {
-	const { flavor: palette } = ctx;
+const todoConfiguration = (ctx: ThemeContext): TodoTreeConfig => {
+	const { colors } = ctx.palette;
 	const generalTags = [
 		"// TODO",
 		"/** TODO",
@@ -32,29 +32,29 @@ const todoConfiguration = (ctx: Palette): TodoTreeConfig => {
 		],
 	};
 	const defaultTagColorSetting = {
-		background: palette.base,
+		background: colors.base,
 		borderRadius: "0",
 		fontWeight: "bold",
-		foreground: palette.crust,
+		foreground: colors.crust,
 		icon: "alert",
-		iconColour: palette.pink,
+		iconColour: colors.pink,
 		type: "text",
 	};
 	const tagColorSettings = {
 		TODO: {
-			background: palette.mint,
+			background: colors.mint,
 			icon: "info",
 		},
 		NOTE: {
-			background: palette.lavender,
+			background: colors.lavender,
 			icon: "note",
 		},
 		FIXME: {
-			background: palette.cherry,
+			background: colors.cherry,
 			icon: "flame",
 		},
 		IMPORTANT: {
-			background: palette.rosewater,
+			background: colors.rosewater,
 			icon: "star",
 		},
 	};

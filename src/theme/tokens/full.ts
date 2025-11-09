@@ -1,7 +1,7 @@
-import { FlavorPalette } from "../../types";
+import { ThemeContext } from "../../types";
 
-export default function full(ctx: FlavorPalette) {
-	const { colors, tokenColors } = ctx;
+export default function full(ctx: ThemeContext) {
+	const { colors, tokenColors } = ctx.palette;
 
 	return [
 		{
