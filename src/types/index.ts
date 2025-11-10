@@ -1,4 +1,4 @@
-import { AccentName, Colors, Flavor } from "./palettetypes";
+import { AccentName, AnsiColors, Colors, Flavor } from "./palettetypes";
 
 export type * from "./textmate-colors";
 export type * from "./workbench-colors";
@@ -6,9 +6,11 @@ export type * from "./errorlens";
 export type * from "./todoTree";
 
 export type GruvvyPalette = Colors<string>;
+export type GruvvyAnsiPalette = AnsiColors<string>;
 
 export type PaletteCollection = {
 	colors: GruvvyPalette;
+	ansiColors: GruvvyAnsiPalette
 	tokenColors: TokenColors;
 	widgetColors: WidgetThemeColors;
 };
@@ -39,6 +41,7 @@ export type TokenColors = {
 	string_value: string;
 	number_value: string;
 	base_value: string;
+	entity_name: string;
 	errorColor: string;
 	warnColor: string;
 	infoColor: string;

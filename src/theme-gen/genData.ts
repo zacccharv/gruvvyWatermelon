@@ -1,6 +1,12 @@
 // Generate Gruvvyflavor from hex colors
-import { ColorFormat, GruvvyColors } from "@/types/palettetypes";
-import { AccentNames } from "@/types/palettetypes";
+import {
+	AnsiColorFormat,
+	AnsiColors,
+	ColorFormat,
+	GruvvyAnsiColors,
+	GruvvyColors,
+} from "@/types/palettetypes";
+import { AccentNames, AnsiNames } from "@/types/palettetypes";
 import { hexToHsl, hexToRgba } from "@/theme/utils";
 import { palette } from "../palettes";
 import { writeFile } from "fs";
@@ -24,12 +30,33 @@ export const createColorFormat = (
 	};
 };
 
+export const createAnsiColorFormat = (
+	name: string,
+	hex: string,
+	code: number,
+): AnsiColorFormat => {
+	return {
+		name,
+		hex,
+		rgb: hexToRgba(hex),
+		hsl: hexToHsl(hex),
+		code,
+	};
+};
+
 const colorMap: GruvvyColors = Object.fromEntries(
 	Object.entries(palette.colors).map(([name, hex]) => [
 		name,
 		createColorFormat(name, hex, isAccent(name)),
 	]),
 ) as GruvvyColors;
+
+const ansiColorMap: GruvvyAnsiColors = Object.fromEntries(
+	Object.entries(palette.ansiColors).map(([name, hex], index) => [
+		name,
+		createAnsiColorFormat(name, hex, index),
+	]),
+) as GruvvyAnsiColors;
 
 const colorEntries: Entries<GruvvyColors> = Object.entries(
 	colorMap,
@@ -38,6 +65,7 @@ const colorEntries: Entries<GruvvyColors> = Object.entries(
 const mappedFlavors: GruvvyFlavor = {
 	name: "Gruvvy Watermelon",
 	colors: colorMap,
+	ansiColors: ansiColorMap,
 	colorEntries: colorEntries,
 };
 
@@ -61,9 +89,9 @@ export const generate = async (): Promise<Boolean> => {
 	});
 };
 
-generate();
-
 function isAccent(name: string): boolean {
 	return (Object.values(AccentNames) as string[]).includes(name);
 }
+
+generate();
 

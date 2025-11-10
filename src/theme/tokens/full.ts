@@ -1,4 +1,5 @@
 import { ThemeContext } from "../../types";
+import { mix } from "../utils";
 
 export default function full(ctx: ThemeContext) {
 	const { colors, tokenColors } = ctx.palette;
@@ -45,7 +46,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "comment.git-status.header.remote",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -194,13 +195,13 @@ export default function full(ctx: ThemeContext) {
 				"entity.name.tag support.class.component",
 			],
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
 			scope: "entity.name.function.operator",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -295,7 +296,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.name.lifetime.rust",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -336,7 +337,7 @@ export default function full(ctx: ThemeContext) {
 				"keyword.other.template.end",
 			],
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -362,7 +363,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["keyword.control.rust", "keyword.operator.misc.rust"],
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -459,7 +460,7 @@ export default function full(ctx: ThemeContext) {
 				"meta.function-call.method.without-arguments.js",
 			],
 			settings: {
-				foreground: colors.surface0,
+				foreground: colors.teal,
 			},
 		},
 		{
@@ -563,12 +564,7 @@ export default function full(ctx: ThemeContext) {
 				foreground: colors.lavender,
 			},
 		},
-		{
-			scope: "meta.object.member",
-			settings: {
-				foreground: colors.text,
-			},
-		},
+
 		{
 			scope: "meta.property-list.css variable.other",
 			settings: {
@@ -681,7 +677,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "region.redish",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -717,7 +713,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "region.pinkish",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -801,7 +797,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "storage",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -820,14 +816,14 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "storage.type.extends",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 				fontStyle: "",
 			},
 		},
 		{
 			scope: "storage.type.function.arrow",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 				fontStyle: "",
 			},
 		},
@@ -854,7 +850,7 @@ export default function full(ctx: ThemeContext) {
 				"storage.modifier.lifetime.rust",
 			],
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -882,7 +878,7 @@ export default function full(ctx: ThemeContext) {
 				"keyword.other.where.rust",
 			],
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -912,7 +908,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["string.other.link.title", "string.other.link.description"],
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -945,7 +941,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "string.other.git-status.remote",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{
@@ -1007,7 +1003,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "text",
 			settings: {
-				foreground: "#fceae6",
+				foreground: colors.text,
 			},
 		},
 		{
@@ -1055,8 +1051,9 @@ export default function full(ctx: ThemeContext) {
 		},
 		{
 			scope: [
+				"meta.object.member",
 				"variable.other.class",
-				"variable.other.object.property",
+				"variable.other.property.js",
 				"variable.other.property.gdscript",
 			],
 			settings: {
@@ -1236,7 +1233,7 @@ export default function full(ctx: ThemeContext) {
 				"punctuation.definition.string.end",
 			],
 			settings: {
-				foreground: tokenColors.plain,
+				foreground: tokenColors.punctuation,
 			},
 		},
 		{
@@ -1278,7 +1275,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "token.error-token",
 			settings: {
-				foreground: tokenColors.button_fg_highlight,
+				foreground: tokenColors.entity_name,
 			},
 		},
 		{

@@ -24,6 +24,7 @@ export const compileTheme = (
 	// Use the dynamic palette instead of reading from static JSON
 	const ctxPaletteCollection: PaletteCollection = {
 		colors: palette.colors,
+		ansiColors: palette.ansiColors,
 		tokenColors: palette.tokenColors,
 		widgetColors: palette.widgetColors,
 	};

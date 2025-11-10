@@ -1,5 +1,6 @@
 import {
 	GruvvyPalette,
+	GruvvyAnsiPalette,
 	PaletteCollection,
 	TokenColors,
 	WidgetThemeColors,
@@ -7,7 +8,7 @@ import {
 
 const m_colors: GruvvyPalette = {
 	rosewater: "#ffc7d6",
-	cherry: "#FF647D",
+	cherry: "#ff647dff",
 	pink: "#FFB6EB",
 	raspberry: "#DD5A8E",
 	lavender: "#C3ADFF",
@@ -29,6 +30,25 @@ const m_colors: GruvvyPalette = {
 	base: "#2a3232ff",
 	mantle: "#202727ff",
 	crust: "#171c1bff",
+};
+
+const m_ansiColors: GruvvyAnsiPalette = {
+	black: m_colors.base,
+	red: m_colors.cherry,
+	green: m_colors.mint,
+	yellow: m_colors.champagne,
+	blue: m_colors.watermelon,
+	magenta: m_colors.pink,
+	cyan: m_colors.teal,
+	white: m_colors.subtext0,
+	brightBlack: m_colors.surface1,
+	brightRed: "#ff5a76ff",
+	brightGreen: "#8ff3d1ff",
+	brightYellow: "#ffc9b9ff",
+	brightBlue: "#47c5a1ff",
+	brightMagenta: "#fe97e3ff",
+	brightCyan: "#73b3abff",
+	brightWhite: m_colors.subtext1,
 };
 
 const tokens: TokenColors = {
@@ -69,6 +89,9 @@ const tokens: TokenColors = {
 	string_value: m_colors.watermelon,
 	number_value: m_colors.watermelon,
 
+	// entity name (xml, html, etc...)
+	entity_name: m_colors.mauve,
+
 	// error
 	errorColor: m_colors.cherry,
 	// warn
@@ -88,14 +111,15 @@ const tokens: TokenColors = {
 const widgets: WidgetThemeColors = {
 	widget_bg: m_colors.base,
 	widget_fg: m_colors.text,
-	widget_hl: m_colors.overlay1,
-	widget_menu_bg: m_colors.surface0,
+	widget_hl: m_colors.subSurface,
+	widget_menu_bg: m_colors.subSurface,
 };
 
 const palette: PaletteCollection = {
 	tokenColors: tokens,
 	widgetColors: widgets,
 	colors: m_colors,
+	ansiColors: m_ansiColors,
 };
 
 export { palette };
