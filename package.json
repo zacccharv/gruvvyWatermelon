@@ -45,7 +45,7 @@
     "themes": [
       {
         "label": "Gruvvy Watermelon",
-        "uiTheme": "vs",
+        "uiTheme": "vs-dark",
         "path": "./themes/Gruvvy-Watermelon-color-theme.json"
       }
     ],

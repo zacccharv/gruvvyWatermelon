@@ -49,9 +49,9 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"checkbox.foreground": accent,
 
 		"list.highlightForeground": accent,
-		"notificationCenter.border": accent,
-		"notificationToast.border": accent,
-		"notifications.border": accent,
+		"notificationCenter.border": transparent,
+		"notificationToast.border": transparent,
+		"notifications.border": transparent,
 		"panelTitle.activeBorder": accent,
 		"pickerGroup.border": accent,
 		"pickerGroup.foreground": accent,
@@ -76,10 +76,10 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		// bracket colors
 		"editorBracketHighlight.foreground1": colors.watermelon,
 		"editorBracketHighlight.foreground2": colors.mint,
-		"editorBracketHighlight.foreground3": colors.champagne,
+		"editorBracketHighlight.foreground3": colors.teal,
 		"editorBracketHighlight.foreground4": colors.watermelon,
 		"editorBracketHighlight.foreground5": colors.mint,
-		"editorBracketHighlight.foreground6": colors.champagne,
+		"editorBracketHighlight.foreground6": colors.teal,
 		"editorBracketHighlight.unexpectedBracket.foreground": colors.cherry,
 
 		// Activity Bar
@@ -303,7 +303,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"list.activeSelectionBackground": opacity(colors.mantle, 0.88),
 		"list.activeSelectionForeground": colors.text,
 		"list.dropBackground": dropBackground,
-		"list.errorForeground": tokenColors.button_fg_highlight,
+		"list.errorForeground": tokenColors.errorColor,
 		"list.focusBackground": opacity(colors.surface1, 0.5),
 		"list.focusForeground": colors.text,
 		"list.hoverBackground": opacity(colors.crust, 0),
@@ -349,9 +349,9 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"notificationLink.foreground": colors.watermelon,
 		"notifications.background": colors.mantle,
 		"notifications.foreground": colors.text,
-		"notificationsErrorIcon.foreground": accent,
-		"notificationsInfoIcon.foreground": accent,
-		"notificationsWarningIcon.foreground": accent,
+		"notificationsErrorIcon.foreground": tokenColors.errorColor,
+		"notificationsInfoIcon.foreground": tokenColors.infoColor,
+		"notificationsWarningIcon.foreground": tokenColors.warnColor,
 
 		"panelInput.border": widgetColors.widget_bg,
 		"panelTitle.activeForeground": colors.subtext0,

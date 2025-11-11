@@ -178,7 +178,7 @@ export function syncExtensionSettings(configTargets: JsonSettings) {
 				workspace.getConfiguration("todo-tree").update(
 					key, // remove "todo-tree." prefix for update
 					integrateTodoTree ? value : undefined,
-					ConfigurationTarget.Workspace,
+					ConfigurationTarget.Global,
 				);
 			}
 		}
@@ -191,7 +191,7 @@ export function syncExtensionSettings(configTargets: JsonSettings) {
 			workspace.getConfiguration("errorLens").update(
 				key, // remove "errorLens." prefix for update
 				integrateErrorLensGutter ? value : undefined,
-				ConfigurationTarget.Workspace,
+				ConfigurationTarget.Global,
 			);
 		}
 	}
