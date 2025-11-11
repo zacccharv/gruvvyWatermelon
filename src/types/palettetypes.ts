@@ -158,7 +158,7 @@ export type AnsiColorFormat = {
 
 export type GruvvyAnsiColors = Record<AnsiColorName, AnsiColorFormat>;
 
-export type Flavor ={
+export type Flavor = {
 	name: string;
 	colors: GruvvyColors;
 	ansiColors: GruvvyAnsiColors;

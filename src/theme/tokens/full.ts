@@ -11,7 +11,6 @@ export default function full(ctx: ThemeContext) {
 				"comment keyword",
 				"comment markup.underline.link",
 				"comment string",
-				"comment punctuation.definition",
 				"comment punctuation",
 				"comment text",
 			],
@@ -20,21 +19,21 @@ export default function full(ctx: ThemeContext) {
 			},
 		},
 		{
-			scope: "comment storage.type",
+			scope: ["comment storage.type", "comment punctuation.definition"],
 			settings: {
-				foreground: colors.surface0,
+				foreground: tokenColors.keyword_storage,
 			},
 		},
 		{
 			scope: "comment entity.name.type",
 			settings: {
-				foreground: colors.surface0,
+				foreground: tokenColors.type,
 			},
 		},
 		{
 			scope: ["comment variable", "comment variable.other"],
 			settings: {
-				foreground: colors.surface0,
+				foreground: colors.champagne,
 			},
 		},
 		{

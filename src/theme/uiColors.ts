@@ -402,7 +402,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"settings.textInputForeground": colors.watermelon,
 
 		"sideBar.background": colors.crust,
-		"sideBar.foreground": colors.overlay0,
+		"sideBar.foreground": colors.surface1,
 		"sideBarSectionHeader.background": colors.mantle,
 		"sideBarSectionHeader.foreground": colors.surface1,
 

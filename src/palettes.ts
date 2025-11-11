@@ -8,28 +8,29 @@ import {
 
 const m_colors: GruvvyPalette = {
 	rosewater: "#ffc7d6",
-	cherry: "#ff647dff",
+	cherry: "#ff647d",
 	pink: "#FFB6EB",
 	raspberry: "#DD5A8E",
 	lavender: "#C3ADFF",
 	mauve: "#9781D5",
-	seafoam: "#a1ede0ff",
-	teal: "#86d5dfff",
-	mint: "#80e5b3ff",
-	watermelon: "#4fb094ff",
+	seafoam: "#a1ede0",
+	teal: "#86d5df",
+	darkteal: "#67938E",
+	mint: "#80e5b3",
+	watermelon: "#4fb094",
 	champagne: "#f1bcac",
 	peach: "#f18464",
-	text: "#ecefeeff",
-	subtext1: "#d8e8e6ff",
-	subtext0: "#cee9e6ff",
-	overlay1: "#9dafadff",
-	overlay0: "#6a817fff",
+	text: "#ecefee",
+	subtext1: "#d8e8e6",
+	subtext0: "#cee9e6",
+	overlay1: "#9dafad",
+	overlay0: "#6a817f",
 	surface1: "#627776",
-	surface0: "#5e6867ff",
-	subSurface: "#35403eff",
-	base: "#2a3232ff",
-	mantle: "#202727ff",
-	crust: "#171c1bff",
+	surface0: "#5e6867",
+	subSurface: "#35403e",
+	base: "#2a3232",
+	mantle: "#202727",
+	crust: "#171c1b",
 };
 
 const m_ansiColors: GruvvyAnsiPalette = {
@@ -42,51 +43,95 @@ const m_ansiColors: GruvvyAnsiPalette = {
 	cyan: m_colors.teal,
 	white: m_colors.subtext0,
 	brightBlack: m_colors.surface1,
-	brightRed: "#ff5a76ff",
-	brightGreen: "#8ff3d1ff",
-	brightYellow: "#ffc9b9ff",
-	brightBlue: "#47c5a1ff",
-	brightMagenta: "#fe97e3ff",
-	brightCyan: "#53e5ddff",
+	brightRed: "#ff5a76",
+	brightGreen: "#8ff3d1",
+	brightYellow: "#ffc9b9",
+	brightBlue: "#47c5a1",
+	brightMagenta: "#fe97e3",
+	brightCyan: "#53e5dd",
 	brightWhite: m_colors.subtext1,
 };
 
 const tokens: TokenColors = {
+	// plain text
 	plain: m_colors.text,
 
-	// punctuation
+	// punctuation / delimiters:
+	// | ( , ; : . ` ' " etc...)
+	// | ( (), {}, [], < > ) unless brackets are colorized by workbench settings
 	punctuation: m_colors.mint,
 
-	// public, private, static...
-	keyword_storage: m_colors.mint,
+	// arithmetic + bit operators + assignment operators:
+	// | (+, -, *, /, %, =, ==, ===, !=, !==, <, >, <=, >=, &&, ||, !, ?, ??, .?, etc...)
+	// | (is, in, where, as, where, default, etc...)
+	operator: m_colors.mint,
 
-	// base types (bool, string, int, uint, float...) + flow control + operators + using
+	// access modifiers / type modifiers keywords:
+	// | (public, private, protected, static, final, const, let, var, etc...)
+	// | (async, await, etc...)
+	// | (class, interface, enum, struct, module, package, etc...)
+	// | string interpolation key symbols ( $"", @"", ``, etc...)
+	keyword_storage: m_colors.mint,
+	// + italic
+
+	// custom attribute / decorator:
+	// | ( @Injectable, @export, [Serializable], [HideInInspector], etc...)
+	// ==> keyword_attribute: m_colors.mauve + italic,
+
+	// flow control keywords | base types | operator:
+	// | (if, else, switch, case, for, while, do, return, break, yield, continue...)
+	// | (try, catch, finally, throw, etc...)
+	// | (int, uint, float, bool, void, etc...)
 	keyword_base_types: m_colors.watermelon,
 	keyword_flow: m_colors.watermelon,
-	operator: m_colors.watermelon,
 
-	// type/class
+	// special keywords:
+	// | (this, self, super, base. etc...)
+	// ==> keyword_special: m_colors.raspberry + italic,
+
+	// top level special header keywords:
+	// | ( using, import, export)
+	// ==> keyword_header: m_colors.mint + bold,
+
+	// custom struct | custom class | custom interface | custom enum decleration:
+	// ==> struct_declaration: m_colors.mauve,
+
+	// custom struct ref
 	type: m_colors.mauve,
+
+	// special declaration names:
+	// get set properties... basically methods pretending to be fields
 	type_declaration: m_colors.raspberry,
 
-	// fieldNames
+	// fieldName declarations
+	// when a variable, constant, type, class, interface, enum, function/method is declared
 	field_name_declaration: m_colors.champagne,
+
+	// field reference
+	// when a variable, constant, type, class, interface, enum is directly referenced not as a property
+	// field_reference: m_colors.rosewater,
 	field_name: m_colors.rosewater,
 
-	// namespaces + classname + className of file
+	// property reference
+	// when accessing object properties or fields with dot notation
+	// property_reference: m_colors.plain,
+
+	// namespaces | classname | className of file reference and declaration
 	namespace: m_colors.cherry,
 	class_name: m_colors.cherry,
 
-	// property names
+	// property names (when accessing object properties)
 	property: m_colors.raspberry,
 
-	// functions/methods/events/getters + setters
+	// method names | event names | getters + setters | method/event references
 	method: m_colors.raspberry,
 	event: m_colors.raspberry,
 
-	// number value + string value + enum value + bool
+	// bool value | null/undefined/nil value | string value
 	base_value: m_colors.watermelon,
 	string_value: m_colors.watermelon,
+
+	// number value ( maybe different from base_value in some languages? )
 	number_value: m_colors.watermelon,
 
 	// entity name (xml, html, etc...)
@@ -94,6 +139,8 @@ const tokens: TokenColors = {
 
 	// error
 	errorColor: m_colors.cherry,
+	// success
+	// successColor: m_colors.mint,
 	// warn
 	warnColor: m_colors.champagne,
 	// info
@@ -101,6 +148,7 @@ const tokens: TokenColors = {
 	// hint
 	hintColor: m_colors.lavender,
 
+	// TODO: create workbench colors type/const move to workbench colors
 	menu_bg_highlight: m_colors.watermelon,
 	menu_fg_highlight: m_colors.crust,
 	button_bg_highlight: m_colors.watermelon,
