@@ -137,14 +137,20 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 
 		// git colors
 		"gitDecoration.addedResourceForeground": colors.seafoam,
-		"gitDecoration.conflictingResourceForeground": colors.lavender,
+		"gitDecoration.conflictingResourceForeground": colors.cherry,
 		"gitDecoration.deletedResourceForeground": colors.cherry,
 		"gitDecoration.ignoredResourceForeground": colors.overlay0,
-		"gitDecoration.modifiedResourceForeground": colors.mint,
+		"gitDecoration.modifiedResourceForeground": opacity(
+			colors.seafoam,
+			0.8,
+		),
 		"gitDecoration.stageDeletedResourceForeground": colors.cherry,
 		"gitDecoration.stageModifiedResourceForeground": colors.champagne,
 		"gitDecoration.submoduleResourceForeground": colors.watermelon,
-		"gitDecoration.untrackedResourceForeground": colors.mint,
+		"gitDecoration.untrackedResourceForeground": opacity(
+			colors.champagne,
+			0.8,
+		),
 		"editorGhostText.foreground": opacity(colors.surface1, 0.5),
 
 		// git colors -> built-in git graph
@@ -231,7 +237,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"editorMarkerNavigationError.background":
 			tokenColors.button_fg_highlight,
 		"editorMarkerNavigationInfo.background": colors.watermelon,
-		"editorMarkerNavigationWarning.background": colors.lavender,
+		"editorMarkerNavigationWarning.background": colors.champagne,
 		"editorOverviewRuler.addedForeground": opacity(colors.watermelon, 0.5),
 		"editorOverviewRuler.border": transparent,
 		"editorOverviewRuler.commonContentForeground": colors.surface0,
@@ -265,7 +271,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 			colors.watermelon,
 			0.5,
 		),
-		"editorOverviewRuler.warningForeground": colors.lavender,
+		"editorOverviewRuler.warningForeground": colors.champagne,
 		"editorOverviewRuler.wordHighlightForeground": opacity(
 			colors.surface0,
 			0.5,
@@ -311,11 +317,9 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"list.inactiveFocusBackground": opacity(colors.surface1, 0.42),
 		"list.inactiveSelectionBackground": opacity(colors.mantle, 0.79),
 		"list.inactiveSelectionForeground": colors.surface0,
-		"list.invalidItemForeground": opacity(
-			tokenColors.button_fg_highlight,
-			0.5,
-		),
-		"list.warningForeground": colors.lavender,
+		"list.invalidItemForeground": opacity(tokenColors.errorColor, 0.5),
+		"list.warningForeground": tokenColors.warnColor,
+
 		"menu.background": colors.crust,
 		"menu.foreground": colors.text,
 		"menu.selectionBackground": colors.mantle,
@@ -335,7 +339,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		),
 		"minimap.findMatchHighlight": opacity(colors.watermelon, 0.25),
 		"minimap.selectionHighlight": opacity(colors.surface1, 0.94),
-		"minimap.warningHighlight": opacity(colors.lavender, 0.8),
+		"minimap.warningHighlight": opacity(tokenColors.warnColor, 0.8),
 		"minimap.background": opacity(colors.base, 0.5),
 		"minimapGutter.addedBackground": opacity(colors.watermelon, 0.63),
 		"minimapGutter.deletedBackground": opacity(
@@ -404,7 +408,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 
 		// status bar
 		"statusBarItem.errorBackground": tokenColors.errorColor,
-		"statusBarItem.errorForeground": colors.mantle,
+		"statusBarItem.errorForeground": colors.crust,
 		"statusBar.background": colors.rosewater,
 		"statusBar.border": colors.mantle,
 		"statusBar.debuggingBackground": tokenColors.button_bg_highlight,
