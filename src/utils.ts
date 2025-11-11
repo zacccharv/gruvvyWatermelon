@@ -105,10 +105,10 @@ export const isDefaultConfig = (): boolean => {
 };
 
 export const isFreshInstall = async (
-	context: ExtensionContext,
+	ctx: ExtensionContext,
 ): Promise<boolean | "error"> => {
 	LOG.info("Checking if gruvvy watermelon is installed for the first time.");
-	const flagUri = Uri.file(context.asAbsolutePath("themes/.flag"));
+	const flagUri = Uri.file(ctx.asAbsolutePath("themes/.flag"));
 	if (await fileExists(flagUri)) {
 		LOG.info("Gruvvy Watermelon has been installed before.");
 		return false;
@@ -165,7 +165,7 @@ export function syncExtensionSettings(configTargets: JsonSettings) {
 		"integrateErrorLensGutter",
 	);
 
-	const context: ThemeContext = {
+	const ctx: ThemeContext = {
 		palette: palette,
 		options: getConfiguration(),
 	};
@@ -173,7 +173,7 @@ export function syncExtensionSettings(configTargets: JsonSettings) {
 	// Update Todo Tree settings
 	if (configTargets["gruvvy-watermelon.integrateErrorLensGutter"].changed) {
 		{
-			const todoConfig = todoConfiguration(context);
+			const todoConfig = todoConfiguration(ctx);
 			for (const [key, value] of Object.entries(todoConfig)) {
 				workspace.getConfiguration("todo-tree").update(
 					key, // remove "todo-tree." prefix for update
@@ -186,7 +186,7 @@ export function syncExtensionSettings(configTargets: JsonSettings) {
 
 	if (configTargets["gruvvy-watermelon.integrateErrorLensGutter"].changed) {
 		// Update ErrorLens settings
-		const errorLensConfig = errorLensConfiguration(context);
+		const errorLensConfig = errorLensConfiguration(ctx);
 		for (const [key, value] of Object.entries(errorLensConfig)) {
 			workspace.getConfiguration("errorLens").update(
 				key, // remove "errorLens." prefix for update

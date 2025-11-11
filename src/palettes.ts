@@ -14,7 +14,8 @@ const m_colors: GruvvyPalette = {
 	lavender: "#C3ADFF",
 	mauve: "#9781D5",
 	seafoam: "#A2EDE0",
-	teal: "#67938E",
+	teal: "#2acfbc",
+	darkteal: "#67938E",
 	mint: "#81E5B3",
 	watermelon: "#4FB094",
 	champagne: "#f1bcac",
@@ -47,7 +48,7 @@ const m_ansiColors: GruvvyAnsiPalette = {
 	brightYellow: "#ffc9b9ff",
 	brightBlue: "#47c5a1ff",
 	brightMagenta: "#fe97e3ff",
-	brightCyan: "#73b3abff",
+	brightCyan: "#53e5ddff",
 	brightWhite: m_colors.subtext1,
 };
 
@@ -95,7 +96,7 @@ const tokens: TokenColors = {
 	// error
 	errorColor: m_colors.cherry,
 	// warn
-	warnColor: m_colors.peach,
+	warnColor: m_colors.champagne,
 	// info
 	infoColor: m_colors.mint,
 	// hint
