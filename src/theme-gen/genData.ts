@@ -1,12 +1,11 @@
 // Generate Gruvvyflavor from hex colors
 import {
 	AnsiColorFormat,
-	AnsiColors,
 	ColorFormat,
 	GruvvyAnsiColors,
 	GruvvyColors,
 } from "@/types/palettetypes";
-import { AccentNames, AnsiNames } from "@/types/palettetypes";
+import { AccentNames } from "@/types/palettetypes";
 import { hexToHsl, hexToRgba } from "@/theme/utils";
 import { palette } from "../palettes";
 import { writeFile } from "fs";

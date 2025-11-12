@@ -2,7 +2,7 @@ import { ThemeContext } from "../../types";
 import { mix } from "../utils";
 
 export default function full(ctx: ThemeContext) {
-	const { colors, tokenColors } = ctx.palette;
+	const { colors, tokenColors, workbenchColors } = ctx.palette;
 
 	return [
 		{
@@ -33,7 +33,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["comment variable", "comment variable.other"],
 			settings: {
-				foreground: colors.champagne,
+				foreground: tokenColors.field_reference,
 			},
 		},
 		{
@@ -51,7 +51,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "comment.git-status.header.local",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -171,7 +171,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.name.function.preprocessor",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -183,7 +183,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.other.inherited-class",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 				fontStyle: "italic",
 			},
 		},
@@ -218,7 +218,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.other.attribute-name",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 				fontStyle: "italic",
 			},
 		},
@@ -230,7 +230,7 @@ export default function full(ctx: ThemeContext) {
 				"entity.other.attribute-name.css",
 			],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -246,14 +246,14 @@ export default function full(ctx: ThemeContext) {
 				"entity.other.pseudo-element.css",
 			],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 				fontStyle: "italic",
 			},
 		},
 		{
 			scope: ["entity.name.function", "support.function"],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -289,7 +289,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.name.type.rust",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -356,7 +356,7 @@ export default function full(ctx: ThemeContext) {
 				"keyword.other.where.rust",
 			],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -398,7 +398,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "markup.underline.link",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -407,7 +407,7 @@ export default function full(ctx: ThemeContext) {
 				"markup.inserted punctuation.definition.inserted",
 			],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -468,7 +468,7 @@ export default function full(ctx: ThemeContext) {
 				"meta.function-call.arguments.python meta.function-call.python",
 			],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -480,7 +480,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "meta.instance.constructor",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -489,7 +489,7 @@ export default function full(ctx: ThemeContext) {
 				"meta.attribute.class.html string",
 			],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -694,7 +694,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "region.greenish",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -863,7 +863,7 @@ export default function full(ctx: ThemeContext) {
 				"storage.class.std.rust",
 			],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -913,7 +913,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "string.other.link.description.title",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -928,7 +928,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["string.other.ref", "string.other.restructuredtext.ref"],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -946,7 +946,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "support.constant",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -964,20 +964,20 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "support.function",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
 			scope: ["support.type", "entity.name.type.object.console"],
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 				fontStyle: "italic",
 			},
 		},
 		{
 			scope: "support.variable",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -990,7 +990,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "support.class",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -1090,7 +1090,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "variable.function",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{
@@ -1111,7 +1111,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "source.jinja2 variable.other.jinja2.block",
 			settings: {
-				foreground: tokenColors.menu_bg_highlight,
+				foreground: workbenchColors.menu_bg_highlight,
 			},
 		},
 		{

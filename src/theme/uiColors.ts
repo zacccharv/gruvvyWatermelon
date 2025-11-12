@@ -7,7 +7,8 @@ export type WorkbenchPartial = Partial<Record<keyof WorkbenchColors, string>>;
 // TODO figure out why colors don't look right currently
 export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 	const { palette, options } = ctx;
-	const { colors, ansiColors, tokenColors, widgetColors } = palette;
+	const { colors, ansiColors, tokenColors, workbenchColors, widgetColors } =
+		palette;
 
 	const accent = colors[options.accentColor];
 	console.log("Generating UI colors with accent:", accent);
@@ -105,8 +106,8 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"debugToolBar.border": transparent,
 		"debugExceptionWidget.background": colors.crust,
 		"debugTokenExpression.number": tokenColors.number_value,
-		"debugTokenExpression.boolean": colors.peach,
-		"debugTokenExpression.string": tokenColors.string_value,
+		"debugTokenExpression.boolean": tokenColors.base_value,
+		"debugTokenExpression.string": tokenColors.base_value,
 		"debugTokenExpression.error": tokenColors.errorColor,
 
 		// debug icons
@@ -177,7 +178,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 
 		"diffEditor.insertedTextBackground": opacity(colors.watermelon, 0.1),
 		"diffEditor.removedTextBackground": opacity(
-			tokenColors.button_fg_highlight,
+			workbenchColors.button_fg_highlight,
 			0.15,
 		),
 		"dropdown.background": colors.mantle,
@@ -218,7 +219,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"editorGutter.addedBackground": opacity(colors.watermelon, 0.25),
 		"editorGutter.background": transparent,
 		"editorGutter.deletedBackground": opacity(
-			tokenColors.button_fg_highlight,
+			workbenchColors.button_fg_highlight,
 			0.25,
 		),
 		"editorGutter.modifiedBackground": opacity(colors.watermelon, 0.25),
@@ -235,7 +236,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"editorLink.activeForeground": colors.watermelon,
 		"editorMarkerNavigation.background": colors.surface1,
 		"editorMarkerNavigationError.background":
-			tokenColors.button_fg_highlight,
+			workbenchColors.button_fg_highlight,
 		"editorMarkerNavigationInfo.background": colors.watermelon,
 		"editorMarkerNavigationWarning.background": colors.champagne,
 		"editorOverviewRuler.addedForeground": opacity(colors.watermelon, 0.5),
@@ -246,7 +247,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 			0.63,
 		),
 		"editorOverviewRuler.deletedForeground": opacity(
-			tokenColors.button_fg_highlight,
+			workbenchColors.button_fg_highlight,
 			0.5,
 		),
 		"editorOverviewRuler.errorForeground": tokenColors.errorColor,
@@ -334,7 +335,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 
 		// minimap
 		"minimap.errorHighlight": opacity(
-			tokenColors.button_fg_highlight,
+			workbenchColors.button_fg_highlight,
 			0.44,
 		),
 		"minimap.findMatchHighlight": opacity(colors.watermelon, 0.25),
@@ -343,7 +344,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"minimap.background": opacity(colors.base, 0.5),
 		"minimapGutter.addedBackground": opacity(colors.watermelon, 0.63),
 		"minimapGutter.deletedBackground": opacity(
-			tokenColors.button_fg_highlight,
+			workbenchColors.button_fg_highlight,
 			0.63,
 		),
 		"minimapGutter.modifiedBackground": opacity(colors.watermelon, 0.63),
@@ -411,8 +412,8 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"statusBarItem.errorForeground": colors.crust,
 		"statusBar.background": colors.rosewater,
 		"statusBar.border": colors.mantle,
-		"statusBar.debuggingBackground": tokenColors.button_bg_highlight,
-		"statusBar.debuggingBorder": tokenColors.button_fg_highlight,
+		"statusBar.debuggingBackground": workbenchColors.button_bg_highlight,
+		"statusBar.debuggingBorder": workbenchColors.button_fg_highlight,
 		"statusBar.debuggingForeground": colors.mantle,
 		"statusBar.foreground": colors.mantle,
 		"statusBar.noFolderBackground": colors.mantle,
@@ -420,7 +421,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"statusBar.noFolderForeground": colors.mantle,
 		"statusBarItem.activeBackground": opacity(colors.surface1, 0.63),
 		"statusBarItem.hoverBackground": colors.watermelon,
-		"statusBarItem.remoteBackground": tokenColors.button_bg_highlight,
+		"statusBarItem.remoteBackground": workbenchColors.button_bg_highlight,
 		"statusBarItem.remoteForeground": colors.mantle,
 
 		// symbols in outline, autocomplete, etc.
@@ -437,15 +438,15 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"symbolIcon.functionForeground": tokenColors.method,
 		"symbolIcon.interfaceForeground": colors.watermelon,
 		"symbolIcon.keyForeground": colors.watermelon,
-		"symbolIcon.keywordForeground": tokenColors.button_fg_highlight,
+		"symbolIcon.keywordForeground": workbenchColors.button_fg_highlight,
 		"symbolIcon.methodForeground": tokenColors.method,
-		"symbolIcon.moduleForeground": tokenColors.button_fg_highlight,
-		"symbolIcon.namespaceForeground": tokenColors.button_fg_highlight,
+		"symbolIcon.moduleForeground": workbenchColors.button_fg_highlight,
+		"symbolIcon.namespaceForeground": workbenchColors.button_fg_highlight,
 		"symbolIcon.nullForeground": colors.mauve,
 		"symbolIcon.numberForeground": colors.mauve,
 		"symbolIcon.objectForeground": colors.watermelon,
-		"symbolIcon.operatorForeground": tokenColors.button_fg_highlight,
-		"symbolIcon.packageForeground": tokenColors.button_fg_highlight,
+		"symbolIcon.operatorForeground": workbenchColors.button_fg_highlight,
+		"symbolIcon.packageForeground": workbenchColors.button_fg_highlight,
 		"symbolIcon.propertyForeground": tokenColors.property,
 		"symbolIcon.referenceForeground": colors.watermelon,
 		"symbolIcon.snippetForeground": colors.text,

@@ -4,6 +4,7 @@ import {
 	PaletteCollection,
 	TokenColors,
 	WidgetThemeColors,
+	WorkbenchThemeColors,
 } from "@/types";
 
 const m_colors: GruvvyPalette = {
@@ -71,12 +72,13 @@ const tokens: TokenColors = {
 	// | (async, await, etc...)
 	// | (class, interface, enum, struct, module, package, etc...)
 	// | string interpolation key symbols ( $"", @"", ``, etc...)
+	// italic
 	keyword_storage: m_colors.mint,
-	// + italic
 
 	// custom attribute / decorator:
 	// | ( @Injectable, @export, [Serializable], [HideInInspector], etc...)
-	// ==> keyword_attribute: m_colors.mauve + italic,
+	// italic
+	keyword_attribute: m_colors.mauve,
 
 	// flow control keywords | base types | operator:
 	// | (if, else, switch, case, for, while, do, return, break, yield, continue...)
@@ -87,14 +89,16 @@ const tokens: TokenColors = {
 
 	// special keywords:
 	// | (this, self, super, base. etc...)
-	// ==> keyword_special: m_colors.raspberry + italic,
+	// italic
+	keyword_special: m_colors.raspberry,
 
 	// top level special header keywords:
 	// | ( using, import, export)
-	// ==> keyword_header: m_colors.mint + bold,
+	// bold
+	keyword_header: m_colors.mint,
 
 	// custom struct | custom class | custom interface | custom enum decleration:
-	// ==> struct_declaration: m_colors.mauve,
+	struct_declaration: m_colors.mauve,
 
 	// custom struct ref
 	type: m_colors.mauve,
@@ -109,12 +113,12 @@ const tokens: TokenColors = {
 
 	// field reference
 	// when a variable, constant, type, class, interface, enum is directly referenced not as a property
-	// field_reference: m_colors.rosewater,
+	field_reference: m_colors.rosewater,
 	field_name: m_colors.rosewater,
 
 	// property reference
 	// when accessing object properties or fields with dot notation
-	// property_reference: m_colors.plain,
+	property_reference: m_colors.text,
 
 	// namespaces | classname | className of file reference and declaration
 	namespace: m_colors.cherry,
@@ -129,10 +133,9 @@ const tokens: TokenColors = {
 
 	// bool value | null/undefined/nil value | string value
 	base_value: m_colors.watermelon,
-	string_value: m_colors.watermelon,
 
 	// number value ( maybe different from base_value in some languages? )
-	number_value: m_colors.watermelon,
+	number_value: m_colors.teal,
 
 	// entity name (xml, html, etc...)
 	entity_name: m_colors.mauve,
@@ -140,15 +143,16 @@ const tokens: TokenColors = {
 	// error
 	errorColor: m_colors.cherry,
 	// success
-	// successColor: m_colors.mint,
+	successColor: m_colors.mint,
 	// warn
 	warnColor: m_colors.champagne,
 	// info
 	infoColor: m_colors.mint,
 	// hint
 	hintColor: m_colors.lavender,
+};
 
-	// TODO: create workbench colors type/const move to workbench colors
+const workbench: WorkbenchThemeColors = {
 	menu_bg_highlight: m_colors.watermelon,
 	menu_fg_highlight: m_colors.crust,
 	button_bg_highlight: m_colors.watermelon,
@@ -165,6 +169,7 @@ const widgets: WidgetThemeColors = {
 
 const palette: PaletteCollection = {
 	tokenColors: tokens,
+	workbenchColors: workbench,
 	widgetColors: widgets,
 	colors: m_colors,
 	ansiColors: m_ansiColors,
