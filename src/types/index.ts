@@ -7,8 +7,8 @@ export type * from "./todoTree";
 
 export type GruvvyAnsiPalette = AnsiColors<string>;
 
-type Brand<K, T> = K & { __brand: T };
-
+/** {@link https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#inference-with-template-literals}
+ */
 export type GruvvyPalette = {
 	/**
 	 * @param {string} <span style="color:#111111;background-color:#ffc7d6;">-rosewater-</span>
