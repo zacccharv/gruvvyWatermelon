@@ -71,17 +71,8 @@ const m_ansiColors = {
 } as const satisfies GruvvyAnsiPalette;
 
 const tokens = {
-	// plain text
 	plain: m_colors.text,
-
-	// punctuation / delimiters:
-	// | ( , ; : . ` ' " etc...)
-	// | ( (), {}, [], < > ) unless brackets are colorized by workbench settings
 	punctuation: m_colors.mint,
-
-	// arithmetic + bit operators + assignment operators:
-	// | (+, -, *, /, %, =, ==, ===, !=, !==, <, >, <=, >=, &&, ||, !, ?, ??, .?, etc...)
-	// | (is, in, where, as, where, etc...)
 	operator: m_colors.mint,
 
 	// access modifiers / type modifiers keywords:

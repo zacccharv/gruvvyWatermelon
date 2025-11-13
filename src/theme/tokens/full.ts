@@ -502,6 +502,8 @@ export default function full(ctx: ThemeContext) {
 		},
 		{
 			scope: [
+				"source.json.comments support.type.property-name",
+				"source.json support.type.property-name",
 				"source.json meta.structure.dictionary",
 				"source.json meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary",
 				"source.json meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary",
@@ -536,7 +538,7 @@ export default function full(ctx: ThemeContext) {
 				"source.json meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary meta.structure.dictionary.value meta.structure.dictionary string",
 			],
 			settings: {
-				foreground: colors.text,
+				foreground: colors.raspberry,
 			},
 		},
 		{
