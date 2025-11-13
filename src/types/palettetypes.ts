@@ -1,20 +1,3 @@
-
-
-export const AccentNames = {
-	ROSEWATER: "rosewater",
-	CHERRY: "cherry",
-	PINK: "pink",
-	RASPBERRY: "raspberry",
-	LAVENDER: "lavender",
-	MAUVE: "mauve",
-	SEAFOAM: "seafoam",
-	TEAL: "teal",
-	MINT: "mint",
-	WATERMELON: "watermelon",
-	CHAMPAGNE: "champagne",
-	PEACH: "peach",
-} as const;
-
 export const AnsiNames = {
 	RED: "red",
 	GREEN: "green",
@@ -37,13 +20,15 @@ type Entries<T> = {
     [K in keyof T]: [K, T[K]];
 }[keyof T][];
 
-export type AccentName = "rosewater" | "cherry" | "pink" | "raspberry" | "lavender" | "mauve" | "seafoam" | "teal" | "darkteal" | "mint" | "watermelon" | "champagne" | "peach";
+export type AccentName = "azalea" | "cherry" | "bubblegum" | "raspberry" | "lavender" | "plum" | "seagreen" | "blueberry" | "juniper" | "mint" | "watermelon" | "peachpuff" | "peach";
 
 export type MonochromaticName = "text" | "subtext1" | "subtext0" |  "overlay1" | "overlay0" |  "surface1" | "surface0" | "subSurface" |"base" | "mantle" | "crust";
 
 export type ColorName = AccentName | MonochromaticName;
 
 export type Colors<T> = Record<ColorName, T>;
+
+export type Accents<T> = Record<AccentName, T>;
 
 export type ColorFormat = {
 	/**

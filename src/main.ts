@@ -2,7 +2,6 @@ import {
 	ConfigurationChangeEvent,
 	ExtensionContext,
 	Uri,
-	window,
 	workspace,
 } from "vscode";
 
@@ -22,6 +21,7 @@ export type ConfigTargets = {
 
 export const activate = async (ctx: ExtensionContext) => {
 	const base = ctx.extensionUri;
+
 	const path = Uri.joinPath(
 		base,
 		"themes",
@@ -40,6 +40,7 @@ export const activate = async (ctx: ExtensionContext) => {
 		},
 	};
 	const config = utils.getConfiguration();
+
 	// regenerate theme on fresh install/first activation
 	if ((await utils.isFreshInstall(ctx)) && !utils.isDefaultConfig()) {
 		utils.updateTheme(config, path, utils.UpdateTrigger.FRESH_INSTALL);

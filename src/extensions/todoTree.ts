@@ -37,7 +37,7 @@ const todoConfiguration = (ctx: ThemeContext): TodoTreeConfig => {
 		fontWeight: "bold",
 		foreground: colors.crust,
 		icon: "alert",
-		iconColour: colors.pink,
+		iconColour: colors.bubblegum,
 		type: "text",
 	};
 	const tagColorSettings = {
@@ -54,7 +54,7 @@ const todoConfiguration = (ctx: ThemeContext): TodoTreeConfig => {
 			icon: "flame",
 		},
 		IMPORTANT: {
-			background: colors.rosewater,
+			background: colors.azalea,
 			icon: "star",
 		},
 	};

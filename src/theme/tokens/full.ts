@@ -1,5 +1,4 @@
-import { ThemeContext } from "../../types";
-import { mix } from "../utils";
+import { TextmateColors, ThemeContext } from "../../types";
 
 export default function full(ctx: ThemeContext) {
 	const { colors, tokenColors, workbenchColors } = ctx.palette;
@@ -27,19 +26,19 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "comment entity.name.type",
 			settings: {
-				foreground: tokenColors.type,
+				foreground: tokenColors.type_reference,
 			},
 		},
 		{
 			scope: ["comment variable", "comment variable.other"],
 			settings: {
-				foreground: tokenColors.field_reference,
+				foreground: tokenColors.property_reference,
 			},
 		},
 		{
 			scope: "comment keyword.codetag.notation",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -63,49 +62,49 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "constant",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
 			scope: "constant.other",
 			settings: {
-				foreground: colors.text,
+				foreground: tokenColors.object_reference,
 			},
 		},
 		{
 			scope: "constant.other.php",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
 			scope: "constant.other.property",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
 			scope: "constant.other.citation.latex",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
 			scope: "constant.other.color",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
 			scope: "constant.other.character-class.escape",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
 			scope: "constant.other.key",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -117,7 +116,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "constant.numeric",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -129,7 +128,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "constant.character.escape",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -165,7 +164,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.name.label",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -177,7 +176,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.name.constant",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -212,7 +211,7 @@ export default function full(ctx: ThemeContext) {
 				"entity.name.function.decorator.gdscript",
 			],
 			settings: {
-				foreground: tokenColors.type,
+				foreground: tokenColors.type_reference,
 			},
 		},
 		{
@@ -259,7 +258,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.other.git-status.hex",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -283,7 +282,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "entity.name.operator.custom-literal.number",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -459,7 +458,7 @@ export default function full(ctx: ThemeContext) {
 				"meta.function-call.method.without-arguments.js",
 			],
 			settings: {
-				foreground: colors.teal,
+				foreground: colors.blueberry,
 			},
 		},
 		{
@@ -573,7 +572,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["entity.name.constant.preprocessor", "meta.preprocessor"],
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -700,13 +699,13 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "region.bluish",
 			settings: {
-				foreground: colors.pink,
+				foreground: colors.bubblegum,
 			},
 		},
 		{
 			scope: "region.purplish",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -754,7 +753,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "source.git-show.commit.sha",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -775,7 +774,7 @@ export default function full(ctx: ThemeContext) {
 				"source.git-show meta.diff.git-diff.header.extended.index.to-sha",
 			],
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -840,7 +839,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "storage.class.restructuredtext.ref",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -996,7 +995,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "support.constant.core.rust",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -1014,7 +1013,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["variable"],
 			settings: {
-				foreground: tokenColors.field_name,
+				foreground: tokenColors.field_name_declaration,
 				fontStyle: "",
 			},
 		},
@@ -1039,19 +1038,20 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "variable.language.arguments",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
 			scope: ["variable.other.class"],
 			settings: {
-				foreground: tokenColors.field_name,
+				foreground: tokenColors.field_name_reference,
 			},
 		},
 		{
 			scope: [
 				"meta.object.member",
 				"variable.other.class",
+				"variable.other.object.property",
 				"variable.other.property.js",
 				"variable.other.property.gdscript",
 			],
@@ -1062,19 +1062,19 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "variable.other.constant",
 			settings: {
-				foreground: tokenColors.field_name,
+				foreground: tokenColors.field_name_reference,
 			},
 		},
 		{
 			scope: "variable.other.member",
 			settings: {
-				foreground: tokenColors.field_name,
+				foreground: tokenColors.field_name_reference,
 			},
 		},
 		{
 			scope: "variable.other.enummember",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -1084,7 +1084,7 @@ export default function full(ctx: ThemeContext) {
 				"variable.other.event",
 			],
 			settings: {
-				foreground: tokenColors.property,
+				foreground: tokenColors.property_reference,
 			},
 		},
 		{
@@ -1096,7 +1096,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["variable.other.substitution", "heading.2.markdown"],
 			settings: {
-				foreground: colors.pink,
+				foreground: colors.bubblegum,
 			},
 		},
 		{
@@ -1105,7 +1105,7 @@ export default function full(ctx: ThemeContext) {
 				"source.ruby variable.other.readwrite.class.ruby",
 			],
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -1158,15 +1158,16 @@ export default function full(ctx: ThemeContext) {
 				"entity.name.variable.parameter",
 				"entity.name.variable.local",
 				"entity.name.variable.tuple-element",
+				"source.cs entity.name.variable.property",
 			],
 			settings: {
-				foreground: tokenColors.field_name_declaration,
+				foreground: tokenColors.field_name_reference,
 			},
 		},
 		{
 			scope: ["variable.other", "variable.other.object"],
 			settings: {
-				foreground: tokenColors.field_name,
+				foreground: tokenColors.object_reference,
 			},
 		},
 		{
@@ -1178,7 +1179,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: ["support.type.property-name"],
 			settings: {
-				foreground: tokenColors.property,
+				foreground: tokenColors.property_reference,
 			},
 		},
 		{
@@ -1210,7 +1211,7 @@ export default function full(ctx: ThemeContext) {
 				"entity.name.variable.property",
 			],
 			settings: {
-				foreground: tokenColors.property,
+				foreground: tokenColors.property_reference,
 			},
 		},
 		{
@@ -1262,7 +1263,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "token.info-token",
 			settings: {
-				foreground: colors.pink,
+				foreground: colors.bubblegum,
 			},
 		},
 		{
@@ -1280,7 +1281,7 @@ export default function full(ctx: ThemeContext) {
 		{
 			scope: "token.debug-token",
 			settings: {
-				foreground: colors.mauve,
+				foreground: colors.plum,
 			},
 		},
 		{
@@ -1316,5 +1317,5 @@ export default function full(ctx: ThemeContext) {
 				fontStyle: "bold",
 			},
 		},
-	];
+	] as const satisfies TextmateColors;
 }

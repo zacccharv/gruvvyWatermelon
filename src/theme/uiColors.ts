@@ -1,21 +1,24 @@
 import { ThemeContext, WorkbenchColors } from "@/types";
 import { mix, opacity, shade, transparent } from "./utils";
 import extensions from "./themeExtensions";
+import { palette } from "@/palettes";
+import { AccentName } from "@/types/palettetypes";
 
 export type WorkbenchPartial = Partial<Record<keyof WorkbenchColors, string>>;
 
 // TODO figure out why colors don't look right currently
-export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
-	const { palette, options } = ctx;
+export function getUiColors(ctx: ThemeContext) {
+	const { options } = ctx;
 	const { colors, ansiColors, tokenColors, workbenchColors, widgetColors } =
 		palette;
 
-	const accent = colors[options.accentColor];
+	const accent = colors[options.accentColor] as string;
 	console.log("Generating UI colors with accent:", accent);
 	const dropBackground = opacity(accent, 0.2);
 	const border = transparent;
 
 	return {
+		...extensions(ctx),
 		// Base colors
 		focusBorder: transparent,
 		foreground: colors.text,
@@ -31,8 +34,8 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"textBlockQuote.background": colors.mantle,
 		"textBlockQuote.border": colors.crust,
 		"textCodeBlock.background": colors.mantle,
-		"textLink.activeForeground": colors.mauve,
-		"textLink.foreground": colors.seafoam,
+		"textLink.activeForeground": colors.plum,
+		"textLink.foreground": colors.seagreen,
 		"textPreformat.foreground": colors.text,
 		"textSeparator.foreground": accent,
 
@@ -75,12 +78,10 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"symbolIcon.folderForeground": accent,
 
 		// bracket colors
-		"editorBracketHighlight.foreground1": colors.watermelon,
-		"editorBracketHighlight.foreground2": colors.mint,
-		"editorBracketHighlight.foreground3": colors.teal,
-		"editorBracketHighlight.foreground4": colors.watermelon,
-		"editorBracketHighlight.foreground5": colors.mint,
-		"editorBracketHighlight.foreground6": colors.teal,
+		"editorBracketHighlight.foreground1": colors.mint,
+		"editorBracketHighlight.foreground2": colors.raspberry,
+		"editorBracketHighlight.foreground3": colors.seagreen,
+		"editorBracketHighlight.foreground4": colors.bubblegum,
 		"editorBracketHighlight.unexpectedBracket.foreground": colors.cherry,
 
 		// Activity Bar
@@ -90,7 +91,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"activityBar.foreground": accent,
 		"activityBar.border": colors.crust,
 		"activityBar.inactiveForeground": colors.surface1,
-		"activityBarBadge.background": colors.pink,
+		"activityBarBadge.background": colors.bubblegum,
 		"activityBarBadge.foreground": colors.crust,
 		"badge.background": colors.watermelon,
 		"badge.foreground": colors.crust,
@@ -121,11 +122,11 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"debugIcon.breakpointCurrentStackframeForeground": colors.surface1,
 		"debugIcon.breakpointStackframeForeground": colors.surface1,
 		"debugIcon.startForeground": colors.watermelon,
-		"debugIcon.pauseForeground": colors.teal,
+		"debugIcon.pauseForeground": colors.blueberry,
 		"debugIcon.stopForeground": colors.cherry,
 		"debugIcon.disconnectForeground": colors.surface1,
-		"debugIcon.restartForeground": colors.teal,
-		"debugIcon.stepOverForeground": colors.mauve,
+		"debugIcon.restartForeground": colors.blueberry,
+		"debugIcon.stepOverForeground": colors.plum,
 		"debugIcon.stepIntoForeground": colors.text,
 		"debugIcon.stepOutForeground": colors.text,
 		"debugIcon.continueForeground": colors.watermelon,
@@ -133,23 +134,23 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"debugConsole.infoForeground": tokenColors.infoColor,
 		"debugConsole.warningForeground": colors.peach,
 		"debugConsole.errorForeground": colors.cherry,
-		"debugConsole.sourceForeground": colors.rosewater,
+		"debugConsole.sourceForeground": colors.azalea,
 		"debugConsoleInputIcon.foreground": colors.text,
 
 		// git colors
-		"gitDecoration.addedResourceForeground": colors.seafoam,
+		"gitDecoration.addedResourceForeground": colors.seagreen,
 		"gitDecoration.conflictingResourceForeground": colors.cherry,
 		"gitDecoration.deletedResourceForeground": colors.cherry,
 		"gitDecoration.ignoredResourceForeground": colors.overlay0,
 		"gitDecoration.modifiedResourceForeground": opacity(
-			colors.seafoam,
+			colors.seagreen,
 			0.8,
 		),
 		"gitDecoration.stageDeletedResourceForeground": colors.cherry,
-		"gitDecoration.stageModifiedResourceForeground": colors.champagne,
+		"gitDecoration.stageModifiedResourceForeground": colors.peachpuff,
 		"gitDecoration.submoduleResourceForeground": colors.watermelon,
 		"gitDecoration.untrackedResourceForeground": opacity(
-			colors.champagne,
+			colors.peachpuff,
 			0.8,
 		),
 		"editorGhostText.foreground": opacity(colors.surface1, 0.5),
@@ -158,11 +159,11 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"scmGraph.historyItemRefColor": colors.watermelon,
 		"scmGraph.historyItemBaseRefColor": colors.peach,
 		"scmGraph.historyItemRemoteRefColor": colors.lavender,
-		"scmGraph.foreground1": colors.champagne,
+		"scmGraph.foreground1": colors.peachpuff,
 		"scmGraph.foreground2": colors.cherry,
 		"scmGraph.foreground3": colors.mint,
 		"scmGraph.foreground4": colors.lavender,
-		"scmGraph.foreground5": colors.teal,
+		"scmGraph.foreground5": colors.blueberry,
 
 		"input.background": transparent,
 		"input.border": widgetColors.widget_bg,
@@ -192,11 +193,11 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"editor.hoverHighlightBackground": opacity(colors.watermelon, 0.2),
 		"editor.lineHighlightBackground": opacity(colors.surface0, 0.25),
 		"editor.lineHighlightBorder": opacity(colors.surface0, 0),
-		"editor.rangeHighlightBackground": opacity(colors.mauve, 0.25),
+		"editor.rangeHighlightBackground": opacity(colors.plum, 0.25),
 		"editor.selectionBackground": opacity(colors.surface0, 0.94),
 		"editor.selectionHighlightBackground": opacity(colors.surface0, 0),
 		"editor.snippetFinalTabstopHighlightBackground": opacity(
-			colors.mauve,
+			colors.plum,
 			0.2,
 		),
 		"editor.snippetFinalTabstopHighlightBorder": colors.mantle,
@@ -238,7 +239,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"editorMarkerNavigationError.background":
 			workbenchColors.button_fg_highlight,
 		"editorMarkerNavigationInfo.background": colors.watermelon,
-		"editorMarkerNavigationWarning.background": colors.champagne,
+		"editorMarkerNavigationWarning.background": colors.peachpuff,
 		"editorOverviewRuler.addedForeground": opacity(colors.watermelon, 0.5),
 		"editorOverviewRuler.border": transparent,
 		"editorOverviewRuler.commonContentForeground": colors.surface0,
@@ -272,7 +273,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 			colors.watermelon,
 			0.5,
 		),
-		"editorOverviewRuler.warningForeground": colors.champagne,
+		"editorOverviewRuler.warningForeground": colors.peachpuff,
 		"editorOverviewRuler.wordHighlightForeground": opacity(
 			colors.surface0,
 			0.5,
@@ -302,21 +303,21 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"inputValidation.errorForeground": colors.cherry,
 		"inputValidation.infoBackground": colors.mantle,
 		"inputValidation.infoBorder": tokenColors.infoColor,
-		"inputValidation.infoForeground": colors.mauve,
+		"inputValidation.infoForeground": colors.plum,
 		"inputValidation.warningBackground": colors.mantle,
 		"inputValidation.warningBorder": tokenColors.warnColor,
 		"inputValidation.warningForeground": colors.peach,
 
-		"list.activeSelectionBackground": opacity(colors.mantle, 0.88),
+		"list.activeSelectionBackground": opacity(colors.crust, 0.3),
 		"list.activeSelectionForeground": colors.text,
 		"list.dropBackground": dropBackground,
 		"list.errorForeground": tokenColors.errorColor,
-		"list.focusBackground": opacity(colors.surface1, 0.5),
+		"list.focusBackground": colors.subSurface,
 		"list.focusForeground": colors.text,
-		"list.hoverBackground": opacity(colors.crust, 0),
+		"list.hoverBackground": transparent,
 		"list.hoverForeground": colors.text,
-		"list.inactiveFocusBackground": opacity(colors.surface1, 0.42),
-		"list.inactiveSelectionBackground": opacity(colors.mantle, 0.79),
+		"list.inactiveFocusBackground": transparent,
+		"list.inactiveSelectionBackground": transparent,
 		"list.inactiveSelectionForeground": colors.surface0,
 		"list.invalidItemForeground": opacity(tokenColors.errorColor, 0.5),
 		"list.warningForeground": tokenColors.warnColor,
@@ -349,10 +350,10 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		),
 		"minimapGutter.modifiedBackground": opacity(colors.watermelon, 0.63),
 
-		"notificationCenterHeader.background": colors.surface0,
+		"notificationCenterHeader.background": shade(colors.surface0, -0.1),
 		"notificationCenterHeader.foreground": colors.text,
 		"notificationLink.foreground": colors.watermelon,
-		"notifications.background": colors.mantle,
+		"notifications.background": colors.base,
 		"notifications.foreground": colors.text,
 		"notificationsErrorIcon.foreground": tokenColors.errorColor,
 		"notificationsInfoIcon.foreground": tokenColors.infoColor,
@@ -397,7 +398,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"settings.headerForeground": colors.text,
 		"settings.numberInputBackground": colors.mantle,
 		"settings.numberInputBorder": widgetColors.widget_bg,
-		"settings.numberInputForeground": colors.mauve,
+		"settings.numberInputForeground": colors.plum,
 		"settings.textInputBackground": widgetColors.widget_bg,
 		"settings.textInputBorder": widgetColors.widget_bg,
 		"settings.textInputForeground": colors.watermelon,
@@ -410,7 +411,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		// status bar
 		"statusBarItem.errorBackground": tokenColors.errorColor,
 		"statusBarItem.errorForeground": colors.crust,
-		"statusBar.background": colors.rosewater,
+		"statusBar.background": colors.azalea,
 		"statusBar.border": colors.mantle,
 		"statusBar.debuggingBackground": workbenchColors.button_bg_highlight,
 		"statusBar.debuggingBorder": workbenchColors.button_fg_highlight,
@@ -426,15 +427,15 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 
 		// symbols in outline, autocomplete, etc.
 		"symbolIcon.arrayForeground": colors.text,
-		"symbolIcon.booleanForeground": colors.mauve,
+		"symbolIcon.booleanForeground": colors.plum,
 		"symbolIcon.classForeground": tokenColors.class_name,
 		"symbolIcon.colorForeground": colors.text,
-		"symbolIcon.constantForeground": colors.mauve,
+		"symbolIcon.constantForeground": colors.plum,
 		"symbolIcon.constructorForeground": colors.watermelon,
-		"symbolIcon.enumeratorForeground": colors.mauve,
-		"symbolIcon.enumeratorMemberForeground": colors.mauve,
+		"symbolIcon.enumeratorForeground": colors.plum,
+		"symbolIcon.enumeratorMemberForeground": colors.plum,
 		"symbolIcon.eventForeground": colors.watermelon,
-		"symbolIcon.fieldForeground": tokenColors.field_name,
+		"symbolIcon.fieldForeground": tokenColors.field_name_reference,
 		"symbolIcon.functionForeground": tokenColors.method,
 		"symbolIcon.interfaceForeground": colors.watermelon,
 		"symbolIcon.keyForeground": colors.watermelon,
@@ -442,12 +443,12 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"symbolIcon.methodForeground": tokenColors.method,
 		"symbolIcon.moduleForeground": workbenchColors.button_fg_highlight,
 		"symbolIcon.namespaceForeground": workbenchColors.button_fg_highlight,
-		"symbolIcon.nullForeground": colors.mauve,
-		"symbolIcon.numberForeground": colors.mauve,
+		"symbolIcon.nullForeground": colors.plum,
+		"symbolIcon.numberForeground": colors.plum,
 		"symbolIcon.objectForeground": colors.watermelon,
 		"symbolIcon.operatorForeground": workbenchColors.button_fg_highlight,
 		"symbolIcon.packageForeground": workbenchColors.button_fg_highlight,
-		"symbolIcon.propertyForeground": tokenColors.property,
+		"symbolIcon.propertyForeground": tokenColors.property_reference,
 		"symbolIcon.referenceForeground": colors.watermelon,
 		"symbolIcon.snippetForeground": colors.text,
 		"symbolIcon.stringForeground": colors.lavender,
@@ -497,7 +498,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 		"terminalCursor.foreground": colors.text,
 		"terminalCommandDecoration.defaultBackground": colors.subSurface,
 		"terminalCommandDecoration.errorBackground": tokenColors.errorColor,
-		"terminalCommandDecoration.successBackground": colors.seafoam,
+		"terminalCommandDecoration.successBackground": colors.seagreen,
 
 		// title bar
 		"titleBar.activeBackground": colors.crust,
@@ -510,8 +511,7 @@ export function getUiColors(ctx: ThemeContext): WorkbenchPartial {
 
 		"inlineChat.foreground": colors.subtext0,
 		"chat.slashCommandBackground": colors.subSurface,
-		"chat.slashCommandForeground": colors.seafoam,
+		"chat.slashCommandForeground": colors.seagreen,
 		"editorStickyScrollHover.background": colors.subSurface,
-		...extensions(ctx),
-	};
+	} as const satisfies WorkbenchPartial;
 }

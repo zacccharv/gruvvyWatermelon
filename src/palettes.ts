@@ -5,21 +5,38 @@ import {
 	TokenColors,
 	WidgetThemeColors,
 	WorkbenchThemeColors,
+	GruvvyAccents,
 } from "@/types";
 
-const m_colors: GruvvyPalette = {
-	rosewater: "#ffc7d6",
+export const accentNames: GruvvyAccents = {
+	azalea: "azalea",
+	cherry: "cherry",
+	bubblegum: "bubblegum",
+	raspberry: "raspberry",
+	lavender: "lavender",
+	plum: "plum",
+	seagreen: "seagreen",
+	blueberry: "blueberry",
+	juniper: "juniper",
+	mint: "mint",
+	watermelon: "watermelon",
+	peachpuff: "peachpuff",
+	peach: "peach",
+};
+
+export const m_colors = {
+	azalea: "#ffc7d6",
 	cherry: "#ff647d",
-	pink: "#FFB6EB",
-	raspberry: "#DD5A8E",
+	bubblegum: "#ffb8ec",
+	raspberry: "#dd5a8e",
 	lavender: "#C3ADFF",
-	mauve: "#9781D5",
-	seafoam: "#a1ede0",
-	teal: "#86d5df",
-	darkteal: "#67938E",
+	plum: "#9781D5",
+	seagreen: "#a1ede0",
+	blueberry: "#86d5df",
+	juniper: "#67938E",
 	mint: "#80e5b3",
 	watermelon: "#4fb094",
-	champagne: "#f1bcac",
+	peachpuff: "#f1bcac",
 	peach: "#f18464",
 	text: "#ecefee",
 	subtext1: "#d8e8e6",
@@ -32,16 +49,16 @@ const m_colors: GruvvyPalette = {
 	base: "#2a3232",
 	mantle: "#202727",
 	crust: "#171c1b",
-};
+} as const satisfies GruvvyPalette;
 
-const m_ansiColors: GruvvyAnsiPalette = {
+const m_ansiColors = {
 	black: m_colors.base,
 	red: m_colors.cherry,
 	green: m_colors.mint,
-	yellow: m_colors.champagne,
+	yellow: m_colors.peachpuff,
 	blue: m_colors.watermelon,
-	magenta: m_colors.pink,
-	cyan: m_colors.teal,
+	magenta: m_colors.bubblegum,
+	cyan: m_colors.blueberry,
 	white: m_colors.subtext0,
 	brightBlack: m_colors.surface1,
 	brightRed: "#ff5a76",
@@ -51,9 +68,9 @@ const m_ansiColors: GruvvyAnsiPalette = {
 	brightMagenta: "#fe97e3",
 	brightCyan: "#53e5dd",
 	brightWhite: m_colors.subtext1,
-};
+} as const satisfies GruvvyAnsiPalette;
 
-const tokens: TokenColors = {
+const tokens = {
 	// plain text
 	plain: m_colors.text,
 
@@ -64,7 +81,7 @@ const tokens: TokenColors = {
 
 	// arithmetic + bit operators + assignment operators:
 	// | (+, -, *, /, %, =, ==, ===, !=, !==, <, >, <=, >=, &&, ||, !, ?, ??, .?, etc...)
-	// | (is, in, where, as, where, default, etc...)
+	// | (is, in, where, as, where, etc...)
 	operator: m_colors.mint,
 
 	// access modifiers / type modifiers keywords:
@@ -78,7 +95,7 @@ const tokens: TokenColors = {
 	// custom attribute / decorator:
 	// | ( @Injectable, @export, [Serializable], [HideInInspector], etc...)
 	// italic
-	keyword_attribute: m_colors.mauve,
+	keyword_attribute: m_colors.plum,
 
 	// flow control keywords | base types | operator:
 	// | (if, else, switch, case, for, while, do, return, break, yield, continue...)
@@ -98,10 +115,10 @@ const tokens: TokenColors = {
 	keyword_header: m_colors.mint,
 
 	// custom struct | custom class | custom interface | custom enum decleration:
-	struct_declaration: m_colors.mauve,
+	struct_declaration: m_colors.plum,
 
 	// custom struct ref
-	type: m_colors.mauve,
+	type_reference: m_colors.plum,
 
 	// special declaration names:
 	// get set properties... basically methods pretending to be fields
@@ -109,23 +126,14 @@ const tokens: TokenColors = {
 
 	// fieldName declarations
 	// when a variable, constant, type, class, interface, enum, function/method is declared
-	field_name_declaration: m_colors.champagne,
-
-	// field reference
-	// when a variable, constant, type, class, interface, enum is directly referenced not as a property
-	field_reference: m_colors.rosewater,
-	field_name: m_colors.rosewater,
-
-	// property reference
-	// when accessing object properties or fields with dot notation
+	field_name_declaration: m_colors.peachpuff,
 	property_reference: m_colors.text,
+	object_reference: m_colors.azalea,
+	field_name_reference: m_colors.azalea,
 
 	// namespaces | classname | className of file reference and declaration
 	namespace: m_colors.cherry,
 	class_name: m_colors.cherry,
-
-	// property names (when accessing object properties)
-	property: m_colors.raspberry,
 
 	// method names | event names | getters + setters | method/event references
 	method: m_colors.raspberry,
@@ -135,44 +143,44 @@ const tokens: TokenColors = {
 	base_value: m_colors.watermelon,
 
 	// number value ( maybe different from base_value in some languages? )
-	number_value: m_colors.teal,
+	number_value: m_colors.blueberry,
 
 	// entity name (xml, html, etc...)
-	entity_name: m_colors.mauve,
+	entity_name: m_colors.plum,
 
 	// error
 	errorColor: m_colors.cherry,
 	// success
 	successColor: m_colors.mint,
 	// warn
-	warnColor: m_colors.champagne,
+	warnColor: m_colors.peachpuff,
 	// info
 	infoColor: m_colors.mint,
 	// hint
 	hintColor: m_colors.lavender,
-};
+} as const satisfies TokenColors;
 
-const workbench: WorkbenchThemeColors = {
+const workbench = {
 	menu_bg_highlight: m_colors.watermelon,
 	menu_fg_highlight: m_colors.crust,
 	button_bg_highlight: m_colors.watermelon,
 	button_fg_highlight: m_colors.crust,
 	secondaryButtonHighlight: m_colors.raspberry,
-};
+} as const satisfies WorkbenchThemeColors;
 
-const widgets: WidgetThemeColors = {
+const widgets = {
 	widget_bg: m_colors.base,
 	widget_fg: m_colors.text,
 	widget_hl: m_colors.subSurface,
 	widget_menu_bg: m_colors.subSurface,
-};
+} as const satisfies WidgetThemeColors;
 
-const palette: PaletteCollection = {
+const palette = {
 	tokenColors: tokens,
 	workbenchColors: workbench,
 	widgetColors: widgets,
 	colors: m_colors,
 	ansiColors: m_ansiColors,
-};
+} as const satisfies PaletteCollection;
 
 export { palette };

@@ -1,4 +1,4 @@
-import { AccentName, AnsiColors, Flavor } from "./palettetypes";
+import { AccentName, Accents, AnsiColors, Colors, Flavor } from "./palettetypes";
 
 export type * from "./textmate-colors";
 export type * from "./workbench-colors";
@@ -7,106 +7,9 @@ export type * from "./todoTree";
 
 export type GruvvyAnsiPalette = AnsiColors<string>;
 
-/** {@link https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#inference-with-template-literals}
- */
-export type GruvvyPalette = {
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#ffc7d6;">-rosewater-</span>
-	*/
-	rosewater: `#${string}`;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#ff647d;">-cherry-</span>
-	 */
-	cherry: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#FFB6EB;">-pink-</span>
-	 */
-	pink: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#DD5A8E;">-raspberry-</span>
-	 */
-	raspberry: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#C3ADFF;">-lavender-</span>
-	 */
-	lavender: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#9781D5;">-mauve-</span>
-	 */
-	mauve: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#a1ede0;">-seafoam-</span>
-	 */
-	seafoam: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#86d5df;">-teal-</span>
-	 */
-	teal: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#67938E;">-darkteal-</span>
-	 */
-	darkteal: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#80e5b3;">-mint-</span>
-	 */
-	mint: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#4fb094;">-watermelon-</span>
-	 */
-	watermelon: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#f1bcac;">-champagne-</span>
-	 */
-	champagne: string;
-	/**
-	 * @param {string} <span style="color:#111111;background-color:#f18464;">-peach-</span>
-	 */
-	peach: string;
-	/**
-	 *  @param {string} <span style="color:#111111;background-color:#ecefee;">-text-</span>
-	 */
-	text: string;
-	/**
-	 * @param {string} subtext1 - {@link themeGen.colors.subtext1}
-	 */
-	subtext1: string;
-	/**
-	 * @param {string} subtext0 - {@link themeGen.colors.subtext0}
-	 */
-	subtext0: string;
-	/**
-	 * @param {string} overlay1 - {@link themeGen.colors.overlay1}
-	*/
-	overlay1: string;
-	/**
-	 * @param {string} overlay0 - {@link themeGen.colors.overlay0}
-	 */
-	overlay0: string;
-	/**
-	 * @param {string} surface1 - {@link themeGen.colors.surface1}
-	  */
-	surface1: string;
-	/**
-	 * @param {string} surface0 - {@link themeGen.colors.surface0}
-	*/
-	surface0: string;
-	/**
-	 * @param {string} subSurface - {@link themeGen.colors.subSurface}
-	*/
-	subSurface: string;
-	/**
-	 * @param {string} base - {@link themeGen.colors.base}
-	*/
-	base: string;
-	/**
-	 * @param {string} mantle - {@link themeGen.colors.mantle}
-	*/
-	mantle: string;
-	/**
-	 * @param {string} crust - {@link themeGen.colors.crust}
-	*/
-	crust: string;
-}
+export type GruvvyPalette = Colors<string>
+
+export type GruvvyAccents = Accents<string>;
 
 export type PaletteCollection = {
 	colors: GruvvyPalette;
@@ -147,28 +50,111 @@ export type TokenColors = {
 	punctuation: string;
 
 	/**
+	 * @description arithmetic / bitwise / logical / assignment operators
+	 * @type {string}
+	 * @example + - * / % = == === != !== < > <= >= && || ! ? ?? .? as in is where etc...
+	 *
+	 */
+	operator: string;
+
+	/**
 	 * @description storage keywords:
 	 * @type {string}
 	 * @example  public, private, protected, static, final, const, var, let
 	 */
 	keyword_storage: string;
 
+	/**
+	 * @description custom attribute / decorator keywords:
+	 * @type {string}
+	 * @example [Serializable], #nullable, [Obsolete]
+	 */
 	keyword_attribute: string;
+
+	/**
+	 * @description base types
+	 * @type {string}
+	 * @example int, float, bool, void, string, number, etc...
+	 */
 	keyword_base_types: string;
+
+	/**
+	 * @description flow control keywords
+	 * @type {string}
+	 * @example if, else, switch, case, for, while, do, return, break, yield, continue, etc...
+	 */
 	keyword_flow: string;
+
+	/**
+	 * @description special keywords
+	 * @type {string}
+	 * @example this, self, super, base, etc...
+	 */
 	keyword_special: string;
+
+	/**
+	 * @description top level special header keywords
+	 * @type {string}
+	 * @example using, import, export, etc...
+	 */
 	keyword_header: string;
+
+	/**
+	 * @description custom type declaration names
+	 * @type {string}
+	 * @example  class *MyClass*, struct *MyStruct*, interface *MyInterface*, enum *MyEnum*
+	 */
 	struct_declaration: string;
-	operator: string;
-	type: string;
+
+	/**
+	 * @description custom type references
+	 * @type {string}
+	 * @example  var myVar: *MyType* = xxx
+	 */
+	type_reference: string;
+
+	// TODO: merge with function_name, the things listed below are all secret functions basically
+	/**
+	 * @description special declaration names
+	 * @type {string}
+	 * @example
+	 * ```c#
+	 * c# - delegate *MyDelegate*, *MyProperty* { get; set; }
+	 * ```
+	 */
 	type_declaration: string;
+
+	/**
+	 * @description field name declarations
+	 * @type {string}
+	 * @example
+	 * ```js
+	 * js - const *myConstant*
+	 * ```
+	 * ```c#
+	 * c# - private string = *myPrivateField*
+	 * ```
+	 */
 	field_name_declaration: string;
-	field_reference: string;
-	field_name: string;
+
+	/**
+	 * @description object field/property references
+	 * @type {string}
+	 * @example  other.*myField*, other.*myConstant*, other.*myVariable*
+	 */
 	property_reference: string;
+
+	/**
+	 * @description object references
+	 * @type {string}
+	 * @example  *myObject*.myField, *myObject*.myMethod()
+	 */
+	object_reference: string;
+
+	field_name_reference: string;
 	namespace: string;
 	class_name: string;
-	property: string;
+
 	method: string;
 	event: string;
 
@@ -185,6 +171,14 @@ export type TokenColors = {
 	 * @type {string}
 	 * */
 	number_value: string;
+
+	/**
+	 * @description entity names (xml, html, etc...)
+	 * @type {string}
+	 * @example ```html
+	 * <*MyEntity*></*MyEntity*>;
+	 * ```
+	 * */
 	entity_name: string;
 
 	/**
@@ -220,10 +214,8 @@ export type TokenColors = {
 
 export type GruvvyFlavor = Flavor;
 
-export type Accent = AccentName;
-
 export type ThemeOptions = {
-	accentColor: Accent;
+	accentColor: AccentName;
 	integrateTodoTree: boolean;
 	integrateErrorLensGutter: boolean;
 };

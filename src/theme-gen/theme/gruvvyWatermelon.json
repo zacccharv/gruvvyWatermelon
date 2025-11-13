@@ -1,8 +1,8 @@
 {
   "name": "Gruvvy Watermelon",
   "colors": {
-    "rosewater": {
-      "name": "rosewater",
+    "azalea": {
+      "name": "azalea",
       "hex": "#ffc7d6",
       "rgb": {
         "r": 255,
@@ -35,26 +35,26 @@
       },
       "accent": true
     },
-    "pink": {
-      "name": "pink",
-      "hex": "#FFB6EB",
+    "bubblegum": {
+      "name": "bubblegum",
+      "hex": "#ffb8ec",
       "rgb": {
         "r": 255,
-        "g": 182,
-        "b": 235,
+        "g": 184,
+        "b": 236,
         "a": 1
       },
       "hsl": {
-        "h": 316.43835616438355,
+        "h": 316.056338028169,
         "s": 100,
-        "l": 85.68627450980392,
+        "l": 86.07843137254902,
         "a": 1
       },
       "accent": true
     },
     "raspberry": {
       "name": "raspberry",
-      "hex": "#DD5A8E",
+      "hex": "#dd5a8e",
       "rgb": {
         "r": 221,
         "g": 90,
@@ -86,8 +86,8 @@
       },
       "accent": true
     },
-    "mauve": {
-      "name": "mauve",
+    "plum": {
+      "name": "plum",
       "hex": "#9781D5",
       "rgb": {
         "r": 151,
@@ -103,8 +103,8 @@
       },
       "accent": true
     },
-    "seafoam": {
-      "name": "seafoam",
+    "seagreen": {
+      "name": "seagreen",
       "hex": "#a1ede0",
       "rgb": {
         "r": 161,
@@ -120,8 +120,8 @@
       },
       "accent": true
     },
-    "teal": {
-      "name": "teal",
+    "blueberry": {
+      "name": "blueberry",
       "hex": "#86d5df",
       "rgb": {
         "r": 134,
@@ -137,8 +137,8 @@
       },
       "accent": true
     },
-    "darkteal": {
-      "name": "darkteal",
+    "juniper": {
+      "name": "juniper",
       "hex": "#67938E",
       "rgb": {
         "r": 103,
@@ -152,7 +152,7 @@
         "l": 49.01960784313725,
         "a": 1
       },
-      "accent": false
+      "accent": true
     },
     "mint": {
       "name": "mint",
@@ -188,8 +188,8 @@
       },
       "accent": true
     },
-    "champagne": {
-      "name": "champagne",
+    "peachpuff": {
+      "name": "peachpuff",
       "hex": "#f1bcac",
       "rgb": {
         "r": 241,
@@ -498,17 +498,17 @@
     },
     "magenta": {
       "name": "magenta",
-      "hex": "#FFB6EB",
+      "hex": "#ffb8ec",
       "rgb": {
         "r": 255,
-        "g": 182,
-        "b": 235,
+        "g": 184,
+        "b": 236,
         "a": 1
       },
       "hsl": {
-        "h": 316.43835616438355,
+        "h": 316.056338028169,
         "s": 100,
-        "l": 85.68627450980392,
+        "l": 86.07843137254902,
         "a": 1
       },
       "code": 5
@@ -686,9 +686,9 @@
   },
   "colorEntries": [
     [
-      "rosewater",
+      "azalea",
       {
-        "name": "rosewater",
+        "name": "azalea",
         "hex": "#ffc7d6",
         "rgb": {
           "r": 255,
@@ -726,20 +726,20 @@
       }
     ],
     [
-      "pink",
+      "bubblegum",
       {
-        "name": "pink",
-        "hex": "#FFB6EB",
+        "name": "bubblegum",
+        "hex": "#ffb8ec",
         "rgb": {
           "r": 255,
-          "g": 182,
-          "b": 235,
+          "g": 184,
+          "b": 236,
           "a": 1
         },
         "hsl": {
-          "h": 316.43835616438355,
+          "h": 316.056338028169,
           "s": 100,
-          "l": 85.68627450980392,
+          "l": 86.07843137254902,
           "a": 1
         },
         "accent": true
@@ -749,7 +749,7 @@
       "raspberry",
       {
         "name": "raspberry",
-        "hex": "#DD5A8E",
+        "hex": "#dd5a8e",
         "rgb": {
           "r": 221,
           "g": 90,
@@ -786,9 +786,9 @@
       }
     ],
     [
-      "mauve",
+      "plum",
       {
-        "name": "mauve",
+        "name": "plum",
         "hex": "#9781D5",
         "rgb": {
           "r": 151,
@@ -806,9 +806,9 @@
       }
     ],
     [
-      "seafoam",
+      "seagreen",
       {
-        "name": "seafoam",
+        "name": "seagreen",
         "hex": "#a1ede0",
         "rgb": {
           "r": 161,
@@ -826,9 +826,9 @@
       }
     ],
     [
-      "teal",
+      "blueberry",
       {
-        "name": "teal",
+        "name": "blueberry",
         "hex": "#86d5df",
         "rgb": {
           "r": 134,
@@ -846,9 +846,9 @@
       }
     ],
     [
-      "darkteal",
+      "juniper",
       {
-        "name": "darkteal",
+        "name": "juniper",
         "hex": "#67938E",
         "rgb": {
           "r": 103,
@@ -862,7 +862,7 @@
           "l": 49.01960784313725,
           "a": 1
         },
-        "accent": false
+        "accent": true
       }
     ],
     [
@@ -906,9 +906,9 @@
       }
     ],
     [
-      "champagne",
+      "peachpuff",
       {
-        "name": "champagne",
+        "name": "peachpuff",
         "hex": "#f1bcac",
         "rgb": {
           "r": 241,

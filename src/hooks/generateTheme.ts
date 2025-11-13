@@ -2,6 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { compileTheme, defaultOptions } from "@/theme";
 import { repoRoot } from "./constants";
+import { GruvvyAccents } from "@/types";
 
 const main = async () => {
 	await mkdir(path.join(repoRoot, "themes"), { recursive: true });
@@ -19,3 +20,10 @@ if (typeof require !== "undefined" && require.main === module) {
 	console.log("Compiling themes...");
 	main();
 }
+
+export const accentNames = (): string[] => {
+	// Return the keys of AccentNames if it's an object type, or define them explicitly
+	// Since AccentNames is a generic type, you need to either import the actual accent values
+	// or define them as a constant array
+	return Object.keys({} as GruvvyAccents);
+};

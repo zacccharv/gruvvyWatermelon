@@ -8,10 +8,16 @@ import {
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type { ThemeOptions, JsonSettings, ThemeContext, Accent } from "@/types";
+import type {
+	ThemeOptions,
+	JsonSettings,
+	ThemeContext,
+	GruvvyAccents,
+} from "@/types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";
+import { AccentName } from "./types/palettetypes";
 /* eslint-disable no-restricted-imports */
 
 type Entry<T> = { [K in keyof T]: [K, T[K]] }[keyof T];
@@ -132,7 +138,7 @@ export const getConfiguration = (): ThemeOptions => {
 	const config = workspace.getConfiguration("gruvvy-watermelon");
 
 	const options = {
-		accentColor: config.get<Accent>("accentColor"),
+		accentColor: config.get<AccentName>("accentColor"),
 		integrateTodoTree: config.get<boolean>("integrateTodoTree"),
 		integrateErrorLensGutter: config.get<boolean>(
 			"integrateErrorLensGutter",

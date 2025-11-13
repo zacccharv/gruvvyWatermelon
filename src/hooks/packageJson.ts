@@ -2,7 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { repoRoot } from "./constants";
-import { AccentNames } from "@/types/palettetypes";
+import { accentNames } from "@/palettes";
 
 const config = {
 	configuration: {
@@ -10,25 +10,12 @@ const config = {
 		properties: {
 			"gruvvy-watermelon.accentColor": {
 				scope: "window",
-				// TODO Turn this into an enum with available accent colors so it shows a dropdown in settings
+				// TODO FIX: make this enum work properly
 				type: "string",
 				default: "watermelon",
 				description:
 					"Sets the accent color for the Gruvvy Watermelon theme. Choose from a variety of vibrant colors to customize your coding experience.",
-				enum: [
-					AccentNames.MAUVE,
-					AccentNames.ROSEWATER,
-					AccentNames.CHERRY,
-					AccentNames.PINK,
-					AccentNames.RASPBERRY,
-					AccentNames.LAVENDER,
-					AccentNames.SEAFOAM,
-					AccentNames.TEAL,
-					AccentNames.MINT,
-					AccentNames.WATERMELON,
-					AccentNames.CHAMPAGNE,
-					AccentNames.PEACH,
-				],
+				enum: [...Object.keys(accentNames)],
 			},
 			"gruvvy-watermelon.integrateTodoTree": {
 				scope: "window",

@@ -1,15 +1,12 @@
 import { palette } from "../palettes";
 import {
-	GruvvyFlavor,
 	PaletteCollection,
+	TextmateColors,
 	ThemeContext,
 	ThemeOptions,
 } from "@/types";
-import { getUiColors } from "./uiColors";
+import { getUiColors, WorkbenchPartial } from "./uiColors";
 import { getTokenColors } from "./tokencolors";
-import path from "node:path";
-import fs from "node:fs";
-import { repoRoot } from "@/hooks/constants";
 
 export const defaultOptions: ThemeOptions = {
 	integrateTodoTree: false,
@@ -17,15 +14,24 @@ export const defaultOptions: ThemeOptions = {
 	accentColor: "watermelon",
 };
 
-export const compileTheme = (
-	options: ThemeOptions = defaultOptions,
-): object => {
+export type ThemeObject = {
+	name: string;
+	type: "vs-dark" | "vs" | "hc-black" | "hc-light";
+	colors: WorkbenchPartial;
+	semanticHighlighting: boolean;
+	semanticTokenColors: object;
+	tokenColors: TextmateColors;
+};
+
+export const compileTheme = (options: ThemeOptions = defaultOptions) => {
 	console.log("compileTheme called with options:", options);
+
 	// Use the dynamic palette instead of reading from static JSON
 	const ctxPaletteCollection: PaletteCollection = {
 		colors: palette.colors,
 		ansiColors: palette.ansiColors,
 		tokenColors: palette.tokenColors,
+		workbenchColors: palette.workbenchColors,
 		widgetColors: palette.widgetColors,
 	};
 
@@ -38,10 +44,10 @@ export const compileTheme = (
 
 	return {
 		name: "Gruvvy Watermelon",
-		type: "dark",
+		type: "vs-dark",
 		colors: getUiColors(ctx),
 		semanticHighlighting: false,
 		semanticTokenColors: {},
 		tokenColors: getTokenColors(ctx),
-	};
+	} as const satisfies ThemeObject;
 };

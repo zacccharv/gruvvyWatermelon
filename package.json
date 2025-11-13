@@ -4,7 +4,7 @@
   "publisher": "ZaccCharvolin",
   "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
   "icon": "imgs/logo.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "keywords": [
     "theme",
@@ -58,17 +58,18 @@
           "default": "watermelon",
           "description": "Sets the accent color for the Gruvvy Watermelon theme. Choose from a variety of vibrant colors to customize your coding experience.",
           "enum": [
-            "mauve",
-            "rosewater",
+            "azalea",
             "cherry",
-            "pink",
+            "bubblegum",
             "raspberry",
             "lavender",
-            "seafoam",
-            "teal",
+            "plum",
+            "seagreen",
+            "blueberry",
+            "juniper",
             "mint",
             "watermelon",
-            "champagne",
+            "peachpuff",
             "peach"
           ]
         },

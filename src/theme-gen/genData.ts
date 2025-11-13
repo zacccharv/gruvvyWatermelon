@@ -5,9 +5,8 @@ import {
 	GruvvyAnsiColors,
 	GruvvyColors,
 } from "@/types/palettetypes";
-import { AccentNames } from "@/types/palettetypes";
 import { hexToHsl, hexToRgba } from "@/theme/utils";
-import { palette } from "../palettes";
+import { accentNames, palette } from "../palettes";
 import { writeFile } from "fs";
 import { GruvvyFlavor } from "@/types";
 
@@ -89,7 +88,7 @@ export const generate = async (): Promise<Boolean> => {
 };
 
 function isAccent(name: string): boolean {
-	return (Object.values(AccentNames) as string[]).includes(name);
+	return (Object.values(accentNames) as string[]).includes(name);
 }
 
 generate();
