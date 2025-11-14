@@ -8,12 +8,7 @@ import {
 	workspace,
 } from "vscode";
 import { compileTheme, defaultOptions } from "./theme";
-import type {
-	ThemeOptions,
-	JsonSettings,
-	ThemeContext,
-	GruvvyAccents,
-} from "@/types";
+import type { ThemeOptions, JsonSettings, ThemeContext } from "@/types";
 import { todoConfiguration } from "./extensions/todoTree";
 import { palette } from "./palettes";
 import { errorLensConfiguration } from "./extensions/errorLens";

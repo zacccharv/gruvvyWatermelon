@@ -64,13 +64,14 @@
             "raspberry",
             "lavender",
             "plum",
-            "seagreen",
             "blueberry",
-            "juniper",
             "mint",
             "watermelon",
             "peachpuff",
-            "peach"
+            "peach",
+            "raspberry2",
+            "cornflower",
+            "sky"
           ]
         },
         "gruvvy-watermelon.integrateTodoTree": {

@@ -1,0 +1,75 @@
+import type { TextmateColors, ThemeContext } from "@/types";
+
+const tokens = (context: ThemeContext): TextmateColors => {
+	const { colors } = context.palette;
+
+	return [
+		{
+			name: "HTML/XML DOCTYPE as keyword",
+			scope: [
+				"keyword.other.doctype",
+				"meta.tag.sgml.doctype punctuation.definition.tag",
+				"meta.tag.metadata.doctype entity.name.tag",
+				"meta.tag.metadata.doctype punctuation.definition.tag",
+			],
+			settings: {
+				foreground: colors.plum,
+			},
+		},
+		{
+			name: "xml strings",
+			scope: "meta.tag.xml",
+			settings: {
+				foreground: colors.mint,
+			},
+		},
+		{
+			name: "HTML/XML-like <tags/>",
+			scope: ["entity.name.tag"],
+			settings: {
+				foreground: colors.plum,
+				fontStyle: "",
+			},
+		},
+		{
+			name: "Special characters like &amp;",
+			scope: [
+				"text.html constant.character.entity",
+				"text.html constant.character.entity punctuation",
+				"constant.character.entity.xml",
+				"constant.character.entity.xml punctuation",
+				"punctuation.separator.key-value",
+				// ditto for JSX / TSX
+				"constant.character.entity.js.jsx",
+				"constant.charactger.entity.js.jsx punctuation",
+				"constant.character.entity.tsx",
+				"constant.character.entity.tsx punctuation",
+			],
+			settings: {
+				foreground: colors.cherry,
+			},
+		},
+		{
+			name: "HTML/XML tag attribute values",
+			scope: ["entity.other.attribute-name"],
+			settings: {
+				foreground: colors.raspberry2,
+			},
+		},
+		{
+			name: "Components",
+			scope: [
+				"support.class.component",
+				"support.class.component.jsx",
+				"support.class.component.tsx",
+				"support.class.component.vue",
+			],
+			settings: {
+				foreground: colors.bubblegum,
+				fontStyle: "",
+			},
+		},
+	];
+};
+
+export default tokens;

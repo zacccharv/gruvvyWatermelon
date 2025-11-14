@@ -15,58 +15,75 @@ export const accentNames: GruvvyAccents = {
 	raspberry: "raspberry",
 	lavender: "lavender",
 	plum: "plum",
-	seagreen: "seagreen",
 	blueberry: "blueberry",
-	juniper: "juniper",
 	mint: "mint",
 	watermelon: "watermelon",
 	peachpuff: "peachpuff",
 	peach: "peach",
+	raspberry2: "raspberry2",
+	cornflower: "cornflower",
+	sky: "sky",
 };
 
 export const m_colors = {
+	// was rosewater
 	azalea: "#ffc7d6",
+	// was red
 	cherry: "#ff647d",
+	// was pink
 	bubblegum: "#ffb8ec",
+	// was maroon
 	raspberry: "#dd5a8e",
-	lavender: "#C3ADFF",
-	plum: "#9781D5",
-	seagreen: "#a1ede0",
-	blueberry: "#86d5df",
-	juniper: "#67938E",
-	mint: "#80e5b3",
-	watermelon: "#4fb094",
+	// was flamingo
 	peachpuff: "#f1bcac",
-	peach: "#f18464",
-	text: "#ecefee",
-	subtext1: "#d8e8e6",
-	subtext0: "#cee9e6",
-	overlay1: "#9dafad",
-	overlay0: "#6a817f",
-	surface1: "#627776",
-	surface0: "#5e6867",
-	subSurface: "#35403e",
-	base: "#2a3232",
-	mantle: "#202727",
-	crust: "#171c1b",
+	// was peach
+	peach: "#eea48dff",
+	// was yellow #f9e2af
+	raspberry2: "#dd5a8e",
+	// was teal
+	mint: "#80e5b3",
+	// was green
+	watermelon: "#4fb094",
+	// was sky
+	sky: "#a1ede0",
+	// was sapphire
+	cornflower: "#86d5df",
+	// was blue
+	blueberry: "#74c7ec",
+	// was mauve
+	plum: "#9781d5",
+	// was lavender
+	lavender: "#C3ADFF",
+	text: "#e9f2f1",
+	subtext1: "#b6d2ca",
+	subtext0: "#a2c4ba",
+	overlay2: "#8eb5aa",
+	overlay1: "#7ba59a",
+	overlay0: "#689589",
+	surface2: "#5c7f76",
+	surface1: "#4f6a63",
+	surface0: "#415550",
+	base: "#273030ff",
+	mantle: "#202727ff",
+	crust: "#171c1bff",
 } as const satisfies GruvvyPalette;
 
 const m_ansiColors = {
 	black: m_colors.base,
 	red: m_colors.cherry,
-	green: m_colors.mint,
+	green: m_colors.watermelon,
 	yellow: m_colors.peachpuff,
-	blue: m_colors.watermelon,
+	blue: m_colors.cornflower,
 	magenta: m_colors.bubblegum,
 	cyan: m_colors.blueberry,
 	white: m_colors.subtext0,
-	brightBlack: m_colors.surface1,
+	brightBlack: m_colors.surface2,
 	brightRed: "#ff5a76",
-	brightGreen: "#8ff3d1",
-	brightYellow: "#ffc9b9",
-	brightBlue: "#47c5a1",
+	brightGreen: "#47c5a1",
+	brightYellow: "#ffbaa4",
+	brightBlue: "#74cdd8",
 	brightMagenta: "#fe97e3",
-	brightCyan: "#53e5dd",
+	brightCyan: "#5bc2f1",
 	brightWhite: m_colors.subtext1,
 } as const satisfies GruvvyAnsiPalette;
 
@@ -162,8 +179,8 @@ const workbench = {
 const widgets = {
 	widget_bg: m_colors.base,
 	widget_fg: m_colors.text,
-	widget_hl: m_colors.subSurface,
-	widget_menu_bg: m_colors.subSurface,
+	widget_hl: m_colors.surface0,
+	widget_menu_bg: m_colors.surface0,
 } as const satisfies WidgetThemeColors;
 
 const palette = {
