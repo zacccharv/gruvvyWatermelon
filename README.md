@@ -21,7 +21,7 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 			</th>
 		</tr>
 	</thead>
-	<tbody style"display:flex;width:100%">
+	<tbody style"display:block;width:100%">
 		<tr>
 			<td style="text-align:left"><code>Peachpuff</code></td>
 			<td style="text-align:left"><img src="https://place-hold.it/15/f1bcac/f1bcac?text=+"
