@@ -161,7 +161,7 @@ The Gruvvy Watermelon theme comes with two toggleable integration settings shown
 
 A really helpful plugin for keeping track of todos in your code with tons of customization.
 The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) shown below which overrides these
-[settings](./README.md#changed-todo-tree-settings).
+[settings](./README.md#changed-settings).
 
 #### Setting Property
 
@@ -173,8 +173,9 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 ```
 
 <details>
-<summary><h4>Changed Todo Tree Settings</h4></summary>
+<summary>Changed Todo Tree Settings</summary>
 
+#### Changed Settings
 ```json
 {
 	"todo-tree.general.tags": [
@@ -246,7 +247,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 </details>
 
 <details>
-<summary><h4>Preview</h4></summary>
+<summary>Preview</summary>
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/Screenshot%202025-11-15%20094527.png)
 
@@ -260,7 +261,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 ### _Error Lens_
 
 A gorgeous error/warning/info viewer for linting errors and syntax errors.
-The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) shown below which overrides these [settings](./README.md#changed-error-lens-settings).
+The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) shown below which overrides these [settings](./README.md#changed-settings-1).
 
 #### Setting Property
 
@@ -288,8 +289,9 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 ```
 
 <details>
-<summary><h4>Changed Error Lens Settings</h4></summary>
+<summary>Changed Error Lens Settings</summary>
 
+#### Changed Settings
 ```json
 {
 	"errorGutterIconColor": errorColor,
@@ -303,7 +305,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 
 <details>
 
-<summary><h4>Preview</h4></summary>
+<summary>Preview</summary>
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/Screenshot%202025-11-15%20012610.png)
 
