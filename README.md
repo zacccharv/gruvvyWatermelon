@@ -13,10 +13,10 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 <table width="100vw" >
 	<thead>
 		<tr>
-			<th width="50%">
+			<th width="50vw">
 				<h4>Color Name</h4>
 			</th>
-			<th width="50%">
+			<th width="50vw">
 				<h4>Color</h4>
 			</th>
 		</tr>
