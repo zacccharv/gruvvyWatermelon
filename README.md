@@ -98,52 +98,52 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Subtext 0</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch16.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch10.png"
 					alt="#a2c4ba">  #a2c4ba</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Overlay 2</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch15.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch9.png"
 					alt="#8eb5aa">  #8eb5aa</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Overlay 1</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch14.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch8.png"
 					alt="#7ba59a">  #7ba59a</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Overlay 0</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch13.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png"
 					alt="#689589">  #689589</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Surface 2</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch12.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch6.png"
 					alt="#5c7f76">  #5c7f76</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Surface 1</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch11.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch5.png"
 					alt="#4f6a63">  #4f6a63</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Surface 0</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch10.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch4.png"
 					alt="#415550">  #415550</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Base</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch9.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch3.png"
 					alt="#273030">  #273030</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Mantle</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch8.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch2.png"
 					alt="#202727">  #202727</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Crust</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch1.png"
 					alt="#171c1b">  #171c1b</td>
 		</tr>
 	</tbody>
