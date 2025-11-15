@@ -5,7 +5,10 @@
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/theme_previews.png)
 
+---
+
 ## Description
+
 A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and heavily modeled off of [Catpuccin For Vscode](https://github.com/catppuccin/vscode/tree/main). Supports most languages, but C#, Gdscript and Typescript/Javascript look especially nice.
 
 ## Palette
@@ -28,7 +31,7 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 					alt="#f1bcac"> #f1bcac</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>peach</code></td>
+			<td style="text-align:left"><code>Peach</code></td>
 			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch24.png"
 					alt="#eea48d"> #eea48d</td>
 		</tr>
@@ -52,39 +55,39 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 					alt="#dd5a8e"> #dd5a8e</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Lavender</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch19.png"
-					alt="#c3adff"> #c3adff</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><code>Plum</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch18.png"
-					alt="#9781d5"> #9781d5</td>
-		</tr>
-		<tr>
 			<td style="text-align:left"><code>Mint</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch17.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch19.png"
 					alt="#80e5b3"> #80e5b3</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Watermelon</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch16.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch18.png"
 					alt="#4fb094"> #4fb094</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Sky</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch15.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch17.png"
 					alt="#a1ede0">  #a1ede0</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Cornflower</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch14.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch16.png"
 					alt="#71ccbf">  #71ccbf</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Blueberry</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch13.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch15.png"
 					alt="#479e9e">  #479e9e</td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Lavender</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch14.png"
+					alt="#c3adff"> #c3adff</td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Plum</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch13.png"
+					alt="#9781d5"> #9781d5</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Text</code></td>
@@ -148,6 +151,8 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 		</tr>
 	</tbody>
 </table>
+
+---
 
 ## Customization
 
