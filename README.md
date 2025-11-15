@@ -10,7 +10,7 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 
 ## Palette
 
-<table width="100%" >
+<table width="100vw" >
 	<thead>
 		<tr>
 			<th width="50%">
