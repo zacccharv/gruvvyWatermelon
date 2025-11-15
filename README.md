@@ -163,8 +163,7 @@ A really helpful plugin for keeping track of todos in your code with tons of cus
 The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) shown below which overrides these
 [settings](./README.md#changed-settings).
 
-#### Setting Property
-
+### Setting Property
 ```json
 {
 	// Use Gruvvy Watermelon colors for the Todo Tree extension
@@ -246,6 +245,8 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 
 </details>
 
+<br>
+
 <details>
 <summary>Preview</summary>
 
@@ -263,8 +264,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 A gorgeous error/warning/info viewer for linting errors and syntax errors.
 The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) shown below which overrides these [settings](./README.md#changed-settings-1).
 
-#### Setting Property
-
+### Setting Property
 ```json
 {
 	// Sets the hint gutter icon colors based on severity
@@ -272,8 +272,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 }
 ```
 
-#### Recommended Settings For Error Lens
-
+### Recommended Settings For Error Lens
 ```js
 {
 	// Makes messages italic
@@ -303,9 +302,9 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 
 </details>
 
-<details>
+<br>
 
-<summary>Preview</summary>
+<details><summary>Preview</summary>
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/Screenshot%202025-11-15%20012610.png)
 
@@ -313,5 +312,4 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 
 > [!Note]
 > Find Error Lens
-> ⚠ [HERE](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) ⚠️
-
+> ⚠️ [HERE](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) ⚠️
