@@ -173,11 +173,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 ```
 
 <details>
-<summary>
-
-#### Changed Todo Tree Settings
-
-</summary>
+<summary><h4>Changed Todo Tree Settings</h4></summary>
 
 ```json
 {
@@ -250,12 +246,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 </details>
 
 <details>
-
-<summary>
-
-#### Preview
-
-</summary>
+<summary><h4>Preview</h4></summary>
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/Screenshot%202025-11-15%20094527.png)
 
@@ -297,11 +288,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 ```
 
 <details>
-<summary>
-
-#### Changed Error Lens Settings
-
-</summary>
+<summary><h4>Changed Error Lens Settings</h4></summary>
 
 ```json
 {
@@ -316,11 +303,7 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 
 <details>
 
-<summary>
-
-#### Preview
-
-</summary>
+<summary><h4>Preview</h4></summary>
 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/Screenshot%202025-11-15%20012610.png)
 
