@@ -167,8 +167,8 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 
 ```json
 {
-// Use Gruvvy Watermelon colors for the Todo Tree extension
-"gruvvy-watermelon.integrateTodoTree": false
+	// Use Gruvvy Watermelon colors for the Todo Tree extension
+	"gruvvy-watermelon.integrateTodoTree": false
 }
 ```
 
