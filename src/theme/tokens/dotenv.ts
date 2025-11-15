@@ -8,7 +8,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "dotenv left-hand side assignments",
 			scope: ["variable.other.env"],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 		{

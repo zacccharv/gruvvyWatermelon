@@ -64,7 +64,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "python function calls",
 			scope: ["meta.function-call.python"],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 		{

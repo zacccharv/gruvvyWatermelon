@@ -194,7 +194,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 			name: "Enum",
 			scope: "entity.name.enum",
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 				fontStyle: "italic",
 			},
 		},
@@ -318,7 +318,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 				"support.type.property-name.less",
 			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 				fontStyle: "",
 			},
 		},

@@ -16,7 +16,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "GDScript functions",
 			scope: "support.function.builtin.gdscript",
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 		{

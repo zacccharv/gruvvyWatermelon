@@ -8,7 +8,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "PHP Attributes",
 			scope: ["support.attribute.builtin", "meta.attribute.php"],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{

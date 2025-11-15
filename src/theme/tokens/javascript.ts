@@ -77,7 +77,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 		{
 			scope: "variable.parameter.generic",
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{
@@ -94,7 +94,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "Decorator punctuations (decorators inherit from blue functions, instead of styleguide peach)",
 			scope: "punctuation.decorator.ts",
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 				fontStyle: "italic",
 			},
 		},

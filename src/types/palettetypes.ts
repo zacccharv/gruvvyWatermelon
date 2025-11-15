@@ -20,7 +20,7 @@ type Entries<T> = {
     [K in keyof T]: [K, T[K]];
 }[keyof T][];
 
-export type AccentName = "azalea" | "cherry" | "bubblegum" | "raspberry" | "lavender" | "plum" | "blueberry" | "mint" | "watermelon" | "peachpuff" | "peach" | "raspberry2" | "cornflower" | "sky";
+export type AccentName = "azalea" | "cherry" | "bubblegum" | "raspberry" | "lavender" | "plum" | "mint" | "watermelon" | "sky"| "cornflower" | "blueberry" | "peachpuff" | "peach";
 
 export type MonochromaticName = "text" | "subtext1" | "subtext0" | "overlay2" |  "overlay1" | "overlay0" | "surface2" |  "surface1" | "surface0" | "base" | "mantle" | "crust";
 

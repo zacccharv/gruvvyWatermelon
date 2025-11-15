@@ -20,7 +20,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"entity.name.scope-resolution.function.definition.cpp",
 			],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{

@@ -35,7 +35,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"variable.other.alias.yaml",
 			],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 				fontStyle: "",
 			},
 		},
@@ -46,7 +46,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"entity.name.section.group-title.ini",
 			],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{

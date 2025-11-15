@@ -8,7 +8,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "R function calls",
 			scope: "meta.function-call.r",
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 		{

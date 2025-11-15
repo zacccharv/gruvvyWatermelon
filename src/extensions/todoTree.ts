@@ -54,7 +54,7 @@ const todoConfiguration = (ctx: ThemeContext): TodoTreeConfig => {
 			icon: "flame",
 		},
 		IMPORTANT: {
-			background: colors.azalea,
+			background: colors.raspberry,
 			icon: "star",
 		},
 	};

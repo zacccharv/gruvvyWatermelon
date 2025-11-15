@@ -13,7 +13,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"punctuation.definition.attribute.rust",
 			],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 				fontStyle: "italic",
 			},
 		},
@@ -66,7 +66,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "Rust impl",
 			scope: "entity.name.impl.rust",
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 				fontStyle: "italic",
 			},
 		},
@@ -81,7 +81,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "Rust trait",
 			scope: "entity.name.trait.rust",
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 				fontStyle: "italic",
 			},
 		},
@@ -89,14 +89,14 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "Rust struct",
 			scope: "storage.type.source.rust",
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{
 			name: "Rust union",
 			scope: "entity.name.union.rust",
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{
@@ -114,7 +114,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"entity.name.function.macro.rust",
 			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 				fontStyle: "italic",
 			},
 		},
@@ -125,7 +125,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"entity.name.type.lifetime",
 			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 				fontStyle: "italic",
 			},
 		},
@@ -147,7 +147,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "Rust functions",
 			scope: "meta.function.call.rust",
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 		{

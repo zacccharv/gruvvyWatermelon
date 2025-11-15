@@ -172,7 +172,7 @@ export function syncExtensionSettings(configTargets: JsonSettings) {
 	};
 
 	// Update Todo Tree settings
-	if (configTargets["gruvvy-watermelon.integrateErrorLensGutter"].changed) {
+	if (configTargets["gruvvy-watermelon.integrateTodoTree"].changed) {
 		{
 			const todoConfig = todoConfiguration(ctx);
 			for (const [key, value] of Object.entries(todoConfig)) {

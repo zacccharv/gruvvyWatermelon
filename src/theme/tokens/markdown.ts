@@ -45,7 +45,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"markup.heading.heading-2.asciidoc",
 			],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{
@@ -113,15 +113,18 @@ const tokens = (context: ThemeContext): TextmateColors => {
 		},
 		{
 			name: "Markdown auto links",
-			scope: ["punctuation.definition.link", "markup.underline.link"],
+			scope: [
+				"punctuation.definition.link",
+				"meta.link.inline.markdown",
+				"text.html.markdown punctuation.definition.link.title",
+			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.mint,
 			},
 		},
 		{
 			name: "Markdown links",
 			scope: [
-				"text.html.markdown punctuation.definition.link.title",
 				"text.html.quarto punctuation.definition.link.title",
 				"string.other.link.title.markdown",
 				"string.other.link.title.quarto",
@@ -133,9 +136,11 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"constant.other.reference.link.markdown",
 				"constant.other.reference.link.quarto",
 				"markup.substitution.attribute-reference",
+				"markup.underline.link",
+				"meta.attribute.src.html string",
 			],
 			settings: {
-				foreground: colors.lavender,
+				foreground: colors.sky,
 			},
 		},
 		{

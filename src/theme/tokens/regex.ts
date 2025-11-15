@@ -42,7 +42,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "Regex character class []",
 			scope: "punctuation.definition.character-class.regexp",
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{
@@ -81,7 +81,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"meta.assertion.negative-look-ahead.regexp",
 			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 	];

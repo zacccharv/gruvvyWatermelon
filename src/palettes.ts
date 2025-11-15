@@ -20,7 +20,6 @@ export const accentNames: GruvvyAccents = {
 	watermelon: "watermelon",
 	peachpuff: "peachpuff",
 	peach: "peach",
-	raspberry2: "raspberry2",
 	cornflower: "cornflower",
 	sky: "sky",
 };
@@ -37,23 +36,20 @@ export const m_colors = {
 	// was flamingo
 	peachpuff: "#f1bcac",
 	// was peach
-	peach: "#eea48dff",
-	// was yellow #f9e2af
-	raspberry2: "#dd5a8e",
+	peach: "#eea48d",
 	// was teal
-	mint: "#80e5b3",
+	mint: "#80e5b3ff",
 	// was green
 	watermelon: "#4fb094",
 	// was sky
 	sky: "#a1ede0",
 	// was sapphire
-	cornflower: "#86d5df",
+	cornflower: "#71ccbf",
 	// was blue
-	blueberry: "#74c7ec",
-	// was mauve
+	blueberry: "#479e9e",
 	plum: "#9781d5",
 	// was lavender
-	lavender: "#C3ADFF",
+	lavender: "#c3adff",
 	text: "#e9f2f1",
 	subtext1: "#b6d2ca",
 	subtext0: "#a2c4ba",
@@ -63,9 +59,9 @@ export const m_colors = {
 	surface2: "#5c7f76",
 	surface1: "#4f6a63",
 	surface0: "#415550",
-	base: "#273030ff",
-	mantle: "#202727ff",
-	crust: "#171c1bff",
+	base: "#273030",
+	mantle: "#202727",
+	crust: "#171c1b",
 } as const satisfies GruvvyPalette;
 
 const m_ansiColors = {

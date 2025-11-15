@@ -11,13 +11,13 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				foreground: colors.text,
 			},
 		},
-		{
-			name: "C# xml-style docs",
-			scope: "comment.block.documentation.cs",
-			settings: {
-				foreground: colors.text,
-			},
-		},
+		// {
+		// 	name: "C# xml-style docs",
+		// 	scope: "comment.block.documentation.cs",
+		// 	settings: {
+		// 		foreground: colors.text,
+		// 	},
+		// },
 		{
 			name: "c# field names",
 			scope: ["source.cs entity.name.variable.field"],

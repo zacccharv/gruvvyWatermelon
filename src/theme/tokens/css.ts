@@ -11,7 +11,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"entity.other.attribute-name.parent-selector.css punctuation.definition.entity.css",
 			],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{
@@ -71,7 +71,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"meta.property-list variable.other.less punctuation.definition.variable.less",
 			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.azalea,
 			},
 		},
 		{

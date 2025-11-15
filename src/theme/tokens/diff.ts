@@ -20,7 +20,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"punctuation.definition.to-file.diff",
 			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 		{

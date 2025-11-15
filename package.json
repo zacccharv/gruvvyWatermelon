@@ -69,7 +69,6 @@
             "watermelon",
             "peachpuff",
             "peach",
-            "raspberry2",
             "cornflower",
             "sky"
           ]
@@ -128,5 +127,8 @@
     "keytar": {
       "built": false
     }
+  },
+  "dependencies": {
+    "ejs": "^3.1.10"
   }
 }

@@ -11,7 +11,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"entity.other.attribute-name.single.nix",
 			],
 			settings: {
-				foreground: colors.blueberry,
+				foreground: colors.cornflower,
 			},
 		},
 		{

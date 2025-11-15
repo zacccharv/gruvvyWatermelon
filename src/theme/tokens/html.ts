@@ -53,7 +53,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			name: "HTML/XML tag attribute values",
 			scope: ["entity.other.attribute-name"],
 			settings: {
-				foreground: colors.raspberry2,
+				foreground: colors.raspberry,
 			},
 		},
 		{

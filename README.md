@@ -1,176 +1,150 @@
-# Gruvvy Watermelon Theme
+<h3 align="center">
+	<img src=https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/logo.png width="100" alt="Logo"/><br/>
+	Gruvvy Watermelon Theme
+</h3>
 
-A color theme inspired by gruvbox and Watermelons (and maybe some grapes).
-Created for Unity and C# with GDScript support currently in development. Other languages may look ok but are untested.
+![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/img/theme_previews.png)
 
-<details>
-<summary>
-	<h2>Previews 🖼️</h2>
-</summary>
-
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_130235.png)
-
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_130235.png)
-
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/color_theme_palette.png)
-
-</details>
+## Description
+A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and heavily modeled off of [Catpuccin For Vscode](https://github.com/catppuccin/vscode/tree/main). Supports most languages, but C#, Gdscript and Typescript/Javascript look especially nice.
 
 ## Palette
 
 <table>
 	<thead>
-	<tr>
-			<th style="text-align:left;width:33vw;">
-				<h4>Color</h4>
-			</th>
-			<th style="text-align:left;width:33vw;">
+		<tr>
+			<th style="text-align:left;width:50vw;">
 				<h4>Color Name</h4>
 			</th>
-			<th style="text-align:left;width:33vw;">
-				<h4>RGB Value</h4>
+			<th style="text-align:left;width:50vw;">
+				<h4>Color</h4>
 			</th>
 		</tr>
 	</thead>
 	<tbody style"display:flex;width:100%">
 		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/ffc7d6/ffc7d6?text=+"
-					alt="#ffc7d6"><code>#ffc7d6</code></td>
-			<td style="text-align:left"><code>bright_red_pink</code></td>
-			<td style="text-align:left">rgb(255, 199, 214)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/FF647D/FF647D?text=+"
-					alt="#FF647D"><code>#FF647D</code></td>
-			<td style="text-align:left"><code>red_pink</code></td>
-			<td style="text-align:left">rgb(255, 100, 125)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/FFB6EB/FFB6EB?text=+"
-					alt="#FFB6EB"><code>#FFB6EB</code></td>
-			<td style="text-align:left"><code>bright_purple_pink</code></td>
-			<td style="text-align:left">rgb(255, 182, 235)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/DD5A8E/DD5A8E?text=+"
-					alt="#DD5A8E"><code>#DD5A8E</code></td>
-			<td style="text-align:left"><code>purple_pink</code></td>
-			<td style="text-align:left">rgb(221, 90, 142)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/C3ADFF/C3ADFF?text=+"
-					alt="#C3ADFF"><code>#C3ADFF</code></td>
-			<td style="text-align:left"><code>bright_purple</code></td>
-			<td style="text-align:left">rgb(195, 173, 255)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/9781D5/9781D5?text=+"
-					alt="#9781D5"><code>#9781D5</code></td>
-			<td style="text-align:left"><code>purple</code></td>
-			<td style="text-align:left">rgb(151, 129, 213)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/A2EDE0/A2EDE0?text=+"
-					alt="#A2EDE0"><code>#A2EDE0</code></td>
-			<td style="text-align:left"><code>bright_blue</code></td>
-			<td style="text-align:left">rgb(162, 237, 224)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/67938E/67938E?text=+"
-					alt="#67938E"><code>#67938E</code></td>
-			<td style="text-align:left"><code>blue</code></td>
-			<td style="text-align:left">rgb(103, 147, 142)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/81E5B3/81E5B3?text=+"
-					alt="#81E5B3"><code>#81E5B3</code></td>
-			<td style="text-align:left"><code>bright_aqua</code></td>
-			<td style="text-align:left">rgb(129, 229, 179)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/4FB094/4FB094?text=+"
-					alt="#4FB094"><code>#4FB094</code></td>
-			<td style="text-align:left"><code>aqua</code></td>
-			<td style="text-align:left">rgb(79, 176, 148)</td>
-		</tr>
-		<tr>
+			<td style="text-align:left"><code>Peachpuff</code></td>
 			<td style="text-align:left"><img src="https://place-hold.it/15/f1bcac/f1bcac?text=+"
 					alt="#f1bcac"><code>#f1bcac</code></td>
-			<td style="text-align:left"><code>bright_peach</code></td>
-			<td style="text-align:left">rgb(241, 188, 172)</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/f18464/f18464?text=+"
-					alt="#f18464"><code>#f18464</code></td>
 			<td style="text-align:left"><code>peach</code></td>
-			<td style="text-align:left">rgb(241, 132, 100)</td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/eea48d/eea48d?text=+"
+					alt="#eea48d"><code>#eea48d</code></td>
 		</tr>
-		<thead>
-			<tr>
-				<td style="text-align:left">
-					<h4>Color</h4><br>
-				</td>
-				<td style="text-align:left">
-					<h4>Color Name</h4><br>
-				</td>
-				<td style="text-align:left">
-					<h4>RGB Value</h4><br>
-				</td>
-			</tr>
-		</thead>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/ecefee/ecefee?text=+"
-					alt="#ecefee"><code>#ecefee</code></td>
-			<td style="text-align:left"><code>white</code></td>
-			<td style="text-align:left">rgb(236, 239, 238)</td>
+			<td style="text-align:left"><code>Azalea</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/ffc7d6/ffc7d6?text=+"
+					alt="#ffc7d6"><code>#ffc7d6</code></td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/ecefee/ecefee?text=+"
-					alt="#ecefee"><code>#ecefee</code></td>
-			<td style="text-align:left"><code>fg_0</code></td>
-			<td style="text-align:left">rgb(236, 239, 238)</td>
+			<td style="text-align:left"><code>Cherry</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/ff647d/ff647d?text=+"
+					alt="#ff647d"><code>#ff647d</code></td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/d8e8e6/d8e8e6?text=+"
-					alt="#d8e8e6"><code>#d8e8e6</code></td>
-			<td style="text-align:left"><code>fg_1</code></td>
-			<td style="text-align:left">rgb(216, 232, 230)</td>
+			<td style="text-align:left"><code>Bubblegum</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/ffb8ec/ffb8ec?text=+"
+					alt="#ffb8ec"><code>#ffb8ec</code></td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/cce8e5/cce8e5?text=+"
-					alt="#cce8e5"><code>#cce8e5</code></td>
-			<td style="text-align:left"><code>fg_2</code></td>
-			<td style="text-align:left">rgb(204, 232, 229)</td>
+			<td style="text-align:left"><code>Raspberry</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/dd5a8e/dd5a8e?text=+"
+					alt="#dd5a8e"><code>#dd5a8e</code></td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/647a78/647a78?text=+"
-					alt="#647a78"><code>#647a78</code></td>
-			<td style="text-align:left"><code>gray</code></td>
-			<td style="text-align:left">rgb(100, 122, 120)</td>
+			<td style="text-align:left"><code>Lavender</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/c3adff/c3adff?text=+"
+					alt="#c3adff"><code>#c3adff</code></td>
 		</tr>
 		<tr>
+			<td style="text-align:left"><code>Mint</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/80e5b3/80e5b3?text=+"
+					alt="#80e5b3"><code>#80e5b3</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Watermelon</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/4fb094/4fb094?text=+"
+					alt="#4fb094"><code>#4fb094</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Plum</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/9781d5/9781d5?text=+"
+					alt="#9781d5"><code>#9781d5</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Sky</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/a1ede0/a1ede0?text=+"
+					alt="#a1ede0"><code>#a1ede0</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Cornflower</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/71ccbf/71ccbf?text=+"
+					alt="#71ccbf"><code>#71ccbf</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Blueberry</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/479e9e/479e9e?text=+"
+					alt="#479e9e"><code>#479e9e</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Text</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/e9f2f1/e9f2f1?text=+"
+					alt="#e9f2f1"><code>#e9f2f1</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Subtext 1</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/b6d2ca/b6d2ca?text=+"
+					alt="#b6d2ca"><code>#b6d2ca</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Subtext 0</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/a2c4ba/a2c4ba?text=+"
+					alt="#a2c4ba"><code>#a2c4ba</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Overlay 2</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/8eb5aa/8eb5aa?text=+"
+					alt="#8eb5aa"><code>#8eb5aa</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Overlay 1</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/7ba59a/7ba59a?text=+"
+					alt="#7ba59a"><code>#7ba59a</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Overlay 0</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/689589/689589?text=+"
+					alt="#689589"><code>#689589</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Surface 2</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/5c7f76/5c7f76?text=+"
+					alt="#5c7f76"><code>#5c7f76</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Surface 1</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/4f6a63/4f6a63?text=+"
+					alt="#4f6a63"><code>#4f6a63</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Surface 0</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/415550/415550?text=+"
+					alt="#415550"><code>#415550</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Base</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/273030/273030?text=+"
+					alt="#273030"><code>#273030</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Mantle</code></td>
+			<td style="text-align:left"><img src="https://place-hold.it/15/202727/202727?text=+"
+					alt="#202727"><code>#202727</code></td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Crust</code></td>
 			<td style="text-align:left"><img src="https://place-hold.it/15/171c1b/171c1b?text=+"
 					alt="#171c1b"><code>#171c1b</code></td>
-			<td style="text-align:left"><code>black</code></td>
-			<td style="text-align:left">rgb(23, 28, 27)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/202626/202626?text=+"
-					alt="#202626"><code>#202626</code></td>
-			<td style="text-align:left"><code>bg_0</code></td>
-			<td style="text-align:left">rgb(32, 38, 38)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/293030/293030?text=+"
-					alt="#293030"><code>#293030</code></td>
-			<td style="text-align:left"><code>bg_1</code></td>
-			<td style="text-align:left">rgb(41, 48, 48)</td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><img src="https://place-hold.it/15/35403e/35403e?text=+"
-					alt="#35403e"><code>#35403e</code></td>
-			<td style="text-align:left"><code>bg_2</code></td>
-			<td style="text-align:left">rgb(53, 64, 62)</td>
 		</tr>
 	</tbody>
 </table>
@@ -348,10 +322,4 @@ A nice way to see errors and hints in the editor, and I integrated it with this 
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131100.png)
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131339.png)
 ![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131803.png)
-
-<!-- ## Todos
-
-- [ ] Explain default settings overrides provided and how they can be toggled on or off
-- [ ] Vscode Vim integration?
-- [ ] Learn about bundlers -->
 
