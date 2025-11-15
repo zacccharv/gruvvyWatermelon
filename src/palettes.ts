@@ -25,6 +25,10 @@ export const accentNames: GruvvyAccents = {
 };
 
 export const m_colors = {
+	// was flamingo
+	peachpuff: "#f1bcac",
+	// was peach
+	peach: "#eea48d",
 	// was rosewater
 	azalea: "#ffc7d6",
 	// was red
@@ -33,10 +37,6 @@ export const m_colors = {
 	bubblegum: "#ffb8ec",
 	// was maroon
 	raspberry: "#dd5a8e",
-	// was flamingo
-	peachpuff: "#f1bcac",
-	// was peach
-	peach: "#eea48d",
 	// was teal
 	mint: "#80e5b3",
 	// was green

@@ -24,127 +24,127 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 	<tbody width="100%">
 		<tr>
 			<td><code>Peachpuff</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs./imgs/swatches/palette_swatch23.png"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch25.png"
 					alt="#f1bcac"> #f1bcac</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>peach</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/eea48d/eea48d?text=+"
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch24.png"
 					alt="#eea48d"> #eea48d</td>
 		</tr>
 			<td style="text-align:left"><code>Azalea</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/ffc7d6/ffc7d6?text=+"
-					alt="#ffc7d6"><code>#ffc7d6</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch23.png"
+					alt="#ffc7d6"> #ffc7d6</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Cherry</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/ff647d/ff647d?text=+"
-					alt="#ff647d"><code>#ff647d</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch22.png"
+					alt="#ff647d"> #ff647d</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Bubblegum</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/ffb8ec/ffb8ec?text=+"
-					alt="#ffb8ec"><code>#ffb8ec</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch21.png"
+					alt="#ffb8ec"> #ffb8ec</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Raspberry</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/dd5a8e/dd5a8e?text=+"
-					alt="#dd5a8e"><code>#dd5a8e</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch20.png"
+					alt="#dd5a8e"> #dd5a8e</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Lavender</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/c3adff/c3adff?text=+"
-					alt="#c3adff"><code>#c3adff</code></td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><code>Mint</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/80e5b3/80e5b3?text=+"
-					alt="#80e5b3"><code>#80e5b3</code></td>
-		</tr>
-		<tr>
-			<td style="text-align:left"><code>Watermelon</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/4fb094/4fb094?text=+"
-					alt="#4fb094"><code>#4fb094</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch19.png"
+					alt="#c3adff"> #c3adff</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Plum</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/9781d5/9781d5?text=+"
-					alt="#9781d5"><code>#9781d5</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch18.png"
+					alt="#9781d5"> #9781d5</td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Mint</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png"
+					alt="#80e5b3"> #80e5b3</td>
+		</tr>
+		<tr>
+			<td style="text-align:left"><code>Watermelon</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch6.png"
+					alt="#4fb094"> #4fb094</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Sky</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/a1ede0/a1ede0?text=+"
-					alt="#a1ede0"><code>#a1ede0</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch5.png"
+					alt="#a1ede0">  #a1ede0</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Cornflower</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/71ccbf/71ccbf?text=+"
-					alt="#71ccbf"><code>#71ccbf</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch4.png"
+					alt="#71ccbf">  #71ccbf</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Blueberry</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/479e9e/479e9e?text=+"
-					alt="#479e9e"><code>#479e9e</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch3.png"
+					alt="#479e9e">  #479e9e</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Text</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/e9f2f1/e9f2f1?text=+"
-					alt="#e9f2f1"><code>#e9f2f1</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch0.png"
+					alt="#e9f2f1">  #e9f2f1</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Subtext 1</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/b6d2ca/b6d2ca?text=+"
-					alt="#b6d2ca"><code>#b6d2ca</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch17.png"
+					alt="#b6d2ca">  #b6d2ca</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Subtext 0</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/a2c4ba/a2c4ba?text=+"
-					alt="#a2c4ba"><code>#a2c4ba</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch16.png"
+					alt="#a2c4ba">  #a2c4ba</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Overlay 2</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/8eb5aa/8eb5aa?text=+"
-					alt="#8eb5aa"><code>#8eb5aa</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch15.png"
+					alt="#8eb5aa">  #8eb5aa</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Overlay 1</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/7ba59a/7ba59a?text=+"
-					alt="#7ba59a"><code>#7ba59a</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch14.png"
+					alt="#7ba59a">  #7ba59a</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Overlay 0</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/689589/689589?text=+"
-					alt="#689589"><code>#689589</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch13.png"
+					alt="#689589">  #689589</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Surface 2</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/5c7f76/5c7f76?text=+"
-					alt="#5c7f76"><code>#5c7f76</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch12.png"
+					alt="#5c7f76">  #5c7f76</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Surface 1</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/4f6a63/4f6a63?text=+"
-					alt="#4f6a63"><code>#4f6a63</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch11.png"
+					alt="#4f6a63">  #4f6a63</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Surface 0</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/415550/415550?text=+"
-					alt="#415550"><code>#415550</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch10.png"
+					alt="#415550">  #415550</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Base</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/273030/273030?text=+"
-					alt="#273030"><code>#273030</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch9.png"
+					alt="#273030">  #273030</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Mantle</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/202727/202727?text=+"
-					alt="#202727"><code>#202727</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch8.png"
+					alt="#202727">  #202727</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>Crust</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/171c1b/171c1b?text=+"
-					alt="#171c1b"><code>#171c1b</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png"
+					alt="#171c1b">  #171c1b</td>
 		</tr>
 	</tbody>
 </table>
