@@ -1,9 +1,12 @@
 # Change Log
 
-## [0.1]
+## [1.0.0]
 
 - typescript integration overhaul inspired by [catpuccin](https://github.com/catppuccin/vscode)
-- adding todo-tree compatibilty that can be toggled
+- Tweaked the palette colors, changed the names and added some
+- added todo-tree compatibilty that can be toggled
+- added error lens gutter icon color compatibilty that can be toggled
+- new Read Me
 
 ## [0.0.7]
 

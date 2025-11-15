@@ -3,7 +3,7 @@
 	Gruvvy Watermelon Theme
 </h3>
 
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/img/theme_previews.png)
+![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/theme_previews.png)
 
 ## Description
 A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and heavily modeled off of [Catpuccin For Vscode](https://github.com/catppuccin/vscode/tree/main). Supports most languages, but C#, Gdscript and Typescript/Javascript look especially nice.
@@ -249,6 +249,19 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property) sho
 
 </details>
 
+<details>
+
+<summary>
+
+#### Preview
+
+</summary>
+
+![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/Screenshot%202025-11-15%20094527.png)
+
+</details>
+
+> [!Note]
 > Find Todo Tree here 🌲 [HERE](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree) 🌲
 
 ---
@@ -301,25 +314,19 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 
 </details>
 
+<details>
+
+<summary>
+
+#### Preview
+
+</summary>
+
+![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/Screenshot%202025-11-15%20012610.png)
+
+</details>
+
+> [!Note]
 > Find Error Lens
-> [HERE](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) ⚠️
-
-## Font
-
-I use [Victor Mono](https://rubjo.github.io/victor-mono/) for its cursive italics.
-
-## Integrated Extensions
-
-## [TODO tree](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
-
-This theme adds this setup to that extension's settings. which you can enable in the sett
-
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-15_193507.png)
-
-## [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
-
-A nice way to see errors and hints in the editor, and I integrated it with this theme.
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131100.png)
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131339.png)
-![image](https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/main/imgs/Screenshot_2024-02-10_131803.png)
+> ⚠ [HERE](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) ⚠️
 

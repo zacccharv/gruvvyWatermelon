@@ -74,11 +74,11 @@ export const activate = async (ctx: ExtensionContext) => {
 };
 
 // utility function to check which config keys changed and return those for syncing
-let syncMe = (
+const syncMe = (
 	syncTargets: ConfigTargets,
 	event?: ConfigurationChangeEvent,
 ): { entries: ConfigTargets; changed: boolean } => {
-	var result: { changed: boolean; kvp: ConfigTargets } = {
+	let result: { changed: boolean; kvp: ConfigTargets } = {
 		changed: false,
 		kvp: syncTargets,
 	};

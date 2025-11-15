@@ -106,7 +106,6 @@ export default function tokens(context: ThemeContext): TextmateColors {
 			scope: [
 				"keyword.operator.word",
 				"keyword.operator.new",
-				"variable.language.super",
 				"storage.type",
 				// include punctuation like $ and @ if they're part of the keyword
 				"punctuation.definition.keyword",
@@ -114,6 +113,13 @@ export default function tokens(context: ThemeContext): TextmateColors {
 			settings: {
 				foreground: colors.mint,
 				fontStyle: "bold",
+			},
+		},
+		{
+			scope: "variable.language",
+			settings: {
+				foreground: colors.cherry,
+				fontStyle: "italic",
 			},
 		},
 		{

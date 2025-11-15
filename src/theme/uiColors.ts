@@ -473,7 +473,8 @@ export function getUiColors(ctx: ThemeContext) {
 		"tab.unfocusedActiveBorderTop": opacity(accent, 0.3),
 
 		// terminal / panel
-		"panel.background": colors.surface0,
+		"panel.background": colors.mantle,
+		"panelTitle.border": colors.surface1,
 		"panel.border": colors.surface1,
 		"terminal.tab.activeBorder": accent,
 		"terminal.ansiBlack": ansiColors.black,

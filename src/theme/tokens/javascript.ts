@@ -20,7 +20,7 @@ const tokens = (context: ThemeContext): TextmateColors => {
 				"variable.other.property.ts",
 			],
 			settings: {
-				foreground: colors.text,
+				foreground: colors.peachpuff,
 			},
 		},
 		{

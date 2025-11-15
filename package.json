@@ -4,7 +4,7 @@
   "publisher": "ZaccCharvolin",
   "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
   "icon": "imgs/logo.png",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "license": "MIT",
   "keywords": [
     "theme",
@@ -127,8 +127,5 @@
     "keytar": {
       "built": false
     }
-  },
-  "dependencies": {
-    "ejs": "^3.1.10"
   }
 }

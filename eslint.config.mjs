@@ -22,6 +22,7 @@ export default defineConfig([
             },
         },
         rules: {
+			"@typescript-eslint/no-unused-vars": ["warning", { argsIgnorePattern: "^_", varsIgnorePattern: "^_" }],
             "no-restricted-imports": ["error", { paths: nodeStdLibrary }],
             "no-restricted-modules": ["error", { paths: nodeStdLibrary }],
             "linebreak-style": ["error", "windows"],
