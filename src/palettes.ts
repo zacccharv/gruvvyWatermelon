@@ -38,7 +38,7 @@ export const m_colors = {
 	// was peach
 	peach: "#eea48d",
 	// was teal
-	mint: "#80e5b3ff",
+	mint: "#80e5b3",
 	// was green
 	watermelon: "#4fb094",
 	// was sky
@@ -47,9 +47,10 @@ export const m_colors = {
 	cornflower: "#71ccbf",
 	// was blue
 	blueberry: "#479e9e",
-	plum: "#9781d5",
 	// was lavender
 	lavender: "#c3adff",
+	// was mauve
+	plum: "#9781d5",
 	text: "#e9f2f1",
 	subtext1: "#b6d2ca",
 	subtext0: "#a2c4ba",

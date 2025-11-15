@@ -23,14 +23,14 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 	</thead>
 	<tbody width="100%">
 		<tr>
-			<td style="text-align:left"><code>Peachpuff</code></td>
-			<td style="text-align:left"><img src="https://place-hold.it/15/f1bcac/f1bcac?text=+"
-					alt="#f1bcac"><code>#f1bcac</code></td>
+			<td><code>Peachpuff</code></td>
+			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs./imgs/swatches/palette_swatch23.png"
+					alt="#f1bcac"> #f1bcac</td>
 		</tr>
 		<tr>
 			<td style="text-align:left"><code>peach</code></td>
 			<td style="text-align:left"><img src="https://place-hold.it/15/eea48d/eea48d?text=+"
-					alt="#eea48d"><code>#eea48d</code></td>
+					alt="#eea48d"> #eea48d</td>
 		</tr>
 			<td style="text-align:left"><code>Azalea</code></td>
 			<td style="text-align:left"><img src="https://place-hold.it/15/ffc7d6/ffc7d6?text=+"
