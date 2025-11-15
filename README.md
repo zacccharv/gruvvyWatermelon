@@ -10,18 +10,18 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 
 ## Palette
 
-<table width="100%">
+<table width="100%" >
 	<thead>
 		<tr>
-			<th style="text-align:left;width:50vw;">
+			<th width="50%">
 				<h4>Color Name</h4>
 			</th>
-			<th style="text-align:left;width:50vw;">
+			<th width="50%">
 				<h4>Color</h4>
 			</th>
 		</tr>
 	</thead>
-	<tbody style"display:flex;width:100%">
+	<tbody width="100%">
 		<tr>
 			<td style="text-align:left"><code>Peachpuff</code></td>
 			<td style="text-align:left"><img src="https://place-hold.it/15/f1bcac/f1bcac?text=+"
