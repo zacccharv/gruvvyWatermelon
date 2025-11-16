@@ -318,3 +318,9 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 > [!Note]
 > Find Error Lens
 > ⚠️ [HERE](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens) ⚠️
+
+---
+
+## Support
+
+If you have any questions regarding this port, feel free to open an [issue](https://github.com/zacccharv/gruvvyWatermelon/issues)

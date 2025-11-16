@@ -14,14 +14,14 @@
     "errorLens.hintMessageBackground": "#c3adff26",
     "errorLens.infoBackground": "#80e5b326",
     "errorLens.infoBackgroundLight": "#80e5b326",
-    "errorLens.infoForeground": "#80e5b3ff",
-    "errorLens.infoForegroundLight": "#80e5b3ff",
+    "errorLens.infoForeground": "#80e5b3",
+    "errorLens.infoForegroundLight": "#80e5b3",
     "errorLens.infoMessageBackground": "#80e5b326",
     "errorLens.statusBarErrorForeground": "#ff647d",
     "errorLens.statusBarHintForeground": "#c3adff",
     "errorLens.statusBarIconErrorForeground": "#ff647d",
     "errorLens.statusBarIconWarningForeground": "#f1bcac",
-    "errorLens.statusBarInfoForeground": "#80e5b3ff",
+    "errorLens.statusBarInfoForeground": "#80e5b3",
     "errorLens.statusBarWarningForeground": "#f1bcac",
     "errorLens.warningBackground": "#f1bcac26",
     "errorLens.warningBackgroundLight": "#f1bcac26",
@@ -52,9 +52,9 @@
     "button.secondaryForeground": "#e9f2f1",
     "button.secondaryBackground": "#5c7f76",
     "button.secondaryHoverBackground": "#6b9489",
-    "checkbox.background": "#5c7f76",
-    "checkbox.border": "#00000000",
-    "checkbox.foreground": "#4fb094",
+    "checkbox.background": "#00000000",
+    "checkbox.border": "#4fb094",
+    "checkbox.foreground": "#e9f2f1",
     "list.highlightForeground": "#4fb094",
     "notificationCenter.border": "#00000000",
     "notificationToast.border": "#00000000",
@@ -77,7 +77,7 @@
     "welcomePage.progress.foreground": "#4fb094",
     "symbolIcon.fileForeground": "#4fb094",
     "symbolIcon.folderForeground": "#4fb094",
-    "editorBracketHighlight.foreground1": "#80e5b3ff",
+    "editorBracketHighlight.foreground1": "#80e5b3",
     "editorBracketHighlight.foreground2": "#dd5a8e",
     "editorBracketHighlight.foreground3": "#a1ede0",
     "editorBracketHighlight.foreground4": "#ffb8ec",
@@ -118,7 +118,7 @@
     "debugIcon.stepOutForeground": "#e9f2f1",
     "debugIcon.continueForeground": "#4fb094",
     "debugIcon.stepBackForeground": "#5c7f76",
-    "debugConsole.infoForeground": "#80e5b3ff",
+    "debugConsole.infoForeground": "#80e5b3",
     "debugConsole.warningForeground": "#eea48d",
     "debugConsole.errorForeground": "#ff647d",
     "debugConsole.sourceForeground": "#ffc7d6",
@@ -138,7 +138,7 @@
     "scmGraph.historyItemRemoteRefColor": "#c3adff",
     "scmGraph.foreground1": "#f1bcac",
     "scmGraph.foreground2": "#ff647d",
-    "scmGraph.foreground3": "#80e5b3ff",
+    "scmGraph.foreground3": "#80e5b3",
     "scmGraph.foreground4": "#c3adff",
     "scmGraph.foreground5": "#71ccbf",
     "input.background": "#00000000",
@@ -190,9 +190,9 @@
     "editorHoverWidget.border": "#273030",
     "editorIndentGuide.activeBackground1": "#5c7f76",
     "editorIndentGuide.background1": "#4f6a63",
-    "editorInfo.foreground": "#80e5b3ff",
+    "editorInfo.foreground": "#80e5b3",
     "editorLightBulb.foreground": "#dd5a8e",
-    "editorLightBulbAutoFix.foreground": "#80e5b3ff",
+    "editorLightBulbAutoFix.foreground": "#80e5b3",
     "editorLineNumber.activeForeground": "#e9f2f1",
     "editorLineNumber.foreground": "#5c7f76",
     "editorLink.activeForeground": "#4fb094",
@@ -234,7 +234,7 @@
     "inputValidation.errorBorder": "#ff647d",
     "inputValidation.errorForeground": "#ff647d",
     "inputValidation.infoBackground": "#202727",
-    "inputValidation.infoBorder": "#80e5b3ff",
+    "inputValidation.infoBorder": "#80e5b3",
     "inputValidation.infoForeground": "#9781d5",
     "inputValidation.warningBackground": "#202727",
     "inputValidation.warningBorder": "#f1bcac",
@@ -279,7 +279,7 @@
     "notifications.background": "#273030",
     "notifications.foreground": "#e9f2f1",
     "notificationsErrorIcon.foreground": "#ff647d",
-    "notificationsInfoIcon.foreground": "#80e5b3ff",
+    "notificationsInfoIcon.foreground": "#80e5b3",
     "notificationsWarningIcon.foreground": "#f1bcac",
     "panelInput.border": "#273030",
     "panelTitle.activeForeground": "#a2c4ba",
@@ -296,7 +296,7 @@
     "peekViewTitleDescription.foreground": "#e9f2f1",
     "peekViewTitleLabel.foreground": "#e9f2f1",
     "problemsErrorIcon.foreground": "#ff647d",
-    "problemsInfoIcon.foreground": "#80e5b3ff",
+    "problemsInfoIcon.foreground": "#80e5b3",
     "problemsWarningIcon.foreground": "#f1bcac",
     "quickInput.foreground": "#e9f2f1",
     "quickInputList.focusBackground": "#4f6a63",
@@ -438,7 +438,7 @@
       "name": "Parentheses, Brackets, Braces",
       "scope": "punctuation",
       "settings": {
-        "foreground": "#80e5b3ff",
+        "foreground": "#80e5b3",
         "fontStyle": ""
       }
     },
@@ -485,7 +485,7 @@
         "keyword"
       ],
       "settings": {
-        "foreground": "#80e5b3ff",
+        "foreground": "#80e5b3",
         "fontStyle": "italic"
       }
     },
@@ -520,7 +520,7 @@
         "punctuation.definition.keyword"
       ],
       "settings": {
-        "foreground": "#80e5b3ff",
+        "foreground": "#80e5b3",
         "fontStyle": "bold"
       }
     },
@@ -542,7 +542,7 @@
     {
       "scope": "storage.modifier",
       "settings": {
-        "foreground": "#80e5b3ff",
+        "foreground": "#80e5b3",
         "fontStyle": "italic"
       }
     },
@@ -576,7 +576,7 @@
         "punctuation.separator.key-value"
       ],
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -815,7 +815,7 @@
         "storage.modifier.reference.cpp"
       ],
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -855,14 +855,14 @@
       "name": "Operators",
       "scope": "punctuation.separator.operator.css",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
       "name": "Pseudo classes",
       "scope": "source.css entity.other.attribute-name.pseudo-class",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1122,7 +1122,7 @@
       "name": "GraphQL enum members",
       "scope": "constant.character.enum.graphql",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1148,7 +1148,7 @@
       "name": "xml strings",
       "scope": "meta.tag.xml",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1214,7 +1214,7 @@
       "name": "Java enums",
       "scope": "constant.other.enum.java",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1317,7 +1317,7 @@
         "storage.type.function.arrow.ts"
       ],
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1350,7 +1350,7 @@
       "name": "Julia macros",
       "scope": "support.function.macro.julia",
       "settings": {
-        "foreground": "#80e5b3ff",
+        "foreground": "#80e5b3",
         "fontStyle": "italic"
       }
     },
@@ -1372,7 +1372,7 @@
       "name": "LaTeX preamble",
       "scope": "text.tex keyword.control.preamble",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1529,7 +1529,7 @@
         "text.html.markdown punctuation.definition.link.title"
       ],
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1596,7 +1596,7 @@
       "name": "Markdown separators",
       "scope": "meta.separator.markdown",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1607,7 +1607,7 @@
         "markup.list.bullet"
       ],
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -1899,7 +1899,7 @@
       "name": "Regex quantifier",
       "scope": "keyword.operator.quantifier.regexp",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -2019,7 +2019,7 @@
       "name": "Rust enum member",
       "scope": "meta.enum.rust storage.type.source.rust",
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {
@@ -2131,7 +2131,7 @@
       "name": "Shell shebang command",
       "scope": "comment.line.shebang constant.language",
       "settings": {
-        "foreground": "#80e5b3ff",
+        "foreground": "#80e5b3",
         "fontStyle": "italic"
       }
     },
@@ -2161,7 +2161,7 @@
         "punctuation.definition.evaluation.backticks.shell"
       ],
       "settings": {
-        "foreground": "#80e5b3ff"
+        "foreground": "#80e5b3"
       }
     },
     {

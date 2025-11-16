@@ -47,9 +47,9 @@ export function getUiColors(ctx: ThemeContext) {
 		"button.secondaryForeground": colors.text,
 		"button.secondaryBackground": colors.surface2,
 		"button.secondaryHoverBackground": shade(colors.surface2, 0.07),
-		"checkbox.background": colors.surface2,
-		"checkbox.border": transparent,
-		"checkbox.foreground": accent,
+		"checkbox.background": transparent,
+		"checkbox.border": accent,
+		"checkbox.foreground": colors.text,
 
 		"list.highlightForeground": accent,
 		"notificationCenter.border": transparent,
