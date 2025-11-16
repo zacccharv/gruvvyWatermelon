@@ -13,7 +13,7 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 
 ## Palette
 
-<table width="100%" >
+<table width="100%">
 	<thead>
 		<tr>
 			<th width="450vw">
@@ -27,127 +27,102 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 	<tbody width="100%">
 		<tr>
 			<td><code>Peachpuff</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch25.png"
-					alt="#f1bcac"> #f1bcac</td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch25.png" alt="#f1bcac"> #f1bcac</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Peach</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch24.png"
-					alt="#eea48d"> #eea48d</td>
+			<td><code>Peach</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch24.png" alt="#eea48d"> #eea48d</td>
 		</tr>
-			<td style="text-align:left"><code>Azalea</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch23.png"
-					alt="#ffc7d6"> #ffc7d6</td>
+			<td><code>Azalea</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch23.png" alt="#ffc7d6"> #ffc7d6</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Cherry</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch22.png"
-					alt="#ff647d"> #ff647d</td>
+			<td><code>Cherry</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch22.png" alt="#ff647d"> #ff647d</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Bubblegum</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch21.png"
-					alt="#ffb8ec"> #ffb8ec</td>
+			<td><code>Bubblegum</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch21.png" alt="#ffb8ec"> #ffb8ec</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Raspberry</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch20.png"
-					alt="#dd5a8e"> #dd5a8e</td>
+			<td><code>Raspberry</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch20.png" alt="#dd5a8e"> #dd5a8e</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Mint</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch19.png"
-					alt="#80e5b3"> #80e5b3</td>
+			<td><code>Mint</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch19.png" alt="#80e5b3"> #80e5b3</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Watermelon</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch18.png"
-					alt="#4fb094"> #4fb094</td>
+			<td><code>Watermelon</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch18.png" alt="#4fb094"> #4fb094</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Sky</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch17.png"
-					alt="#a1ede0">  #a1ede0</td>
+			<td><code>Sky</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch17.png" alt="#a1ede0"> #a1ede0</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Cornflower</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch16.png"
-					alt="#71ccbf">  #71ccbf</td>
+			<td><code>Cornflower</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch16.png" alt="#71ccbf"> #71ccbf</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Blueberry</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch15.png"
-					alt="#479e9e">  #479e9e</td>
+			<td><code>Blueberry</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch15.png" alt="#479e9e"> #479e9e</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Lavender</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch14.png"
-					alt="#c3adff"> #c3adff</td>
+			<td><code>Lavender</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch14.png" alt="#c3adff"> #c3adff</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Plum</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch13.png"
-					alt="#9781d5"> #9781d5</td>
+			<td><code>Plum</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch13.png" alt="#9781d5"> #9781d5</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Text</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch12.png"
-					alt="#e9f2f1">  #e9f2f1</td>
+			<td><code>Text</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch12.png" alt="#e9f2f1"> #e9f2f1</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Subtext 1</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch11.png"
-					alt="#b6d2ca">  #b6d2ca</td>
+			<td><code>Subtext 1</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch11.png" alt="#b6d2ca"> #b6d2ca</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Subtext 0</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch10.png"
-					alt="#a2c4ba">  #a2c4ba</td>
+			<td><code>Subtext 0</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch10.png" alt="#a2c4ba"> #a2c4ba</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Overlay 2</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch9.png"
-					alt="#8eb5aa">  #8eb5aa</td>
+			<td><code>Overlay 2</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch9.png" alt="#8eb5aa"> #8eb5aa</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Overlay 1</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch8.png"
-					alt="#7ba59a">  #7ba59a</td>
+			<td><code>Overlay 1</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch8.png" alt="#7ba59a"> #7ba59a</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Overlay 0</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png"
-					alt="#689589">  #689589</td>
+			<td><code>Overlay 0</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png" alt="#689589"> #689589</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Surface 2</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch6.png"
-					alt="#5c7f76">  #5c7f76</td>
+			<td><code>Surface 2</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch6.png" alt="#5c7f76" > #5c7f76</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Surface 1</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch5.png"
-					alt="#4f6a63">  #4f6a63</td>
+			<td><code>Surface 1</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch5.png" alt="#4f6a63"> #4f6a63</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Surface 0</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch4.png"
-					alt="#415550">  #415550</td>
+			<td><code>Surface 0</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch4.png" alt="#415550"> #415550</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Base</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch3.png"
-					alt="#273030">  #273030</td>
+			<td><code>Base</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch3.png" alt="#273030"> #273030</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Mantle</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch2.png"
-					alt="#202727">  #202727</td>
+			<td><code>Mantle</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch2.png" alt="#202727"> #202727</td>
 		</tr>
 		<tr>
-			<td style="text-align:left"><code>Crust</code></td>
-			<td style="text-align:left"><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch1.png"
-					alt="#171c1b">  #171c1b</td>
+			<td><code>Crust</code></td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch1.png" alt="#171c1b"> #171c1b</td>
 		</tr>
 	</tbody>
 </table>
