@@ -94,11 +94,11 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 		</tr>
 		<tr>
 			<td><code>Overlay 1</code></td>
-			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch8.png" alt="#7ba59a"> #7ba59a</td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch8.png" alt="\#7ba59a"> #7ba59a</td>
 		</tr>
 		<tr>
 			<td><code>Overlay 0</code></td>
-			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png" alt="#689589"> #689589</td>
+			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png" alt="\#689589"> #689589</td>
 		</tr>
 		<tr>
 			<td><code>Surface 2</code></td>
@@ -121,8 +121,12 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch2.png" alt="#202727"> #202727</td>
 		</tr>
 		<tr>
-			<td><code>Crust</code></td>
-			<td><img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch1.png" alt="#171c1b"> #171c1b</td>
+			<td>
+				<code>Crust</code>
+			</td>
+			<td>
+				<img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch1.png" alt="#171c1b"> #171c1b
+			</td>
 		</tr>
 	</tbody>
 </table>
