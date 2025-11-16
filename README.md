@@ -316,4 +316,4 @@ The Gruvvy Watermelon comes with the [setting](./README.md#setting-property-1) s
 
 ## Support
 
-If you have any questions regarding this port, feel free to open an [issue](https://github.com/zacccharv/gruvvyWatermelon/issues)
+If you have any questions regarding this theme, feel free to open an [issue](https://github.com/zacccharv/gruvvyWatermelon/issues)
