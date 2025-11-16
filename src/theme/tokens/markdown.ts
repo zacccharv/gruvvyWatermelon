@@ -91,16 +91,16 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			},
 		},
 		{
-			scope: "markup.bold",
+			scope: ["markup.bold", "punctuation.definition.bold.markdown"],
 			settings: {
 				foreground: colors.cherry,
 				fontStyle: "bold",
 			},
 		},
 		{
-			scope: "markup.italic",
+			scope: ["markup.italic", "punctuation.definition.italic.markdown"],
 			settings: {
-				foreground: colors.cherry,
+				foreground: colors.peach,
 				fontStyle: "italic",
 			},
 		},

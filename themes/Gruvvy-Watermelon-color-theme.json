@@ -826,6 +826,25 @@
       }
     },
     {
+      "name": "C# Properties",
+      "scope": [
+        "source.cs entity.name.variable.property"
+      ],
+      "settings": {
+        "foreground": "#dd5a8e"
+      }
+    },
+    {
+      "scope": [
+        "storage.type.accessor.get.cs",
+        "storage.type.accessor.set.cs"
+      ],
+      "settings": {
+        "foreground": "#dd5a8e",
+        "fontStyle": "italic"
+      }
+    },
+    {
       "name": "c# field names",
       "scope": [
         "source.cs entity.name.variable.field"
@@ -1501,16 +1520,22 @@
       }
     },
     {
-      "scope": "markup.bold",
+      "scope": [
+        "markup.bold",
+        "punctuation.definition.bold.markdown"
+      ],
       "settings": {
         "foreground": "#ff647d",
         "fontStyle": "bold"
       }
     },
     {
-      "scope": "markup.italic",
+      "scope": [
+        "markup.italic",
+        "punctuation.definition.italic.markdown"
+      ],
       "settings": {
-        "foreground": "#ff647d",
+        "foreground": "#eea48d",
         "fontStyle": "italic"
       }
     },
