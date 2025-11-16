@@ -100,7 +100,7 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 			<td><code>Overlay 0</code></td>
 			<td>
 				<img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch7.png" alt="\#689589">
-				`#689589`
+				#689589
 			</td>
 		</tr>
 		<tr>
@@ -115,14 +115,14 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 			<td><code>Surface 0</code></td>
 			<td>
 				<img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch4.png" alt="\#415550">
-				`#415550`
+				#415550
 			</td>
 		</tr>
 		<tr>
 			<td><code>Base</code></td>
 			<td>
 				<img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch3.png" alt="\#273030">
-				`#273030`
+				#273030
 			</td>
 		</tr>
 		<tr>
@@ -131,7 +131,7 @@ A color theme inspired by gruvbox and Watermelons (and maybe some grapes), and h
 			</td>
 			<td>
 				<img src="https://raw.githubusercontent.com/zacccharv/gruvvyWatermelon/refs/heads/main/imgs/swatches/palette_swatch2.png" alt="\#202727">
-				`#202727`
+				#202727
 			</td>
 		</tr>
 		<tr>
