@@ -91,5 +91,55 @@ function isAccent(name: string): boolean {
 	return (Object.values(accentNames) as string[]).includes(name);
 }
 
+export const generateCSSVariables = async (): Promise<boolean> => {
+	return new Promise((resolve) => {
+		// Generate CSS content
+		let cssContent = `:root {\n`;
+		cssContent += `  /* Gruvvy Watermelon Theme Variables */\n\n`;
+
+		// Add regular colors
+		cssContent += `  /* Theme Colors */\n`;
+		Object.entries(colorMap).forEach(([name, color]) => {
+			const { hex, rgb, hsl } = color;
+			const varName = name.replace(/([A-Z])/g, "-$1").toLowerCase();
+
+			cssContent += `  --gruvvy-${varName}: ${hex};\n`;
+			cssContent += `  --gruvvy-${varName}-rgb: rgb(${rgb.r}, ${rgb.g}, ${rgb.b});\n`;
+			cssContent += `  --gruvvy-${varName}-hsl: hsl(${hsl.h.toFixed(1)}, ${hsl.s.toFixed(1)}%, ${hsl.l.toFixed(1)}%);\n`;
+			cssContent += `\n`;
+		});
+
+		// Add ANSI colors
+		cssContent += `  /* ANSI Terminal Colors */\n`;
+		Object.entries(ansiColorMap).forEach(([name, color]) => {
+			const { hex, rgb, hsl } = color;
+			const varName = name.replace(/([A-Z])/g, "-$1").toLowerCase();
+
+			cssContent += `  --gruvvy-ansi-${varName}: ${hex};\n`;
+			cssContent += `  --gruvvy-ansi-${varName}-rgb: rgb(${rgb.r}, ${rgb.g}, ${rgb.b});\n`;
+			cssContent += `  --gruvvy-ansi-${varName}-hsl: hsl(${hsl.h.toFixed(1)}, ${hsl.s.toFixed(1)}%, ${hsl.l.toFixed(1)}%);\n`;
+			cssContent += `\n`;
+		});
+
+		cssContent += `}\n`;
+
+		// Write to CSS file
+		writeFile(
+			"./src/theme-gen/theme/gruvvy-watermelon-variables.css",
+			cssContent,
+			(err) => {
+				if (err) {
+					console.error("Error writing CSS variables:", err);
+					resolve(false);
+				} else {
+					console.log("Successfully wrote CSS variables file.");
+					resolve(true);
+				}
+			},
+		);
+	});
+};
+
 generate();
+generateCSSVariables();
 

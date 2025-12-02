@@ -327,7 +327,7 @@ export function getUiColors(ctx: ThemeContext) {
 		"menu.background": colors.crust,
 		"menu.foreground": colors.text,
 		"menu.selectionBackground": colors.mantle,
-		"menu.selectionForeground": colors.text,
+		"menu.selectionForeground": colors.subtext1,
 		"menubar.selectionBackground": colors.mantle,
 		"menubar.selectionBorder": colors.mantle,
 		"merge.border": transparent,

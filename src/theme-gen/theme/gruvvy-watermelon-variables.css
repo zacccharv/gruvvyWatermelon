@@ -1,0 +1,171 @@
+@layer gruvvy-theme-variables {
+	:root {
+		/* Gruvvy Watermelon Theme Variables */
+
+		/* Theme Colors */
+		--gruvvy-peachpuff: #f1bcac;
+		--gruvvy-peachpuff-rgb: rgb(241, 188, 172);
+		--gruvvy-peachpuff-hsl: hsl(13.9, 71.1%, 81%);
+
+		--gruvvy-peach: #eea48d;
+		--gruvvy-peach-rgb: rgb(238, 164, 141);
+		--gruvvy-peach-hsl: hsl(14.2, 74%, 74.3%);
+
+		--gruvvy-azalea: #ffc7d6;
+		--gruvvy-azalea-rgb: rgb(255, 199, 214);
+		--gruvvy-azalea-hsl: hsl(343.9, 100%, 89%);
+
+		--gruvvy-cherry: #ff647d;
+		--gruvvy-cherry-rgb: rgb(255, 100, 125);
+		--gruvvy-cherry-hsl: hsl(350.3, 100%, 69.6%);
+
+		--gruvvy-bubblegum: #ffb8ec;
+		--gruvvy-bubblegum-rgb: rgb(255, 184, 236);
+		--gruvvy-bubblegum-hsl: hsl(316.1, 100%, 86.1%);
+
+		--gruvvy-raspberry: #dd5a8e;
+		--gruvvy-raspberry-rgb: rgb(221, 90, 142);
+		--gruvvy-raspberry-hsl: hsl(336.2, 65.8%, 61%);
+
+		--gruvvy-mint: #80e5b3;
+		--gruvvy-mint-rgb: rgb(128, 229, 179);
+		--gruvvy-mint-hsl: hsl(150.3, 66%, 70%);
+
+		--gruvvy-watermelon: #4fb094;
+		--gruvvy-watermelon-rgb: rgb(79, 176, 148);
+		--gruvvy-watermelon-hsl: hsl(162.7, 38%, 50%);
+
+		--gruvvy-sky: #a1ede0;
+		--gruvvy-sky-rgb: rgb(161, 237, 224);
+		--gruvvy-sky-hsl: hsl(169.7, 67.9%, 78%);
+
+		--gruvvy-cornflower: #71ccbf;
+		--gruvvy-cornflower-rgb: rgb(113, 204, 191);
+		--gruvvy-cornflower-hsl: hsl(171.4, 47.2%, 62.2%);
+
+		--gruvvy-blueberry: #479e9e;
+		--gruvvy-blueberry-rgb: rgb(71, 158, 158);
+		--gruvvy-blueberry-hsl: hsl(180, 38%, 44.9%);
+
+		--gruvvy-lavender: #c3adff;
+		--gruvvy-lavender-rgb: rgb(195, 173, 255);
+		--gruvvy-lavender-hsl: hsl(256.1, 100%, 83.9%);
+
+		--gruvvy-plum: #9781d5;
+		--gruvvy-plum-rgb: rgb(151, 129, 213);
+		--gruvvy-plum-hsl: hsl(255.7, 50%, 67.1%);
+
+		--gruvvy-text: #e9f2f1;
+		--gruvvy-text-rgb: rgb(233, 242, 241);
+		--gruvvy-text-hsl: hsl(173.3, 25.7%, 93.1%);
+
+		--gruvvy-subtext1: #b6d2ca;
+		--gruvvy-subtext1-rgb: rgb(182, 210, 202);
+		--gruvvy-subtext1-hsl: hsl(162.9, 23.7%, 76.9%);
+
+		--gruvvy-subtext0: #a2c4ba;
+		--gruvvy-subtext0-rgb: rgb(162, 196, 186);
+		--gruvvy-subtext0-hsl: hsl(162.4, 22.4%, 70.2%);
+
+		--gruvvy-overlay2: #8eb5aa;
+		--gruvvy-overlay2-rgb: rgb(142, 181, 170);
+		--gruvvy-overlay2-hsl: hsl(163.1, 20.9%, 63.3%);
+
+		--gruvvy-overlay1: #7ba59a;
+		--gruvvy-overlay1-rgb: rgb(123, 165, 154);
+		--gruvvy-overlay1-hsl: hsl(164.3, 18.9%, 56.5%);
+
+		--gruvvy-overlay0: #689589;
+		--gruvvy-overlay0-rgb: rgb(104, 149, 137);
+		--gruvvy-overlay0-hsl: hsl(164, 17.8%, 49.6%);
+
+		--gruvvy-surface2: #5c7f76;
+		--gruvvy-surface2-rgb: rgb(92, 127, 118);
+		--gruvvy-surface2-hsl: hsl(164.6, 16%, 42.9%);
+
+		--gruvvy-surface1: #4f6a63;
+		--gruvvy-surface1-rgb: rgb(79, 106, 99);
+		--gruvvy-surface1-hsl: hsl(164.4, 14.6%, 36.3%);
+
+		--gruvvy-surface0: #415550;
+		--gruvvy-surface0-rgb: rgb(65, 85, 80);
+		--gruvvy-surface0-hsl: hsl(165, 13.3%, 29.4%);
+
+		--gruvvy-base: #273030;
+		--gruvvy-base-rgb: rgb(39, 48, 48);
+		--gruvvy-base-hsl: hsl(180, 10.3%, 17.1%);
+
+		--gruvvy-mantle: #202727;
+		--gruvvy-mantle-rgb: rgb(32, 39, 39);
+		--gruvvy-mantle-hsl: hsl(180, 9.9%, 13.9%);
+
+		--gruvvy-crust: #171c1b;
+		--gruvvy-crust-rgb: rgb(23, 28, 27);
+		--gruvvy-crust-hsl: hsl(168, 9.8%, 10%);
+
+		/* ANSI Terminal Colors */
+		--gruvvy-ansi-black: #273030;
+		--gruvvy-ansi-black-rgb: rgb(39, 48, 48);
+		--gruvvy-ansi-black-hsl: hsl(180, 10.3%, 17.1%);
+
+		--gruvvy-ansi-red: #ff647d;
+		--gruvvy-ansi-red-rgb: rgb(255, 100, 125);
+		--gruvvy-ansi-red-hsl: hsl(350.3, 100%, 69.6%);
+
+		--gruvvy-ansi-green: #4fb094;
+		--gruvvy-ansi-green-rgb: rgb(79, 176, 148);
+		--gruvvy-ansi-green-hsl: hsl(162.7, 38%, 50%);
+
+		--gruvvy-ansi-yellow: #f1bcac;
+		--gruvvy-ansi-yellow-rgb: rgb(241, 188, 172);
+		--gruvvy-ansi-yellow-hsl: hsl(13.9, 71.1%, 81%);
+
+		--gruvvy-ansi-blue: #a1ede0;
+		--gruvvy-ansi-blue-rgb: rgb(161, 237, 224);
+		--gruvvy-ansi-blue-hsl: hsl(169.7, 67.9%, 78%);
+
+		--gruvvy-ansi-magenta: #ffb8ec;
+		--gruvvy-ansi-magenta-rgb: rgb(255, 184, 236);
+		--gruvvy-ansi-magenta-hsl: hsl(316.1, 100%, 86.1%);
+
+		--gruvvy-ansi-cyan: #71ccbf;
+		--gruvvy-ansi-cyan-rgb: rgb(113, 204, 191);
+		--gruvvy-ansi-cyan-hsl: hsl(171.4, 47.2%, 62.2%);
+
+		--gruvvy-ansi-white: #a2c4ba;
+		--gruvvy-ansi-white-rgb: rgb(162, 196, 186);
+		--gruvvy-ansi-white-hsl: hsl(162.4, 22.4%, 70.2%);
+
+		--gruvvy-ansi-bright-black: #5c7f76;
+		--gruvvy-ansi-bright-black-rgb: rgb(92, 127, 118);
+		--gruvvy-ansi-bright-black-hsl: hsl(164.6, 16%, 42.9%);
+
+		--gruvvy-ansi-bright-red: #ff5a76;
+		--gruvvy-ansi-bright-red-rgb: rgb(255, 90, 118);
+		--gruvvy-ansi-bright-red-hsl: hsl(349.8, 100%, 67.6%);
+
+		--gruvvy-ansi-bright-green: #47c5a1;
+		--gruvvy-ansi-bright-green-rgb: rgb(71, 197, 161);
+		--gruvvy-ansi-bright-green-hsl: hsl(162.9, 52.1%, 52.5%);
+
+		--gruvvy-ansi-bright-yellow: #ffbaa4;
+		--gruvvy-ansi-bright-yellow-rgb: rgb(255, 186, 164);
+		--gruvvy-ansi-bright-yellow-hsl: hsl(14.5, 100%, 82.2%);
+
+		--gruvvy-ansi-bright-blue: #7ee0d6;
+		--gruvvy-ansi-bright-blue-rgb: rgb(126, 224, 214);
+		--gruvvy-ansi-bright-blue-hsl: hsl(173.9, 61.2%, 68.6%);
+
+		--gruvvy-ansi-bright-magenta: #fe97e3;
+		--gruvvy-ansi-bright-magenta-rgb: rgb(254, 151, 227);
+		--gruvvy-ansi-bright-magenta-hsl: hsl(315.7, 98.1%, 79.4%);
+
+		--gruvvy-ansi-bright-cyan: #71ccbf;
+		--gruvvy-ansi-bright-cyan-rgb: rgb(113, 204, 191);
+		--gruvvy-ansi-bright-cyan-hsl: hsl(171.4, 47.2%, 62.2%);
+
+		--gruvvy-ansi-bright-white: #b6d2ca;
+		--gruvvy-ansi-bright-white-rgb: rgb(182, 210, 202);
+		--gruvvy-ansi-bright-white-hsl: hsl(162.9, 23.7%, 76.9%);
+	}
+}
