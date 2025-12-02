@@ -43,6 +43,13 @@ export type TokenColors = {
 	plain: string;
 
 	/**
+	 * @description comments
+	 * @type {string}
+	 * @example // this is a comment
+	 */
+	comment: string;
+
+	/**
 	 * @description punctuation and delimiters: }
 	 * @type {string}
 	 * @example  , . ; ( ) { } [ ]

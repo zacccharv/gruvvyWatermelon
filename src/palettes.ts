@@ -58,8 +58,8 @@ export const m_colors = {
 	overlay1: "#7ba59a",
 	overlay0: "#689589",
 	surface2: "#5c7f76",
-	surface1: "#4f6a63",
-	surface0: "#415550",
+	surface1: "#4e6a62",
+	surface0: "#40544f",
 	base: "#273030",
 	mantle: "#202727",
 	crust: "#171c1b",
@@ -86,6 +86,7 @@ const m_ansiColors = {
 
 const tokens = {
 	plain: m_colors.text,
+	comment: m_colors.overlay1,
 	punctuation: m_colors.mint,
 	operator: m_colors.mint,
 

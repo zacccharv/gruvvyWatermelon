@@ -320,7 +320,7 @@ export function getUiColors(ctx: ThemeContext) {
 			0.1,
 		),
 		"list.inactiveSelectionBackground": transparent,
-		"list.inactiveSelectionForeground": colors.surface1,
+		"list.inactiveSelectionForeground": colors.overlay1,
 		"list.invalidItemForeground": opacity(tokenColors.errorColor, 0.5),
 		"list.warningForeground": tokenColors.warnColor,
 
@@ -423,8 +423,8 @@ export function getUiColors(ctx: ThemeContext) {
 		"statusBar.noFolderBorder": colors.crust,
 		"statusBar.noFolderForeground": colors.mantle,
 		"statusBarItem.activeBackground": opacity(colors.surface2, 0.63),
-		"statusBarItem.hoverBackground": colors.watermelon,
-		"statusBarItem.remoteBackground": workbenchColors.button_bg_highlight,
+		"statusBarItem.hoverBackground": colors.mint,
+		"statusBarItem.remoteBackground": colors.watermelon,
 		"statusBarItem.remoteForeground": colors.mantle,
 
 		// symbols in outline, autocomplete, etc.
