@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.5.0]
+
+- added extra Unity textmate language features
+  - attribute scope added i.e, `[*SerializeField*]` or `[*Range*(0,1)]`
+  - added hlsl grammar to Unity shader grammar
+  - custom pseudo textmate language for C# signature documentation called csharpsig
+
 ## [1.0.0]
 
 - typescript integration overhaul inspired by [catpuccin](https://github.com/catppuccin/vscode)

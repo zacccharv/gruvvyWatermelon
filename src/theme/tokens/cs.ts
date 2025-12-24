@@ -29,17 +29,39 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			},
 		},
 		{
-			name: "c# field names",
+			name: "C# field names",
 			scope: ["source.cs entity.name.variable.field"],
 			settings: {
 				foreground: colors.peachpuff,
 			},
 		},
 		{
-			name: "using keyword",
+			name: "Using keyword",
 			scope: "keyword.other.directive.using",
 			settings: {
 				foreground: colors.watermelon,
+			},
+		},
+		{
+			name: "Attribute names",
+			scope: ["entity.name.type.attribute.cs.extensions"],
+			settings: {
+				foreground: colors.raspberry,
+				fontStyle: "italic",
+			},
+		},
+		{
+			name: "Markdown signature entity name",
+			scope: ["variable.other.object"],
+			settings: {
+				foreground: colors.azalea,
+			},
+		},
+		{
+			name: "Markdown signature custom type keyword",
+			scope: ["variable.other.readwrite"],
+			settings: {
+				foreground: colors.lavender,
 			},
 		},
 	];

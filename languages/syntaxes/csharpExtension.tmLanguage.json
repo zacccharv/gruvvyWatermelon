@@ -1,0 +1,48 @@
+{
+	"$schema": "https://raw.githubusercontent.com/RedCMD/TmLanguage-Syntax-Highlighter/main/vscode.tmLanguage.schema.json",
+	"name": "C# Extension",
+	"scopeName": "source.cs.extensions",
+	"injectionSelector": "L:source.cs",
+	"patterns": [
+		{ "include": "#ext-unspecified-attribute-section" },
+		{ "include": "#ext-attribute-section" }
+	],
+	"repository": {
+		"ext-unspecified-attribute-section": {
+			"begin": "(\\[)(?!\\s*(?:assembly|module|field|event|method|param|property|return|type)\\s*:)",
+			"beginCaptures": { "1": { "name": "punctuation.squarebracket.open.cs" } },
+			"end": "(\\])",
+			"endCaptures": { "1": { "name": "punctuation.squarebracket.close.cs" } },
+			"patterns": [
+				{ "include": "source.cs#comment" },
+				{ "include": "#ext-attribute" },
+				{ "include": "source.cs#punctuation-comma" }
+			]
+		},
+		"ext-attribute-section": {
+			"begin": "(\\[)(assembly|module|field|event|method|param|property|return|type)?(\\:)?",
+			"beginCaptures": {
+				"1": { "name": "punctuation.squarebracket.open.cs" },
+				"2": { "name": "keyword.other.attribute-specifier.cs" },
+				"3": { "name": "punctuation.separator.colon.cs" }
+			},
+			"end": "(\\])",
+			"endCaptures": { "1": { "name": "punctuation.squarebracket.close.cs" } },
+			"patterns": [
+				{ "include": "source.cs#comment" },
+				{ "include": "#ext-attribute" },
+				{ "include": "source.cs#punctuation-comma" }
+			]
+		},
+		"ext-attribute": {
+			"patterns": [
+				{
+					"match": "@?[_[:alpha:]][_[:alnum:]]*",
+					"name": "entity.name.type.attribute.cs.extensions"
+				},
+				{ "include": "source.cs#type-arguments" },
+				{ "include": "source.cs#attribute-arguments" }
+			]
+		}
+	}
+}

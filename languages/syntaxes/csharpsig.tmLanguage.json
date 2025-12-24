@@ -1,0 +1,175 @@
+{
+	"name": "C# Signature",
+	"scopeName": "source.csharpsig",
+	"patterns": [
+		{ "include": "#punctuation" },
+		{ "include": "#namespace" },
+		{ "include": "#signature-type" },
+		{ "include": "#struct-type-definition" },
+		{ "include": "#storage-type" },
+		{ "include": "#storage-modifier" },
+		{ "include": "#class-type" },
+		{ "include": "#solitary-method" },
+		{ "include": "#other-object" },
+		{ "include": "#field-name" }
+	],
+	"repository": {
+		"punctuation": {
+			"patterns": [
+				{ "include": "#punctuation-accessor" },
+				{ "include": "#punctuation-separator" },
+				{ "include": "#punctuation-terminator" }
+			]
+		},
+		"namespace": {
+			"begin": "\\b(namespace|using)\\b",
+			"beginCaptures": { "1": { "name": "storage.type.namespace.csharpsig" } },
+			"end": "(?=;)",
+			"patterns": [
+				{
+					"match": "\\b([_[:alpha:]][_[:alnum:]]*)\\b",
+					"name": "namespace.type.csharpsig"
+				},
+				{
+					"match": "\\.",
+					"name": "punctuation.accessor.csharpsig"
+				}
+			]
+		},
+		"signature-type": {
+			"match": "(\\()(method|field|parameter|local variable|property)(\\))",
+			"captures": {
+				"1": { "name": "punctuation.parenthesis.open.csharpsig" },
+				"2": { "name": "signature.type.csharpsig" },
+				"3": { "name": "punctuation.parenthesis.close.csharpsig" }
+			}
+		},
+		"storage-modifier": {
+			"patterns": [
+				{
+					"match": "\\b(public|private|protected|internal|static|readonly|volatile|const|unsafe|extern|virtual|abstract|override|sealed|async|partial)\\b",
+					"name": "storage.modifier.csharpsig"
+				},
+				{
+					"match": "\\b(class|interface|struct|enum)\\b",
+					"name": "storage.type.struct.csharpsig"
+				}
+			]
+		},
+		"storage-type": {
+			"match": "\\b(void|bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string)\\b",
+			"name": "storage.type.csharpsig"
+		},
+		"class-type": {
+			"patterns": [
+				{
+					"match": "(?<=\\bclass)\\s+\\b([_[:alpha:]][_[:alnum:]]*)\\b",
+					"captures": { "1": { "name": "struct.type.csharpsig" } }
+				},
+				{
+					"match": "\\b(class\\s+)\\b(?=([_[:alpha:]][_[:alnum:]]*))\\b",
+					"captures": { "1": { "name": "class.storage.csharpsig" } }
+				}
+			]
+		},
+		"struct-type-definition": {
+			"patterns": [
+				{
+					"begin": "((?:\\b(?:public|private|protected|internal|static|readonly|volatile|const|unsafe|extern|virtual|abstract|override|sealed|async|partial)\\s+)+)",
+					"beginCaptures": { "1": { "name": "storage.modifier.csharpsig" } },
+					"end": "(?=\\b(\\s+)\\b)",
+					"patterns": [
+						{
+							"match": "\\b([_[:alpha:]][_[:alnum:]]*)(?=\\.)",
+							"name": "namespace.type.csharpsig"
+						},
+						{
+							"match": "(?<=\\.)\\b([_[:alpha:]][_[:alnum:]]*)\\b(?=\\.)",
+							"name": "namespace.type.csharpsig"
+						},
+						{
+							"match": "(?<=\\.)\\b([_[:alpha:]][_[:alnum:]]*)\\b(?=\\s)",
+							"name": "struct.type.csharpsig"
+						},
+						{
+							"match": "\\b(void|bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string|class)\\b(?=\\s)",
+							"name": "storage.type.csharpsig"
+						},
+						{
+							"match": "\\b([_[:alpha:]][_[:alnum:]]*)\\b(?=\\s)",
+							"name": "struct.type.csharpsig"
+						},
+						{
+							"match": "\\.",
+							"name": "punctuation.accessor.csharpsig"
+						}
+					]
+				},
+				{
+					"match": "(?<=,\\s+)\\b(void|bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string|class)\\b(?=\\s)",
+					"name": "storage.type.csharpsig"
+				},
+				{
+					"match": "(?<=,\\s+)\\b([_[:alpha:]][_[:alnum:]]*)\\b(?=\\s)",
+					"name": "struct.type.csharpsig"
+				}
+			]
+		},
+		"field-name": {
+			"match": "(?<!\\.)\\b([_[:alpha:]][_[:alnum:]]*)",
+			"name": "field.name.csharpsig"
+		},
+		"solitary-method": {
+			"match": "(?<!\\.)\\b([_[:alpha:]][_[:alnum:]]*)\\s*\\(\\s*\\b(?!(?:void|bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string)\\b)([_[:alpha:]][_[:alnum:]]*)",
+			"captures": {
+				"1": { "name": "method.name.csharpsig" },
+				"2": { "name": "struct.type.csharpsig" }
+			}
+		},
+		"other-object": {
+			"begin": "\\b(?<!(?:public|private|protected|internal|static|readonly|volatile|const|unsafe|extern|virtual|abstract|override|sealed|async|partial)\\s+\\b)\\b(?<!\\.)([_[:alpha:]][_[:alnum:]]*)(?=\\.)",
+			"beginCaptures": { "1": { "name": "other.object.csharpsig" } },
+			"end": "(?=(\\s))",
+			"patterns": [
+				{
+					"match": "\\b([_[:alpha:]][_[:alnum:]]*)(?!\\()\\b",
+					"name": "other.object.property.csharpsig"
+				},
+				{
+					"match": "\\b([_[:alpha:]][_[:alnum:]]*)\\((void|bool|byte|sbyte|char|decimal|double|float|int|uint|long|ulong|object|short|ushort|string)\\b",
+					"captures": {
+						"1": { "name": "method.name.csharpsig" },
+						"2": { "name": "storage.type.csharpsig" }
+					}
+				},
+				{
+					"match": "\\b([_[:alpha:]][_[:alnum:]]*)\\(([_[:alpha:]][_[:alnum:]]*)\\b",
+					"captures": {
+						"1": { "name": "method.name.csharpsig" },
+						"2": { "name": "struct.type.csharpsig" }
+					}
+				},
+				{
+					"match": "\\.",
+					"name": "punctuation.accessor.csharpsig"
+				},
+				{
+					"match": ";",
+					"name": "punctuation.terminator.csharpsig"
+				}
+			]
+		},
+		"punctuation-accessor": {
+			"match": "\\.",
+			"name": "punctuation.accessor.csharpsig"
+		},
+		"punctuation-separator": {
+			"match": ",",
+			"name": "punctuation.separator.csharpsig"
+		},
+		"punctuation-terminator": {
+			"match": ";",
+			"name": "punctuation.terminator.csharpsig"
+		}
+	}
+}

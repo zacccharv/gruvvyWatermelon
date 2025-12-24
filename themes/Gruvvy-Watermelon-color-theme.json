@@ -257,7 +257,7 @@
     "menu.background": "#171c1b",
     "menu.foreground": "#e9f2f1",
     "menu.selectionBackground": "#202727",
-    "menu.selectionForeground": "#e9f2f1",
+    "menu.selectionForeground": "#b6d2ca",
     "menubar.selectionBackground": "#202727",
     "menubar.selectionBorder": "#202727",
     "merge.border": "#00000000",
@@ -580,6 +580,7 @@
       }
     },
     {
+      "name": "Function names",
       "scope": [
         "entity.name.function",
         "meta.function-call.method",
@@ -588,7 +589,8 @@
         "variable.function"
       ],
       "settings": {
-        "foreground": "#dd5a8e"
+        "foreground": "#dd5a8e",
+        "fontStyle": "italic"
       }
     },
     {
@@ -845,7 +847,7 @@
       }
     },
     {
-      "name": "c# field names",
+      "name": "C# field names",
       "scope": [
         "source.cs entity.name.variable.field"
       ],
@@ -854,10 +856,89 @@
       }
     },
     {
-      "name": "using keyword",
+      "name": "Using keyword",
       "scope": "keyword.other.directive.using",
       "settings": {
         "foreground": "#4fb094"
+      }
+    },
+    {
+      "name": "Attribute names",
+      "scope": [
+        "entity.name.type.attribute.cs.extensions"
+      ],
+      "settings": {
+        "foreground": "#dd5a8e",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "Markdown signature entity name",
+      "scope": [
+        "variable.other.object"
+      ],
+      "settings": {
+        "foreground": "#ffc7d6"
+      }
+    },
+    {
+      "name": "Markdown signature custom type keyword",
+      "scope": [
+        "variable.other.readwrite"
+      ],
+      "settings": {
+        "foreground": "#c3adff"
+      }
+    },
+    {
+      "name": "C# Signature type",
+      "scope": "signature.type.csharp",
+      "settings": {
+        "foreground": "#4fb094",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "C# Signature struct types",
+      "scope": "struct.type.csharp",
+      "settings": {
+        "foreground": "#9781d5"
+      }
+    },
+    {
+      "name": "C# Signature method names",
+      "scope": "method.name.csharpsig",
+      "settings": {
+        "foreground": "#ff647d",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "C# Signature field names",
+      "scope": "field.name.csharpsig",
+      "settings": {
+        "foreground": "#f1bcac"
+      }
+    },
+    {
+      "name": "C# Signature other object",
+      "scope": "other.object.csharpsig",
+      "settings": {
+        "foreground": "#dd5a8e"
+      }
+    },
+    {
+      "name": "C# Signature other object properties",
+      "scope": "other.object.property.csharpsig",
+      "settings": {
+        "foreground": "#ffc7d6"
+      }
+    },
+    {
+      "name": "C# Signature namespace",
+      "scope": "namespace.csharpsig",
+      "settings": {
+        "foreground": "#ff647d"
       }
     },
     {
@@ -2207,6 +2288,34 @@
       "scope": [
         "markup.heading.typst"
       ],
+      "settings": {
+        "foreground": "#ff647d"
+      }
+    },
+    {
+      "name": "Unity shader variable declaration",
+      "scope": "meta.variable.declaration.unity.hlsl",
+      "settings": {
+        "foreground": "#ffc7d6"
+      }
+    },
+    {
+      "name": "Unity support class params",
+      "scope": "support.class.param.unity",
+      "settings": {
+        "foreground": "#ffc7d6"
+      }
+    },
+    {
+      "name": "Unity shader input variables",
+      "scope": "support.variable.input.unity",
+      "settings": {
+        "foreground": "#ffc7d6"
+      }
+    },
+    {
+      "name": "Unity shader Semantic variables",
+      "scope": "variable.other.semantic.shader.extension.unity",
       "settings": {
         "foreground": "#ff647d"
       }

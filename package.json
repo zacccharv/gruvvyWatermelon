@@ -1,131 +1,176 @@
 {
-	"name": "gruvvy-watermelon",
-	"displayName": "Gruvvy Watermelon",
-	"publisher": "ZaccCharvolin",
-	"description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
-	"icon": "imgs/logo.png",
-	"version": "1.0.24",
-	"license": "MIT",
-	"keywords": [
-		"theme",
-		"dark",
-		"gruvbox",
-		"gruvvy",
-		"watermelon",
-		"green",
-		"pink",
-		"purple",
-		"grape"
-	],
-	"type": "module",
-	"engines": {
-		"vscode": "^1.85.0",
-		"node": ">=20.0.0"
-	},
-	"categories": [
-		"Themes"
-	],
-	"extensionKind": [
-		"ui",
-		"workspace"
-	],
-	"capabilities": {
-		"untrustedWorkspaces": {
-			"supported": true
-		},
-		"virtualWorkspaces": {
-			"supported": true
-		}
-	},
-	"activationEvents": [
-		"onStartupFinished"
-	],
-	"main": "dist/main.cjs",
-	"contributes": {
-		"themes": [
-			{
-				"label": "Gruvvy Watermelon",
-				"uiTheme": "vs-dark",
-				"path": "./themes/Gruvvy-Watermelon-color-theme.json"
-			}
-		],
-		"configuration": {
-			"title": "gruvvy-watermelon",
-			"properties": {
-				"gruvvy-watermelon.accentColor": {
-					"scope": "window",
-					"type": "string",
-					"default": "watermelon",
-					"description": "Sets the accent color for the Gruvvy Watermelon theme. Choose from a variety of vibrant colors to customize your coding experience.",
-					"enum": [
-						"azalea",
-						"cherry",
-						"bubblegum",
-						"raspberry",
-						"lavender",
-						"plum",
-						"blueberry",
-						"mint",
-						"watermelon",
-						"peachpuff",
-						"peach",
-						"cornflower",
-						"sky"
-					]
-				},
-				"gruvvy-watermelon.integrateTodoTree": {
-					"scope": "window",
-					"type": "boolean",
-					"default": false,
-					"description": "Integrate Gruvvy Watermelon theme with the Todo Tree extension."
-				},
-				"gruvvy-watermelon.integrateErrorLensGutter": {
-					"scope": "window",
-					"type": "boolean",
-					"default": false,
-					"description": "Integrate Gruvvy Watermelon theme with the Error Lens extension gutter icons. Adds basic shapes that use the theme colors for errors, warnings and info and puts them in the editor gutter next to each line with a notification."
-				}
-			}
-		}
-	},
-	"scripts": {
-		"core:compile": "pnpm check-types && tsx build.ts",
-		"check-types": "tsc --noEmit && tsx src/theme-gen/genData.ts",
-		"build": "pnpm tsx build.ts --dev",
-		"core:watch": "tsx watch build.ts",
-		"prepublishOnly": "pnpm run build && vsce publish"
-	},
-	"packageManager": "pnpm@10.22.0",
-	"homepage": "https://marketplace.visualstudio.com/items?itemName=ZaccCharvolin.gruvvy-watermelon",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/zacccharv/gruvvyWatermelon"
-	},
-	"devDependencies": {
-		"@actions/core": "^1.11.1",
-		"@eslint/js": "^9.39.0",
-		"@tsconfig/node22": "^22.0.2",
-		"@types/lodash": "^4.17.20",
-		"@types/node": "^24.9.2",
-		"@types/tinycolor2": "^1.4.6",
-		"@types/vscode": "^1.1.37",
-		"@vscode/test-electron": "^2.5.2",
-		"@vscode/vsce": "^3.6.2",
-		"eslint": "^9.39.1",
-		"globals": "^16.5.0",
-		"lodash": "^4.17.21",
-		"prettier": "^3.6.2",
-		"tinycolor2": "^1.6.0",
-		"ts-node": "^10.9.2",
-		"tsup": "^8.5.0",
-		"tsx": "^4.20.6",
-		"type-flag": "^4.0.0",
-		"typescript": "^5.9.3",
-		"typescript-eslint": "^8.46.2"
-	},
-	"dependenciesMeta": {
-		"keytar": {
-			"built": false
-		}
-	}
+  "name": "gruvvy-watermelon",
+  "displayName": "Gruvvy Watermelon",
+  "publisher": "ZaccCharvolin",
+  "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
+  "icon": "imgs/logo.png",
+  "version": "1.5.0",
+  "license": "MIT",
+  "keywords": [
+    "theme",
+    "dark",
+    "gruvbox",
+    "gruvvy",
+    "watermelon",
+    "green",
+    "pink",
+    "purple",
+    "grape"
+  ],
+  "type": "module",
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=20.0.0"
+  },
+  "categories": [
+    "Themes",
+    "Programming Languages"
+  ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": true
+    }
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "dist/main.cjs",
+  "contributes": {
+    "languages": [
+      {
+        "id": "csharpsig",
+        "aliases": [
+          "C# Signature",
+          "csharpsig"
+        ],
+        "extensions": [
+          ".cssig"
+        ],
+        "configuration": "./languages/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "csharpsig",
+        "scopeName": "source.csharpsig",
+        "path": "./languages/syntaxes/csharpsig.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.csharpsig.codeblock",
+        "path": "./languages/syntaxes/csharpsigMarkdown.tmLanguage.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "meta.embedded.block.csharpsig": "csharpsig"
+        }
+      },
+      {
+        "scopeName": "source.cs.extensions",
+        "path": "./languages/syntaxes/csharpExtension.tmLanguage.json",
+        "injectTo": [
+          "source.cs"
+        ]
+      },
+      {
+        "scopeName": "source.shader.unity.extension",
+        "path": "./languages/syntaxes/shaderExtension.tmLanguage.json",
+        "injectTo": [
+          "source.shader.unity"
+        ]
+      }
+    ],
+    "themes": [
+      {
+        "label": "Gruvvy Watermelon",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Gruvvy-Watermelon-color-theme.json"
+      }
+    ],
+    "configuration": {
+      "title": "gruvvy-watermelon",
+      "properties": {
+        "gruvvy-watermelon.accentColor": {
+          "scope": "window",
+          "type": "string",
+          "default": "watermelon",
+          "description": "Sets the accent color for the Gruvvy Watermelon theme. Choose from a variety of vibrant colors to customize your coding experience.",
+          "enum": [
+            "azalea",
+            "cherry",
+            "bubblegum",
+            "raspberry",
+            "lavender",
+            "plum",
+            "blueberry",
+            "mint",
+            "watermelon",
+            "peachpuff",
+            "peach",
+            "cornflower",
+            "sky"
+          ]
+        },
+        "gruvvy-watermelon.integrateTodoTree": {
+          "scope": "window",
+          "type": "boolean",
+          "default": false,
+          "description": "Integrate Gruvvy Watermelon theme with the Todo Tree extension."
+        },
+        "gruvvy-watermelon.integrateErrorLensGutter": {
+          "scope": "window",
+          "type": "boolean",
+          "default": false,
+          "description": "Integrate Gruvvy Watermelon theme with the Error Lens extension gutter icons. Adds basic shapes that use the theme colors for errors, warnings and info and puts them in the editor gutter next to each line with a notification."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "core:compile": "pnpm check-types && tsx build.ts",
+    "check-types": "tsc --noEmit && tsx src/theme-gen/genData.ts",
+    "build": "pnpm tsx build.ts --dev",
+    "core:watch": "tsx watch build.ts",
+    "prepublishOnly": "pnpm run build && vsce publish"
+  },
+  "packageManager": "pnpm@10.22.0",
+  "homepage": "https://marketplace.visualstudio.com/items?itemName=ZaccCharvolin.gruvvy-watermelon",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zacccharv/gruvvyWatermelon"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.11.1",
+    "@eslint/js": "^9.39.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^24.9.2",
+    "@types/tinycolor2": "^1.4.6",
+    "@types/vscode": "^1.1.37",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.2",
+    "eslint": "^9.39.1",
+    "globals": "^16.5.0",
+    "lodash": "^4.17.21",
+    "prettier": "^3.6.2",
+    "tinycolor2": "^1.6.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.6",
+    "type-flag": "^4.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
+  },
+  "dependenciesMeta": {
+    "keytar": {
+      "built": false
+    }
+  }
 }

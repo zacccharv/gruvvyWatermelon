@@ -1,0 +1,588 @@
+{
+	"name": "Unity Shader Extension",
+	"scopeName": "source.shader.unity.extension",
+	"injectionSelector": "L:source.shader.unity",
+	"patterns": [
+		{ "include": "#unity-keywords" },
+		{ "include": "#line_comments" },
+		{ "include": "#block_comments" },
+		{ "include": "#qualifiers" },
+		{ "include": "#preprocessor" },
+		{ "include": "#attributes" },
+		{ "include": "#functions" },
+		{ "include": "#function_calls" },
+		{ "include": "#member_access" },
+		{ "include": "#keywords" },
+		{ "include": "#constants" },
+		{ "include": "#variables" },
+		{ "include": "#types" },
+		{ "include": "#punctuation" }
+	],
+	"repository": {
+		"unity-keywords": {
+			"patterns": [
+				{
+					"match": "(?<!\")\\b(VSTUMARKER|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|Fog|AlphaTest|Blend|ColorMask|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack)\\b(?!\")",
+					"name": "support.class.unity"
+				},
+				{
+					"match": "\\b(On|Off|ObjectLinear|EyeLinear|SphereMap|CubeReflect|CubeNormal|A|RGB|Less|Greater|LEqual|GEqual|NotEqual|Always|AmbientAndDiffuse|Emission|Back|Front|Linear|Exp|Exp2|One|Zero|SrcColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha|AppSrcAdd|AppDstAdd|Vertex|VertexOrNone|VertexOnly|Pixel|PixelOnly|VertexOrPixel|VertexAndPixel|PixelOrNone|None|Always|SoftVegetation|Normal|Tangent|Mesh|Normals|Tangents|World|Texcoord|Texcoord0|Texcoord1)\\b",
+					"name": "support.class.param.unity"
+				},
+				{
+					"match": "\\b(CGPROGRAM|GLSLPROGRAM|ENDCG|ENDGLSL|C\\+\\+RAW|BEGIN DOC|END DOC|BEGIN EX|END EX|CSRAW|CSNONE|CLASS|CUSTOM|CUSTOM_PROP|THREAD_SAFE|BEGIN|END|TYPEMAP|ENUM|DOCUMENT|AUTO|AUTO_PROP|AUTO_PTR_PROP|OBSOLETE|THREAD_UNSAFE|CONVERTEXAMPLE|NONSEALED_CLASS|CONDITIONAL|STRUCT)\\b",
+					"name": "support.class.unity"
+				},
+				{
+					"match": "\\b(Dependency|Fallback)\\b",
+					"name": "support.variable.unity"
+				},
+				{
+					"match": "^\\s*\\[(HideInInspector)\\]",
+					"name": "keyword.unity"
+				},
+				{
+					"match": "\\b(_\\w+)\\b",
+					"name": "support.variable.input.unity"
+				},
+				{
+					"match": "\\b(uv(2)*_\\w+|viewDir|COLOR|screenPos|worldPos|worldRefl|worldNormal|worldRefl|worldNormal)\\b",
+					"name": "support.variable.input.unity"
+				},
+				{
+					"match": "\\b(Albedo|Normal|Emission|Specular|Gloss|Alpha)\\b",
+					"name": "support.variable.output.unity"
+				},
+				{
+					"match": "\\b(appdata_(base|tan|full|img)|SurfaceOutput)\\b",
+					"name": "support.variable.structure.unity"
+				},
+				{
+					"match": "\\b(UNITY_MATRIX_(MVP|MV|V|P|VP|T_MV|IT_MV|TEXTURE0|TEXTURE1|TEXTURE2|TEXTURE3)|_Object2World|_World2Object|_WorldSpaceCameraPos|unity_Scale)\\b",
+					"name": "support.variable.transformation.unity"
+				},
+				{
+					"match": "\\b(_ModelLightColor[0-9]|_SpecularLightColor[0-9]|_ObjectSpaceLightPos|_Light2World|_World2Light|_Object2Light)\\b",
+					"name": "support.variable.lighting.unity"
+				},
+				{
+					"match": "\\b(_Time|_SinTime|_CosTime|unity_DeltaTime|_ProjectionParams|_ScreenParams)\\b",
+					"name": "support.variable.other.unity"
+				}
+			]
+		},
+		"line_comments": {
+			"comment": "single line comment",
+			"name": "comment.line.double-slash.unity.hlsl",
+			"match": "\\s*//.*"
+		},
+		"block_comments": {
+			"patterns": [
+				{
+					"comment": "empty block comments",
+					"name": "comment.block.unity.hlsl",
+					"match": "/\\*\\*/"
+				},
+				{
+					"comment": "block documentation comments",
+					"name": "comment.block.documentation.unity.hlsl",
+					"begin": "/\\*\\*",
+					"end": "\\*/",
+					"patterns": [ { "include": "#block_comments" } ]
+				},
+				{
+					"comment": "block comments",
+					"name": "comment.block.unity.hlsl",
+					"begin": "/\\*(?!\\*)",
+					"end": "\\*/",
+					"patterns": [ { "include": "#block_comments" } ]
+				}
+			]
+		},
+		"attributes": {
+			"patterns": [
+				{
+					"comment": "attribute declaration",
+					"name": "constant.language.attribute.unity.hlsl",
+					"match": "\\[(?i:domain|earlydepthstencil|instance|maxtessfactor|numthreads|outputcontrolpoints|outputtopology|partitioning|patchconstantfunc|flatten|branch|loop|unroll|fastopt|allow_uav_condition|forcecase|call|clipplanes|maxvertexcount|noinline|unknown|rootsignature|raypayload|shader)(\\(.*\\))?\\]"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"comment": "function definition",
+					"begin": "\\b(\\w+)(\\s*\\<\\s*(\\w+)\\s*\\>\\s*)?\\s+(\\w+)?([\\s]*\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.type.unity.hlsl",
+							"patterns": [ { "include": "#types" } ]
+						},
+						"3": {
+							"name": "entity.name.type.unity.hlsl",
+							"patterns": [ { "include": "#types" } ]
+						},
+						"4": { "name": "entity.name.function.unity.hlsl" },
+						"6": { "name": "punctuation.brackets.round.unity.hlsl" }
+					},
+					"end": "\\{",
+					"endCaptures": { "0": { "name": "punctuation.brackets.curly.unity.hlsl" } },
+					"patterns": [
+						{ "include": "#preprocessor" },
+						{ "include": "#line_comments" },
+						{ "include": "#block_comments" },
+						{ "include": "#qualifiers" },
+						{ "include": "#keywords" },
+						{ "include": "#attributes" },
+						{ "include": "#function_calls" },
+						{ "include": "#constants" },
+						{ "include": "#types" },
+						{ "include": "#variables" },
+						{ "include": "#punctuation" }
+					]
+				}
+			]
+		},
+		"function_calls": {
+			"patterns": [
+				{
+					"comment": "function/method calls",
+					"begin": "([a-zA-Z_][a-zA-Z0-9_]*)(\\s*\\<\\s*(\\w+)\\s*\\>)?([\\s]*\\()",
+					"beginCaptures": {
+						"1": {
+							"name": "entity.name.function.unity.hlsl",
+							"patterns": [ { "include": "#types" } ]
+						},
+						"4": { "name": "punctuation.brackets.round.unity.hlsl" }
+					},
+					"end": "\\)",
+					"endCaptures": { "0": { "name": "punctuation.brackets.round.unity.hlsl" } },
+					"patterns": [
+						{ "include": "#preprocessor" },
+						{ "include": "#line_comments" },
+						{ "include": "#block_comments" },
+						{ "include": "#qualifiers" },
+						{ "include": "#keywords" },
+						{ "include": "#attributes" },
+						{ "include": "#function_calls" },
+						{ "include": "#constants" },
+						{ "include": "#types" },
+						{ "include": "#variables" },
+						{ "include": "#punctuation" }
+					]
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"comment": "decimal float literal",
+					"name": "constant.numeric.float.unity.hlsl",
+					"match": "(-?\\b[0-9][0-9]*\\.[0-9]*)([eE][+-]?[0-9]+)?((?i:[fhl]))?\\b",
+					"captures": {
+						"1": { "name": "constant.numeric.float.unity.hlsl" },
+						"2": { "name": "constant.language.attribute.hlsl entity.name.tag" },
+						"3": { "name": "constant.language.attribute.hlsl entity.name.tag" }
+					}
+				},
+				{
+					"comment": "decimal literal",
+					"name": "constant.numeric.decimal.unity.hlsl",
+					"match": "(-?\\b((0x)[0-9a-fA-F]+|(0)[0-9]+|[0-9]+))([ul]+)?\\b",
+					"captures": {
+						"1": { "name": "constant.numeric.decimal.unity.hlsl" },
+						"2": { "name": "constant.numeric.decimal.unity.hlsl" },
+						"3": { "name": "constant.language.attribute.hlsl entity.name.tag" },
+						"4": { "name": "constant.language.attribute.hlsl entity.name.tag" },
+						"5": { "name": "constant.language.attribute.hlsl entity.name.tag" }
+					}
+				},
+				{
+					"comment": "boolean constant",
+					"name": "constant.language.boolean.unity.hlsl",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.language.boolean.unity.hlsl",
+					"match": "\\b(FALSE|TRUE|NULL)\\b"
+				},
+				{
+					"comment": "hlsl semantic",
+					"name": "constant.language.unity.hlsl",
+					"match": "(?<=\\:\\s|\\:)(?i:BINORMAL[0-9]*|BLENDINDICES[0-9]*|BLENDWEIGHT[0-9]*|COLOR[0-9]*|NORMAL[0-9]*|POSITIONT|POSITION[0-9]*|PSIZE[0-9]*|TANGENT[0-9]*|TEXCOORD[0-9]*|FOG|TESSFACTOR[0-9]*|VFACE|VPOS|DEPTH[0-9]*)\\b"
+				},
+				{
+					"comment": "hlsl semantic shader model 4.0",
+					"name": "constant.language.sm4.unity.hlsl",
+					"match": "\\b(?<=\\:\\s|\\:)(?i:SV_ClipDistance[0-9]*|SV_CullDistance[0-9]*|SV_Coverage|SV_Depth|SV_DepthGreaterEqual[0-9]*|SV_DepthLessEqual[0-9]*|SV_InstanceID|SV_IsFrontFace|SV_Position|SV_RenderTargetArrayIndex|SV_SampleIndex|SV_StencilRef|SV_Target[0-7]?|SV_VertexID|SV_ViewportArrayIndex)\\b"
+				},
+				{
+					"comment": "hlsl semantic shader model 5.0",
+					"name": "constant.language.sm5.unity.hlsl",
+					"match": "(?<=\\:\\s|\\:)(?i:SV_DispatchThreadID|SV_DomainLocation|SV_GroupID|SV_GroupIndex|SV_GroupThreadID|SV_GSInstanceID|SV_InsideTessFactor|SV_OutputControlPointID|SV_TessFactor)\\b"
+				},
+				{
+					"comment": "hlsl semantic shader model 5.1",
+					"name": "constant.language.sm51.unity.hlsl",
+					"match": "(?<=\\:\\s|\\:)(?i:SV_InnerCoverage|SV_StencilRef)\\b"
+				}
+			]
+		},
+		"types": {
+			"comment": "types",
+			"patterns": [
+				{
+					"comment": "scalar Types",
+					"name": "storage.type.unity.hlsl",
+					"match": "\\b(bool|int|uint|dword|half|float|double)\\b"
+				},
+				{
+					"comment": "minimum precision scalar Types",
+					"name": "storage.type.unity.hlsl",
+					"match": "\\b(min16float|min10float|min16int|min12int|min16uint)\\b"
+				},
+				{
+					"comment": "scalar Types 6.0",
+					"name": "storage.type.sm60.unity.hlsl",
+					"match": "\\b(uint64_t|int64_t|uint32_t|int32_t)\\b"
+				},
+				{
+					"comment": "scalar Types 6.2",
+					"name": "storage.type.sm62.unity.hlsl",
+					"match": "\\b(float16_t|uint16_t|int16_t|float32_t|float64_t)\\b"
+				},
+				{
+					"comment": "vector/matrix types",
+					"name": "storage.type.unity.hlsl",
+					"match": "\\b(matrix|vector|(bool|int|uint|half|float|double|dword)[1-4](x[1-4])?)\\b"
+				},
+				{
+					"comment": "vector/matrix types",
+					"name": "storage.type.unity.hlsl",
+					"match": "\\b((min12int|min16float|min16int|min16uint|float16_t|float32_t|float64_t|uint16_t|int16_t|uint32_t|int32_t|uint64_t|int64_t)[1-4](x[1-4])?)\\b"
+				},
+				{
+					"comment": "string type",
+					"name": "storage.type.unity.hlsl",
+					"match": "\\b(string)\\b"
+				},
+				{
+					"comment": "read hlsl type",
+					"name": "storage.type.object.unity.hlsl",
+					"match": "\\b(AppendStructuredBuffer|Buffer|StructuredBuffer|ByteAddressBuffer|ConstantBuffer|TextureBuffer|ConsumeStructuredBuffer|InputPatch|OutputPatch|FeedbackTexture2D|FeedbackTexture2DArray)\\b"
+				},
+				{
+					"comment": "rasterized order view type",
+					"name": "storage.type.object.rasterizerordered.unity.hlsl",
+					"match": "\\b(RasterizerOrderedBuffer|RasterizerOrderedByteAddressBuffer|RasterizerOrderedStructuredBuffer|RasterizerOrderedTexture1D|RasterizerOrderedTexture1DArray|RasterizerOrderedTexture2D|RasterizerOrderedTexture2DArray|RasterizerOrderedTexture3D)\\b"
+				},
+				{
+					"comment": "read write hlsl type",
+					"name": "storage.type.object.rw.unity.hlsl",
+					"match": "\\b(RWBuffer|RWByteAddressBuffer|RWStructuredBuffer|RWTexture1D|RWTexture1DArray|RWTexture2D|RWTexture2DArray|RWTexture3D)\\b"
+				},
+				{
+					"comment": "raytracing extension",
+					"name": "storage.type.object.rw.unity.hlsl",
+					"match": "\\b(RayDesc|BuiltInTriangleIntersectionAttributes|RaytracingAccelerationStructure|GlobalRootSignature)\\b"
+				},
+				{
+					"comment": "geometry stream type",
+					"name": "storage.type.object.geometryshader.unity.hlsl",
+					"match": "\\b(LineStream|PointStream|TriangleStream)\\b"
+				},
+				{
+					"comment": "legacy sampler type",
+					"name": "storage.type.sampler.legacy.unity.hlsl",
+					"match": "\\b(sampler|sampler1D|sampler2D|sampler3D|samplerCUBE|sampler_state)\\b"
+				},
+				{
+					"comment": "sampler type",
+					"name": "storage.type.sampler.unity.hlsl",
+					"match": "\\b(SamplerState|SamplerComparisonState)\\b"
+				},
+				{
+					"comment": "legacy texture type",
+					"name": "storage.type.texture.legacy.unity.hlsl",
+					"match": "\\b(texture2D|textureCUBE)\\b"
+				},
+				{
+					"comment": "texture type",
+					"name": "storage.type.texture.unity.hlsl",
+					"match": "\\b(Texture1D|Texture1DArray|Texture2D|Texture2DArray|Texture2DMS|Texture2DMSArray|Texture3D|TextureCube|TextureCubeArray)\\b"
+				},
+				{
+					"comment": "blending type",
+					"name": "storage.type.unity.hlsl",
+					"match": "\\b(BlendState|DepthStencilState|RasterizerState)\\b"
+				},
+				{
+					"comment": "technique type",
+					"name": "storage.type.fx.technique.unity.hlsl",
+					"match": "\\b(technique|Technique|technique10|technique11|pass)\\b"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"comment": "struct declaration",
+					"name": "keyword.declaration.struct.unity.hlsl",
+					"match": "\\b(struct|class|interface|cbuffer|tbuffer|enum class|enum)\\s+(\\[[a-z]+\\]\\s+)?([a-zA-Z][a-zA-Z0-9_]*)?(\\s+:\\s+[a-zA-Z][a-zA-Z0-9_]*)?",
+					"captures": {
+						"1": { "name": "keyword.declaration.struct.unity.hlsl" },
+						"2": { "name": "constant.language.attribute.unity.hlsl" },
+						"3": { "name": "entity.name.type.unity.hlsl" }
+					}
+				},
+				{
+					"comment": "variable declaration",
+					"name": "meta.variable.declaration.unity.hlsl",
+					"match": "\\b((\\w+)\\s+)*(\\w+)(\\s*\\<\\s*((\\w+)[\\s\\,]?)+\\s*\\>)?\\s+(\\w+)\\b",
+					"captures": {
+						"2": {
+							"name": "keyword.declaration.qualifier.unity.hlsl",
+							"patterns": [ { "include": "#qualifiers" } ]
+						},
+						"3": {
+							"name": "entity.name.type.unity.hlsl",
+							"patterns": [ { "include": "#types" } ]
+						},
+						"5": {
+							"name": "entity.name.type.unity.hlsl",
+							"patterns": [ { "include": "#types" } ]
+						},
+						"6": { "name": "variable.other.unity.hlsl" }
+					}
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"comment": "comma",
+					"name": "punctuation.comma.unity.hlsl",
+					"match": ","
+				},
+				{
+					"comment": "curly braces",
+					"name": "punctuation.brackets.curly.unity.hlsl",
+					"match": "[{}]"
+				},
+				{
+					"comment": "parentheses, round brackets",
+					"name": "punctuation.brackets.round.unity.hlsl",
+					"match": "[()]"
+				},
+				{
+					"comment": "semicolon",
+					"name": "punctuation.semi.unity.hlsl",
+					"match": ";"
+				},
+				{
+					"comment": "square brackets",
+					"name": "punctuation.brackets.square.unity.hlsl",
+					"match": "[\\[\\]]"
+				},
+				{
+					"comment": "angle brackets",
+					"name": "punctuation.brackets.angle.unity.hlsl",
+					"match": "(?<![=-])[<>]"
+				}
+			]
+		},
+		"qualifiers": {
+			"patterns": [
+				{
+					"comment": "other qualifier",
+					"name": "keyword.qualifier.unity.hlsl",
+					"match": "\\b(const|volatile|uniform|unorm|unsigned|signed)\\b"
+				},
+				{
+					"comment": "type modifier for float",
+					"name": "keyword.declaration.float.unity.hlsl",
+					"match": "\\b(snorm|unorm)\\b"
+				},
+				{
+					"comment": "type modifier for interpolation",
+					"name": "keyword.declaration.unity.hlsl",
+					"match": "\\b(centroid|linear|nointerpolation|noperspective|sample)\\b"
+				},
+				{
+					"comment": "type modifier for geometry shader",
+					"name": "keyword.declaration.unity.hlsl",
+					"match": "\\b(lineadj|line|point|triangle|triangleadj)\\b"
+				},
+				{
+					"comment": "common qualifier",
+					"name": "keyword.qualifier.unity.hlsl",
+					"match": "\\b(column_major|const|export|extern|globallycoherent|groupshared|inline|inout|in|out|precise|row_major|shared|static|uniform|volatile)\\b"
+				}
+			]
+		},
+		"member_access": {
+			"match": "((?:[a-zA-Z_]\\w*|(?<=\\]|\\)))\\s*)(?:((?:\\.\\*|\\.))|((?:->\\*|->)))((?:[a-zA-Z_]\\w*\\s*(?:(?:(?:\\.\\*|\\.))|(?:(?:->\\*|->)))\\s*)*)\\s*(\\b(?!(?:atomic_uint_least64_t|atomic_uint_least16_t|atomic_uint_least32_t|atomic_uint_least8_t|atomic_int_least16_t|atomic_uint_fast64_t|atomic_uint_fast32_t|atomic_int_least64_t|atomic_int_least32_t|pthread_rwlockattr_t|atomic_uint_fast16_t|pthread_mutexattr_t|atomic_int_fast16_t|atomic_uint_fast8_t|atomic_int_fast64_t|atomic_int_least8_t|atomic_int_fast32_t|atomic_int_fast8_t|pthread_condattr_t|atomic_uintptr_t|atomic_ptrdiff_t|pthread_rwlock_t|atomic_uintmax_t|pthread_mutex_t|atomic_intmax_t|atomic_intptr_t|atomic_char32_t|atomic_char16_t|pthread_attr_t|atomic_wchar_t|uint_least64_t|uint_least32_t|uint_least16_t|pthread_cond_t|pthread_once_t|uint_fast64_t|uint_fast16_t|atomic_size_t|uint_least8_t|int_least64_t|int_least32_t|int_least16_t|pthread_key_t|atomic_ullong|atomic_ushort|uint_fast32_t|atomic_schar|atomic_short|uint_fast8_t|int_fast64_t|int_fast32_t|int_fast16_t|atomic_ulong|atomic_llong|int_least8_t|atomic_uchar|memory_order|suseconds_t|int_fast8_t|atomic_bool|atomic_char|atomic_uint|atomic_long|atomic_int|useconds_t|_Imaginary|blksize_t|pthread_t|in_addr_t|uintptr_t|in_port_t|uintmax_t|uintmax_t|blkcnt_t|uint16_t|unsigned|_Complex|uint32_t|intptr_t|intmax_t|intmax_t|uint64_t|u_quad_t|int64_t|int32_t|ssize_t|caddr_t|clock_t|uint8_t|u_short|swblk_t|segsz_t|int16_t|fixpt_t|daddr_t|nlink_t|qaddr_t|size_t|time_t|mode_t|signed|quad_t|ushort|u_long|u_char|double|int8_t|ino_t|uid_t|pid_t|_Bool|float|dev_t|div_t|short|gid_t|off_t|u_int|key_t|id_t|uint|long|void|char|bool|id_t|int)\\b)[a-zA-Z_]\\w*\\b(?!\\())",
+			"captures": {
+				"1": { "name": "variable.other.object.access.unity" },
+				"2": { "name": "punctuation.separator.dot-access.unity" },
+				"3": { "name": "punctuation.separator.pointer-access.unity" },
+				"4": {
+					"patterns": [
+						{ "include": "#member_access" },
+						{
+							"match": "((?:[a-zA-Z_]\\w*|(?<=\\]|\\)))\\s*)(?:((?:\\.\\*|\\.))|((?:->\\*|->)))",
+							"captures": {
+								"1": { "name": "variable.other.object.access.unity" },
+								"2": { "name": "punctuation.separator.dot-access.unity" },
+								"3": { "name": "punctuation.separator.pointer-access.unity" }
+							}
+						}
+					]
+				},
+				"5": {
+					"name": "variable.other.member.unity",
+					"patterns": [
+						{
+							"match": "(([rgba]{1,4}|[xyzw]{1,4})\\w\\b)",
+							"captures": { "1": { "name": "keyword.operator.unity" } }
+						}
+					]
+				}
+			}
+		},
+		"preprocessor": {
+			"patterns": [
+				{
+					"comment": "preprocessor",
+					"name": "keyword.preprocessor.unity.hlsl",
+					"match": "^\\s*#\\s*(if|elif|else|endif|ifdef|ifndef|undef|include|line|error|warning|pragma|INF)\\s+([\\w\\(\\)]+)?",
+					"captures": {
+						"1": { "name": "keyword.other.preprocessor.unity.hlsl" },
+						"2": {
+							"name": "variable.other.unity.hlsl",
+							"patterns": [
+								{
+									"comment": "defined macro",
+									"match": "(defined)\\(\\w+\\)",
+									"captures": { "1": { "name": "entity.name.function" } }
+								},
+								{ "include": "#line_comments" },
+								{ "include": "#block_comments" },
+								{ "include": "#keywords" },
+								{ "include": "#attributes" },
+								{ "include": "#function_calls" },
+								{ "include": "#constants" },
+								{ "include": "#types" },
+								{ "include": "#variables" },
+								{ "include": "#punctuation" }
+							]
+						}
+					}
+				},
+				{
+					"comment": "define preprocessor",
+					"name": "keyword.preprocessor.unity.hlsl",
+					"match": "^\\s*#\\s*(define)\\s+(\\w+)(\\s*\\(\\s*[\\w\\,\\s]+\\s*\\))?\\s+(.*)?",
+					"captures": {
+						"1": { "name": "keyword.preprocessor.unity.hlsl" },
+						"2": { "name": "entity.name.function.preprocessor.unity.hlsl" },
+						"3": { "name": "variable.other.unity.hlsl" },
+						"4": {
+							"name": "variable.other.unity.hlsl",
+							"patterns": [
+								{ "include": "#line_comments" },
+								{ "include": "#block_comments" },
+								{ "include": "#keywords" },
+								{ "include": "#attributes" },
+								{ "include": "#function_calls" },
+								{ "include": "#constants" },
+								{ "include": "#types" },
+								{ "include": "#variables" },
+								{ "include": "#punctuation" }
+							]
+						}
+					}
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"comment": "other keywords",
+					"name": "keyword.control.unity.hlsl",
+					"match": "\\b(goto|void|break|typedef|using|case|continue|default|discard|else|export|do|for|function|if|private|return|switch|while|workgroup|operator)\\b"
+				},
+				{
+					"comment": "reserved keywords",
+					"name": "keyword.control.unity.hlsl",
+					"match": "\\b(try|catch|do|new|long|typeid|public|__imag|__real)\\b"
+				},
+				{
+					"comment": "type keyword",
+					"name": "keyword.declaration.type.unity.hlsl",
+					"match": "\\b(typename|template|namespace)\\b"
+				},
+				{
+					"comment": "logical operators",
+					"name": "keyword.operator.logical.unity.hlsl",
+					"match": "(\\^|\\||\\|\\||&&|<<|>>|!|~|\\*)(?!=)"
+				},
+				{
+					"comment": "logical AND, borrow references",
+					"name": "keyword.operator.borrow.and.unity.hlsl",
+					"match": "&(?![&=])"
+				},
+				{
+					"comment": "assignment operators",
+					"name": "keyword.operator.assignment.unity.hlsl",
+					"match": "(\\+=|-=|\\*=|/=|%=|\\^=|&=|\\|=|<<=|>>=)"
+				},
+				{
+					"comment": "single equal",
+					"name": "keyword.operator.assignment.equal.unity.hlsl",
+					"match": "(?<![<>])=(?!=|>)"
+				},
+				{
+					"comment": "comparison operators",
+					"name": "keyword.operator.comparison.unity.hlsl",
+					"match": "(=(=)?(?!>)|!=|<=|(?<!=)>=|>|<)"
+				},
+				{
+					"comment": "math operators",
+					"name": "keyword.operator.math.unity.hlsl",
+					"match": "(([+%]|(\\*(?!\\w)))(?!=))|(-(?!>))|(/(?!/))"
+				},
+				{
+					"comment": "dot access",
+					"name": "keyword.operator.access.dot.unity.hlsl",
+					"match": "\\.(?!\\.)"
+				},
+				{
+					"comment": "namespace access",
+					"name": "punctuation.separator.semantic.unity.hlsl",
+					"match": "\\::(?!\\:)"
+				},
+				{
+					"comment": "semantic access",
+					"name": "punctuation.separator.semantic.unity.hlsl",
+					"match": "\\:(?!\\::)"
+				},
+				{
+					"comment": "dashrocket, skinny arrow",
+					"name": "keyword.operator.arrow.skinny.unity.hlsl",
+					"match": "->"
+				},
+				{
+					"comment": "compiler operator",
+					"name": "keyword.declaration.unity.hlsl",
+					"match": "\\b(sizeof|offsetof|static_assert|decltype|__decltype|_Static_assert)\\b"
+				},
+				{
+					"comment": "type modifier for storage",
+					"name": "keyword.declaration.unity.hlsl",
+					"match": "\\b(packoffset|register)\\b"
+				}
+			]
+		}
+	}
+}

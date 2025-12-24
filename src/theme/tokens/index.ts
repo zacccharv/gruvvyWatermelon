@@ -2,6 +2,7 @@ import type { TextmateColors, ThemeContext } from "@/types";
 
 import cpp from "./cpp";
 import cs from "./cs";
+import csharpsig from "./csharpsig";
 import css from "./css";
 import data from "./data";
 import diff from "./diff";
@@ -25,6 +26,7 @@ import regex from "./regex";
 import rust from "./rust";
 import shell from "./shell";
 import typst from "./typst";
+import unityShader from "./unityShader";
 
 export default function tokens(context: ThemeContext): TextmateColors {
 	const { options, palette } = context;
@@ -171,6 +173,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 			},
 		},
 		{
+			name: "Function names",
 			scope: [
 				"entity.name.function",
 				"meta.function-call.method",
@@ -180,6 +183,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 			],
 			settings: {
 				foreground: colors.raspberry,
+				fontStyle: "italic",
 			},
 		},
 		{
@@ -365,6 +369,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 		...[
 			cpp,
 			cs,
+			csharpsig,
 			css,
 			data,
 			diff,
@@ -388,6 +393,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 			rust,
 			shell,
 			typst,
+			unityShader,
 		].flatMap((element) => element(context)),
 	];
 }
