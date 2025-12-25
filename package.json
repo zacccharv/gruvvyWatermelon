@@ -4,7 +4,7 @@
   "publisher": "ZaccCharvolin",
   "description": "Color theme inspired by gruvbox and Watermelons (and maybe some grapes).",
   "icon": "imgs/logo.png",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "license": "MIT",
   "keywords": [
     "theme",
@@ -138,7 +138,7 @@
     "check-types": "tsc --noEmit && tsx src/theme-gen/genData.ts",
     "build": "pnpm tsx build.ts --dev",
     "core:watch": "tsx watch build.ts",
-    "prepublishOnly": "pnpm run build && vsce publish"
+    "prepublishOnly": "pnpm run core:compile && vsce publish"
   },
   "packageManager": "pnpm@10.22.0",
   "homepage": "https://marketplace.visualstudio.com/items?itemName=ZaccCharvolin.gruvvy-watermelon",
