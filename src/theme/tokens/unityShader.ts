@@ -5,22 +5,25 @@ const tokens = (context: ThemeContext): TextmateColors => {
 
 	return [
 		{
-			name: "Unity shader variable declaration",
-			scope: "meta.variable.declaration.unity.hlsl",
+			name: "Unity shader struct types",
+			scope: "string.unity.tagblock.key",
+			settings: {
+				foreground: colors.plum,
+			},
+		},
+		{
+			name: "Unity shader variable names",
+			scope: [
+				"meta.variable.declaration.unity.hlsl",
+				"support.variable.input.unity",
+			],
 			settings: {
 				foreground: colors.azalea,
 			},
 		},
 		{
-			name: "Unity support class params",
-			scope: "support.class.param.unity",
-			settings: {
-				foreground: colors.azalea,
-			},
-		},
-		{
-			name: "Unity shader input variables",
-			scope: "support.variable.input.unity",
+			name: "Unity support class properties",
+			scope: ["support.class.param.unity", "string.unity.tagblock.value"],
 			settings: {
 				foreground: colors.azalea,
 			},

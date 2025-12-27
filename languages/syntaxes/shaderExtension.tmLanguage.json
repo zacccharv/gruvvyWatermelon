@@ -4,34 +4,122 @@
 	"scopeName": "source.shader.unity.extension",
 	"injectionSelector": "L:source.shader.unity",
 	"patterns": [
-		{ "include": "#unity-keywords" },
-		{ "include": "#unity-tag-block" },
 		{ "include": "#line_comments" },
 		{ "include": "#block_comments" },
-		{ "include": "#qualifiers" },
-		{ "include": "#preprocessor" },
-		{ "include": "#attributes" },
-		{ "include": "#functions" },
-		{ "include": "#function_calls" },
-		{ "include": "#member_access" },
-		{ "include": "#keywords" },
-		{ "include": "#constants" },
-		{ "include": "#variables" },
-		{ "include": "#types" },
-		{ "include": "#punctuation" }
+		{ "include": "#shader-block" },
+		{ "include": "#fallback-value" }
 	],
 	"repository": {
-		"unity-keywords": {
+		"shader-block": {
+			"name": "shader.block.unity",
+			"begin": "(Shader)(\\s)(\\\")(.*)(\\\")((\\{)|())",
+			"beginCaptures": {
+				"1": { "name": "support.class.unity" },
+				"3": { "name": "string.quoted.double.begin.whitespace.unity" },
+				"4": { "name": "string.quoted.double.whitespace.unity shader.path.unity" },
+				"5": { "name": "string.quoted.double.end.whitespace.unity" },
+				"6": { "name": "punctuation.brackets.curly.unity.hlsl" }
+			},
+			"end": "(.\\z)",
 			"patterns": [
+				{ "include": "#line_comments" },
+				{ "include": "#block_comments" },
+				{ "include": "#properties-block" },
+				{ "include": "#subshader-block" },
+				{ "include": "#fallback-value" }
+			]
+		},
+		"subshader-block": {
+			"name": "subshader.block.unity",
+			"begin": "(SubShader)((\\{)|())",
+			"beginCaptures": {
+				"1": { "name": "support.class.unity" },
+				"2": { "name": "punctuation.brackets.curly.unity.hlsl" }
+			},
+			"end": "(SubShader|Fallback|Properties)\\s*",
+			"endCaptures": { "1": { "name": "support.class.unity" } },
+			"patterns": [
+				{ "include": "#unity-tag-block" },
 				{
-					"match": "(Shader)(\\s)(\\\")(.*)(\\\")",
+					"match": "(LOD)\\s+(\\d+)",
 					"captures": {
 						"1": { "name": "support.class.unity" },
-						"3": { "name": "string.quoted.double.begin.whitespace.unity" },
-						"4": { "name": "string.quoted.double.whitespace.unity shader.path.unity" },
-						"5": { "name": "string.quoted.double.end.whitespace.unity" }
+						"2": { "name": "constant.numeric.unity.hlsl" }
 					}
 				},
+				{ "include": "#keywords" },
+				{ "include": "#unity-pass-block" },
+				{ "include": "#unity-keywords" },
+				{ "include": "#whitespace-strings" },
+				{ "include": "#line_comments" },
+				{ "include": "#block_comments" },
+				{ "include": "#punctuation" }
+			]
+		},
+		"unity-pass-block": {
+			"name": "pass.block.unity",
+			"begin": "(Pass)((\\{)|())",
+			"beginCaptures": {
+				"1": { "name": "support.class.unity" },
+				"2": { "name": "punctuation.brackets.curly.unity.hlsl" }
+			},
+			"end": "(Tags|SubShader|Fallback)\\s+(?=(\\{|\\\"))",
+			"endCaptures": { "1": { "name": "support.class.unity" } },
+			"patterns": [
+				{ "include": "#keywords" },
+				{ "include": "#unity-keywords" },
+				{ "include": "#qualifiers" },
+				{ "include": "#preprocessor" },
+				{ "include": "#attributes" },
+				{ "include": "#functions" },
+				{ "include": "#function_calls" },
+				{ "include": "#member_access" },
+				{ "include": "#constants" },
+				{ "include": "#variables" },
+				{ "include": "#types" },
+				{ "include": "#whitespace-strings" },
+				{ "include": "#punctuation" }
+			]
+		},
+		"properties-block": {
+			"name": "properties.block.unity",
+			"begin": "(Properties)((\\{)|())",
+			"beginCaptures": {
+				"1": { "name": "support.class.unity" },
+				"2": { "name": "punctuation.brackets.curly.unity.hlsl" }
+			},
+			"end": "(\\s\\})",
+			"patterns": [
+				{ "include": "#keywords" },
+				{ "include": "#constants" },
+				{ "include": "#functions" },
+				{ "include": "#function_calls" },
+				{ "include": "#punctuation" },
+				{ "include": "#whitespace-strings" }
+			]
+		},
+		"fallback-value": {
+			"patterns": [
+				{
+					"match": "(Fallback)(\\\")(.*)(\\\")",
+					"captures": {
+						"1": { "name": "support.class.unity" },
+						"2": { "name": "string.quoted.double.begin.whitespace.unity" },
+						"3": { "name": "string.quoted.double.whitespace.unity shader.path.unity" },
+						"4": { "name": "string.quoted.double.end.whitespace.unity" }
+					}
+				},
+				{
+					"match": "(Fallback)\\s+(Off)",
+					"captures": {
+						"1": { "name": "support.class.unity" },
+						"2": { "name": "support.class.param.unity" }
+					}
+				}
+			]
+		},
+		"unity-keywords": {
+			"patterns": [
 				{
 					"name": "support.class.unity",
 					"match": "(?<!\\\")\\b(VSTUMARKER|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|Fog|AlphaTest|Blend|ColorMask|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack|Stencil|Ref)\\b"
@@ -41,8 +129,8 @@
 					"name": "support.class.param.unity"
 				},
 				{
-					"match": "\\b(CGPROGRAM|GLSLPROGRAM|ENDCG|ENDGLSL|C\\+\\+RAW|BEGIN DOC|END DOC|BEGIN EX|END EX|CSRAW|CSNONE|CLASS|CUSTOM|CUSTOM_PROP|THREAD_SAFE|BEGIN|END|TYPEMAP|ENUM|DOCUMENT|AUTO|AUTO_PROP|AUTO_PTR_PROP|OBSOLETE|THREAD_UNSAFE|CONVERTEXAMPLE|NONSEALED_CLASS|CONDITIONAL|STRUCT)\\b",
-					"name": "support.class.unity"
+					"match": "\\b(CGPROGRAM|GLSLPROGRAM|HLSLPROGRAM|ENDCG|ENDGLSL|ENDHLSL|C\\+\\+RAW|BEGIN DOC|END DOC|BEGIN EX|END EX|CSRAW|CSNONE|CLASS|CUSTOM|CUSTOM_PROP|THREAD_SAFE|BEGIN|END|TYPEMAP|ENUM|DOCUMENT|AUTO|AUTO_PROP|AUTO_PTR_PROP|OBSOLETE|THREAD_UNSAFE|CONVERTEXAMPLE|NONSEALED_CLASS|CONDITIONAL|STRUCT)\\b",
+					"name": "keyword.preprocessor.region.unity"
 				},
 				{
 					"match": "\\b(Dependency|Fallback)\\b",
@@ -120,6 +208,8 @@
 						"3": { "name": "string.quoted.double.end" }
 					}
 				},
+				{ "include": "#keywords" },
+				{ "include": "#constants" },
 				{ "include": "#whitespace-strings" }
 			]
 		},
@@ -156,6 +246,61 @@
 			"name": "constant.language.attribute.unity.hlsl",
 			"match": "\\[(?i:domain|earlydepthstencil|instance|maxtessfactor|numthreads|outputcontrolpoints|outputtopology|partitioning|patchconstantfunc|flatten|branch|loop|unroll|fastopt|allow_uav_condition|forcecase|call|clipplanes|maxvertexcount|noinline|unknown|rootsignature|raypayload|shader)(\\(.*\\))?\\]"
 		},
+		"preprocessor": {
+			"patterns": [
+				{
+					"comment": "preprocessor",
+					"name": "keyword.preprocessor.unity.hlsl",
+					"match": "^\\s*#\\s*(if|elif|else|endif|ifdef|ifndef|undef|include|line|error|warning|pragma|INF)\\s+([\\w\\(\\)]+)?",
+					"captures": {
+						"1": { "name": "keyword.other.preprocessor.unity.hlsl" },
+						"2": {
+							"name": "variable.other.unity.hlsl",
+							"patterns": [
+								{
+									"comment": "defined macro",
+									"match": "(defined)\\(\\w+\\)",
+									"captures": { "1": { "name": "entity.name.function" } }
+								},
+								{ "include": "#line_comments" },
+								{ "include": "#block_comments" },
+								{ "include": "#keywords" },
+								{ "include": "#attributes" },
+								{ "include": "#function_calls" },
+								{ "include": "#constants" },
+								{ "include": "#types" },
+								{ "include": "#variables" },
+								{ "include": "#punctuation" }
+							]
+						}
+					}
+				},
+				{
+					"comment": "define preprocessor",
+					"name": "keyword.preprocessor.unity.hlsl",
+					"match": "^\\s*#\\s*(define)\\s+(\\w+)(\\s*\\(\\s*[\\w\\,\\s]+\\s*\\))?\\s+(.*)?",
+					"captures": {
+						"1": { "name": "keyword.preprocessor.unity.hlsl" },
+						"2": { "name": "entity.name.function.preprocessor.unity.hlsl" },
+						"3": { "name": "variable.other.unity.hlsl" },
+						"4": {
+							"name": "variable.other.unity.hlsl",
+							"patterns": [
+								{ "include": "#line_comments" },
+								{ "include": "#block_comments" },
+								{ "include": "#keywords" },
+								{ "include": "#attributes" },
+								{ "include": "#function_calls" },
+								{ "include": "#constants" },
+								{ "include": "#types" },
+								{ "include": "#variables" },
+								{ "include": "#punctuation" }
+							]
+						}
+					}
+				}
+			]
+		},
 		"functions": {
 			"comment": "function definition",
 			"begin": "\\b(\\w+)(\\s*\\<\\s*(\\w+)\\s*\\>\\s*)?\\s+(\\w+)?([\\s]*\\()",
@@ -174,6 +319,7 @@
 			"end": "\\{",
 			"endCaptures": { "0": { "name": "punctuation.brackets.curly.unity.hlsl" } },
 			"patterns": [
+				{ "include": "#member_access" },
 				{ "include": "#preprocessor" },
 				{ "include": "#line_comments" },
 				{ "include": "#block_comments" },
@@ -184,7 +330,8 @@
 				{ "include": "#constants" },
 				{ "include": "#types" },
 				{ "include": "#variables" },
-				{ "include": "#punctuation" }
+				{ "include": "#punctuation" },
+				{ "include": "#whitespace-strings" }
 			]
 		},
 		"function_calls": {
@@ -200,17 +347,16 @@
 			"end": "\\)",
 			"endCaptures": { "0": { "name": "punctuation.brackets.round.unity.hlsl" } },
 			"patterns": [
-				{ "include": "#preprocessor" },
-				{ "include": "#line_comments" },
-				{ "include": "#block_comments" },
+				{ "include": "#member_access" },
 				{ "include": "#qualifiers" },
+				{ "include": "#unity-keywords" },
 				{ "include": "#keywords" },
-				{ "include": "#attributes" },
 				{ "include": "#function_calls" },
 				{ "include": "#constants" },
 				{ "include": "#types" },
 				{ "include": "#variables" },
-				{ "include": "#punctuation" }
+				{ "include": "#punctuation" },
+				{ "include": "#whitespace-strings" }
 			]
 		},
 		"constants": {
@@ -218,7 +364,7 @@
 				{
 					"comment": "decimal float literal",
 					"name": "constant.numeric.float.unity.hlsl",
-					"match": "(-?\\b[0-9][0-9]*\\.[0-9]*)([eE][+-]?[0-9]+)?((?i:[fhl]))?\\b",
+					"match": "(-?\\b[0-9][0-9]*<punctuation>[0-9]*)([eE][+-]?[0-9]+)?((?i:[fhl]))?\\b",
 					"captures": {
 						"1": { "name": "constant.numeric.float.unity.hlsl" },
 						"2": { "name": "constant.language.attribute.hlsl entity.name.tag" },
@@ -367,7 +513,6 @@
 			"patterns": [
 				{
 					"comment": "struct declaration",
-					"name": "keyword.declaration.struct.unity.hlsl",
 					"match": "\\b(struct|class|interface|cbuffer|tbuffer|enum class|enum)\\s+(\\[[a-z]+\\]\\s+)?([a-zA-Z][a-zA-Z0-9_]*)?(\\s+:\\s+[a-zA-Z][a-zA-Z0-9_]*)?",
 					"captures": {
 						"1": { "name": "keyword.declaration.struct.unity.hlsl" },
@@ -483,67 +628,12 @@
 					"name": "variable.other.member.unity",
 					"patterns": [
 						{
-							"match": "(([rgba]{1,4}|[xyzw]{1,4})\\w\\b)",
+							"match": "(([rgba]{1,4}|[xyzw]{1,4})\\b)",
 							"captures": { "1": { "name": "keyword.operator.unity" } }
 						}
 					]
 				}
 			}
-		},
-		"preprocessor": {
-			"patterns": [
-				{
-					"comment": "preprocessor",
-					"name": "keyword.preprocessor.unity.hlsl",
-					"match": "^\\s*#\\s*(if|elif|else|endif|ifdef|ifndef|undef|include|line|error|warning|pragma|INF)\\s+([\\w\\(\\)]+)?",
-					"captures": {
-						"1": { "name": "keyword.other.preprocessor.unity.hlsl" },
-						"2": {
-							"name": "variable.other.unity.hlsl",
-							"patterns": [
-								{
-									"comment": "defined macro",
-									"match": "(defined)\\(\\w+\\)",
-									"captures": { "1": { "name": "entity.name.function" } }
-								},
-								{ "include": "#line_comments" },
-								{ "include": "#block_comments" },
-								{ "include": "#keywords" },
-								{ "include": "#attributes" },
-								{ "include": "#function_calls" },
-								{ "include": "#constants" },
-								{ "include": "#types" },
-								{ "include": "#variables" },
-								{ "include": "#punctuation" }
-							]
-						}
-					}
-				},
-				{
-					"comment": "define preprocessor",
-					"name": "keyword.preprocessor.unity.hlsl",
-					"match": "^\\s*#\\s*(define)\\s+(\\w+)(\\s*\\(\\s*[\\w\\,\\s]+\\s*\\))?\\s+(.*)?",
-					"captures": {
-						"1": { "name": "keyword.preprocessor.unity.hlsl" },
-						"2": { "name": "entity.name.function.preprocessor.unity.hlsl" },
-						"3": { "name": "variable.other.unity.hlsl" },
-						"4": {
-							"name": "variable.other.unity.hlsl",
-							"patterns": [
-								{ "include": "#line_comments" },
-								{ "include": "#block_comments" },
-								{ "include": "#keywords" },
-								{ "include": "#attributes" },
-								{ "include": "#function_calls" },
-								{ "include": "#constants" },
-								{ "include": "#types" },
-								{ "include": "#variables" },
-								{ "include": "#punctuation" }
-							]
-						}
-					}
-				}
-			]
 		},
 		"keywords": {
 			"patterns": [

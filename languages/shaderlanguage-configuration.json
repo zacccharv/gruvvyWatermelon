@@ -26,9 +26,10 @@
 		["\"", "\""],
 		["'", "'"]
 	],
+
 	"folding": {
 		"markers": {
-			"start": "^\\s(#region|CGPROGRAM|HLSLPROGRAM|GLSLPROGRAM)\\b",
+			"start": "^\\s*(#region|CGPROGRAM|HLSLPROGRAM|GLSLPROGRAM)\\b",
 			"end": "^\\s*(#endregion|ENDCG|ENDHLSL|ENDGLSL)\\b"
 		}
 	}
