@@ -1,4 +1,5 @@
 .vscode
+themes/.flag
 node_modules
 temp/
 out/
