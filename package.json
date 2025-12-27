@@ -155,7 +155,7 @@
     "@types/tinycolor2": "^1.4.6",
     "@types/vscode": "^1.1.37",
     "@vscode/test-electron": "^2.5.2",
-    "@vscode/vsce": "^3.6.2",
+    "@vscode/vsce": "^3.7.1",
     "eslint": "^9.39.1",
     "globals": "^16.5.0",
     "lodash": "^4.17.21",
