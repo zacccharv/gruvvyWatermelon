@@ -122,11 +122,31 @@
 			"patterns": [
 				{
 					"name": "support.class.unity",
-					"match": "(?<!\\\")\\b(VSTUMARKER|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|Fog|AlphaTest|Blend|ColorMask|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack|Stencil|Ref)\\b"
+					"match": "(?<!\\\")\\b(VSTUMARKER|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|ZClip|Fog|AlphaMask|AlphaTest|Blend|BlendOp|ColorMask|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack|Stencil)\\b"
 				},
 				{
-					"match": "\\b(On|Off|ObjectLinear|EyeLinear|SphereMap|CubeReflect|CubeNormal|A|RGB|Less|Greater|LEqual|GEqual|NotEqual|Always|AmbientAndDiffuse|Emission|Back|Front|Linear|Exp|Exp2|One|Zero|SrcColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha|AppSrcAdd|AppDstAdd|Vertex|VertexOrNone|VertexOnly|Pixel|PixelOnly|VertexOrPixel|VertexAndPixel|PixelOrNone|None|Always|SoftVegetation|Normal|Tangent|Mesh|Normals|Tangents|World|Texcoord|Texcoord0|Texcoord1|Replace)\\b",
-					"name": "support.class.param.unity"
+					"name": "support.class.unity",
+					"match": "(?<!\\\")\\b(Ref|ReadMask|WriteMask|Comp|Fail|ZFail|CompBack|PassBack|FailBack|ZFailBack|CompFront|PassFront|FailFront|ZFailFront)\\b"
+				},
+				{
+					"name": "support.class.param.unity",
+					"match": "\\b(On|Off|ObjectLinear|EyeLinear|SphereMap|CubeReflect|CubeNormal|ARGB|AmbientAndDiffuse|Emission|Back|Front|Linear|Exp|Exp2|One|Zero|AppSrcAdd|AppDstAdd|Vertex|VertexOrNone|VertexOnly|Pixel|PixelOnly|VertexOrPixel|VertexAndPixel|PixelOrNone|None|SoftVegetation|Normal|Tangent|Mesh|Normals|Tangents|World|Texcoord|Texcoord0|Texcoord1|Disabled)\\b"
+				},
+				{
+					"name": "support.class.param.unity",
+					"match": "\\b(SrcColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b"
+				},
+				{
+					"name": "support.class.param.unity",
+					"match": "\\b(ADD|SUB|REVSUB|MIN|MAX|LOGICALCLEAR|LOGICALSET|LOGICALCOPY|LOGICALCOPYINVERTED|LOGICALNOOP|LOGICALINVERT|LOGICALAND|LOGICALNAND|LOGICALOR|LOGICALNOR|LOGICALXOR|LOGICALEQUIV|LOGICALANDREVERSE|LOGICALANDINVERTED|LOGICALORREVERSE|LOGICALORINVERTED|MULTIPLY|SCREEN|OVERLAY|DARKEN|LIGHTEN|COLORDODGE|COLORBURN|HARDLIGHT|SOFTLIGHT|DIFFERENCE|EXCLUSION|HSLHUE|HSLSATURATION|HSLCOLOR|HSLLUMINOSITY)\\b"
+				},
+				{
+					"name": "support.class.param.unity",
+					"match": "\\b(Never|Less|Equal|LEqual|Greater|NotEqual|GEqual|Always)\\b"
+				},
+				{
+					"name": "support.class.param.unity",
+					"match": "\\b(Keep|Replace|IncrSat|DecrSat|Invert|IncrWrap|DecrWrap)\\b"
 				},
 				{
 					"match": "\\b(CGPROGRAM|GLSLPROGRAM|HLSLPROGRAM|ENDCG|ENDGLSL|ENDHLSL|C\\+\\+RAW|BEGIN DOC|END DOC|BEGIN EX|END EX|CSRAW|CSNONE|CLASS|CUSTOM|CUSTOM_PROP|THREAD_SAFE|BEGIN|END|TYPEMAP|ENUM|DOCUMENT|AUTO|AUTO_PROP|AUTO_PTR_PROP|OBSOLETE|THREAD_UNSAFE|CONVERTEXAMPLE|NONSEALED_CLASS|CONDITIONAL|STRUCT)\\b",

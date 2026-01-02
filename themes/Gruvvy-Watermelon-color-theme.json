@@ -786,6 +786,48 @@
       }
     },
     {
+      "name": "Antlr source",
+      "scope": "source.antlr",
+      "settings": {
+        "foreground": "#b6d2ca"
+      }
+    },
+    {
+      "name": "Language keywords",
+      "scope": [
+        "entity.other.pointer.antlr",
+        "string.regexp.antlr"
+      ],
+      "settings": {
+        "foreground": "#ff647d"
+      }
+    },
+    {
+      "name": "Support other token",
+      "scope": [
+        "support.other.token.lexer.antlr"
+      ],
+      "settings": {
+        "foreground": "#e9f2f1"
+      }
+    },
+    {
+      "name": "Support function",
+      "scope": "support.function.parser.antlr",
+      "settings": {
+        "foreground": "#479e9e"
+      }
+    },
+    {
+      "name": "Constants/Literals",
+      "scope": [
+        "constant.other.antlr"
+      ],
+      "settings": {
+        "foreground": "#4fb094"
+      }
+    },
+    {
       "name": "C++ extern keyword",
       "scope": "storage.modifier.specifier.extern.cpp",
       "settings": {

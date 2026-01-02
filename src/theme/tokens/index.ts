@@ -1,5 +1,5 @@
 import type { TextmateColors, ThemeContext } from "@/types";
-
+import antlr from "./antlr";
 import cpp from "./cpp";
 import cs from "./cs";
 import csharpsig from "./csharpsig";
@@ -367,6 +367,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 
 		// per-language tokens
 		...[
+			antlr,
 			cpp,
 			cs,
 			csharpsig,
