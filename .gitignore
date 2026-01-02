@@ -1,5 +1,5 @@
 node_modules
 dist
-*.vsix
+/*.vsix
 markdown.css
 themes/.flag
