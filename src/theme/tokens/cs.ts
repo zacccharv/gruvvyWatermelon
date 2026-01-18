@@ -58,10 +58,17 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			},
 		},
 		{
-			name: "Markdown signature custom type keyword",
-			scope: ["variable.other.readwrite"],
+			name: "C# struct name",
+			scope: ["entity.name.type.cs"],
 			settings: {
-				foreground: colors.lavender,
+				foreground: colors.plum,
+			},
+		},
+		{
+			name: "C# Variable read write",
+			scope: ["variable.other.readwrite.cs"],
+			settings: {
+				foreground: colors.blueberry,
 			},
 		},
 	];

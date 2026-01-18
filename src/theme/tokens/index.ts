@@ -235,7 +235,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 				"entity.name.variable.enum-member",
 			],
 			settings: {
-				foreground: colors.watermelon,
+				foreground: colors.blueberry,
 			},
 		},
 		{
@@ -269,7 +269,7 @@ export default function tokens(context: ThemeContext): TextmateColors {
 				"constant.numeric.other.suffix",
 			],
 			settings: {
-				foreground: colors.subtext1,
+				foreground: colors.sky,
 			},
 		},
 		{

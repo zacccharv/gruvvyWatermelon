@@ -645,7 +645,7 @@
         "entity.name.variable.enum-member"
       ],
       "settings": {
-        "foreground": "#4fb094"
+        "foreground": "#479e9e"
       }
     },
     {
@@ -682,7 +682,7 @@
         "constant.numeric.other.suffix"
       ],
       "settings": {
-        "foreground": "#b6d2ca"
+        "foreground": "#a1ede0"
       }
     },
     {
@@ -924,12 +924,21 @@
       }
     },
     {
-      "name": "Markdown signature custom type keyword",
+      "name": "C# struct name",
       "scope": [
-        "variable.other.readwrite"
+        "entity.name.type.cs"
       ],
       "settings": {
-        "foreground": "#c3adff"
+        "foreground": "#9781d5"
+      }
+    },
+    {
+      "name": "C# Variable read write",
+      "scope": [
+        "variable.other.readwrite.cs"
+      ],
+      "settings": {
+        "foreground": "#479e9e"
       }
     },
     {
@@ -2335,6 +2344,15 @@
       }
     },
     {
+      "name": "Literal Expressions",
+      "scope": [
+        "literal.rgba"
+      ],
+      "settings": {
+        "foreground": "#479e9e"
+      }
+    },
+    {
       "name": "Unity shader struct types",
       "scope": "string.unity.tagblock.key",
       "settings": {
@@ -2366,6 +2384,14 @@
       "scope": "variable.other.semantic.shader.extension.unity",
       "settings": {
         "foreground": "#ff647d"
+      }
+    },
+    {
+      "name": "Preprocessor after vars",
+      "scope": "variable.other.unity.hlsl",
+      "settings": {
+        "foreground": "#479e9e",
+        "fontStyle": ""
       }
     }
   ]

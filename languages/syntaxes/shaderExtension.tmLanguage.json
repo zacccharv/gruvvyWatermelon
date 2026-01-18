@@ -50,6 +50,7 @@
 				{ "include": "#keywords" },
 				{ "include": "#unity-pass-block" },
 				{ "include": "#unity-keywords" },
+				{ "include": "#preprocessor" },
 				{ "include": "#whitespace-strings" },
 				{ "include": "#line_comments" },
 				{ "include": "#block_comments" },
@@ -69,7 +70,6 @@
 				{ "include": "#keywords" },
 				{ "include": "#unity-keywords" },
 				{ "include": "#qualifiers" },
-				{ "include": "#preprocessor" },
 				{ "include": "#attributes" },
 				{ "include": "#functions" },
 				{ "include": "#function_calls" },
@@ -77,6 +77,7 @@
 				{ "include": "#constants" },
 				{ "include": "#variables" },
 				{ "include": "#types" },
+				{ "include": "#preprocessor" },
 				{ "include": "#whitespace-strings" },
 				{ "include": "#punctuation" }
 			]
@@ -90,6 +91,10 @@
 			},
 			"end": "(\\s\\})",
 			"patterns": [
+				{
+					"name": "keyword.attribute",
+					"match": "\\[(HideInInspector|Normal|HDR|ToggleUI|NoScaleOffset|ToggleOff|MainColor|MainTexture)\\]"
+				},
 				{ "include": "#keywords" },
 				{ "include": "#constants" },
 				{ "include": "#functions" },
@@ -122,11 +127,26 @@
 			"patterns": [
 				{
 					"name": "support.class.unity",
-					"match": "(?<!\\\")\\b(VSTUMARKER|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|ZClip|Fog|AlphaMask|AlphaTest|Blend|BlendOp|ColorMask|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack|Stencil)\\b"
+					"match": "(?<!\\\")\\b(VSTUMARKER|AlphaToMask|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|2DArray|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|ZClip|Fog|AlphaMask|AlphaTest|Blend|BlendOp|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack|Stencil)\\b"
 				},
 				{
 					"name": "support.class.unity",
-					"match": "(?<!\\\")\\b(Ref|ReadMask|WriteMask|Comp|Fail|ZFail|CompBack|PassBack|FailBack|ZFailBack|CompFront|PassFront|FailFront|ZFailFront)\\b"
+					"match": "(?<!\\\")\\b(Comp|Fail|ZFail|CompBack|PassBack|FailBack|ZFailBack|CompFront|CustomEditor|PassFront|FailFront|ZFailFront)\\b"
+				},
+				{
+					"match": "(?<!\\\")\\b(ColorMask)\\s(([RGBA][RGBA]?[RGBA]?[RGBA]?)|(0))\\b",
+					"captures": {
+						"1": { "name": "support.class.unity" },
+						"3": { "name": "literal.rgba" },
+						"4": { "name": "constant.numeric.decimal.unity.hlsl" }
+					}
+				},
+				{
+					"match": "(?<!\\\")\\b(Ref|WriteMask|ReadMask)\\s+([0-9]*)\\b",
+					"captures": {
+						"1": { "name": "support.class.unity" },
+						"2": { "name": "constant.numeric.decimal.unity.hlsl" }
+					}
 				},
 				{
 					"name": "support.class.param.unity",
@@ -155,10 +175,6 @@
 				{
 					"match": "\\b(Dependency|Fallback)\\b",
 					"name": "support.variable.unity"
-				},
-				{
-					"match": "^\\s*\\[(HideInInspector)\\]",
-					"name": "keyword.unity"
 				},
 				{
 					"match": "\\b(_\\w+)\\b",
@@ -271,26 +287,25 @@
 				{
 					"comment": "preprocessor",
 					"name": "keyword.preprocessor.unity.hlsl",
-					"match": "^\\s*#\\s*(if|elif|else|endif|ifdef|ifndef|undef|include|line|error|warning|pragma|INF)\\s+([\\w\\(\\)]+)?",
+					"match": "^\\s*#\\s*(if|elif|else|endif|ifdef|ifndef|undef|include|include_with_pragmas|line|error|warning|pragma|INF)\\s+(\\\"[^\\\"]*\\\"|[\\w\\(\\)]+)(.*)$",
 					"captures": {
 						"1": { "name": "keyword.other.preprocessor.unity.hlsl" },
 						"2": {
-							"name": "variable.other.unity.hlsl",
+							"name": "keyword.preprocessor.unity.hlsl",
 							"patterns": [
 								{
 									"comment": "defined macro",
 									"match": "(defined)\\(\\w+\\)",
 									"captures": { "1": { "name": "entity.name.function" } }
 								},
-								{ "include": "#line_comments" },
+								{ "include": "#whitespace-strings" }
+							]
+						},
+						"3": {
+							"name": "variable.other.unity.hlsl",
+							"patterns": [
 								{ "include": "#block_comments" },
-								{ "include": "#keywords" },
-								{ "include": "#attributes" },
-								{ "include": "#function_calls" },
-								{ "include": "#constants" },
-								{ "include": "#types" },
-								{ "include": "#variables" },
-								{ "include": "#punctuation" }
+								{ "include": "#line_comments" }
 							]
 						}
 					}
@@ -383,20 +398,18 @@
 			"patterns": [
 				{
 					"comment": "decimal float literal",
-					"name": "constant.numeric.float.unity.hlsl",
-					"match": "(-?\\b[0-9][0-9]*<punctuation>[0-9]*)([eE][+-]?[0-9]+)?((?i:[fhl]))?\\b",
+					"match": "(-?\\b[0-9][0-9]*(\\.)[0-9]*)([eE][+-]?[0-9]+)?((?i:[fhl]))?\\b",
 					"captures": {
 						"1": { "name": "constant.numeric.float.unity.hlsl" },
-						"2": { "name": "constant.language.attribute.hlsl entity.name.tag" },
-						"3": { "name": "constant.language.attribute.hlsl entity.name.tag" }
+						"2": { "name": "punctuation.decimal.point" },
+						"3": { "name": "constant.language.attribute.hlsl entity.name.tag" },
+						"4": { "name": "constant.language.attribute.hlsl entity.name.tag" }
 					}
 				},
 				{
 					"comment": "decimal literal",
-					"name": "constant.numeric.decimal.unity.hlsl",
 					"match": "(-?\\b((0x)[0-9a-fA-F]+|(0)[0-9]+|[0-9]+))([ul]+)?\\b",
 					"captures": {
-						"1": { "name": "constant.numeric.decimal.unity.hlsl" },
 						"2": { "name": "constant.numeric.decimal.unity.hlsl" },
 						"3": { "name": "constant.language.attribute.hlsl entity.name.tag" },
 						"4": { "name": "constant.language.attribute.hlsl entity.name.tag" },

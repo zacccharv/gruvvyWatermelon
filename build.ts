@@ -37,7 +37,7 @@ const main = async () => {
 		tsconfig: "tsconfig.json",
 	});
 
-	const packagePath = `gruvvygruvvy-watermelon-${packageJsonVersion}.vsix`;
+	const packagePath = `releases/gruvvy-watermelon-${packageJsonVersion}.vsix`;
 
 	await createVSIX({ dependencies: false, packagePath });
 };

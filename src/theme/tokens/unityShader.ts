@@ -5,6 +5,13 @@ const tokens = (context: ThemeContext): TextmateColors => {
 
 	return [
 		{
+			name: "Literal Expressions",
+			scope: ["literal.rgba"],
+			settings: {
+				foreground: colors.blueberry,
+			},
+		},
+		{
 			name: "Unity shader struct types",
 			scope: "string.unity.tagblock.key",
 			settings: {
@@ -33,6 +40,14 @@ const tokens = (context: ThemeContext): TextmateColors => {
 			scope: "variable.other.semantic.shader.extension.unity",
 			settings: {
 				foreground: colors.cherry,
+			},
+		},
+		{
+			name: "Preprocessor after vars",
+			scope: "variable.other.unity.hlsl",
+			settings: {
+				foreground: colors.blueberry,
+				fontStyle: "",
 			},
 		},
 	];
