@@ -127,7 +127,7 @@
 			"patterns": [
 				{
 					"name": "support.class.unity",
-					"match": "(?<!\\\")\\b(VSTUMARKER|AlphaToMask|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|2DArray|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|ZClip|Fog|AlphaMask|AlphaTest|Blend|BlendOp|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack|Stencil)\\b"
+					"match": "(?<!\\\")\\b(VSTUMARKER|AlphaToMask|LOD|Shader|Properties|SubShader|Pass|UsePass|Texture|Fog|Tags|BindChannels|GrabPass|Category|Color|Range|Float|Vector|2D|2DArray|Rect|Cube|Constant|Previous|TexGen|LightmapMode|SetTexture|Lighting|Material|Cull|ZTest|ZWrite|ZClip|Fog|AlphaMask|AlphaTest|Blend|BlendOp|Offset|SeparateSpecular|ColorMaterial|Diffuse|Ambient|Specular|Shininess|Emission|Combine|ConstantColor|Matrix|Lerp|Mode|Density|LightMode|RequireOptions|LightTexCount|Name|Bind|UsePass|TextureScale|TextureSize|BorderScale|Fall[Bb]ack|Stencil|Ref)\\b"
 				},
 				{
 					"name": "support.class.unity",
@@ -145,7 +145,7 @@
 					"match": "(?<!\\\")\\b(Ref|WriteMask|ReadMask)\\s+([0-9]*)\\b",
 					"captures": {
 						"1": { "name": "support.class.unity" },
-						"2": { "name": "constant.numeric.decimal.unity.hlsl" }
+						"3": { "name": "constant.numeric.decimal.unity.hlsl" }
 					}
 				},
 				{
@@ -661,7 +661,7 @@
 					"name": "variable.other.member.unity",
 					"patterns": [
 						{
-							"match": "(([rgba]{1,4}|[xyzw]{1,4})\\b)",
+							"match": "(?<=\\.)(([rgba]{1,4}|[xyzw]{1,4})\\b)",
 							"captures": { "1": { "name": "keyword.operator.unity" } }
 						}
 					]
