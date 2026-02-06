@@ -7,7 +7,8 @@
 		{ "include": "#line_comments" },
 		{ "include": "#block_comments" },
 		{ "include": "#shader-block" },
-		{ "include": "#fallback-value" }
+		{ "include": "#fallback-value" },
+		{ "include": "#keywords" }
 	],
 	"repository": {
 		"shader-block": {
@@ -371,7 +372,7 @@
 		},
 		"function_calls": {
 			"comment": "function/method calls",
-			"begin": "(?:\\s+|\\[)\\b([a-zA-Z_][a-zA-Z0-9_]*)(\\s*\\<\\s*(\\w+)\\s*\\>)?([\\s]*\\()",
+			"begin": "(?:\\s+|\\[)(?!if|else|while|for|switch|do|return)\\b([a-zA-Z_][a-zA-Z0-9_]*)(\\s*\\<\\s*(\\w+)\\s*\\>)?([\\s]*\\()",
 			"beginCaptures": {
 				"1": {
 					"name": "entity.name.function.unity.hlsl",
@@ -672,7 +673,7 @@
 			"patterns": [
 				{
 					"comment": "other keywords",
-					"name": "keyword.control.unity.hlsl",
+					"name": "keyword.control.conditional.unity.hlsl",
 					"match": "\\b(goto|void|break|typedef|using|case|continue|default|discard|else|export|do|for|function|if|private|return|switch|while|workgroup|operator)\\b"
 				},
 				{
@@ -688,7 +689,7 @@
 				{
 					"comment": "logical operators",
 					"name": "keyword.operator.logical.unity.hlsl",
-					"match": "(\\^|\\||\\|\\||&&|<<|>>|!|~|\\*)(?!=)"
+					"match": "(\\^|\\||\\|\\||&&|<<|>>|!|\\?|~|\\*)(?!=)"
 				},
 				{
 					"comment": "logical AND, borrow references",
